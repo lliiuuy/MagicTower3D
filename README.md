@@ -1,14 +1,15 @@
-# **MagicTower3D**
-using Opengl to rebuild the Magic Tower in 3D
+---
+title: MagicTower3D 
+tags: Game, 2Dto3D, OpenGL, Visual Studio
+grammar_cjkRuby: true
+---
 
-#### **1. 项目简介** ####
-----------
-本项目基于opengl库，使用C++语言+GLFW库编写，将一个经典RPG游戏魔塔（日文名：魔法の塔， 英文名：Magic Tower）还原并投影到3D世界中，实现第一人称游玩体验。
-![英文原版魔塔第一层初始场景](./images/magic_tower_5.jpg)
+#### 项目简介 ####
+------
+MagicTower3D是一个基于C++、OpenGL与GLFW库， 使用Visual Studio开发的应用程序，目的在于还原原版2D魔塔（日文名：；英文名：Magic Tower）的同时，将游戏投影到三维世界中，实现第一人称的游戏体验
+![TOS版魔塔第一层初始场景](https://raw.githubusercontent.com/lliiuuy/Images/master/小书匠/magic_tower.jpg)
 
-#### **2. 需求分析** ####
+#### 需求分析 ####
 ------
 1. UML类图
-![UML类图（待完善）](./images/magic_tower_1.jpg)
-
-#### **3. 难点** ####
+![UML类图（待完善）](https://raw.githubusercontent.com/lliiuuy/Images/master/小书匠/magic_tower_uml.jpg)
