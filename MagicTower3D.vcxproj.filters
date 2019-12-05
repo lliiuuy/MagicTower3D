@@ -306,7 +306,7 @@
       <Filter>头文件\Objects\Creatures\Monsters</Filter>
     </ClInclude>
     <ClInclude Include="Config.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
