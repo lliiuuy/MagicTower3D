@@ -25,4 +25,5 @@ bool Door::init()
 
 Door::Door(Vector2* positionInMap): Object(positionInMap)
 {
+	this->tag = Tag::door;
 }

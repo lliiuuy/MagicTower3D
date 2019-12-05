@@ -19,4 +19,5 @@ bool NPC::init()
 
 NPC::NPC(Vector2* positionInMap): Object(positionInMap)
 {
+	this->tag = Tag::NPC;
 }

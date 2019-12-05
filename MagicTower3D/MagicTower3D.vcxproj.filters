@@ -186,9 +186,6 @@
     <ClCompile Include="Shield.cpp">
       <Filter>源文件\Objects\Items\ConsumbleItems\Shield</Filter>
     </ClCompile>
-    <ClCompile Include="Altar.cpp">
-      <Filter>源文件\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Merchant.cpp">
       <Filter>源文件\Objects\NPCs</Filter>
     </ClCompile>
@@ -200,6 +197,12 @@
     </ClCompile>
     <ClCompile Include="Message.cpp">
       <Filter>源文件\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Altar.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenSlime.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +301,12 @@
     </ClInclude>
     <ClInclude Include="Message.h">
       <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="GreenSlime.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

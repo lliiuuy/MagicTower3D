@@ -20,4 +20,5 @@ void Altar::collide()
 
 Altar::Altar(Vector2* positionInMap): Object(positionInMap)
 {
+	this->name = "Altar";
 }

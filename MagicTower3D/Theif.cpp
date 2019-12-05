@@ -2,7 +2,6 @@
 
 Theif::Theif(Vector2* positionInMap) : NPC(positionInMap)
 {
-	this->tag = Tag::theif;
 	this->name = "Theif";
 }
 

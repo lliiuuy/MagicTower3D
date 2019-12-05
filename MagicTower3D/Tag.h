@@ -3,14 +3,13 @@ enum class Tag : unsigned short
 {
 	object,
 	wall,
-	redDoor,
-	blueDoor,
-	yellowDoor,
+	door,
 	ironDoor,
 	prison,
 	consumbleItem,
 	sword,
 	shield,
 	monster,
-	master,
+	magician,
+	NPC,
 };

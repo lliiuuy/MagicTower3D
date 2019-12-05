@@ -134,6 +134,7 @@
     <ClCompile Include="ConsumbleItem.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Door.cpp" />
+    <ClCompile Include="GreenSlime.cpp" />
     <ClCompile Include="IronDoor.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MapCreator.cpp" />
@@ -165,9 +166,11 @@
     <ClInclude Include="BlueJewel.h" />
     <ClInclude Include="BlueKey.h" />
     <ClInclude Include="BlueMedicine.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="ConsumbleItem.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Door.h" />
+    <ClInclude Include="GreenSlime.h" />
     <ClInclude Include="IronDoor.h" />
     <ClInclude Include="MapCreator.h" />
     <ClInclude Include="Merchant.h" />
