@@ -3,6 +3,7 @@ enum class Tag : unsigned short
 {
 	object,
 	wall,
+	floor,
 	door,
 	ironDoor,
 	prison,

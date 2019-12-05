@@ -13,7 +13,8 @@ protected:
 
 public:
 	virtual void collide() = 0;
-	virtual void draw() = 0;
+	virtual void draw2D() = 0;
+	virtual void draw3D() = 0;
 	virtual bool init() = 0;
 
 	unsigned int getHealth() { return health; }

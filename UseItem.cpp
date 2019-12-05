@@ -5,7 +5,11 @@ bool UseItem::loadTexture()
 	return false;
 }
 
-void UseItem::draw()
+void UseItem::draw2D()
+{
+}
+
+void UseItem::draw3D()
 {
 }
 

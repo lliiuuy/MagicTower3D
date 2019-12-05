@@ -7,7 +7,8 @@ protected:
 	bool loadTexture();
 public:
 	virtual void useItem() = 0;
-	void draw();
+	void draw2D();
+	void draw3D();
 	void collide();
 	bool init();
 	UseItem(Vector2* positionInMap);

@@ -5,7 +5,12 @@ bool MapCreator::loadMap(char* fileName)
 	return false;
 }
 
-bool MapCreator::createMap()
+bool MapCreator::createMap2D()
+{
+	return false;
+}
+
+bool MapCreator::createMap3D()
 {
 	return false;
 }

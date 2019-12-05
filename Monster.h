@@ -13,7 +13,8 @@ protected:
 public:
 	Monster(Vector2* positionInMap);
 	void collide();
-	void draw();
+	void draw2D();
+	void draw3D();
 	bool init();
 };
 

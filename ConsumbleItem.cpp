@@ -5,7 +5,11 @@ bool ConsumbleItem::loadTexture()
 	return false;
 }
 
-void ConsumbleItem::draw()
+void ConsumbleItem::draw2D()
+{
+}
+
+void ConsumbleItem::draw3D()
 {
 }
 

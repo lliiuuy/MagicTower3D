@@ -18,7 +18,11 @@ void Monster::collide()
 {
 }
 
-void Monster::draw()
+void Monster::draw2D()
+{
+}
+
+void Monster::draw3D()
 {
 }
 

@@ -1,10 +1,12 @@
 #pragma once
 #include "Vector2.h"
+#include "Object.h"
 
 class MapCreator
 {
 private:
 	unsigned short map[11][11] = {0}; // 存储地图中各个位置的物体
+	Object* objects[11][11]; // 存储地图中的各个物体
 	const unsigned short mapWidth = 11; // 地图的长度
 	const unsigned short mapHeight = 11; // 地图的宽度
 	
@@ -15,7 +17,8 @@ private:
 
 public:
 	bool loadMap(char* fileName); // 从文件中读取json
-	bool createMap(); // 创建地图
+	bool createMap2D(); // 创建2D地图
+	bool createMap3D(); // 创建3D地图
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼
 

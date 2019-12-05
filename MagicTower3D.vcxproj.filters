@@ -103,6 +103,9 @@
     <Filter Include="源文件\Objects\Items\ConsumbleItems\Shield">
       <UniqueIdentifier>{67c8c012-3f86-4cd5-bb2d-52f2508808cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Objects\Items\UseItems">
+      <UniqueIdentifier>{72c80c5e-0c6f-46e9-a907-d43dee038ad0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -210,6 +213,9 @@
     <ClCompile Include="UseItem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -315,9 +321,12 @@
       <Filter>头文件\Config</Filter>
     </ClInclude>
     <ClInclude Include="TheOrbOfTheHero.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Objects\Items\UseItems</Filter>
     </ClInclude>
     <ClInclude Include="UseItem.h">
+      <Filter>头文件\Objects\Items\UseItems</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
