@@ -10,6 +10,5 @@ public:
 	void collide() {} // 地板没有碰撞反应
 	void draw2D();
 	void draw3D();
-	bool init();
 };
 

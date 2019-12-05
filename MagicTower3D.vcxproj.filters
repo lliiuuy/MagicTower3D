@@ -106,6 +106,9 @@
     <Filter Include="头文件\Objects\Items\UseItems">
       <UniqueIdentifier>{72c80c5e-0c6f-46e9-a907-d43dee038ad0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Objects\Items\UseItem">
+      <UniqueIdentifier>{8c72343e-afb1-4499-8af1-c4806f3e3822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -208,13 +211,13 @@
       <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
     <ClCompile Include="TheOrbOfTheHero.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Objects\Items\UseItem</Filter>
     </ClCompile>
     <ClCompile Include="UseItem.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Objects\Items\UseItem</Filter>
     </ClCompile>
     <ClCompile Include="Floor.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Objects\Obstacles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

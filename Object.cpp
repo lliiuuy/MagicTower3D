@@ -16,6 +16,13 @@ AUX_RGBImageRec* Object::loadBMP(char* fileName)
 	return NULL;
 }
 
+bool Object::init()
+{
+	bool status = true;
+	status = loadTexture();
+	return status;
+}
+
 Tag Object::getTag()
 {
 	return tag;

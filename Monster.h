@@ -15,6 +15,5 @@ public:
 	void collide();
 	void draw2D();
 	void draw3D();
-	bool init();
 };
 

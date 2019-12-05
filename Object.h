@@ -21,7 +21,7 @@ public:
 	virtual void draw2D() = 0; // 2D绘制用函数
 	virtual void draw3D() = 0; // 3D绘制用函数
 	virtual void collide() = 0; // 物体接触函数
-	virtual bool init() = 0; // 初始化函数
+	virtual bool init(); // 初始化函数
 
 	Tag getTag(); // 获取物体种类
 	Vector2* getPostionInMap(); // 获取物体在小地图中的位置

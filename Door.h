@@ -11,8 +11,6 @@ public:
 	void open(); // ©╙це
 	void collide();
 
-	bool init();
-
 	Door(Vector2* positionInMap);
 };
 

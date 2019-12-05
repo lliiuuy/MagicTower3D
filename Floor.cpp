@@ -46,10 +46,3 @@ void Floor::draw2D()
 void Floor::draw3D()
 {
 }
-
-bool Floor::init()
-{
-	bool status = true;
-	status = loadTexture();
-	return status;
-}
