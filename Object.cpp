@@ -1,18 +1,24 @@
 #include "Object.h"
 
-AUX_RGBImageRec Object::loadBMP(char* fileName)
+AUX_RGBImageRec* Object::loadBMP(char* fileName)
 {
-	return AUX_RGBImageRec();
-}
+	FILE* file = NULL;
+	if (!fileName)
+		return NULL;
 
-bool Object::loadTexture()
-{
-	return false;
+	fopen_s(&file, fileName, "r");
+	if (file)
+	{
+		fclose(file);
+		return auxDIBImageLoad(fileName);
+	}
+
+	return NULL;
 }
 
 Tag Object::getTag()
 {
-	return Tag();
+	return tag;
 }
 
 Vector2* Object::getPostionInMap()

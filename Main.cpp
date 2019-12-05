@@ -152,7 +152,6 @@ int main()
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
 
-	// initObjects();
 	timerInit();
 
 	glfwSetKeyCallback(window, keyCallback);
@@ -162,8 +161,6 @@ int main()
 	{
 		float start = timerGetTime();
 		while (timerGetTime() < start + float(steps[adjust] * 2.0f)) {} // 控制帧数
-		// displayScene();
-		// drawScene();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

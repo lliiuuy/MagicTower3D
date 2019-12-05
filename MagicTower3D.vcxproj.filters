@@ -327,7 +327,7 @@
       <Filter>头文件\Objects\Items\UseItems</Filter>
     </ClInclude>
     <ClInclude Include="Floor.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Objects\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ protected:
 
 	char* name; // 物体名字
 
-	AUX_RGBImageRec loadBMP(char* fileName); // 读取bitmap文件
+	AUX_RGBImageRec* loadBMP(char* fileName); // 读取bitmap文件
 
 	virtual bool loadTexture() = 0; // 将bitmap转成纹理
 

@@ -13,3 +13,5 @@ MagicTower3D是一个基于C++、OpenGL与GLFW库， 使用Visual Studio开发�
 ------
 1. UML类图
 ![UML类图（待完善）](https://raw.githubusercontent.com/lliiuuy/MarkDownSave/master/小书匠/magic_tower_uml.jpg)
+2. UI设计图
+![UI设计图](https://raw.githubusercontent.com/lliiuuy/MarkDownSave/master/小书匠/MagicTowerUI.jpg)
