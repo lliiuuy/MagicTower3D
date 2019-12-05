@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Config">
+      <UniqueIdentifier>{497451a0-4cf6-44a5-9df6-4bd9f16697d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Config">
+      <UniqueIdentifier>{a6b1ae0f-0986-48b9-956e-1e37dbaed477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Managers">
+      <UniqueIdentifier>{7c96111c-686a-47b8-959a-67301775948b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Managers">
+      <UniqueIdentifier>{bfefb35a-b683-4991-a103-a9da2f85c03e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects">
+      <UniqueIdentifier>{b0c6ceef-a4d0-49b6-a8ec-80f4c68a2748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects">
+      <UniqueIdentifier>{1c02f166-95b8-4256-9b55-6180e50b5061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Obstacles">
+      <UniqueIdentifier>{2bd64a02-4882-4355-96f9-bdc21dc1bb98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\NPCs">
+      <UniqueIdentifier>{d2cb7682-71c5-4769-876a-539fc06b065d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items">
+      <UniqueIdentifier>{9b9d27d1-fa43-40d9-be3f-cf575f57b1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems">
+      <UniqueIdentifier>{e2defe05-249a-4039-9fbc-cb19baae7fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Creatures">
+      <UniqueIdentifier>{6d014055-1be7-4f80-972e-4ecdeec1225d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Creatures\Monsters">
+      <UniqueIdentifier>{11a72467-678e-491b-9bdf-99e104d6c0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Creatures">
+      <UniqueIdentifier>{d78e4018-93f1-4368-9014-2f7a5752ff30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Creatures\Monster">
+      <UniqueIdentifier>{c650ae17-2f3c-4ad3-b5fa-0c6d14dd03ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items">
+      <UniqueIdentifier>{122d3b1d-4642-4f57-87cb-25ea2c4809f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems">
+      <UniqueIdentifier>{88b0176f-cfe5-4e2e-a314-27c1978840da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\NPCs">
+      <UniqueIdentifier>{c6fdd66d-7ce6-481b-958b-d1c955551cb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Obstacles">
+      <UniqueIdentifier>{99620229-b2be-4374-a40d-3789c31a7003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Obstacles\Door">
+      <UniqueIdentifier>{3c3cd6b8-2143-4bd8-a172-afbb5c35fa5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Obstacles\Door">
+      <UniqueIdentifier>{61bb9daa-9545-4b5f-ae18-2590e9c52cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems\Sword">
+      <UniqueIdentifier>{aca76642-3382-4d61-bd58-e581d88dd62d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems\Key">
+      <UniqueIdentifier>{bd9aaccc-8c5c-48bd-9af2-8ceb23c19c5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems\Jewel">
+      <UniqueIdentifier>{74b67054-b638-4eab-9eae-a618ead72d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems\Medicine">
+      <UniqueIdentifier>{234ce25e-1d0b-4f57-a662-0e09d01d6a8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems\Sword">
+      <UniqueIdentifier>{0740418b-525f-4d16-ad09-1c5a692254b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems\Key">
+      <UniqueIdentifier>{e7470d38-ded4-4a11-846d-b131d95c7c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems\Jewel">
+      <UniqueIdentifier>{284db475-2f08-428b-a161-276e5e51d3ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems\Medicine">
+      <UniqueIdentifier>{e8b97fd3-aef0-4946-bcaa-a20f505496bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Objects\Items\ConsumbleItems\Shield">
+      <UniqueIdentifier>{e99a1623-cd46-4cde-8730-9de090c39e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Items\ConsumbleItems\Shield">
+      <UniqueIdentifier>{67c8c012-3f86-4cd5-bb2d-52f2508808cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>源文件\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>源文件\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCreator.cpp">
+      <Filter>源文件\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>源文件\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleController.cpp">
+      <Filter>源文件\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>源文件\Objects\Creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>源文件\Objects\Creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsumbleItem.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>源文件\Objects\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="RedDoor.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueDoor.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="YellowDoor.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="IronDoor.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Prison.cpp">
+      <Filter>源文件\Objects\Obstacles\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Sword</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueKey.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="RedKey.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="YellowKey.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueJewel.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Jewel</Filter>
+    </ClCompile>
+    <ClCompile Include="RedJewel.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Jewel</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueMedicine.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Medicine</Filter>
+    </ClCompile>
+    <ClCompile Include="RedMedicine.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Medicine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="Merchant.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="OldMan.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="Theif.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>源文件\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Altar.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenSlime.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector2.h">
+      <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreator.h">
+      <Filter>头文件\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>头文件\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Tag.h">
+      <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleController.h">
+      <Filter>头文件\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>头文件\Objects\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>头文件\Objects\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsumbleItem.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>头文件\Objects\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="RedDoor.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueDoor.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="YellowDoor.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="IronDoor.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Prison.h">
+      <Filter>头文件\Objects\Obstacles\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Sword</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueKey.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="RedKey.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="YellowKey.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueJewel.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Jewel</Filter>
+    </ClInclude>
+    <ClInclude Include="RedJewel.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Jewel</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueMedicine.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Medicine</Filter>
+    </ClInclude>
+    <ClInclude Include="RedMedicine.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Medicine</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Merchant.h">
+      <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="OldMan.h">
+      <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="Theif.h">
+      <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="Altar.h">
+      <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="GreenSlime.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
