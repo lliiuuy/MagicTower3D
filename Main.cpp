@@ -130,7 +130,7 @@ int main()
 	if (!glfwInit())
 		exit(EXIT_FAILURE);
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Balls", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "MagicTower3D", NULL, NULL);
 	if (window == NULL)
 	{
 		glfwTerminate();

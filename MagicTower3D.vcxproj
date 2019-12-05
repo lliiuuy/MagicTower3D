@@ -153,6 +153,8 @@
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Theif.cpp" />
+    <ClCompile Include="TheOrbOfTheHero.cpp" />
+    <ClCompile Include="UseItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -189,6 +191,8 @@
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tag.h" />
     <ClInclude Include="Theif.h" />
+    <ClInclude Include="TheOrbOfTheHero.h" />
+    <ClInclude Include="UseItem.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="Wall.h" />

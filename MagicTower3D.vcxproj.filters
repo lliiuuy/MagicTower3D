@@ -204,6 +204,12 @@
     <ClCompile Include="GreenSlime.cpp">
       <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="TheOrbOfTheHero.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UseItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -307,6 +313,12 @@
     </ClInclude>
     <ClInclude Include="Config.h">
       <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="TheOrbOfTheHero.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItem.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

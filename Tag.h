@@ -9,6 +9,7 @@ enum class Tag : unsigned short
 	consumbleItem,
 	sword,
 	shield,
+	useItem,
 	monster,
 	magician,
 	NPC,
