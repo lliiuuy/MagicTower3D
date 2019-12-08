@@ -25,4 +25,5 @@ bool UseItem::init()
 UseItem::UseItem(Vector2* positionInMap): Object(positionInMap)
 {
 	this->tag = Tag::useItem;
+	this->index = 0;
 }
