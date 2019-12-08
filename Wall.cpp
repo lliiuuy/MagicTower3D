@@ -55,3 +55,8 @@ void Wall::collide()
 void Wall::draw()
 {
 }
+
+bool Wall::init()
+{
+	return false;
+}

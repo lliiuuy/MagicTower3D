@@ -1,4 +1,7 @@
 #pragma once
+
+#define _USE_MATH_DEFINES
+
 #include "Vector2.h"
 #include "Vector3.h"
 #include "Tag.h"

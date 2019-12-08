@@ -1,13 +1,18 @@
 #include "Config.h"
+#include "GreenSlime.h"
 
 bool fullScreen = false; // 是否全屏
 
+float rotX = 0; // 视角X轴旋转量
 float rotY = 0; // 视角Y轴旋转量
 
 unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
 Vector3* view = new Vector3(0, 0, 0); // 视角位置
+
+GreenSlime* greenSlime = new GreenSlime(new Vector2(0,0));
+
 
 struct			 											// 计时器的结构体
 {
@@ -68,6 +73,26 @@ void initGL()
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // 设置自动透视修正
 }
 
+bool initObjects()
+{
+	bool status = false;
+	status = greenSlime->init();
+	return status;
+}
+
+void drawScene()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glLoadIdentity();
+
+	glRotatef(rotX, 1, 0, 0);
+	glRotatef(360.0f - rotY, 0, 1, 0);
+	glTranslatef(-view->x, -view->y, -view->z);
+
+	greenSlime->draw3D();
+}
+
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
@@ -93,14 +118,21 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 		switch (key)
 		{
 		case GLFW_KEY_UP:
+			rotX--;
 			break;
 		case GLFW_KEY_DOWN:
+			rotX++;
 			break;
 		case GLFW_KEY_LEFT:
+			rotY++;
 			break;
 		case GLFW_KEY_RIGHT:
+			rotY--;
 			break;
 		case GLFW_KEY_W:
+			view->x -= (float)sin(rotY * M_PI / 180) * 2.0f;
+			view->y -= (float)sin(rotX * M_PI / 180) * 2.0f;
+			view->z -= (float)cos(rotY * M_PI / 180) * 2.0f;
 			break;
 		case GLFW_KEY_S:
 			break;
@@ -119,7 +151,7 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 10000.0f); // 设置投影
+	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 100.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -147,12 +179,13 @@ int main()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 10000.0f); // 设置投影
+	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 100.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
 
 	timerInit();
+	initObjects();
 
 	glfwSetKeyCallback(window, keyCallback);
 	glfwSetWindowSizeCallback(window, resizeCallback);
@@ -161,6 +194,7 @@ int main()
 	{
 		float start = timerGetTime();
 		while (timerGetTime() < start + float(steps[adjust] * 2.0f)) {} // 控制帧数
+		drawScene();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

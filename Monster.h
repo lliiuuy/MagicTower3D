@@ -4,9 +4,9 @@ class Monster :
 	public Creature
 {
 protected: 
-	float spinY = 0; // Y轴旋转量
+	float spinY = 0;
 
-	void spin(); // 朝着人物所在方向旋转
+	void spin(Vector3* position); // 朝着人物所在方向旋转
 
 	bool loadTexture(); // 怪物固定是两帧
 

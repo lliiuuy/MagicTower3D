@@ -15,7 +15,8 @@ public:
 	virtual void collide() = 0;
 	virtual void draw2D() = 0;
 	virtual void draw3D() = 0;
-	virtual bool init() = 0;
+	
+	bool init();
 
 	unsigned int getHealth() { return health; }
 	unsigned int getAttack() { return attack; }

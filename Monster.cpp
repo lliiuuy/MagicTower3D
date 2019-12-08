@@ -1,8 +1,9 @@
 #include "Monster.h"
 
-void Monster::spin()
+void Monster::spin(Vector3* position)
 {
-
+	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
+	spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
 }
 
 bool Monster::loadTexture()
@@ -13,10 +14,11 @@ bool Monster::loadTexture()
 
 	memset(textureImage, 0, sizeof(void*) * 2);
 
-	char fileName[20];
+	char fileName[100];
 	for (int i = 0; i < 2; i++)
 	{
-		sprintf_s(fileName, "Data/Monster/%s/%s_%d.bmp", this->name, this->name,i);
+		// printf("Data/Creature/Monster/%s/%s_%d.bmp", this->name, this->name, i + 1);
+		sprintf_s(fileName, "Data/Creature/Monster/%s/%s_%d.bmp", this->name, this->name, i+1);
 
 		if (textureImage[i] = loadBMP(fileName))
 		{
@@ -56,4 +58,16 @@ void Monster::draw2D()
 
 void Monster::draw3D()
 {
+	glPushMatrix();
+	glTranslatef(position->x, position->y, position->z);
+	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
+	glBindTexture(GL_TEXTURE_2D, texture[0]);
+	glBegin(GL_QUADS);
+	// 画正面
+	/*下面是测试用代码*/
+	glNormal3f(0.0f, 0.0f, 1.0f);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-10.0f, -10.0f, 0);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(10.0f, -10.0f, 0);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(10.0f, 10.0f, 0);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-10.0f, 10.0f, 0);
 }
