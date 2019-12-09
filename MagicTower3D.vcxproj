@@ -151,10 +151,12 @@
     <ClCompile Include="RedJewel.cpp" />
     <ClCompile Include="RedKey.cpp" />
     <ClCompile Include="RedMedicine.cpp" />
+    <ClCompile Include="RedSlime.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Theif.cpp" />
     <ClCompile Include="TheOrbOfTheHero.cpp" />
+    <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UseItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
@@ -182,6 +184,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Objects.h" />
     <ClInclude Include="OldMan.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Prison.h" />
@@ -189,11 +192,13 @@
     <ClInclude Include="RedJewel.h" />
     <ClInclude Include="RedKey.h" />
     <ClInclude Include="RedMedicine.h" />
+    <ClInclude Include="RedSlime.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tag.h" />
     <ClInclude Include="Theif.h" />
     <ClInclude Include="TheOrbOfTheHero.h" />
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="UseItem.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />

@@ -219,6 +219,12 @@
     <ClCompile Include="Floor.cpp">
       <Filter>源文件\Objects\Obstacles</Filter>
     </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>源文件\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="RedSlime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -331,6 +337,15 @@
     </ClInclude>
     <ClInclude Include="Floor.h">
       <Filter>头文件\Objects\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>头文件\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="RedSlime.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>头文件\Config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

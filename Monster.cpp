@@ -66,8 +66,8 @@ void Monster::draw3D()
 	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glBegin(GL_QUADS);
-	// 画正面
 	/*下面是测试用代码*/
+	// 大小等到实际测试时会进行调整
 	glNormal3f(0.0f, 0.0f, 1.0f);
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(-10.0f, -10.0f, 0);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(10.0f, -10.0f, 0);
