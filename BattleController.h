@@ -5,8 +5,11 @@
 
 class BattleController
 {
-public:
-	void battle(Monster* monster); // 战斗控制
+private:
+	static BattleController* instance;
 	BattleController();
+public:
+	static void battle(Monster* monster); // 战斗控制
+	static BattleController* getInstance() { return instance; }
 };
 

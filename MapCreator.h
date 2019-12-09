@@ -23,6 +23,10 @@ private:
 	Vector2* downPosition; // 从该层下楼后人物所在的位置
 	char downDirection[10]; // 从该层下楼后人物的朝向
 
+	MapCreator();
+	
+	static MapCreator* instance;
+
 public:
 	bool loadMap(); // 从文件中读取json
 	bool createMap2D(); // 创建2D地图
@@ -30,6 +34,6 @@ public:
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼
 
-	MapCreator();
+	static MapCreator* getInstance() { return instance; }
 };
 
