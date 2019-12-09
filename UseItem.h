@@ -6,6 +6,8 @@ class UseItem :
 protected:
 	bool loadTexture();
 	unsigned short index;
+	
+	bool enable;
 public:
 	virtual void useItem() = 0;
 	void draw2D();

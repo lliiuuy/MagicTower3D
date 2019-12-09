@@ -1,2 +1,112 @@
-﻿  Monster.cpp
+﻿  Main.cpp
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251: “Json::Reader::nodes_”: class“std::stack<Json::Value *,std::deque<_Ty,std::allocator<_Ty>>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:             _Ty=Json::Value *
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message : 参见“std::stack<Json::Value *,std::deque<_Ty,std::allocator<_Ty>>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :             _Ty=Json::Value *
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251: “Json::Reader::errors_”: class“std::deque<Json::Reader::ErrorInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:             _Ty=Json::Reader::ErrorInfo
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message : 参见“std::deque<Json::Reader::ErrorInfo,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :             _Ty=Json::Reader::ErrorInfo
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(175,28): warning C4251: “Json::Reader::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(181,34): warning C4251: “Json::Reader::commentsBefore_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(50,28): warning C4251: “Json::FastWriter::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::FastWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251: “Json::StyledWriter::childValues_”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message : 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(102,28): warning C4251: “Json::StyledWriter::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(103,32): warning C4251: “Json::StyledWriter::indentString_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251: “Json::StyledStreamWriter::childValues_”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message : 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(161,32): warning C4251: “Json::StyledStreamWriter::indentString_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(163,31): warning C4251: “Json::StyledStreamWriter::indentation_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+  MapCreator.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251: “Json::Reader::nodes_”: class“std::stack<Json::Value *,std::deque<_Ty,std::allocator<_Ty>>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:             _Ty=Json::Value *
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(173,19): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message : 参见“std::stack<Json::Value *,std::deque<_Ty,std::allocator<_Ty>>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :             _Ty=Json::Value *
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(172): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251: “Json::Reader::errors_”: class“std::deque<Json::Reader::ErrorInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:             _Ty=Json::Reader::ErrorInfo
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(174,21): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message : 参见“std::deque<Json::Reader::ErrorInfo,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :             _Ty=Json::Reader::ErrorInfo
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(175,28): warning C4251: “Json::Reader::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\reader.h(181,34): warning C4251: “Json::Reader::commentsBefore_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::Reader”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(50,28): warning C4251: “Json::FastWriter::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::FastWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251: “Json::StyledWriter::childValues_”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(101,31): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message : 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(102,28): warning C4251: “Json::StyledWriter::document_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(103,32): warning C4251: “Json::StyledWriter::indentString_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251: “Json::StyledStreamWriter::childValues_”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(159,31): warning C4251:         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message : 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         with
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         [
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :             _Ty=std::string
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\value.h(126): message :         ]
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(161,32): warning C4251: “Json::StyledStreamWriter::indentString_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+C:\Users\lliiuuy\Desktop\repository\MagicTower3D\packages\jsoncpp.0.6.0.1\build\native\include\json\writer.h(163,31): warning C4251: “Json::StyledStreamWriter::indentation_”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“Json::StyledStreamWriter”的客户端使用
+  正在生成代码...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
   MagicTower3D.vcxproj -> C:\Users\lliiuuy\Desktop\repository\MagicTower3D\Debug\MagicTower3D.exe

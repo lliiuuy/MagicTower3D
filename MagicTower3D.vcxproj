@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>.\packages\jsoncpp.0.6.0.1\build\native\include\json;$(IncludePath)</IncludePath>
+    <LibraryPath>.\packages\jsoncpp.0.6.0.1\build\native\lib\Win32\v110\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -79,7 +82,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;legacy_stdio_definitions.lib;glu32.lib;glaux.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;legacy_stdio_definitions.lib;glu32.lib;glaux.lib;winmm.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Altar.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BattleController.cpp" />
     <ClCompile Include="BlueDoor.cpp" />
@@ -136,6 +140,7 @@
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GreenSlime.cpp" />
     <ClCompile Include="IronDoor.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -170,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Altar.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Bat.h" />
     <ClInclude Include="BattleController.h" />
     <ClInclude Include="BlueDoor.h" />
@@ -181,6 +187,7 @@
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="Floor.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="GreenSlime.h" />
     <ClInclude Include="IronDoor.h" />
     <ClInclude Include="MapCreator.h" />

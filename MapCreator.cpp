@@ -24,7 +24,7 @@ bool MapCreator::loadMap()
 				sprintf_s(element, mapValue["mapData"][i * mapWidth + j]["element"].asCString());
 				if (element == "")
 				{
-					objects[i][j] == NULL;
+					objects[i][j] = NULL;
 				}
 				else
 				{
@@ -37,10 +37,12 @@ bool MapCreator::loadMap()
 		upPosition->x = mapValue["upPosition"]["x"].asInt();
 		upPosition->y = mapValue["upPosition"]["y"].asInt();
 	}
+	return status;
 }
 
 bool MapCreator::createMap2D()
 {
+	bool status = false;
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapWidth; j++)
@@ -48,10 +50,12 @@ bool MapCreator::createMap2D()
 			objects[i][j]->draw2D();
 		}
 	}
+	return status;
 }
 
 bool MapCreator::createMap3D()
 {
+	bool status = false;
 	for (int i = 0; i < mapHeight; i++)
 	{
 		for (int j = 0; j < mapWidth; j++)
@@ -59,6 +63,7 @@ bool MapCreator::createMap3D()
 			objects[i][j]->draw3D();
 		}
 	}
+	return status;
 }
 
 void MapCreator::upStairs()

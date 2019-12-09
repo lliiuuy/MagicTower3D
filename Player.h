@@ -23,6 +23,8 @@ private:
 
 	std::vector<UseItem*> *useItems; // 玩家的使用型物品列表
 
+	static Player* instance;
+
 public:
 	void move(Vector2* direction);
 	// void spin(bool isLeft); 这边还在考虑要不要自由转动视角
@@ -39,5 +41,6 @@ public:
 
 	Player(Vector2* positionInMap);
 
+	static Player* getInstance() { return instance; }
 };
 

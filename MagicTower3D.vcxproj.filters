@@ -237,6 +237,12 @@
     <ClCompile Include="SkeletonB.cpp">
       <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>源文件\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>源文件\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -370,6 +376,12 @@
     </ClInclude>
     <ClInclude Include="SkeletonB.h">
       <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>头文件\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>头文件\Managers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
