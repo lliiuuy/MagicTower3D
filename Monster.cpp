@@ -1,9 +1,13 @@
 #include "Monster.h"
 
-void Monster::spin(Vector3* position)
+void Monster::lookAt(Vector3* position)
 {
+	// 经过测试没问题
 	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
-	spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+	if(direction->x < 0)
+		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+	else
+		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
 }
 
 bool Monster::loadTexture()
@@ -17,7 +21,6 @@ bool Monster::loadTexture()
 	char fileName[100];
 	for (int i = 0; i < 2; i++)
 	{
-		// printf("Data/Creature/Monster/%s/%s_%d.bmp", this->name, this->name, i + 1);
 		sprintf_s(fileName, "Data/Creature/Monster/%s/%s_%d.bmp", this->name, this->name, i+1);
 
 		if (textureImage[i] = loadBMP(fileName))
