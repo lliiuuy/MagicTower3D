@@ -225,6 +225,9 @@
     <ClCompile Include="RedSlime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Bat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -346,6 +349,9 @@
     </ClInclude>
     <ClInclude Include="Objects.h">
       <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Bat.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

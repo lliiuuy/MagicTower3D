@@ -126,6 +126,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Altar.cpp" />
+    <ClCompile Include="Bat.cpp" />
     <ClCompile Include="BattleController.cpp" />
     <ClCompile Include="BlueDoor.cpp" />
     <ClCompile Include="BlueJewel.cpp" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Altar.h" />
+    <ClInclude Include="Bat.h" />
     <ClInclude Include="BattleController.h" />
     <ClInclude Include="BlueDoor.h" />
     <ClInclude Include="BlueJewel.h" />
