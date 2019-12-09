@@ -1,5 +1,5 @@
 #include "Config.h"
-#include "GreenSlime.h"
+#include "MapCreator.h"
 
 bool fullScreen = false; // 是否全屏
 
@@ -9,9 +9,6 @@ float rotY = 0; // 视角Y轴旋转量
 unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
-Vector3* view = new Vector3(0, 0, 0); // 视角位置
-
-GreenSlime* greenSlime = new GreenSlime(new Vector2(0,0));
 
 
 struct			 											// 计时器的结构体
@@ -76,7 +73,6 @@ void initGL()
 bool initObjects()
 {
 	bool status = false;
-	status = greenSlime->init();
 	return status;
 }
 
@@ -88,9 +84,6 @@ void drawScene()
 
 	glRotatef(rotX, 1, 0, 0);
 	glRotatef(360.0f - rotY, 0, 1, 0);
-	glTranslatef(-view->x, -view->y, -view->z);
-
-	greenSlime->draw3D();
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -130,9 +123,10 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 			rotY--;
 			break;
 		case GLFW_KEY_W:
-			view->x -= (float)sin(rotY * M_PI / 180) * 2.0f;
+			/*view->x -= (float)sin(rotY * M_PI / 180) * 2.0f;
 			view->y -= (float)sin(rotX * M_PI / 180) * 2.0f;
 			view->z -= (float)cos(rotY * M_PI / 180) * 2.0f;
+			*/
 			break;
 		case GLFW_KEY_S:
 			break;
