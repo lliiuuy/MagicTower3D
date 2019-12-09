@@ -9,8 +9,6 @@ float rotY = 0; // 视角Y轴旋转量
 unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
-
-
 struct			 											// 计时器的结构体
 {
 	__int64       frequency;									// 计时器频率（所以为啥不用long）

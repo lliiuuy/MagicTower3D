@@ -222,11 +222,20 @@
     <ClCompile Include="UIManager.cpp">
       <Filter>源文件\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="RedSlime.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Bat.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="RedSlime.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Priest.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonC.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonB.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -351,7 +360,16 @@
       <Filter>头文件\Config</Filter>
     </ClInclude>
     <ClInclude Include="Bat.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Priest.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonC.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonB.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

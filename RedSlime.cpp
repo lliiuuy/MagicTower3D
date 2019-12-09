@@ -6,4 +6,5 @@ RedSlime::RedSlime(Vector2* positionInMap) : Monster(positionInMap)
 	this->attack = 20;
 	this->defence = 2;
 	this->money = 2;
+	this->name = "Red Slime";
 }

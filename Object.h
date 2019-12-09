@@ -9,7 +9,7 @@ protected:
 	
 	Tag tag; // 物体的种类
 	
-	GLuint texture[4] = {0, 0, 0, 0}; // 物体的纹理，最多四帧
+	GLuint texture[4] = {0, 0, 0, 0}; // 物体的纹理，最多四帧(除了Player)
 
 	char* name; // 物体名字
 
