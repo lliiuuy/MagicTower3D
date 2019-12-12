@@ -8,7 +8,7 @@ bool ConsumbleItem::loadTexture()
 
 	memset(textureImage, 0, sizeof(void*) * 1);
 
-	char fileName[20];
+	char fileName[100];
 	sprintf_s(fileName, "Data/ConsumbleItem/%s.bmp", this->name);
 
 	if (textureImage[0] = loadBMP(fileName))
@@ -38,6 +38,10 @@ void ConsumbleItem::draw2D()
 }
 
 void ConsumbleItem::draw3D()
+{
+}
+
+void ConsumbleItem::collide()
 {
 }
 

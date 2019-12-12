@@ -8,8 +8,8 @@ bool Floor::loadTexture()
 
 	memset(textureImage, 0, sizeof(void*) * 1);
 
-	char fileName[20];
-	sprintf_s(fileName, "Data/Obstacle/floor.bmp");
+	char fileName[100];
+	sprintf_s(fileName, "Data/Obstacle/Floor.bmp");
 
 	if (textureImage[0] = loadBMP(fileName))
 	{
@@ -33,16 +33,30 @@ bool Floor::loadTexture()
 	return status;
 }
 
-Floor::Floor(Vector2* positionInMap): Object(positionInMap)
+Floor::Floor(Vector2* positionInMap, bool isFloor): Obstacle(positionInMap)
 {
 	this->tag = Tag::floor;
 	this->name = "Floor";
-}
-
-void Floor::draw2D()
-{
+	if (isFloor)
+		this->position->y = 0;
+	else
+		this->position->y = ly;
 }
 
 void Floor::draw3D()
 {
+	glPushMatrix();
+	glTranslatef(position->x, position->y, position->z);
+	glBindTexture(GL_TEXTURE_2D, texture[0]);
+	glBegin(GL_QUADS);
+	if (this->position->y == 0)
+		glNormal3f(0.0f, 1.0f, 0.0f);
+	else
+		glNormal3f(0.0f, -1.0f, 0.0f);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), 0, -(lz / 2));
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), 0, (lz / 2));
+	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), 0, (lz / 2));
+	glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), 0, -(lz / 2));
+	glEnd();
+	glPopMatrix();
 }

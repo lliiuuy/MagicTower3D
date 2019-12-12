@@ -1,7 +1,7 @@
 #pragma once
-#include "Object.h"
+#include "Obstacle.h"
 class Door :
-	public Object
+	public Obstacle
 {
 private:
 	bool loadTexture();

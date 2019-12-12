@@ -7,6 +7,4 @@ GreenSlime::GreenSlime(Vector2* positionInMap): Monster(positionInMap)
 	this->defence = 1;
 	this->money = 1;
 	this->name = "Green Slime";
-	// ²âÊÔÓÃ
-	this->position = new Vector3(0, 0, 1);
 }

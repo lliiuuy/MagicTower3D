@@ -71,6 +71,12 @@ void initGL()
 	glEnable(GL_DEPTH_TEST);							// 启动深度测试
 	glDepthFunc(GL_LEQUAL);								// 设置进行深度测试的类型
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // 设置自动透视修正
+
+	glEnable(GL_ALPHA_TEST); //透明部分測试
+	glAlphaFunc(GL_GREATER, 0.5);
+
+	glEnable(GL_BLEND);//启用混合
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 bool initObjects()
@@ -125,10 +131,10 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 			rotX++;
 			break;
 		case GLFW_KEY_LEFT:
-			rotY++;
+			rotY+=5;
 			break;
 		case GLFW_KEY_RIGHT:
-			rotY--;
+			rotY-=5;
 			break;
 		case GLFW_KEY_W:
 			view->x -= (float)sin(rotY * M_PI / 180) * 2.0f;
@@ -150,12 +156,12 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 		height = 1; // 保护
 	if (width == 0)
 		width = 1;
-	glViewport(0, 0, width, height);
+	glViewport(width/4, height/6, width/2, height - height/3);
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, 4 / 3, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -178,12 +184,12 @@ int main()
 	glfwGetFramebufferSize(window, &width, &height); // 获取渲染窗口大小
 
 	initGL();
-	glViewport(0, 0, width, height);
+	glViewport(width/4, height/6, width/2, height - height/3); // 测试用
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, 4 / 3, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵

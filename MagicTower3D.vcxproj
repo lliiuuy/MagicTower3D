@@ -152,6 +152,7 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OldMan.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Priest.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Objects.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OldMan.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Priest.h" />

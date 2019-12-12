@@ -2,5 +2,5 @@
 
 YellowDoor::YellowDoor(Vector2* positionInMap): Door(positionInMap)
 {
-	this->name = "YellowDoor";
+	this->name = "Yellow Door";
 }

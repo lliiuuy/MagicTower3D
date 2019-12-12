@@ -8,7 +8,7 @@ bool Door::loadTexture()
 
 	memset(textureImage, 0, sizeof(void*) * 1);
 
-	char fileName[20];
+	char fileName[100];
 	sprintf_s(fileName, "Data/Obstacle/Door/%s.bmp", this->name);
 
 	if (textureImage[0] = loadBMP(fileName))
@@ -46,7 +46,7 @@ void Door::collide()
 	open();
 }
 
-Door::Door(Vector2* positionInMap): Object(positionInMap)
+Door::Door(Vector2* positionInMap): Obstacle(positionInMap)
 {
 	this->tag = Tag::door;
 }

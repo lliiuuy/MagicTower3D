@@ -42,9 +42,9 @@ Object::Object(Vector2* positionInMap)
 {
 	this->positionInMap = positionInMap;
 	this->tag = Tag::object;
-	this->name = " ";
+	this->name = "";
 	this->lx = 30;
 	this->ly = 30;
 	this->lz = 30;
-	this->position = new Vector3(positionInMap->y*30.0f, 5, positionInMap->x*30.0f); // 在3D世界中的位置可以按照2DMap中的位置计算
+	this->position = new Vector3(positionInMap->y * lx, ly / 2, positionInMap->x * lz); // 在3D世界中的位置可以按照2DMap中的位置计算
 }

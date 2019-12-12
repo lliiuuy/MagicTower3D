@@ -24,8 +24,7 @@ public:
 	unsigned short getYellowKeyNumber() { return yellowKeyNumber; }
 	void draw2D();
 	void draw3D();
-	virtual void collide() = 0;
-	virtual bool init() = 0;
+	void collide();
 
 	ConsumbleItem(Vector2* positionInMap);
 };

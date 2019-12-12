@@ -9,6 +9,8 @@ protected:
 	
 	float lx, ly, lz; // 物体的大小（长宽高）
 
+	unsigned int counter; // 计时器，用于物体自己变换
+
 	Tag tag; // 物体的种类
 	
 	GLuint texture[4] = {0, 0, 0, 0}; // 物体的纹理，最多四帧(除了Player)

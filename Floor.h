@@ -1,14 +1,13 @@
 #pragma once
-#include "Object.h"
+#include "Obstacle.h"
 class Floor :
-	public Object
+	public Obstacle
 {
 private:
 	bool loadTexture();
 public:
-	Floor(Vector2* positionInMap);
+	Floor(Vector2* positionInMap, bool isFloor);
 	void collide() {} // 地板没有碰撞反应
-	void draw2D();
 	void draw3D();
 };
 

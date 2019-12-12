@@ -243,6 +243,9 @@
     <ClCompile Include="AudioManager.cpp">
       <Filter>源文件\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>源文件\Objects\Obstacles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -382,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>头文件\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>头文件\Objects\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

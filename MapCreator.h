@@ -15,10 +15,13 @@
 class MapCreator
 {
 private:
-	unsigned short map[11][11] = {0}; // 存储地图中各个位置的物体
-	Object* objects[11][11]; // 存储地图中的各个物体
-	const unsigned short mapWidth = 11; // 地图的长度
-	const unsigned short mapHeight = 11; // 地图的宽度
+	Object* objects[13][13]; // 存储地图中的各个物体
+
+	Floor* floors[13][13]; // 存储地图中的地板
+	Floor* cells[13][13]; // 存储地图中的天花板
+	
+	const unsigned short mapWidth = 13; // 地图的长度
+	const unsigned short mapHeight = 13; // 地图的宽度
 	
 	unsigned short floor; // 人物所在层数
 

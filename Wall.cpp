@@ -9,7 +9,7 @@ bool Wall::loadTexture()
 	memset(textureImage, 0, sizeof(void*) * 1);
 
 	char fileName[100];
-	sprintf_s(fileName, "Data/Obstacle/wall.bmp");
+	sprintf_s(fileName, "Data/Obstacle/Wall.bmp");
 
 	if (textureImage[0] = loadBMP(fileName))
 	{
@@ -33,7 +33,7 @@ bool Wall::loadTexture()
 	return status;
 }
 
-Wall::Wall(Vector2* positionInMap): Object(positionInMap)
+Wall::Wall(Vector2* positionInMap): Obstacle(positionInMap)
 {
 	this->name = "Wall";
 	this->tag = Tag::wall;
@@ -49,55 +49,4 @@ void Wall::appear()
 
 void Wall::collide()
 {
-}
-
-void Wall::draw2D()
-{
-}
-
-void Wall::draw3D()
-{
-	glPushMatrix();
-	glTranslatef(position->x, position->y, position->z);
-	glBindTexture(GL_TEXTURE_2D, texture[0]);
-	glBegin(GL_QUADS);
-	// »­ÕýÃæ
-	glNormal3f(0.0f, 0.0f, 1.0f);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), (lz / 2));
-	// »­±³Ãæ
-	glNormal3f(0.0f, 0.0f, -1.0f);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
-	// »­¶¥Ãæ
-	glNormal3f(0.0f, 1.0f, 0.0f);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
-	// »­µ×Ãæ
-	glNormal3f(0.0f, -1.0f, 0.0f);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), (lz / 2));
-	// »­ÓÒ²àÃæ
-	glNormal3f(1.0f, 0.0f, 0.0f);
-	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), (lz / 2));
-	// »­×ó²àÃæ
-	glNormal3f(-1.0f, 0.0f, 0.0f);
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
-
-	glEnd();
-	glPopMatrix();
 }
