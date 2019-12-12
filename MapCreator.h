@@ -9,7 +9,6 @@
 #include <fstream>
 #include <iostream>
 
-
 class MapCreator
 {
 private:
