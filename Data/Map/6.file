@@ -1,0 +1,409 @@
+{
+    "bgMusic": "music/sound_1.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 9
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "junior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "green_slime"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"我有一把蓝钥匙，你出50个金币就卖给你。"}
+                     ],
+                     "actionAsk":"main.money>=50?main.money-=50,main.keys[blueKey]+=1,currentMap.mapData[40].dialog[0]=null:null",
+                     "end":false
+                 },
+                 {
+                      "dialogues":[
+                          {"speaker":"red_old","sentence":"魔塔一共50层，每10层为一个区域。如果不打败此区域的头目就不能到更高的地方。"}
+                      ],
+                      "action":"currentMap.mapData[40].element=\"\";currentMap.mapData[40].dialog=null",
+                      "toNote":"true",
+                      "end":true
+                  }
+
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_slime"
+        },
+        {
+            "element": "junior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "skeleton_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "junior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"blue_old","sentence":"你购买了礼物后再与商人对话，他会告诉你一些重要的消息。"}
+                     ],
+                     "action":"currentMap.mapData[80].element=\"\";currentMap.mapData[80].dialog=null",
+                     "toNote":"true"
+                 }
+             ]
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_jewel_1"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_slime"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "green_slime"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_1"
+        },
+        {
+            "element": "red_hp_1"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "stair_up"
+        }
+    ],
+    "mapFloor": 6,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 1
+    }
+}

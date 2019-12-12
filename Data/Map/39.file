@@ -1,0 +1,418 @@
+{
+    "bgMusic": "music/sound_4.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 9
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[12].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1&&currentMap.mapData[38].element!=\"yellow_door\"?currentMap.mapData[14].action=\"\",currentMap.mapData[36].element=\"swing\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[16].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"我有三把蓝钥匙，你出2000个金币就都给你。"}
+                     ],
+                     "actionAsk":"main.money>=2000?main.money-=2000,main.keys[blueKey]+=3,currentMap.mapData[19].dialog[0]=null:null",
+                     "end":false
+                 },
+                 {
+                      "dialogues":[
+                          {"speaker":"red_old","sentence":"塔内有个幸运金币。拥有它在打败敌人后能获得2倍的金钱。"}
+                      ],
+                      "action":"currentMap.mapData[19].element=\"\";currentMap.mapData[19].dialog=null",
+                      "toNote":"true",
+                      "end":true
+                  }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[34].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[36].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1&&currentMap.mapData[14].element!=\"yellow_door\"?currentMap.mapData[38].action=\"\",currentMap.mapData[36].element=\"swing\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[56].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[58].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.keys[yellowKey]>=1?currentMap.mapData[60].action=\"\",currentMap.mapData[14].action=\"\",currentMap.mapData[38].action=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_jewel_4"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_captain"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_captain"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "double_sword_man"
+        },
+        {
+            "element": "blue_jewel_4"
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "dark_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_old",
+            "dialog":[
+              {
+                  "dialogues":[
+                      {"speaker":"blue_old","sentence":"谜题：“在3点，拥有传送功能的密宝就会出现。”"}
+                  ],
+                  "action":"currentMap.mapData[110].element=\"\";currentMap.mapData[110].dialog=null",
+                  "toNote":"true",
+                  "end":true
+              }
+            ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_4"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        }
+    ],
+    "mapFloor": 39,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 1
+    }
+}

@@ -28,7 +28,7 @@ bool MapCreator::loadMap()
 				}
 				else
 				{
-					// ¶ÁÈ¡element
+					objects[i][j] = NULL;
 				}
 			}
 		}
@@ -37,6 +37,8 @@ bool MapCreator::loadMap()
 		upPosition->x = mapValue["upPosition"]["x"].asInt();
 		upPosition->y = mapValue["upPosition"]["y"].asInt();
 	}
+	printf("Floor:%d\n", this->floor);
+	printf("upPosition(X:%d, Y:%d)", upPosition->x, upPosition->y);
 	return status;
 }
 

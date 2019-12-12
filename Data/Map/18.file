@@ -1,0 +1,393 @@
+{
+    "bgMusic": "music/sound_2.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 1
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"blue_old","sentence":"在这区域不多次提升攻击力，就不能打败石头人。切记前人教训！"}
+                     ],
+                     "action":"currentMap.mapData[13].element=\"\";currentMap.mapData[13].dialog[0]=null",
+                     "toNote":"true",
+                     "end":true
+                 }
+             ]
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "brown_fake_wall",
+            "action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "orc_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc_soldier"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "stone_man"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stone_man"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stone_man"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": "red_jewel_2"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_jewel_2"
+        },
+        {
+            "element": "red_hp_2"
+        }
+    ],
+    "mapFloor": 18,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 1
+    }
+}

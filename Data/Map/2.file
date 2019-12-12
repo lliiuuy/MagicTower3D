@@ -1,0 +1,414 @@
+{
+    "bgMusic": "music/sound_1.mp3",
+    "downPosition": {
+        "direction": "up",
+        "x": 0,
+        "y": 9
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_guard",
+            "actionAfter":"currentMap.mapData[18].element!=\"dark_guard\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_guard",
+            "actionAfter":"currentMap.mapData[16].element!=\"dark_guard\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"blue_old","sentence":"谢谢你救了我，为感谢你的帮助，请收下这些礼物(1000金币)"}
+                     ],
+                     "action":"main.money+=1000;currentMap.mapData[43].element=null",
+                     "message":"获得1000金币",
+                     "end":true
+                 }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "thief"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"谢谢你救了我，我可以用祝福魔法提升你3%的攻击力和防御力，现在就提升吗？"}
+                     ],
+                     "actionAsk":"main.damage*=1.03;main.defense*=1.03;currentMap.mapData[76].element=null;currentMap.mapData[76].dialog=null;",
+                     "end":false
+                 }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_hp_1"
+        },
+        {
+            "element": "blue_hp_1"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_hp_1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "prison",
+            "action": "false"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "dialog":[
+                {
+                    "condition":"false"
+                }
+            ]
+        }
+    ],
+    "mapFloor": 2,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 1
+    }
+}

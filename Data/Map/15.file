@@ -1,0 +1,420 @@
+{
+    "bgMusic": "music/sound_2.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 1
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "blue_jewel_2"
+        },
+        {
+            "element": "orc_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "brown_fake_wall"
+        },
+        {
+            "element": "thief",
+            "dialog": [
+                {
+                    "dialogues":[
+                        {"speaker":"thief","sentence":"啊哈！你还好吗？这大章鱼挡住了我前进的道路，现在暗道终于完工了，你现在最好也躲开它。我要走了，再见。"}
+                    ],
+                    "action":"currentMap.mapData[8].dialog[0]=null;currentMap.mapData[8].element=\"\";currentMap.mapData[7].element=\"\";",
+                    "end":true
+                }
+            ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_squid_1_1"
+        },
+        {
+            "element": "big_squid_1_2"
+        },
+        {
+            "element": "big_squid_1_3"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_squid_2_1"
+        },
+        {
+            "element": "big_squid_2_2"
+        },
+        {
+            "element": "big_squid_2_3"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_squid_3_1",
+            "actionAfter":"currentMap.mapData[37].element=\"\";currentMap.mapData[38].element=\"\";currentMap.mapData[39].element=\"\";\
+                           currentMap.mapData[48].element=\"\";currentMap.mapData[49].element=\"\";currentMap.mapData[50].element=\"\";\
+                           currentMap.mapData[60].element=\"\";currentMap.mapData[61].element=\"\";currentMap.mapData[27].element=\"\";\
+                           main.tools[hoe_senior]==null?currentMap.mapData[49].element=\"hoe_senior\":null"
+        },
+        {
+            "element": "big_squid_3_2",
+            "actionAfter":"currentMap.mapData[37].element=\"\";currentMap.mapData[38].element=\"\";currentMap.mapData[39].element=\"\";\
+                           currentMap.mapData[48].element=\"\";currentMap.mapData[49].element=\"\";currentMap.mapData[50].element=\"\";\
+                           currentMap.mapData[59].element=\"\";currentMap.mapData[61].element=\"\";currentMap.mapData[27].element=\"\";\
+                           main.tools[hoe_senior]==null?currentMap.mapData[49].element=\"hoe_senior\":null"
+        },
+        {
+            "element": "big_squid_3_3",
+            "actionAfter":"currentMap.mapData[37].element=\"\";currentMap.mapData[38].element=\"\";currentMap.mapData[39].element=\"\";\
+                           currentMap.mapData[48].element=\"\";currentMap.mapData[49].element=\"\";currentMap.mapData[50].element=\"\";\
+                           currentMap.mapData[59].element=\"\";currentMap.mapData[60].element=\"\";currentMap.mapData[27].element=\"\";\
+                           main.tools[hoe_senior]==null?currentMap.mapData[49].element=\"hoe_senior\":null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"我有一把蓝钥匙，你出200个金币就卖给你。"}
+                     ],
+                     "actionAsk":"main.money>=200?main.money-=200,main.keys[blueKey]+=1,currentMap.mapData[120].dialog[0]=null:null",
+                     "end":false
+                 },
+                 {
+                      "dialogues":[
+                          {"speaker":"red_old","sentence":"如果你持有十字架，面对兽人和吸血鬼时你的攻击力加倍。在没有十字架的情况下，你不可能打败吸血鬼。十字架被藏在高于15楼的墙内。"}
+                      ],
+                      "action":"currentMap.mapData[120].dialog=null;currentMap.mapData[120].element=\"\"",
+                      "toNote":"true",
+                      "end":true
+                  }
+             ]
+        }
+    ],
+    "mapFloor": 15,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 9
+    }
+}

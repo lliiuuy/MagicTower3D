@@ -1,0 +1,382 @@
+{
+    "bgMusic":"music/sound_1.mp3",
+  "downPosition": {
+    "direction": "down",
+    "x": 1,
+    "y": 0
+  },
+  "floorImage": "floor",
+  "mapData": [
+    {
+      "element": "stair_up"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "green_slime"
+    },
+    {
+      "element": "red_slime"
+    },
+    {
+      "element": "green_slime"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "red_hp_1"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "red_jewel_1"
+    },
+    {
+      "element": "yellow_key"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "skeleton"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "blue_jewel_1"
+    },
+    {
+      "element": "red_hp_1"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "yellow_key"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "small_bat"
+    },
+    {
+      "element": "junior_wizard"
+    },
+    {
+      "element": "small_bat"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "skeleton_soldier"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_door"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "red_hp_1"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "yellow_key"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "yellow_key"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "small_bat"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "red_hp_1"
+    },
+    {
+      "element": "fly"
+    },
+    {
+      "element": "yellow_key"
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": ""
+    },
+    {
+      "element": "wall"
+    },
+    {
+      "element": "green_slime"
+    },
+    {
+      "element": "blue_hp_1"
+    },
+    {
+      "element": "green_slime"
+    }
+  ],
+  "mapFloor": 1,
+  "mapHeight": 11,
+  "mapWidth": 11,
+  "upPosition": {
+    "direction": "down",
+    "x": 5,
+    "y": 10
+  }
+}

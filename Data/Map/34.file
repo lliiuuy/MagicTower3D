@@ -1,0 +1,438 @@
+{
+    "bgMusic": "music/sound_4.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 9
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_hp_4"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "blue_jewel_4"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "red_hp_4"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "green_slime",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[37].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "double_sword_man",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[39].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "cyan_slime",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[41].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "ghost_soldier",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[43].actionAfter=\"\""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "dark_captain",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[81].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_slime",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[83].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "gold_captain",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[85].actionAfter=\"\""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "small_bat",
+            "actionAfter":"currentMap.mapData[37].element!=\"green_slime\"&&currentMap.mapData[39].element!=\"double_sword_man\"&&\
+                           currentMap.mapData[41].element!=\"cyan_slime\"&&currentMap.mapData[43].element!=\"ghost_soldier\"&&\
+                           currentMap.mapData[81].element!=\"dark_captain\"&&currentMap.mapData[83].element!=\"red_slime\"&&\
+                           currentMap.mapData[85].element!=\"gold_captain\"&&currentMap.mapData[87].element!=\"small_bat\"\
+                           ?currentMap.mapData[44].element=\"yellow_key\",currentMap.mapData[46].element=\"yellow_key\",\
+                           currentMap.mapData[66].element=\"yellow_key\",currentMap.mapData[68].element=\"yellow_key\",\
+                           currentMap.mapData[56].element=\"red_key\":null;currentMap.mapData[87].actionAfter=\"\""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_captain"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "double_sword_man"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "ghost_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_hp_4"
+        },
+        {
+            "element": "blue_hp_4"
+        },
+        {
+            "element": "ghost_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "red_jewel_4"
+        }
+    ],
+    "mapFloor": 34,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 1,
+        "y": 0
+    }
+}

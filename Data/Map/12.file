@@ -1,0 +1,419 @@
+{
+    "bgMusic": "music/sound_2.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 1,
+        "y": 10
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"我有一把红钥匙，你出800个金币就卖给你。"}
+                     ],
+                     "actionAsk":"main.money>=800?main.money-=800,main.keys[redKey]+=1,currentMap.mapData[0].dialog[0]=null:null",
+                     "end":false
+                 },
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"你是否注意到5,9,14,16,18,楼有的墙与众不同？"}
+                     ],
+                     "action":"currentMap.mapData[0].element=\"\";currentMap.mapData[0].dialog=null",
+                     "toNote":"true",
+                     "end":true
+                 }
+             ]
+        },
+        {
+            "element": "brown_fake_wall",
+            "action":true
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "red_jewel_2"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "brown_fake_wall",
+            "action":"currentMap.mapData[10].element=\"red_old\",true"
+        },
+        {
+            "element": "brown_fake_wall",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"红商人我有许多黄钥匙，1000金币一把你要吗？"}
+                     ],
+                     "actionAsk":"main.money>=1000?main.money-=1000,main.keys[yellowKey]+=1:null",
+                     "end":false
+                 }
+             ]
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "big_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "senior_wizard"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_jewel_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_hp_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "blue_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "shop_left"
+        },
+        {
+            "element": "blue_shop",
+            "shop":{
+                "style":"mt50_shop",
+                "title":"花费%d金币您可以：",
+                "options":[
+                    {"text":"增加%d点生命","condition":"main.money>=%d","action":"main.money-=%1$d;main.hp+=%2$d"},
+                    {"text":"增加4点攻击","condition":"main.money>=%d","action":"main.money-=%d;main.damage+=4"},
+                    {"text":"增加8点防御","condition":"main.money>=%d","action":"main.money-=%d;main.defense+=8"}
+                ]
+            }
+        },
+        {
+            "element": "shop_right"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "cyan_slime"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_hp_2"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "small_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        }
+    ],
+    "mapFloor": 12,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 9,
+        "y": 10
+    }
+}
