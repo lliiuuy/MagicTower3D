@@ -22,13 +22,14 @@ bool MapCreator::loadMap()
 			{
 				char element[100];
 				sprintf_s(element, mapValue["mapData"][i * mapWidth + j]["element"].asCString());
-				if (element == "")
+				if (strcmp(element,"") == 0)
 				{
 					objects[i][j] = NULL;
 				}
-				else
+				else if(strcmp(element, "wall") == 0)
 				{
-					objects[i][j] = NULL;
+					objects[i][j] = new Wall(new Vector2(i,j));
+					objects[i][j]->init();
 				}
 			}
 		}
@@ -37,8 +38,6 @@ bool MapCreator::loadMap()
 		upPosition->x = mapValue["upPosition"]["x"].asInt();
 		upPosition->y = mapValue["upPosition"]["y"].asInt();
 	}
-	printf("Floor:%d\n", this->floor);
-	printf("upPosition(X:%d, Y:%d)", upPosition->x, upPosition->y);
 	return status;
 }
 
@@ -49,7 +48,8 @@ bool MapCreator::createMap2D()
 	{
 		for (unsigned short j = 0; j < mapWidth; j++)
 		{
-			objects[i][j]->draw2D();
+			if (objects[i][j] != NULL)
+				objects[i][j]->draw2D();
 		}
 	}
 	return status;
@@ -58,11 +58,14 @@ bool MapCreator::createMap2D()
 bool MapCreator::createMap3D()
 {
 	bool status = false;
+	//Floor* floor = new Floor(new Vector2(0, 0));
+	//floor->draw3D();
 	for (int i = 0; i < mapHeight; i++)
 	{
 		for (int j = 0; j < mapWidth; j++)
 		{
-			objects[i][j]->draw3D();
+			if (objects[i][j] != NULL)
+				objects[i][j]->draw3D();
 		}
 	}
 	return status;

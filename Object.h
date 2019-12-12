@@ -7,6 +7,8 @@ protected:
 	Vector2* positionInMap; // 小地图中物体的位置
 	Vector3* position; // 3D世界中物体的位置
 	
+	float lx, ly, lz; // 物体的大小（长宽高）
+
 	Tag tag; // 物体的种类
 	
 	GLuint texture[4] = {0, 0, 0, 0}; // 物体的纹理，最多四帧(除了Player)

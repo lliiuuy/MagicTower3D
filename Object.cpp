@@ -41,7 +41,10 @@ Vector3* Object::getPositon()
 Object::Object(Vector2* positionInMap)
 {
 	this->positionInMap = positionInMap;
-	this->position = new Vector3(0, 0, 0); // 在3D世界中的位置可以按照2DMap中的位置计算
 	this->tag = Tag::object;
 	this->name = " ";
+	this->lx = 30;
+	this->ly = 30;
+	this->lz = 30;
+	this->position = new Vector3(positionInMap->y*30.0f, 5, positionInMap->x*30.0f); // 在3D世界中的位置可以按照2DMap中的位置计算
 }

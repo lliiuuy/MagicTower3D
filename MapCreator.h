@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2.h"
 #include "Object.h"
+#include "Objects.h"
 #include <string.h>
 
 #include "json/reader.h"
