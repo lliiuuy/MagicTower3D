@@ -2,12 +2,7 @@
 
 void ConsumbleItem::lookAt(Vector3* position)
 {
-	// 经过测试没问题
-	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
-	if (direction->x < 0)
-		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
-	else
-		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
+	spinY += 5;
 }
 
 bool ConsumbleItem::loadTexture()
@@ -56,7 +51,6 @@ void ConsumbleItem::draw3D()
 	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glBegin(GL_QUADS);
-	glNormal3f(0.0f, 0.0f, 1.0f); // 朝向正面
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(-lx / 2, -ly / 2, 0);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(lx / 2, -ly / 2, 0);
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(lx / 2, ly / 2, 0);
@@ -72,4 +66,5 @@ void ConsumbleItem::collide()
 
 ConsumbleItem::ConsumbleItem(Vector2* positionInMap): Object(positionInMap)
 {
+	this->tag = Tag::consumbleItem;
 }

@@ -109,8 +109,6 @@ void Player::display()
 				direction = new Vector2(-1, 0); // ╨С
 			else if ((int)spinY % 360 == 270 || (int)spinY % 360 == -90)
 				direction = new Vector2(0, -1); // ср
-			printf("%d\n", (int)spinY % 360);
-			printf("%f, %f\n", direction->x, direction->y);
 			status = PlayerStatus::idle;
 		}
 		else

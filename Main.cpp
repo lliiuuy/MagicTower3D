@@ -138,12 +138,12 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 		height = 1; // 保护
 	if (width == 0)
 		width = 1;
-	glViewport(width/4, height/6, width/2, height - height/3);
+	glViewport(width * 3 / 16, height / 21, width * 5 / 8, height * 20 / 21);
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, 4 / 3, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, 4/3, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -166,12 +166,12 @@ int main()
 	glfwGetFramebufferSize(window, &width, &height); // 获取渲染窗口大小
 
 	initGL();
-	glViewport(width/4, height/6, width/2, height - height/3); // 测试用
+	glViewport(width * 3 / 16, height / 21, width * 5 / 8, height * 20 / 21); // 测试用
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, 4 / 3, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, 4/3, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵

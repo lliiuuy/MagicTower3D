@@ -92,6 +92,7 @@ bool MapCreator::createMap3D()
 {
 	bool status = false;
 	display();
+	// 根据顺序画图，不然Blend属性会乱
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapHeight; j++)
@@ -105,7 +106,21 @@ bool MapCreator::createMap3D()
 		for (unsigned short j = 0; j < mapWidth; j++)
 		{
 			if (objects[i][j] != NULL)
-				objects[i][j]->draw3D();
+			{
+				if(objects[i][j]->getTag() == Tag::wall || objects[i][j]->getTag() == Tag::door || objects[i][j]->getTag() == Tag::ironDoor || objects[i][j]->getTag() == Tag::prison)
+					objects[i][j]->draw3D();
+			}
+		}
+	}
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if (objects[i][j]->getTag() == Tag::monster || objects[i][j]->getTag() == Tag::consumbleItem)
+					objects[i][j]->draw3D();
+			}
 		}
 	}
 	return status;
