@@ -23,3 +23,5 @@
 #include "Priest.h"
 #include "SkeletonC.h"
 #include "SkeletonB.h"
+
+#include "Player.h"

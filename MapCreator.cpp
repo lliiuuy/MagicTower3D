@@ -35,8 +35,32 @@ bool MapCreator::loadMap()
 						objects[i][j] = new Wall(new Vector2(i - 1, j - 1));
 					else if (strcmp(element, "Yellow Door") == 0)
 						objects[i][j] = new YellowDoor(new Vector2(i - 1, j - 1));
-					else if(strcmp(element, "Green Slime") == 0)
+					else if (strcmp(element, "Green Slime") == 0)
 						objects[i][j] = new GreenSlime(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Red Slime") == 0)
+						objects[i][j] = new RedSlime(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Bat") == 0)
+						objects[i][j] = new Bat(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Priest") == 0)
+						objects[i][j] = new Priest(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "SkeletonC") == 0)
+						objects[i][j] = new SkeletonC(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "SkeletonB") == 0)
+						objects[i][j] = new SkeletonB(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Yellow Key") == 0)
+						objects[i][j] = new YellowKey(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Blue Key") == 0)
+						objects[i][j] = new BlueKey(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Red Key") == 0)
+						objects[i][j] = new RedKey(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Red Medicine") == 0)
+						objects[i][j] = new RedMedicine(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Blue Medicine") == 0)
+						objects[i][j] = new BlueMedicine(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Red Jewel") == 0)
+						objects[i][j] = new RedJewel(new Vector2(i - 1, j - 1));
+					else if (strcmp(element, "Blue Jewel") == 0)
+						objects[i][j] = new BlueJewel(new Vector2(i - 1, j - 1));
 				}
 				if (objects[i][j] != NULL)
 					objects[i][j]->init();
@@ -67,14 +91,20 @@ bool MapCreator::createMap2D()
 bool MapCreator::createMap3D()
 {
 	bool status = false;
-	for (int i = 0; i < mapHeight; i++)
+	for (unsigned short i = 0; i < mapHeight; i++)
 	{
-		for (int j = 0; j < mapWidth; j++)
+		for (unsigned short j = 0; j < mapHeight; j++)
+		{
+			floors[i][j]->draw3D();
+			cells[i][j]->draw3D();
+		}
+	}
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
 		{
 			if (objects[i][j] != NULL)
 				objects[i][j]->draw3D();
-			floors[i][j]->draw3D();
-			//cells[i][j]->draw3D();
 		}
 	}
 	return status;
@@ -103,8 +133,8 @@ MapCreator::MapCreator()
 		{
 			floors[i][j] = new Floor(new Vector2(i-1, j-1), true);
 			floors[i][j]->init();
-			/*cells[i][j] = new Floor(new Vector2(i, j), false);
-			cells[i][j]->init();*/
+			cells[i][j] = new Floor(new Vector2(i-1, j-1), false);
+			cells[i][j]->init();
 		}
 	}
 }

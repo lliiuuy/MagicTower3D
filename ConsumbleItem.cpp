@@ -1,5 +1,16 @@
 #include "ConsumbleItem.h"
 
+void ConsumbleItem::lookAt(Vector3* position)
+{
+	// 经过测试没问题
+	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
+	if (direction->x < 0)
+		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+	else
+		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+
+}
+
 bool ConsumbleItem::loadTexture()
 {
 	bool status = false;
@@ -39,6 +50,21 @@ void ConsumbleItem::draw2D()
 
 void ConsumbleItem::draw3D()
 {
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
+	glPushMatrix();
+	glTranslatef(position->x, position->y, position->z);
+	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
+	glBindTexture(GL_TEXTURE_2D, texture[0]);
+	glBegin(GL_QUADS);
+	glNormal3f(0.0f, 0.0f, 1.0f); // 朝向正面
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-lx / 2, -ly / 2, 0);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(lx / 2, -ly / 2, 0);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(lx / 2, ly / 2, 0);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-lx / 2, ly / 2, 0);
+	glEnd();
+	glPopMatrix();
+	glDisable(GL_BLEND);
 }
 
 void ConsumbleItem::collide()

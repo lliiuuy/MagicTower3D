@@ -71,12 +71,6 @@ void initGL()
 	glEnable(GL_DEPTH_TEST);							// 启动深度测试
 	glDepthFunc(GL_LEQUAL);								// 设置进行深度测试的类型
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // 设置自动透视修正
-
-	glEnable(GL_ALPHA_TEST); //透明部分測试
-	glAlphaFunc(GL_GREATER, 0.5);
-
-	glEnable(GL_BLEND);//启用混合
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 bool initObjects()

@@ -3,5 +3,5 @@
 BlueKey::BlueKey(Vector2* positionInMap): ConsumbleItem(positionInMap)
 {
 	this->blueKeyNumber = 1;
-	this->name = "BlueKey";
+	this->name = "Blue Key";
 }

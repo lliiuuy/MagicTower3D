@@ -3,5 +3,5 @@
 YellowKey::YellowKey(Vector2* positionInMap): ConsumbleItem(positionInMap)
 {
 	this->yellowKeyNumber = 1;
-	this->name = "YellowKey";
+	this->name = "Yellow Key";
 }

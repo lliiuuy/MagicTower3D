@@ -13,6 +13,8 @@ protected:
 
 	float spinY = 0; // 道具在3D场景中旋转
 
+	void lookAt(Vector3* position);
+
 	bool loadTexture(); // 读取纹理
 
 public:
