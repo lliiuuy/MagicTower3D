@@ -3,16 +3,11 @@
 
 bool fullScreen = false; // 是否全屏
 
-float rotX = 0; // 视角X轴旋转量
-float rotY = 0; // 视角Y轴旋转量
-
 unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
-// 测试用视角
-Vector3* view = new Vector3(150.0f, 15.0f, 300.0f);
-
-MapCreator* mapCreator;
+MapCreator* mapCreator; // 测试用
+Player* player; // 测试用
 
 struct			 											// 计时器的结构体
 {
@@ -76,7 +71,8 @@ void initGL()
 bool initObjects()
 {
 	bool status = false;
-	mapCreator = new MapCreator();
+	player = new Player(new Vector2(10, 5));
+	mapCreator = new MapCreator(player);
 	mapCreator->loadMap();
 	return status;
 }
@@ -87,9 +83,8 @@ void drawScene()
 
 	glLoadIdentity();
 
-	glRotatef(rotX, 1, 0, 0);
-	glRotatef(360.0f - rotY, 0, 1, 0);
-	glTranslatef(-view->x, -view->y, -view->z);
+	glRotatef(360.0f - player->getSpinY(), 0, 1, 0);
+	glTranslatef(-player->getPositon()->x, -player->getPositon()->y, -player->getPositon()->z);
 
 	mapCreator->createMap3D();
 }
@@ -116,30 +111,23 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	}
 	if (action == GLFW_REPEAT || action == GLFW_PRESS)
 	{
-		switch (key)
+		if (player->getStatus() == PlayerStatus::idle)
 		{
-		case GLFW_KEY_UP:
-			rotX--;
-			break;
-		case GLFW_KEY_DOWN:
-			rotX++;
-			break;
-		case GLFW_KEY_LEFT:
-			rotY+=5;
-			break;
-		case GLFW_KEY_RIGHT:
-			rotY-=5;
-			break;
-		case GLFW_KEY_W:
-			view->x -= (float)sin(rotY * M_PI / 180) * 2.0f;
-			view->y -= (float)sin(rotX * M_PI / 180) * 2.0f;
-			view->z -= (float)cos(rotY * M_PI / 180) * 2.0f;
-			break;
-		case GLFW_KEY_S:
-			view->x += (float)sin(rotY * M_PI / 180) * 2.0f;
-			view->y += (float)sin(rotX * M_PI / 180) * 2.0f;
-			view->z += (float)cos(rotY * M_PI / 180) * 2.0f;
-			break;
+			switch (key)
+			{
+			case GLFW_KEY_A:
+				player->spin(true);
+				break;
+			case GLFW_KEY_D:
+				player->spin(false);
+				break;
+			case GLFW_KEY_W:
+				player->move(true);
+				break;
+			case GLFW_KEY_S:
+				player->move(false);
+				break;
+			}
 		}
 	}
 }

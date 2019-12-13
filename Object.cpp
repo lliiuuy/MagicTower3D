@@ -46,5 +46,6 @@ Object::Object(Vector2* positionInMap)
 	this->lx = 30;
 	this->ly = 30;
 	this->lz = 30;
+	this->counter = 0;
 	this->position = new Vector3(positionInMap->y * lx, ly / 2, positionInMap->x * lz); // 在3D世界中的位置可以按照2DMap中的位置计算
 }

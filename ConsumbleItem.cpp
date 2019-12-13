@@ -5,10 +5,9 @@ void ConsumbleItem::lookAt(Vector3* position)
 	// 经过测试没问题
 	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
 	if (direction->x < 0)
-		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
 	else
-		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
-
+		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
 }
 
 bool ConsumbleItem::loadTexture()

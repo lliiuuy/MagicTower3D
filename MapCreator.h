@@ -15,10 +15,10 @@
 class MapCreator
 {
 private:
-	Object* objects[13][13]; // 存储地图中的各个物体
+	Object* objects[13][13] = {0}; // 存储地图中的各个物体
 
-	Floor* floors[13][13]; // 存储地图中的地板
-	Floor* cells[13][13]; // 存储地图中的天花板
+	Floor* floors[13][13] = {0}; // 存储地图中的地板
+	Floor* cells[13][13] = {0}; // 存储地图中的天花板
 	
 	const unsigned short mapWidth = 13; // 地图的长度
 	const unsigned short mapHeight = 13; // 地图的宽度
@@ -30,6 +30,10 @@ private:
 	Vector2* downPosition; // 从该层下楼后人物所在的位置
 	char downDirection[10]; // 从该层下楼后人物的朝向
 
+	Player* player; // 可能是用来测试的
+
+	void display(); // 物体的移动，转向处理函数
+
 public:
 	bool loadMap(); // 从文件中读取json
 	bool createMap2D(); // 创建2D地图
@@ -37,6 +41,6 @@ public:
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼
 
-	MapCreator();
+	MapCreator(Player* player);
 };
 

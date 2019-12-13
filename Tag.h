@@ -15,3 +15,11 @@ enum class Tag : unsigned short
 	magician,
 	NPC,
 };
+
+enum class PlayerStatus : unsigned short
+{
+	moving,
+	spining,
+	battling,
+	idle,
+};

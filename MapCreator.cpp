@@ -14,15 +14,15 @@ bool MapCreator::loadMap()
 	if (reader.parse(is, mapValue))
 	{
 		sprintf_s(downDirection, mapValue["downPosition"]["direction"].asCString());
-		downPosition->x = mapValue["downPosition"]["x"].asInt();
-		downPosition->y = mapValue["downPosition"]["y"].asInt();
+		downPosition->x = (float)mapValue["downPosition"]["x"].asInt();
+		downPosition->y = (float)mapValue["downPosition"]["y"].asInt();
 		for (unsigned short i = 0; i < mapHeight; i++)
 		{
 			for (unsigned short j = 0; j < mapWidth; j++)
 			{
 				if (i == 0 || j == 0 || i == mapHeight - 1 || j == mapWidth - 1)
 				{
-					objects[i][j] = new Wall(new Vector2(i - 1, j - 1));
+					objects[i][j] = new Wall(new Vector2((float)i - 1, (float)j - 1));
 					objects[i][j]->init();
 				}
 				else
@@ -32,35 +32,35 @@ bool MapCreator::loadMap()
 					if (strcmp(element, "") == 0)
 						objects[i][j] = NULL;
 					else if (strcmp(element, "Wall") == 0)
-						objects[i][j] = new Wall(new Vector2(i - 1, j - 1));
+						objects[i][j] = new Wall(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Yellow Door") == 0)
-						objects[i][j] = new YellowDoor(new Vector2(i - 1, j - 1));
+						objects[i][j] = new YellowDoor(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Green Slime") == 0)
-						objects[i][j] = new GreenSlime(new Vector2(i - 1, j - 1));
+						objects[i][j] = new GreenSlime(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Slime") == 0)
-						objects[i][j] = new RedSlime(new Vector2(i - 1, j - 1));
+						objects[i][j] = new RedSlime(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Bat") == 0)
-						objects[i][j] = new Bat(new Vector2(i - 1, j - 1));
+						objects[i][j] = new Bat(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Priest") == 0)
-						objects[i][j] = new Priest(new Vector2(i - 1, j - 1));
+						objects[i][j] = new Priest(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "SkeletonC") == 0)
-						objects[i][j] = new SkeletonC(new Vector2(i - 1, j - 1));
+						objects[i][j] = new SkeletonC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "SkeletonB") == 0)
-						objects[i][j] = new SkeletonB(new Vector2(i - 1, j - 1));
+						objects[i][j] = new SkeletonB(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Yellow Key") == 0)
-						objects[i][j] = new YellowKey(new Vector2(i - 1, j - 1));
+						objects[i][j] = new YellowKey(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Key") == 0)
-						objects[i][j] = new BlueKey(new Vector2(i - 1, j - 1));
+						objects[i][j] = new BlueKey(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Key") == 0)
-						objects[i][j] = new RedKey(new Vector2(i - 1, j - 1));
+						objects[i][j] = new RedKey(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Medicine") == 0)
-						objects[i][j] = new RedMedicine(new Vector2(i - 1, j - 1));
+						objects[i][j] = new RedMedicine(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Medicine") == 0)
-						objects[i][j] = new BlueMedicine(new Vector2(i - 1, j - 1));
+						objects[i][j] = new BlueMedicine(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Jewel") == 0)
-						objects[i][j] = new RedJewel(new Vector2(i - 1, j - 1));
+						objects[i][j] = new RedJewel(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Jewel") == 0)
-						objects[i][j] = new BlueJewel(new Vector2(i - 1, j - 1));
+						objects[i][j] = new BlueJewel(new Vector2((float)i - 1, (float)j - 1));
 				}
 				if (objects[i][j] != NULL)
 					objects[i][j]->init();
@@ -68,8 +68,8 @@ bool MapCreator::loadMap()
 		}
 		floor = mapValue["mapFloor"].asInt();
 		sprintf_s(upDirection, mapValue["upPosition"]["direction"].asCString());
-		upPosition->x = mapValue["upPosition"]["x"].asInt();
-		upPosition->y = mapValue["upPosition"]["y"].asInt();
+		upPosition->x = (float)mapValue["upPosition"]["x"].asInt();
+		upPosition->y = (float)mapValue["upPosition"]["y"].asInt();
 	}
 	return status;
 }
@@ -91,6 +91,7 @@ bool MapCreator::createMap2D()
 bool MapCreator::createMap3D()
 {
 	bool status = false;
+	display();
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapHeight; j++)
@@ -122,7 +123,23 @@ void MapCreator::downStairs()
 	loadMap();
 }
 
-MapCreator::MapCreator()
+void MapCreator::display()
+{
+	player->display();
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if (objects[i][j]->getTag() == Tag::consumbleItem || objects[i][j]->getTag() == Tag::monster)
+					objects[i][j]->lookAt(player->getPositon());
+			}
+		}
+	}
+}
+
+MapCreator::MapCreator(Player *player)
 {
 	downPosition = new Vector2(0, 0);
 	upPosition = new Vector2(0, 0);
@@ -137,4 +154,6 @@ MapCreator::MapCreator()
 			cells[i][j]->init();
 		}
 	}
+	this->player = player;
+	player->init();
 }

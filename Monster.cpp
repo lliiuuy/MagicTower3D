@@ -4,10 +4,10 @@ void Monster::lookAt(Vector3* position)
 {
 	// 经过测试没问题
 	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
-	if(direction->x < 0)
-		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+	if (direction->x < 0)
+		spinY = -acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
 	else
-		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->y, 2) + powf(direction->z, 2)));
+		spinY = acosf(direction->z / sqrtf(powf(direction->x, 2) + powf(direction->z, 2))) * 180 / (float)M_PI;
 }
 
 bool Monster::loadTexture()
@@ -61,11 +61,11 @@ void Monster::draw2D()
 
 void Monster::draw3D()
 {
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
 	glPushMatrix();
 	glTranslatef(position->x, position->y, position->z);
 	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glBegin(GL_QUADS);
 	glNormal3f(0.0f, 0.0f, 1.0f); // 朝向正面
