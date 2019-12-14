@@ -22,8 +22,6 @@ private:
 	
 	const unsigned short mapWidth = 13; // 地图的长度
 	const unsigned short mapHeight = 13; // 地图的宽度
-	
-	unsigned short floor; // 人物所在层数
 
 	Vector2* upPosition; // 从该层上楼后人物所在的位置
 	char upDirection[10]; // 从该层上楼以后人物的朝向

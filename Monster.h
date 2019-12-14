@@ -15,5 +15,7 @@ public:
 	void collide();
 	void draw2D();
 	void draw3D();
+
+	GLuint getTexture() { return texture[0]; }
 };
 

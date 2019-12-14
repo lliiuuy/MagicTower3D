@@ -35,6 +35,7 @@ private:
 
 	PlayerStatus status;
 
+	unsigned short floor = 1; // 人物所在层数
 public:
 	void move(bool isUp);
 	void spin(bool isLeft);
@@ -50,6 +51,11 @@ public:
 	unsigned short getBlueKeyNumber() { return blueKeyNumber; }
 	unsigned short getRedKeyNumber() { return redKeyNumber; }
 
+	unsigned short getFloor() { return floor; }
+
+	void upStairs() { floor++; }
+	void downStairs() { floor--; }
+
 	float getSpinY() { return spinY; }
 
 	PlayerStatus getStatus() { return status; }
@@ -61,5 +67,7 @@ public:
 	void reciveUseItems(UseItem* useItem); // 获取使用型物体
 
 	Player(Vector2* positionInMap);
+
+	std::vector<UseItem*>* getUseItem() { return useItems; }
 };
 

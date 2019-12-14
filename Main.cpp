@@ -1,5 +1,6 @@
 #include "Config.h"
 #include "MapCreator.h"
+#include "UIManager.h"
 
 bool fullScreen = false; // 是否全屏
 
@@ -7,6 +8,7 @@ unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
 MapCreator* mapCreator; // 测试用
+UIManager* uiManager; // 测试用
 Player* player; // 测试用
 
 struct			 											// 计时器的结构体
@@ -72,8 +74,11 @@ bool initObjects()
 {
 	bool status = false;
 	player = new Player(new Vector2(10, 5));
+	player->init();
 	mapCreator = new MapCreator(player);
 	mapCreator->loadMap();
+	uiManager = new UIManager(1600, 1200, player);
+	uiManager->init();
 	return status;
 }
 
@@ -87,6 +92,8 @@ void drawScene()
 	glTranslatef(-player->getPositon()->x, -player->getPositon()->y, -player->getPositon()->z);
 
 	mapCreator->createMap3D();
+
+	 uiManager->draw();
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -138,12 +145,14 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 		height = 1; // 保护
 	if (width == 0)
 		width = 1;
-	glViewport(width * 3 / 16, height / 21, width * 5 / 8, height * 20 / 21);
+	uiManager->setWindow(width, height);
+
+	glViewport(0, 0, width, height);
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, 4/3, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, width/height, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -154,7 +163,7 @@ int main()
 	if (!glfwInit())
 		exit(EXIT_FAILURE);
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "MagicTower3D", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(1600, 1200, "MagicTower3D", NULL, NULL);
 	if (window == NULL)
 	{
 		glfwTerminate();
@@ -166,12 +175,12 @@ int main()
 	glfwGetFramebufferSize(window, &width, &height); // 获取渲染窗口大小
 
 	initGL();
-	glViewport(width * 3 / 16, height / 21, width * 5 / 8, height * 20 / 21); // 测试用
+	glViewport(0, 0, width, height); // 测试用
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, 4/3, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(45.0f, width/height, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵

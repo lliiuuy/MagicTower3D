@@ -246,6 +246,15 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>源文件\Objects\Obstacles</Filter>
     </ClCompile>
+    <ClCompile Include="UpStairs.cpp">
+      <Filter>源文件\Objects\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="IronSword.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Sword</Filter>
+    </ClCompile>
+    <ClCompile Include="IronShield.cpp">
+      <Filter>源文件\Objects\Items\ConsumbleItems\Shield</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -388,6 +397,15 @@
     </ClInclude>
     <ClInclude Include="Obstacle.h">
       <Filter>头文件\Objects\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="UpStairs.h">
+      <Filter>头文件\Objects\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="IronShield.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="IronSword.h">
+      <Filter>头文件\Objects\Items\ConsumbleItems\Sword</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

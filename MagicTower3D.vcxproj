@@ -145,6 +145,8 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GreenSlime.cpp" />
     <ClCompile Include="IronDoor.cpp" />
+    <ClCompile Include="IronShield.cpp" />
+    <ClCompile Include="IronSword.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MapCreator.cpp" />
     <ClCompile Include="Merchant.cpp" />
@@ -169,6 +171,7 @@
     <ClCompile Include="Theif.cpp" />
     <ClCompile Include="TheOrbOfTheHero.cpp" />
     <ClCompile Include="UIManager.cpp" />
+    <ClCompile Include="UpStairs.cpp" />
     <ClCompile Include="UseItem.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
@@ -193,6 +196,8 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GreenSlime.h" />
     <ClInclude Include="IronDoor.h" />
+    <ClInclude Include="IronShield.h" />
+    <ClInclude Include="IronSword.h" />
     <ClInclude Include="MapCreator.h" />
     <ClInclude Include="Merchant.h" />
     <ClInclude Include="Message.h" />
@@ -218,6 +223,7 @@
     <ClInclude Include="Theif.h" />
     <ClInclude Include="TheOrbOfTheHero.h" />
     <ClInclude Include="UIManager.h" />
+    <ClInclude Include="UpStairs.h" />
     <ClInclude Include="UseItem.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />

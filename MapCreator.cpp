@@ -7,7 +7,7 @@ bool MapCreator::loadMap()
 	Json::Value mapValue;
 
 	char fileName[20];
-	sprintf_s(fileName, "Data/Map/%d.file", floor);
+	sprintf_s(fileName, "Data/Map/%d.file", player->getFloor());
 
 	std::ifstream is(fileName, std::ios::binary);
 
@@ -66,7 +66,6 @@ bool MapCreator::loadMap()
 					objects[i][j]->init();
 			}
 		}
-		floor = mapValue["mapFloor"].asInt();
 		sprintf_s(upDirection, mapValue["upPosition"]["direction"].asCString());
 		upPosition->x = (float)mapValue["upPosition"]["x"].asInt();
 		upPosition->y = (float)mapValue["upPosition"]["y"].asInt();
@@ -101,13 +100,46 @@ bool MapCreator::createMap3D()
 			cells[i][j]->draw3D();
 		}
 	}
+	// ªÊ÷∆«Ω
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapWidth; j++)
 		{
 			if (objects[i][j] != NULL)
 			{
-				if(objects[i][j]->getTag() == Tag::wall || objects[i][j]->getTag() == Tag::door || objects[i][j]->getTag() == Tag::ironDoor || objects[i][j]->getTag() == Tag::prison)
+				if(objects[i][j]->getTag() == Tag::wall)
+					objects[i][j]->draw3D();
+			}
+		}
+	}
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if (objects[i][j]->getTag() == Tag::door || objects[i][j]->getTag() == Tag::ironDoor || objects[i][j]->getTag() == Tag::prison)
+				{
+					if (i > 0 && j > 0)
+					{
+						if (objects[i - 1][j] != NULL)
+						{
+							if(objects[i-1][j]->getTag() == Tag::wall)
+								objects[i][j]->lookAt(player->getPositon());
+						}
+					}
+					objects[i][j]->draw3D();
+				}
+			}
+		}
+	}
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if (objects[i][j]->getTag() == Tag::NPC)
 					objects[i][j]->draw3D();
 			}
 		}
@@ -128,13 +160,13 @@ bool MapCreator::createMap3D()
 
 void MapCreator::upStairs()
 {
-	floor++;
+	player->upStairs();
 	loadMap();
 }
 
 void MapCreator::downStairs()
 {
-	floor--;
+	player->downStairs();
 	loadMap();
 }
 
@@ -158,17 +190,15 @@ MapCreator::MapCreator(Player *player)
 {
 	downPosition = new Vector2(0, 0);
 	upPosition = new Vector2(0, 0);
-	floor = 1;
 	for (unsigned short i = 0; i < 13; i++)
 	{
 		for (unsigned short j = 0; j < 13; j++)
 		{
-			floors[i][j] = new Floor(new Vector2(i-1, j-1), true);
+			floors[i][j] = new Floor(new Vector2((float)i-1, (float)j-1), true);
 			floors[i][j]->init();
-			cells[i][j] = new Floor(new Vector2(i-1, j-1), false);
+			cells[i][j] = new Floor(new Vector2((float)i-1, (float)j-1), false);
 			cells[i][j]->init();
 		}
 	}
 	this->player = player;
-	player->init();
 }

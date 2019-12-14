@@ -15,6 +15,8 @@ public:
 	void collide();
 	bool init();
 
+	GLuint getTexture() { return texture[0]; }
+
 	unsigned short getIndex() { return index; }
 
 	UseItem(Vector2* positionInMap);

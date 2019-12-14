@@ -22,18 +22,18 @@ void Obstacle::draw3D()
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
 	glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
 	glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
-	// »­¶¥Ãæ
-	glNormal3f(0.0f, 1.0f, 0.0f);
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), (ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
-	// »­µ×Ãæ
-	glNormal3f(0.0f, -1.0f, 0.0f);
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
-	glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), (lz / 2));
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), (lz / 2));
+	//// »­¶¥Ãæ
+	//glNormal3f(0.0f, 1.0f, 0.0f);
+	//glTexCoord2f(0.0f, 1.0f); glVertex3f(-(lx / 2), (ly / 2), -(lz / 2));
+	//glTexCoord2f(0.0f, 0.0f); glVertex3f(-(lx / 2), (ly / 2), (lz / 2));
+	//glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), (ly / 2), (lz / 2));
+	//glTexCoord2f(1.0f, 1.0f); glVertex3f((lx / 2), (ly / 2), -(lz / 2));
+	//// »­µ×Ãæ
+	//glNormal3f(0.0f, -1.0f, 0.0f);
+	//glTexCoord2f(1.0f, 1.0f); glVertex3f(-(lx / 2), -(ly / 2), -(lz / 2));
+	//glTexCoord2f(0.0f, 1.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
+	//glTexCoord2f(0.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), (lz / 2));
+	//glTexCoord2f(1.0f, 0.0f); glVertex3f(-(lx / 2), -(ly / 2), (lz / 2));
 	// »­ÓÒ²àÃæ
 	glNormal3f(1.0f, 0.0f, 0.0f);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f((lx / 2), -(ly / 2), -(lz / 2));
