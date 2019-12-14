@@ -1,2 +1,5 @@
-﻿  UIManager.cpp
+﻿  Main.cpp
+  UIManager.cpp
+  正在生成代码...
+  LINK : 没有找到 C:\Users\lliiuuy\Desktop\repository\MagicTower3D\Debug\MagicTower3D.exe 或上一个增量链接没有生成它；正在执行完全链接
   MagicTower3D.vcxproj -> C:\Users\lliiuuy\Desktop\repository\MagicTower3D\Debug\MagicTower3D.exe

@@ -382,7 +382,7 @@ void UIManager::draw()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(45.0f, 1, 0.1f, 1000.0f); //	设置回透视投影
+	gluPerspective(60.0f, width * 1.8f / height, 0.1f, 1000.0f); //	设置回透视投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
