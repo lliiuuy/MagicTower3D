@@ -3,6 +3,9 @@
 #include "Monster.h"
 #include "Player.h"
 
+// ≤‚ ‘
+#include "GreenSlime.h"
+
 class UIManager
 {
 private:

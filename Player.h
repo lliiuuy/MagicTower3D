@@ -4,6 +4,10 @@
 #include "Shield.h"
 #include "UseItem.h"
 
+// ≤‚ ‘
+#include "IronSword.h"
+#include "IronShield.h"
+
 class Player :
 	public Creature
 {

@@ -46,14 +46,12 @@ void UIManager::BuildFont()
 
 void UIManager::glPrint(int x, int y, char* string, float scale)
 {
-	glEnable(GL_BLEND);
 	glBindTexture(GL_TEXTURE_2D, font[0]);			// 选择字体纹理
 	glTranslated(x, y, 0);								// 移动文本
 	glScalef(scale, scale, 1);
 	glListBase(base - 32);								// 创建显示列表
 	glCallLists(strlen(string), GL_BYTE, string);		// 将文本投影到屏幕上
 	glLoadIdentity();
-	glDisable(GL_BLEND);
 }
 
 bool UIManager::loadTexture()
@@ -149,6 +147,43 @@ bool UIManager::loadTexture()
 		free(textureImage[0]);
 	}
 
+	for (int i = 0; i < 3; i++)
+	{
+		switch (i)
+		{
+		case 0:
+			sprintf_s(fileName, "Data/UI/Red Key.bmp");
+			break;
+		case 1:
+			sprintf_s(fileName, "Data/UI/Blue Key.bmp");
+			break;
+		case 2:
+			sprintf_s(fileName, "Data/UI/Yellow Key.bmp");
+			break;
+		default:
+			break;
+		}
+
+		if (textureImage[0] = loadBMP(fileName))
+		{
+			status = true;
+			glGenTextures(1, &key[i]);
+			glBindTexture(GL_TEXTURE_2D, key[i]); // 使用纹理中坐标最接近的若干个颜色，通过加权平均算法得到需要绘制的像素颜色
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+		}
+
+		if (textureImage[0])
+		{
+			if (textureImage[0]->data)
+			{
+				free(textureImage[0]->data);
+			}
+			free(textureImage[0]);
+		}
+	}
+
 	return status;
 }
 
@@ -197,10 +232,12 @@ void UIManager::draw()
 	glTexCoord2f(0.0f, 1.0f); glVertex2d(0, height * 20 / 21);
 	glEnd();
 
+	glEnable(GL_BLEND);
+
 	char string[100];
 	// 显示层数
-	sprintf_s(string, "Tower %d", 15);
-	glPrint((int)(((float)40/1600)*width), (int)(((float)150/1200)*height), string, ((float)240 / (float)(strlen(string) * 11))/1600 * width);
+	sprintf_s(string, "Tower %d", player->getFloor());
+	glPrint((int)(((float)38/1600)*width), (int)(((float)148/1200)*height), string, ((float)240 / (float)(strlen(string) * 11.5f))/1600 * width);
 	// 显示属性
 	sprintf_s(string, "%d", player->getHealth());
 	glPrint((int)((260 - strlen(string) * 32) / (float)1600 * width), (int)(((float)230 / 1200) * height), string, (float)3 / 1600 * width);
@@ -211,7 +248,6 @@ void UIManager::draw()
 	sprintf_s(string, "%d", player->getMoney());
 	glPrint((int)((260 - strlen(string) * 32) / (float)1600 * width), (int)(((float)434 / 1200) * height), string, (float)3 / 1600 * width);
 
-	glEnable(GL_BLEND);
 	GLuint texture;
 	// 画主动道具
 	for (unsigned short i = 0; i < player->getUseItem()->size(); i++)
@@ -224,46 +260,125 @@ void UIManager::draw()
 	if (player->getSword() != NULL)
 	{
 		sprintf_s(string, "%s", player->getSword()->getUIName());
+		glPrint(width * 1328 / 1600, height * 192 / 1200, string, width * 2.5f / 1600);
+
 		texture = player->getSword()->getTexture();
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1526 - 36) / 1600, height * 223 / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1526 + 36) / 1600, height * 223 / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1526 + 36) / 1600, height * 151 / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1526 - 36) / 1600, height * 151 / 1200);
+		glEnd();
+	}
+	if (player->getShield() != NULL)
+	{
+		sprintf_s(string, "%s", player->getShield()->getUIName());
+		glPrint(width * 1328 / 1600, height * 332 / 1200, string, width * 2.5f / 1600);
+
+		texture = player->getShield()->getTexture();
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1526 - 36) / 1600, height * 363 / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1526 + 36) / 1600, height * 363 / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1526 + 36) / 1600, height * 291 / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1526 - 36) / 1600, height * 291 / 1200);
+		glEnd();
 	}
 	// 画钥匙
 	int index = 0;
 	for (int i = 0; i < player->getRedKeyNumber(); i++)
 	{
 		// 画红钥匙
+		texture = key[0];
+		if (index < 24)
+		{
+			glEnable(GL_TEXTURE_2D); // 开启2D纹理
+			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index%6) * (double)234/6) / 1600, height * (409 + (index/6) * (double)185/4) / 1200);
+			glEnd();
+		}
 		index++;
 	}
 	for (int i = 0; i < player->getBlueKeyNumber(); i++)
 	{
 		// 画蓝钥匙
+		texture = key[1];
+
+		if (index < 24)
+		{
+			glEnable(GL_TEXTURE_2D); // 开启2D纹理
+			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glEnd();
+		}
 		index++;
 	}
 	for (int i = 0; i < player->getYellowKeyNumber(); i++)
 	{
 		// 画黄钥匙
+		texture = key[2];
+		if (index < 24)
+		{
+			glEnable(GL_TEXTURE_2D); // 开启2D纹理
+			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index%6) * (double)234/6) / 1600, height * (409 + (index/6) * (double)185/4) / 1200);
+			glEnd();
+		}
 		index++;
 	}
 
 	// 画怪物属性
 	if (monster != NULL)
 	{
+		// 画怪物纹理
 		texture = monster->getTexture();
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1450 - 65) / 1600, height * 760 / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1450 + 65) / 1600, height * 760 / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1450 + 65) / 1600, height * 630 / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1450 - 65) / 1600, height * 630 / 1200);
+		glEnd();
+
 		sprintf_s(string, "%s", monster->getName());
+		glPrint((int)((float)1328 / 1600 * width), (int)((float)774 / 1200 * height), string, (width * ((float)240 / (strlen(string)* 11.2f))) / 1600);
 		sprintf_s(string, "%d", monster->getHealth());
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)832 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "%d", monster->getAttack());
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)890 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "%d", monster->getDefence());
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)948 / 1200 * height), string, (2.2f / 1600) * width);
 	}
 	else
 	{
 		sprintf_s(string, "The Name");
-		glPrint((int)((float)1328/1600 * width), (int)((float)770/1200*height), string, (2.5f / 1600) * width);
+		glPrint((int)((float)1328/1600 * width), (int)((float)772/1200*height), string, (2.5f / 1600) * width);
 		sprintf_s(string, "Life");
-		glPrint((int)((float)1400 / 1600 * width), (int)((float)828 / 1200 * height), string, (2.5f / 1600) * width);
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)832 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "Offense");
-		glPrint((int)((float)1400 / 1600 * width), (int)((float)886 / 1200 * height), string, (2.5f / 1600) * width);
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)890 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "Defense");
-		glPrint((int)((float)1400 / 1600 * width), (int)((float)944 / 1200 * height), string, (2.5f / 1600) * width);
+		glPrint((int)((float)1400 / 1600 * width), (int)((float)948 / 1200 * height), string, (2.2f / 1600) * width);
 	}
+
+	glDisable(GL_BLEND);
+
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
@@ -283,7 +398,8 @@ UIManager::UIManager(int width, int height, Player* player)
 	this->width = width;
 	this->height = height;
 	this->player = player;
-	this->monster = NULL;
+	this->monster = new GreenSlime(new Vector2(-1, -1));
+	this->monster->init();
 }
 
 void UIManager::setWindow(int width, int height)
