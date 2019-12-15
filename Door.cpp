@@ -101,7 +101,7 @@ void Door::draw2D(int width, int height)
 
 }
 
-void Door::lookAt(Vector3* position)
+void Door::display(Vector3* position)
 {
 	spinY = 90;
 }

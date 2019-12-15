@@ -9,7 +9,7 @@ private:
 public:
 	DownStairs(Vector2* positionInMap);
 	void draw3D();
-	void lookAt(Vector3* position);
+	void display(Vector3* position);
 	void collide();
 };
 

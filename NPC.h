@@ -19,7 +19,7 @@ public:
 	void collide();
 	void draw3D();
 	void draw2D(int width, int height);
-	void lookAt(Vector3* position); // NPC朝着玩家旋转
+	void display(Vector3* position); // NPC朝着玩家旋转
 
 	NPC(Vector2* positionInMap);
 };

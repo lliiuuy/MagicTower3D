@@ -195,16 +195,8 @@ bool UIManager::init()
 	return status;
 }
 
-void UIManager::draw()
+void UIManager::draw(Player* player)
 {
-	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
-	glLoadIdentity();									// 重设透视矩阵
-
-	glOrtho(0.0f, width, height, 0.0f, -1.0f, 1.0f);   // 设置平行投影
-
-	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
-	glLoadIdentity();									// 重新载入模型矩阵
-
 	glEnable(GL_TEXTURE_2D); // 开启2D纹理
 	glBindTexture(GL_TEXTURE_2D, left[0]);		// 选择纹理
 	glBegin(GL_QUADS);
@@ -378,14 +370,6 @@ void UIManager::draw()
 	}
 
 	glDisable(GL_BLEND);
-
-	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
-	glLoadIdentity();									// 重设透视矩阵
-
-	gluPerspective(60.0f, width * 1.2f / height, 0.1f, 1000.0f); //	设置回透视投影
-
-	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
-	glLoadIdentity();									// 重新载入模型矩阵
 }
 
 void UIManager::loadMonster(Monster* monster)
@@ -393,11 +377,10 @@ void UIManager::loadMonster(Monster* monster)
 	this->monster = monster;
 }
 
-UIManager::UIManager(int width, int height, Player* player)
+UIManager::UIManager(int width, int height)
 {
 	this->width = width;
 	this->height = height;
-	this->player = player;
 	this->monster = NULL;
 }
 

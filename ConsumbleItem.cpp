@@ -1,6 +1,6 @@
 #include "ConsumbleItem.h"
 
-void ConsumbleItem::lookAt(Vector3* position)
+void ConsumbleItem::display(Vector3* position)
 {
 	spinY += 5;
 }

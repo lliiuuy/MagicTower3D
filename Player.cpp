@@ -150,6 +150,36 @@ void Player::draw2D(int width, int height)
 	glEnd();
 }
 
+void Player::upStairs(Vector2* position, Vector2* direction)
+{
+	floor++;
+	this->direction = direction;
+	if (direction->x == 1)
+		spinY = 0; // 前
+	else if (direction->y == 1)
+		spinY = 90;
+	else if (direction->x == -1)
+		spinY = 180; // 后
+	else if (direction->y == -1)
+		spinY = 270; // 右
+	this->positionInMap = position;
+}
+
+void Player::downStairs(Vector2* position, Vector2* direction)
+{
+	floor--;
+	this->direction = direction;
+	if (direction->x == 1)
+		spinY = 0; // 前
+	else if (direction->y == 1)
+		spinY = 90;
+	else if (direction->x == -1)
+		spinY = 180; // 后
+	else if (direction->y == -1)
+		spinY = 270; // 右
+	this->positionInMap = position;
+}
+
 void Player::reciveItems(ConsumbleItem* consumbleItem)
 {
 	if (consumbleItem->getTag() == Tag::sword)
@@ -163,42 +193,32 @@ void Player::reciveItems(ConsumbleItem* consumbleItem)
 	this->yellowKeyNumber += consumbleItem->getYellowKeyNumber();
 	this->blueKeyNumber += consumbleItem->getBlueKeyNumber();
 	this->redKeyNumber += consumbleItem->getRedKeyNumber();
-
-	// 更新UI界面
-	// UIManager.update();
 }
 
 void Player::reciveUseItems(UseItem* useItem)
 {
-	// 将UI界面上的UseItem图标激活
-	// unsigned short index = useItem->get
-	// UIManager.enableUseItem(index)
-	// UIManager.update();
-	// 将物体插入指定位置
-	// useItems->insert(index, useItem);
+	useItems->push_back(useItem);
+}
+
+void Player::SetDirection(Vector2* direction)
+{
 }
 
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	// 测试
-
-	yellowKeyNumber = 40;
-	blueKeyNumber = 2;
-	redKeyNumber = 6;
+	yellowKeyNumber = 0;
+	blueKeyNumber = 0;
+	redKeyNumber = 0;
 	
 	moveSpeed = 0.1f;
 	positionMoveTo = positionInMap;
-	// 测试
+
 	shield = NULL;
 	sword = NULL;
-	//shield = new IronShield(new Vector2(-1, -1));
-	//shield->init();
-	//sword = new IronSword(new Vector2(-1, -1));
-	//sword->init();
 	
 	spinY = 0;
 	spinSpeed = 5.0f;
 	useItems = new std::vector<UseItem*>();
 	direction = new Vector2(1, 0);
-	floor = 2;
+	floor = 5;
 }

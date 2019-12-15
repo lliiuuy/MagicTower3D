@@ -6,7 +6,7 @@ class Monster :
 protected: 
 	float spinY = 0;
 
-	void lookAt(Vector3* position); // 朝着人物所在方向旋转
+	void display(Vector3* position); // 朝着人物所在方向旋转
 
 	bool loadTexture(); // 怪物固定是两帧
 

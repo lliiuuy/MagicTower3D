@@ -1,12 +1,9 @@
 #include "Config.h"
-#include "MapCreator.h"
-#include "UIManager.h"
+#include "GameManager.h"
 
 bool fullScreen = false; // 是否全屏
 
-MapCreator* mapCreator; // 测试用
-UIManager* uiManager; // 测试用
-Player* player; // 测试用
+GameManager* gameManager;
 
 unsigned short adjust = 5;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
@@ -70,33 +67,6 @@ void initGL()
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // 设置自动透视修正
 }
 
-bool initObjects()
-{
-	bool status = false;
-	player = new Player(new Vector2(10, 5));
-	player->init();
-	mapCreator = new MapCreator(player);
-	mapCreator->loadMap();
-	uiManager = new UIManager(1600, 1200, player);
-	uiManager->init();
-	return status;
-}
-
-void drawScene(int width, int height)
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glLoadIdentity();
-
-	glRotatef(360.0f - player->getSpinY(), 0, 1, 0);
-	glTranslatef(-player->getPositon()->x, -player->getPositon()->y, -player->getPositon()->z);
-
-	mapCreator->createMap3D();
-	mapCreator->createMap2D(width, height);
-
-	 uiManager->draw();
-}
-
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
@@ -119,23 +89,20 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	}
 	if (action == GLFW_REPEAT || action == GLFW_PRESS)
 	{
-		if (player->getStatus() == PlayerStatus::idle)
+		switch (key)
 		{
-			switch (key)
-			{
-			case GLFW_KEY_A:
-				player->spin(true);
-				break;
-			case GLFW_KEY_D:
-				player->spin(false);
-				break;
-			case GLFW_KEY_W:
-				mapCreator->movePlayer(true);
-				break;
-			case GLFW_KEY_S:
-				mapCreator->movePlayer(false);
-				break;
-			}
+		case GLFW_KEY_A:
+			gameManager->spinPlayer(true);
+			break;
+		case GLFW_KEY_D:
+			gameManager->spinPlayer(false);
+			break;
+		case GLFW_KEY_W:
+			gameManager->movePlayer(true);
+			break;
+		case GLFW_KEY_S:
+			gameManager->movePlayer(false);
+			break;
 		}
 	}
 }
@@ -149,7 +116,7 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 	int widthOrigin = width;
 	if (width != height * 4 / 3)
 		width = height * 4 / 3;
-	uiManager->setWindow(width, height);
+	gameManager->setWindow(width, height);
 
 	glViewport((widthOrigin - width)/2, 0, width, height);
 
@@ -190,7 +157,9 @@ int main()
 	glLoadIdentity();									// 重新载入模型矩阵
 
 	timerInit();
-	initObjects();
+
+	gameManager = new GameManager(width, height);
+	gameManager->init();
 
 	glfwSetKeyCallback(window, keyCallback);
 	glfwSetWindowSizeCallback(window, resizeCallback);
@@ -199,7 +168,7 @@ int main()
 	{
 		float start = timerGetTime();
 		while (timerGetTime() < start + float(steps[adjust] * 2.0f)) {} // 控制帧数
-		drawScene(width, height);
+		gameManager->drawScene();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

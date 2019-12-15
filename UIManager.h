@@ -27,15 +27,14 @@ private:
 	void glPrint(int x, int y, char* string, float scale); // 输出字符串
 
 	bool loadTexture(); // 将bitmap转成纹理
-
-	Player* player; // 用于显示人物属性
 	Monster* monster; // 用于显示怪物
+
 public:
 
-	void draw(); // 绘画UI
+	void draw(Player* player); // 绘画UI
 	void loadMonster(Monster* monster); // 加载Monster的数据
 	bool init();
-	UIManager(int width, int height, Player* player);
+	UIManager(int width, int height);
 	void setWindow(int width, int height);
 };
 

@@ -117,7 +117,7 @@ void UpStairs::draw3D()
 	glPopMatrix();
 }
 
-void UpStairs::lookAt(Vector3* position)
+void UpStairs::display(Vector3* position)
 {
 	if (position->x == 1)
 		spinY = 0;

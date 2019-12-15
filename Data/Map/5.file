@@ -8,34 +8,25 @@
     "floorImage": "floor",
     "mapData": [
         {
-            "element": "stair_up"
+            "element": "UpStairs"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "red_slime"
-        },
-        {
-            "element": "yellow_door"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Red Slime"
+        },
+        {
+            "element": "Yellow Door"
         },
         {
             "element": ""
         },
         {
-            "element": ""
-        },
-        {
-            "element": "yellow_door"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -44,7 +35,7 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Yellow Door"
         },
         {
             "element": ""
@@ -53,127 +44,7 @@
             "element": ""
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "green_slime"
-        },
-        {
-            "element": "green_slime"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "red_slime"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "yellow_door"
-        },
-        {
-            "element": "small_bat"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_door"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "small_bat"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "junior_wizard"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "yellow_key"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -182,61 +53,145 @@
             "element": ""
         },
         {
-            "element": "small_bat"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Yellow Key"
         },
         {
-            "element": ""
+            "element": "Wall"
         },
         {
-            "element": "green_slime"
+            "element": "Green Slime"
         },
         {
-            "element": ""
+            "element": "Green Slime"
         },
         {
-            "element": ""
+            "element": "Wall"
         },
         {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "skeleton_soldier"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
+            "element": "Red Slime"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Yellow Door"
         },
         {
-            "element": "wall"
+            "element": "Bat"
         },
         {
-            "element": "wall"
+            "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "red_slime"
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Door"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Bat"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Priest"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Bat"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Green Slime"
         },
         {
             "element": ""
@@ -251,13 +206,58 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "green_slime"
+            "element": "SkeletonB"
         },
         {
-            "element": "wall"
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Red Slime"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Green Slime"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
@@ -275,76 +275,70 @@
             "element": "blue_jewel_1"
         },
         {
-            "element": "yellow_key"
+            "element": "Yellow Key"
         },
         {
-            "element": "red_hp_1"
+            "element": "Red Medicine"
         },
         {
             "element": "notepad"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "yellow_door"
+            "element": "Yellow Door"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": ""
-        },
-        {
-            "element": "stair_down"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
             "element": ""
+        },
+        {
+            "element": "DownStairs"
         },
         {
             "element": ""
@@ -356,20 +350,26 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": ""
         },
         {
             "element": ""
         },
         {
-            "element": "brown_fake_wall",
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "brown_fake_Wall",
             "action":"true"
         },
         {
             "element": ""
         },
         {
-            "element": "sword_1"
+            "element": "Iron Sword"
         }
     ],
     "mapFloor": 5,

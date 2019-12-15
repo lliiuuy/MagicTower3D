@@ -1,6 +1,6 @@
 #include "Monster.h"
 
-void Monster::lookAt(Vector3* position)
+void Monster::display(Vector3* position)
 {
 	// 经过测试没问题
 	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);

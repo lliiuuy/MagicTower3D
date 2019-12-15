@@ -5,5 +5,6 @@ class Merchant :
 {
 public:
 	Merchant(Vector2* positionInMap);
+	void talk() {}
 };
 

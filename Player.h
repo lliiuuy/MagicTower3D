@@ -4,10 +4,6 @@
 #include "Shield.h"
 #include "UseItem.h"
 
-// 测试
-#include "IronSword.h"
-#include "IronShield.h"
-
 class Player :
 	public Creature
 {
@@ -51,7 +47,7 @@ public:
 	void draw3D() { ; } // 不在3D中绘制
 	void draw2D(int width, int height);
 	void collide() { ; } // 不会碰撞
-	void lookAt(Vector3* position) { ; }
+	void display(Vector3* position) { ; }
 
 	unsigned short getYellowKeyNumber() { return yellowKeyNumber; }
 	unsigned short getBlueKeyNumber() { return blueKeyNumber; }
@@ -59,8 +55,8 @@ public:
 
 	unsigned short getFloor() { return floor; }
 
-	void upStairs() { floor++; }
-	void downStairs() { floor--; }
+	void upStairs(Vector2* position, Vector2* direction);
+	void downStairs(Vector2* position, Vector2* direction);
 
 	float getSpinY() { return spinY; }
 
@@ -73,6 +69,7 @@ public:
 	void reciveUseItems(UseItem* useItem); // 获取使用型物体
 
 	Vector2* getDirection() { return direction; }
+	void SetDirection(Vector2* direction);
 
 	Player(Vector2* positionInMap);
 

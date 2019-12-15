@@ -9,7 +9,7 @@ private:
 	unsigned int attack = 0; // 增加的攻击力
 	unsigned int defence = 0; // 增加的防御力
 
-	std::vector<char* > messages;
+	std::vector<char*> messages;
 
 	bool loadTexture();
 
@@ -19,9 +19,10 @@ public:
 	unsigned int getAttack() { return attack; }
 	unsigned int getDefence() { return defence; }
 
-	bool init();
-	void draw();
+	void draw2D(int width, int height);
+	void draw3D();
 	void collide();
+	void display(Vector3* position) {}
 
 	Altar(Vector2* positionInMap);
 };

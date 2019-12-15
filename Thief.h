@@ -5,5 +5,6 @@ class Thief :
 {
 public:
 	Thief(Vector2* positionInMap);
+	void talk() {}
 };
 

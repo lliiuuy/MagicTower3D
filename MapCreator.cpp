@@ -1,13 +1,13 @@
 #include "MapCreator.h"
 
-bool MapCreator::loadMap()
+bool MapCreator::loadMap(int floor)
 {
 	bool status = false;
 	Json::Reader reader;
 	Json::Value mapValue;
 
 	char fileName[20];
-	sprintf_s(fileName, "Data/Map/%d.file", player->getFloor());
+	sprintf_s(fileName, "Data/Map/%d.file", floor);
 
 	std::ifstream is(fileName, std::ios::binary);
 
@@ -65,6 +65,8 @@ bool MapCreator::loadMap()
 						objects[i][j] = new SkeletonC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "SkeletonB") == 0)
 						objects[i][j] = new SkeletonB(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Gate-Keeper B") == 0)
+						objects[i][j] = new GateKeeperB(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Yellow Key") == 0)
 						objects[i][j] = new YellowKey(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Key") == 0)
@@ -79,8 +81,18 @@ bool MapCreator::loadMap()
 						objects[i][j] = new RedJewel(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Jewel") == 0)
 						objects[i][j] = new BlueJewel(new Vector2((float)i - 1, (float)j - 1));
-					else if(strcmp(element, "Old Man") == 0)
+					else if (strcmp(element, "Iron Sword") == 0)
+						objects[i][j] = new IronSword(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Iron Shield") == 0)
+						objects[i][j] = new IronShield(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Old Man") == 0)
 						objects[i][j] = new OldMan(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Merchant") == 0)
+						objects[i][j] = new Merchant(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Thief") == 0)
+						objects[i][j] = new Thief(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Altar") == 0)
+						objects[i][j] = new Altar(new Vector2((float)i - 1, (float)j - 1));
 				}
 				if (objects[i][j] != NULL)
 					objects[i][j]->init();
@@ -93,16 +105,9 @@ bool MapCreator::loadMap()
 	return status;
 }
 
-bool MapCreator::createMap2D(int width, int height)
+void MapCreator::createMap2D(int width, int height)
 {
-	bool status = false;
-	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
-	glLoadIdentity();									// 重设透视矩阵
 
-	glOrtho(0.0f, width, height, 0.0f, -1.0f, 1.0f);   // 设置平行投影
-
-	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
-	glLoadIdentity();									// 重新载入模型矩阵
 	// 先画地板
 	for (unsigned short i = 0; i < mapWidth; i++)
 	{
@@ -129,25 +134,10 @@ bool MapCreator::createMap2D(int width, int height)
 			}
 		}
 	}
-	glEnable(GL_BLEND);
-	player->draw2D(width, height);
-	glDisable(GL_BLEND);
-
-	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
-	glLoadIdentity();									// 重设透视矩阵
-
-	gluPerspective(60.0f, width * 1.3f / height, 0.1f, 1000.0f); //	设置回透视投影
-
-	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
-	glLoadIdentity();									// 重新载入模型矩阵
-
-	return status;
 }
 
-bool MapCreator::createMap3D()
+void MapCreator::createMap3D()
 {
-	bool status = false;
-	display();
 	// 根据顺序画图，不然Blend属性会乱
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
@@ -181,19 +171,16 @@ bool MapCreator::createMap3D()
 			{
 				if (objects[i][j]->getTag() == Tag::upStairs || objects[i][j]->getTag() == Tag::downStairs)
 				{
-					/*printf("%s: %f, %f i,j: %d, %d\n", objects[i][j]->getName(), objects[i][j]->getPostionInMap()->x, objects[i][j]->getPostionInMap()->y, i, j);
-					printf("Player: %f, %f\n", player->getPostionInMap()->x, player->getPostionInMap()->y);
-					*/
 					if (i > 0 && j > 0)
 					{
 						if (objects[i - 1][j] == NULL) // 左侧是空的
-							objects[i][j]->lookAt(new Vector3(-1, 0, 0));
+							objects[i][j]->display(new Vector3(-1, 0, 0));
 						else if (objects[i + 1][j] == NULL) // 右侧是空的
-							objects[i][j]->lookAt(new Vector3(1, 0, 0));
+							objects[i][j]->display(new Vector3(1, 0, 0));
 						else if (objects[i][j + 1] == NULL) // 下面是空的
-							objects[i][j]->lookAt(new Vector3(0, 1, 0));
+							objects[i][j]->display(new Vector3(0, 1, 0));
 						else if (objects[i][j - 1] == NULL) // 上面是空的
-							objects[i][j]->lookAt(new Vector3(0, -1, 0));
+							objects[i][j]->display(new Vector3(0, -1, 0));
 					}
 					objects[i][j]->draw3D();
 				}
@@ -207,18 +194,10 @@ bool MapCreator::createMap3D()
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::door || objects[i][j]->getTag() == Tag::ironDoor || objects[i][j]->getTag() == Tag::prison)
-				{
-					if (i > 0 && j > 0)
-					{
-						if (objects[i - 1][j] != NULL)
-						{
-							if(objects[i-1][j]->getTag() == Tag::wall)
-								objects[i][j]->lookAt(player->getPositon());
-						}
-					}
+				if (objects[i][j]->getTag() == Tag::door 
+					|| objects[i][j]->getTag() == Tag::ironDoor 
+					|| objects[i][j]->getTag() == Tag::prison)
 					objects[i][j]->draw3D();
-				}
 			}
 		}
 	}
@@ -239,63 +218,43 @@ bool MapCreator::createMap3D()
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::monster || objects[i][j]->getTag() == Tag::consumbleItem)
+				if (objects[i][j]->getTag() == Tag::monster 
+					|| objects[i][j]->getTag() == Tag::consumbleItem 
+					|| objects[i][j]->getTag() == Tag::sword 
+					|| objects[i][j]->getTag() == Tag::shield)
 					objects[i][j]->draw3D();
 			}
 		}
 	}
-	return status;
 }
 
-void MapCreator::upStairs()
+void MapCreator::display(Vector3* position)
 {
-	player->upStairs();
-	loadMap();
-}
-
-void MapCreator::downStairs()
-{
-	player->downStairs();
-	loadMap();
-}
-
-void MapCreator::movePlayer(bool isUp)
-{
-	player->move(isUp);
-	/*Object* object;
-	if (isUp)
-	{
-		object = objects[(int)floor(player->getPostionInMap()->x - player->getDirection()->x + 0.5f) + 1][(int)floor(player->getPostionInMap()->y - player->getDirection()->y + 0.5f) + 1];
-	}
-	else
-	{
-		object = objects[(int)floor(player->getPostionInMap()->x + player->getDirection()->x + 0.5f) + 1][(int)floor(player->getPostionInMap()->y + player->getDirection()->y + 0.5) + 1];
-	}
-	if (object == NULL)
-		player->move(isUp);
-	else if (object->getTag() != Tag::wall
-		&& object->getTag() != Tag::door
-		&& object->getTag() != Tag::NPC
-		&& object->getTag() != Tag::prison
-		&& object->getTag() != Tag::ironDoor
-		&& object->getTag() != Tag::upStairs
-		&& object->getTag() != Tag::downStairs)
-	{
-		;
-	}*/
-}
-
-void MapCreator::display()
-{
-	player->display();
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapWidth; j++)
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::consumbleItem || objects[i][j]->getTag() == Tag::monster || objects[i][j]->getTag() == Tag::NPC)
-					objects[i][j]->lookAt(player->getPositon());
+				if (objects[i][j]->getTag() == Tag::consumbleItem 
+					|| objects[i][j]->getTag() == Tag::monster 
+					|| objects[i][j]->getTag() == Tag::NPC
+					|| objects[i][j]->getTag() == Tag::sword
+					|| objects[i][j]->getTag() == Tag::shield)
+					objects[i][j]->display(position);
+				else if (objects[i][j]->getTag() == Tag::door
+					|| objects[i][j]->getTag() == Tag::ironDoor
+					|| objects[i][j]->getTag() == Tag::prison)
+				{
+					if (i > 1 && j > 1)
+					{
+						if (objects[i - 1][j] != NULL)
+						{
+							if (objects[i - 1][j]->getTag() == Tag::wall)
+								objects[i][j]->display(position);
+						}
+					}
+				}
 				if (objects[i][j]->isDestroy() == true)
 				{
 					delete objects[i][j];
@@ -306,7 +265,17 @@ void MapCreator::display()
 	}
 }
 
-MapCreator::MapCreator(Player *player)
+Vector2* MapCreator::getUpDirection()
+{
+	return nullptr;
+}
+
+Vector2* MapCreator::getDownDirection()
+{
+	return nullptr;
+}
+
+MapCreator::MapCreator()
 {
 	downPosition = new Vector2(0, 0);
 	upPosition = new Vector2(0, 0);
@@ -320,6 +289,4 @@ MapCreator::MapCreator(Player *player)
 			cells[i][j]->init();
 		}
 	}
-	this->player = player;
-	this->audioManager = new AudioManager();
 }

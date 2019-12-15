@@ -27,7 +27,14 @@
 #include "Priest.h"
 #include "SkeletonC.h"
 #include "SkeletonB.h"
+#include "GateKeeperB.h"
 
 #include "OldMan.h"
+#include "Merchant.h"
+#include "Thief.h"
+#include "Altar.h"
+
+#include "IronSword.h"
+#include "IronShield.h"
 
 #include "Player.h"

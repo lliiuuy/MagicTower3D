@@ -56,7 +56,7 @@
             "element": ""
         },
         {
-            "element": "Gate-keeper B",
+            "element": "Gate-Keeper B",
             "actionAfter":"currentMap.mapData[18].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
         },
         {

@@ -112,12 +112,12 @@ void DownStairs::draw3D()
 	glPopMatrix();
 }
 
-void DownStairs::lookAt(Vector3* position)
+void DownStairs::display(Vector3* position)
 {
 	if (position->x == 1)
-		spinY = 0;
-	else if (position->x == -1)
 		spinY = 180;
+	else if (position->x == -1)
+		spinY = 0;
 	else if (position->y == 1)
 		spinY = -90;
 	else if (position->y == -1)
