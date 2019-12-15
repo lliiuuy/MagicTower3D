@@ -129,6 +129,10 @@ bool MapCreator::createMap2D(int width, int height)
 			}
 		}
 	}
+	glEnable(GL_BLEND);
+	player->draw2D(width, height);
+	glDisable(GL_BLEND);
+
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
@@ -263,6 +267,11 @@ void MapCreator::display()
 			{
 				if (objects[i][j]->getTag() == Tag::consumbleItem || objects[i][j]->getTag() == Tag::monster || objects[i][j]->getTag() == Tag::NPC)
 					objects[i][j]->lookAt(player->getPositon());
+				if (objects[i][j]->isDestroy() == true)
+				{
+					delete objects[i][j];
+					objects[i][j] = NULL;
+				}
 			}
 		}
 	}

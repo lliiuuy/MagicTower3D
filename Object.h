@@ -12,10 +12,13 @@ protected:
 	unsigned int counter; // 计时器，用于物体自己变换
 
 	Tag tag; // 物体的种类
-	
+
+	int index = 0;
 	GLuint texture[4] = {0, 0, 0, 0}; // 物体的纹理，最多四帧(除了Player)
 
 	char* name; // 物体名字
+
+	bool destroy = false;
 
 	AUX_RGBImageRec* loadBMP(char* fileName); // 读取bitmap文件
 
@@ -34,6 +37,8 @@ public:
 	Vector3* getPositon(); // 获取物体在3D世界中的位置
 
 	char* getName() { return name; }
+
+	bool isDestroy() { return destroy; }
 
 	Object(Vector2* positionInMap);
 };

@@ -5,7 +5,6 @@ class Monster :
 {
 protected: 
 	float spinY = 0;
-	unsigned short index; // texture的编号
 
 	void lookAt(Vector3* position); // 朝着人物所在方向旋转
 

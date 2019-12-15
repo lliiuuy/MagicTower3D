@@ -7,7 +7,7 @@ protected:
 	std::vector<char*> messages; // 与人物的对话
 
 	unsigned short indexOfMessage = 0; // 记录对话进行到第几句
-	unsigned short indexOfTexture = 0; // 记录加载第几张texture
+	unsigned short index = 0; // 记录加载第几张texture
 
 	float spinY = 0; // NPC旋转的角度
 

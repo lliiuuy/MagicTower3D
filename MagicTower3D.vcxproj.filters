@@ -198,9 +198,6 @@
     <ClCompile Include="OldMan.cpp">
       <Filter>源文件\Objects\NPCs</Filter>
     </ClCompile>
-    <ClCompile Include="Theif.cpp">
-      <Filter>源文件\Objects\NPCs</Filter>
-    </ClCompile>
     <ClCompile Include="Message.cpp">
       <Filter>源文件\Config</Filter>
     </ClCompile>
@@ -257,6 +254,12 @@
     </ClCompile>
     <ClCompile Include="DownStairs.cpp">
       <Filter>源文件\Objects\Obstacles</Filter>
+    </ClCompile>
+    <ClCompile Include="GateKeeperB.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Thief.cpp">
+      <Filter>源文件\Objects\NPCs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -347,9 +350,6 @@
     <ClInclude Include="OldMan.h">
       <Filter>头文件\Objects\NPCs</Filter>
     </ClInclude>
-    <ClInclude Include="Theif.h">
-      <Filter>头文件\Objects\NPCs</Filter>
-    </ClInclude>
     <ClInclude Include="Altar.h">
       <Filter>头文件\Objects\NPCs</Filter>
     </ClInclude>
@@ -412,6 +412,12 @@
     </ClInclude>
     <ClInclude Include="DownStairs.h">
       <Filter>头文件\Objects\Obstacles</Filter>
+    </ClInclude>
+    <ClInclude Include="GateKeeperB.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Thief.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

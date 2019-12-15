@@ -45,7 +45,7 @@ void NPC::draw3D()
 	counter++;
 	if (counter >= 5)
 	{
-		indexOfTexture = indexOfTexture == 1 ? 0 : 1;
+		index = index == 1 ? 0 : 1;
 		counter = 0;
 	}
 	glPushMatrix();
@@ -53,7 +53,7 @@ void NPC::draw3D()
 	glRotatef(spinY, 0, 1, 0); // 绕Y轴旋转一下
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
-	glBindTexture(GL_TEXTURE_2D, texture[indexOfTexture]);
+	glBindTexture(GL_TEXTURE_2D, texture[index]);
 	glBegin(GL_QUADS);
 	glNormal3f(0.0f, 0.0f, 1.0f); // 朝向正面
 	glTexCoord2f(0.0f, 0.0f); glVertex3f(-lx / 2, -ly / 2, 0);
@@ -68,7 +68,7 @@ void NPC::draw3D()
 void NPC::draw2D(int width, int height)
 {
 	glEnable(GL_TEXTURE_2D); // 开启2D纹理
-	glBindTexture(GL_TEXTURE_2D, texture[indexOfTexture]);		// 选择纹理
+	glBindTexture(GL_TEXTURE_2D, texture[index]);		// 选择纹理
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
 	glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
@@ -91,5 +91,5 @@ NPC::NPC(Vector2* positionInMap): Object(positionInMap)
 {
 	this->tag = Tag::NPC;
 	this->indexOfMessage = 0;
-	this->indexOfTexture = 0;
+	this->index = 0;
 }

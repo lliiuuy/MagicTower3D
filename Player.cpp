@@ -93,8 +93,10 @@ void Player::display()
 				position->x += (positionInMap->y - positionMoveTo->y < 0 ? 1 : -1) * lx * moveSpeed;
 			else
 				position->z += (positionInMap->x - positionMoveTo->x < 0 ? 1 : -1) * lz * moveSpeed;
-			positionInMap->x += (positionInMap->x - positionMoveTo->x < 0 ? 1 : -1) * moveSpeed;
-			positionInMap->y += (positionInMap->y - positionMoveTo->y < 0 ? 1 : -1) * moveSpeed;
+			if(direction->y == 0)
+				positionInMap->x += (positionInMap->x - positionMoveTo->x < 0 ? 1 : -1) * moveSpeed;
+			else
+				positionInMap->y += (positionInMap->y - positionMoveTo->y < 0 ? 1 : -1) * moveSpeed;
 		}
 	}
 	else if (status == PlayerStatus::spining)
@@ -118,6 +120,34 @@ void Player::display()
 
 void Player::draw2D(int width, int height)
 {
+	if (status == PlayerStatus::moving)
+	{
+		counter++;
+		if (counter == 2)
+		{
+			index++;
+			counter = 0;
+		}
+		if (index >= 4)
+			index = 0;
+	}
+	else
+		index = 0;
+	glEnable(GL_TEXTURE_2D); // 开启2D纹理
+	if(direction->x == 1)
+		glBindTexture(GL_TEXTURE_2D, up[index]);		// 选择纹理
+	else if (direction->x == -1)
+		glBindTexture(GL_TEXTURE_2D, down[index]);		// 选择纹理
+	else if (direction->y == 1)
+		glBindTexture(GL_TEXTURE_2D, left[index]);		// 选择纹理
+	else if (direction->y == -1)
+		glBindTexture(GL_TEXTURE_2D, right[index]);		// 选择纹理
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
+	glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
+	glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 - 16) / 1200);
+	glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 - 16) / 1200);
+	glEnd();
 }
 
 void Player::reciveItems(ConsumbleItem* consumbleItem)

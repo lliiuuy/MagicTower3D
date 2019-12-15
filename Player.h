@@ -19,6 +19,8 @@ private:
 	Sword* sword; // 玩家所持有的剑
 	Shield* shield; // 玩家持有的盾
 
+	int index = 0; // 人物移动的index
+
 	float spinY; // 玩家的朝向
 	float spinYTo; // 玩家需要转向的位置
 	float spinSpeed; // 玩家的转向速度

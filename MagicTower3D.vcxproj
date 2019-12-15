@@ -144,6 +144,7 @@
     <ClCompile Include="DownStairs.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GateKeeperB.cpp" />
     <ClCompile Include="GreenSlime.cpp" />
     <ClCompile Include="IronDoor.cpp" />
     <ClCompile Include="IronShield.cpp" />
@@ -169,8 +170,8 @@
     <ClCompile Include="SkeletonB.cpp" />
     <ClCompile Include="SkeletonC.cpp" />
     <ClCompile Include="Sword.cpp" />
-    <ClCompile Include="Theif.cpp" />
     <ClCompile Include="TheOrbOfTheHero.cpp" />
+    <ClCompile Include="Thief.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UpStairs.cpp" />
     <ClCompile Include="UseItem.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="DownStairs.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GateKeeperB.h" />
     <ClInclude Include="GreenSlime.h" />
     <ClInclude Include="IronDoor.h" />
     <ClInclude Include="IronShield.h" />
@@ -222,8 +224,8 @@
     <ClInclude Include="SkeletonC.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tag.h" />
-    <ClInclude Include="Theif.h" />
     <ClInclude Include="TheOrbOfTheHero.h" />
+    <ClInclude Include="Thief.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UpStairs.h" />
     <ClInclude Include="UseItem.h" />
