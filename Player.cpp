@@ -181,21 +181,24 @@ void Player::reciveUseItems(UseItem* useItem)
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
 	// ²âÊÔ
-	yellowKeyNumber = 6;
-	blueKeyNumber = 6;
+
+	yellowKeyNumber = 40;
+	blueKeyNumber = 2;
 	redKeyNumber = 6;
 	
 	moveSpeed = 0.1f;
 	positionMoveTo = positionInMap;
 	// ²âÊÔ
-	shield = new IronShield(new Vector2(-1, -1));
-	shield->init();
-	sword = new IronSword(new Vector2(-1, -1));
-	sword->init();
+	shield = NULL;
+	sword = NULL;
+	//shield = new IronShield(new Vector2(-1, -1));
+	//shield->init();
+	//sword = new IronSword(new Vector2(-1, -1));
+	//sword->init();
 	
 	spinY = 0;
 	spinSpeed = 5.0f;
 	useItems = new std::vector<UseItem*>();
 	direction = new Vector2(1, 0);
-	floor = 3;
+	floor = 2;
 }

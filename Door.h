@@ -3,9 +3,8 @@
 class Door :
 	public Obstacle
 {
-private:
+protected:
 	bool loadTexture();
-	float move;
 	float spinY;
 	bool open;
 

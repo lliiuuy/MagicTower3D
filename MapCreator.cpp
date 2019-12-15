@@ -181,6 +181,9 @@ bool MapCreator::createMap3D()
 			{
 				if (objects[i][j]->getTag() == Tag::upStairs || objects[i][j]->getTag() == Tag::downStairs)
 				{
+					/*printf("%s: %f, %f i,j: %d, %d\n", objects[i][j]->getName(), objects[i][j]->getPostionInMap()->x, objects[i][j]->getPostionInMap()->y, i, j);
+					printf("Player: %f, %f\n", player->getPostionInMap()->x, player->getPostionInMap()->y);
+					*/
 					if (i > 0 && j > 0)
 					{
 						if (objects[i - 1][j] == NULL) // ×ó²àÊÇ¿ÕµÄ
@@ -256,6 +259,32 @@ void MapCreator::downStairs()
 	loadMap();
 }
 
+void MapCreator::movePlayer(bool isUp)
+{
+	player->move(isUp);
+	/*Object* object;
+	if (isUp)
+	{
+		object = objects[(int)floor(player->getPostionInMap()->x - player->getDirection()->x + 0.5f) + 1][(int)floor(player->getPostionInMap()->y - player->getDirection()->y + 0.5f) + 1];
+	}
+	else
+	{
+		object = objects[(int)floor(player->getPostionInMap()->x + player->getDirection()->x + 0.5f) + 1][(int)floor(player->getPostionInMap()->y + player->getDirection()->y + 0.5) + 1];
+	}
+	if (object == NULL)
+		player->move(isUp);
+	else if (object->getTag() != Tag::wall
+		&& object->getTag() != Tag::door
+		&& object->getTag() != Tag::NPC
+		&& object->getTag() != Tag::prison
+		&& object->getTag() != Tag::ironDoor
+		&& object->getTag() != Tag::upStairs
+		&& object->getTag() != Tag::downStairs)
+	{
+		;
+	}*/
+}
+
 void MapCreator::display()
 {
 	player->display();
@@ -292,4 +321,5 @@ MapCreator::MapCreator(Player *player)
 		}
 	}
 	this->player = player;
+	this->audioManager = new AudioManager();
 }

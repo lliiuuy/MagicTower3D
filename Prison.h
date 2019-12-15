@@ -5,5 +5,7 @@ class Prison :
 {
 public:
 	Prison(Vector2* positionInMap);
+	void draw2D(int width, int height);
+	void draw3D();
 };
 

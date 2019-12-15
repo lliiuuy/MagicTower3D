@@ -398,8 +398,7 @@ UIManager::UIManager(int width, int height, Player* player)
 	this->width = width;
 	this->height = height;
 	this->player = player;
-	this->monster = new GreenSlime(new Vector2(-1, -1));
-	this->monster->init();
+	this->monster = NULL;
 }
 
 void UIManager::setWindow(int width, int height)

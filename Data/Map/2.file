@@ -8,19 +8,13 @@
     "floorImage": "floor",
     "mapData": [
         {
-            "element": "stair_down"
+            "element": "DownStairs"
         },
         {
             "element": ""
         },
         {
-            "element": "blue_door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
+            "element": "Blue Door"
         },
         {
             "element": ""
@@ -47,103 +41,109 @@
             "element": ""
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "dark_guard",
-            "actionAfter":"currentMap.mapData[18].element!=\"dark_guard\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "dark_guard",
-            "actionAfter":"currentMap.mapData[16].element!=\"dark_guard\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
-        },
-        {
             "element": ""
         },
         {
             "element": ""
         },
         {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Gate-keeper B",
+            "actionAfter":"currentMap.mapData[18].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
         },
         {
             "element": ""
         },
         {
-            "element": "blue_old",
+            "element": "Gate-Keeper B",
+            "actionAfter":"currentMap.mapData[16].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Old Man",
             "dialog":[
                  {
                      "dialogues":[
-                         {"speaker":"blue_old","sentence":"谢谢你救了我，为感谢你的帮助，请收下这些礼物(1000金币)"}
+                         {"speaker":"Old Man","sentence":"谢谢你救了我，为感谢你的帮助，请收下这些礼物(1000金币)"}
                      ],
                      "action":"main.money+=1000;currentMap.mapData[43].element=null",
                      "message":"获得1000金币",
@@ -155,16 +155,16 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "yellow_key"
+            "element": "Yellow Key"
         },
         {
             "element": ""
         },
         {
-            "element": "prison",
+            "element": "Prison",
             "action": "false"
         },
         {
@@ -177,7 +177,7 @@
             "element": ""
         },
         {
-            "element": "prison",
+            "element": "Prison",
             "action": "false"
         },
         {
@@ -190,49 +190,16 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "thief"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -244,17 +211,50 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "red_old",
+            "element": "Wall"
+        },
+        {
+            "element": "Thief"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Merchant",
             "dialog":[
                  {
                      "dialogues":[
-                         {"speaker":"red_old","sentence":"谢谢你救了我，我可以用祝福魔法提升你3%的攻击力和防御力，现在就提升吗？"}
+                         {"speaker":"Merchant","sentence":"谢谢你救了我，我可以用祝福魔法提升你3%的攻击力和防御力，现在就提升吗？"}
                      ],
                      "actionAsk":"main.damage*=1.03;main.defense*=1.03;currentMap.mapData[76].element=null;currentMap.mapData[76].dialog=null;",
                      "end":false
@@ -265,7 +265,7 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -274,7 +274,7 @@
             "element": ""
         },
         {
-            "element": "prison",
+            "element": "Prison",
             "action": "false"
         },
         {
@@ -287,7 +287,7 @@
             "element": ""
         },
         {
-            "element": "prison",
+            "element": "Prison",
             "action": "false"
         },
         {
@@ -300,49 +300,16 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "blue_hp_1"
-        },
-        {
-            "element": "blue_hp_1"
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -354,7 +321,28 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Blue Medicine"
+        },
+        {
+            "element": "Blue Medicine"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
@@ -363,19 +351,31 @@
             "element": ""
         },
         {
-            "element": "stair_up"
+            "element": ""
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "blue_hp_1"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "prison",
+            "element": ""
+        },
+        {
+            "element": "UpStairs"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Blue Medicine"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Prison",
             "action": "false"
         },
         {
@@ -388,7 +388,7 @@
             "element": ""
         },
         {
-            "element": "prison",
+            "element": "Prison",
             "action": "false"
         },
         {

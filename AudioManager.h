@@ -5,11 +5,8 @@
 
 class AudioManager
 {
-private:
-	static AudioManager* instance;
-	AudioManager();
 public:
-	static AudioManager* getInstance() { return instance; }
-	static void playSound(char* fileName);
+	void playSound(char* fileName);
+	AudioManager();
 };
 

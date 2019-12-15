@@ -25,7 +25,7 @@ private:
 	float spinYTo; // 玩家需要转向的位置
 	float spinSpeed; // 玩家的转向速度
 
-	Vector2* direction; // 玩家的朝向(左(-1,0), 右(1,0), 前(0,-1), 后(0,1))
+	Vector2* direction; // 玩家的朝向(左(0,1), 右(0,-1), 前(1,0), 后(-1,0))
 
 	Vector2* positionMoveTo; // 玩家需要移动到的位置
 	float moveSpeed; // 玩家的移动速度
@@ -71,6 +71,8 @@ public:
 
 	void reciveItems(ConsumbleItem* consumbleItem); // 获取消耗物品
 	void reciveUseItems(UseItem* useItem); // 获取使用型物体
+
+	Vector2* getDirection() { return direction; }
 
 	Player(Vector2* positionInMap);
 

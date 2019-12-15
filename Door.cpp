@@ -51,7 +51,7 @@ void Door::draw3D()
 	{
 		glEnable(GL_BLEND);
 		counter++;
-		if (counter == 3)
+		if (counter == 5)
 		{
 			counter = 0;
 			index++;
@@ -63,7 +63,7 @@ void Door::draw3D()
 	glPushMatrix();
 	glTranslatef(position->x, position->y, position->z);
 	glRotatef(spinY, 0, 1, 0);
-	glBindTexture(GL_TEXTURE_2D, texture[0]);
+	glBindTexture(GL_TEXTURE_2D, texture[index]);
 	glBegin(GL_QUADS);
 	// »­ÕıÃæ
 	glNormal3f(0.0f, 0.0f, 1.0f);
@@ -109,8 +109,7 @@ void Door::lookAt(Vector3* position)
 Door::Door(Vector2* positionInMap): Obstacle(positionInMap)
 {
 	this->tag = Tag::door;
-	this->move = 0;
 	this->spinY = 0;
-	this->open = true;
+	this->open = false;
 	this->index = 0;
 }

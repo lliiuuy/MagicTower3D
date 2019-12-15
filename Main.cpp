@@ -130,10 +130,10 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 				player->spin(false);
 				break;
 			case GLFW_KEY_W:
-				player->move(true);
+				mapCreator->movePlayer(true);
 				break;
 			case GLFW_KEY_S:
-				player->move(false);
+				mapCreator->movePlayer(false);
 				break;
 			}
 		}

@@ -3,6 +3,7 @@
 #include "Object.h"
 #include "Objects.h"
 #include "Config.h"
+#include "AudioManager.h"
 #include <string.h>
 
 #include "json/reader.h"
@@ -30,6 +31,7 @@ private:
 	char downDirection[10]; // 从该层下楼后人物的朝向
 
 	Player* player; // 可能是用来测试的
+	AudioManager* audioManager; // 可能是用来测试的
 
 	void display(); // 物体的移动，转向处理函数
 
@@ -39,6 +41,7 @@ public:
 	bool createMap3D(); // 创建3D地图
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼
+	void movePlayer(bool isUp); // 移动玩家
 
 	MapCreator(Player* player);
 };
