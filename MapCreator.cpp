@@ -35,6 +35,24 @@ bool MapCreator::loadMap()
 						objects[i][j] = new Wall(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Yellow Door") == 0)
 						objects[i][j] = new YellowDoor(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Blue Door") == 0)
+						objects[i][j] = new BlueDoor(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Red Door") == 0)
+						objects[i][j] = new RedDoor(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Iron Door") == 0)
+						objects[i][j] = new IronDoor(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Prison") == 0)
+						objects[i][j] = new Prison(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "UpStairs") == 0)
+					{
+						cells[i][j] = NULL;
+						objects[i][j] = new UpStairs(new Vector2((float)i - 1, (float)j - 1));
+					}
+					else if (strcmp(element, "DownStairs") == 0)
+					{
+						floors[i][j] = NULL;
+						objects[i][j] = new DownStairs(new Vector2((float)i - 1, (float)j - 1));
+					}
 					else if (strcmp(element, "Green Slime") == 0)
 						objects[i][j] = new GreenSlime(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Slime") == 0)
@@ -61,6 +79,8 @@ bool MapCreator::loadMap()
 						objects[i][j] = new RedJewel(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Jewel") == 0)
 						objects[i][j] = new BlueJewel(new Vector2((float)i - 1, (float)j - 1));
+					else if(strcmp(element, "Old Man") == 0)
+						objects[i][j] = new OldMan(new Vector2((float)i - 1, (float)j - 1));
 				}
 				if (objects[i][j] != NULL)
 					objects[i][j]->init();
@@ -73,17 +93,50 @@ bool MapCreator::loadMap()
 	return status;
 }
 
-bool MapCreator::createMap2D()
+bool MapCreator::createMap2D(int width, int height)
 {
 	bool status = false;
-	for (unsigned short i = 0; i < mapHeight; i++)
+	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
+	glLoadIdentity();									// 重设透视矩阵
+
+	glOrtho(0.0f, width, height, 0.0f, -1.0f, 1.0f);   // 设置平行投影
+
+	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
+	glLoadIdentity();									// 重新载入模型矩阵
+	// 先画地板
+	for (unsigned short i = 0; i < mapWidth; i++)
 	{
-		for (unsigned short j = 0; j < mapWidth; j++)
+		for (unsigned short j = 0; j < mapHeight; j++)
 		{
-			if (objects[i][j] != NULL)
-				objects[i][j]->draw2D();
+			if (cells[i][j] == NULL)
+				floors[i][j]->draw2D(width, height);
+			else
+				cells[i][j]->draw2D(width, height);
 		}
 	}
+
+	for (unsigned short i = 0; i < mapHeight - 0; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth - 0; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				glEnable(GL_BLEND);
+				if(objects[i][j]->getTag() == Tag::wall || objects[i][j]->getTag() == Tag::door)
+					glDisable(GL_BLEND);
+				objects[i][j]->draw2D(width, height);
+				glDisable(GL_BLEND);
+			}
+		}
+	}
+	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
+	glLoadIdentity();									// 重设透视矩阵
+
+	gluPerspective(60.0f, width * 1.3f / height, 0.1f, 1000.0f); //	设置回透视投影
+
+	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
+	glLoadIdentity();									// 重新载入模型矩阵
+
 	return status;
 }
 
@@ -96,8 +149,10 @@ bool MapCreator::createMap3D()
 	{
 		for (unsigned short j = 0; j < mapHeight; j++)
 		{
-			floors[i][j]->draw3D();
-			cells[i][j]->draw3D();
+			if(floors[i][j] != NULL)
+				floors[i][j]->draw3D();
+			if(cells[i][j] != NULL)
+				cells[i][j]->draw3D();
 		}
 	}
 	// 绘制墙
@@ -112,6 +167,33 @@ bool MapCreator::createMap3D()
 			}
 		}
 	}
+
+	// 绘制楼梯
+	for (unsigned short i = 0; i < mapHeight; i++)
+	{
+		for (unsigned short j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if (objects[i][j]->getTag() == Tag::upStairs || objects[i][j]->getTag() == Tag::downStairs)
+				{
+					if (i > 0 && j > 0)
+					{
+						if (objects[i - 1][j] == NULL) // 左侧是空的
+							objects[i][j]->lookAt(new Vector3(-1, 0, 0));
+						else if (objects[i + 1][j] == NULL) // 右侧是空的
+							objects[i][j]->lookAt(new Vector3(1, 0, 0));
+						else if (objects[i][j + 1] == NULL) // 下面是空的
+							objects[i][j]->lookAt(new Vector3(0, 1, 0));
+						else if (objects[i][j - 1] == NULL) // 上面是空的
+							objects[i][j]->lookAt(new Vector3(0, -1, 0));
+					}
+					objects[i][j]->draw3D();
+				}
+			}
+		}
+	}
+
 	for (unsigned short i = 0; i < mapHeight; i++)
 	{
 		for (unsigned short j = 0; j < mapWidth; j++)
@@ -179,7 +261,7 @@ void MapCreator::display()
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::consumbleItem || objects[i][j]->getTag() == Tag::monster)
+				if (objects[i][j]->getTag() == Tag::consumbleItem || objects[i][j]->getTag() == Tag::monster || objects[i][j]->getTag() == Tag::NPC)
 					objects[i][j]->lookAt(player->getPositon());
 			}
 		}

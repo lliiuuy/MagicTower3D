@@ -141,6 +141,7 @@
     <ClCompile Include="ConsumbleItem.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Door.cpp" />
+    <ClCompile Include="DownStairs.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GreenSlime.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="ConsumbleItem.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Door.h" />
+    <ClInclude Include="DownStairs.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GreenSlime.h" />

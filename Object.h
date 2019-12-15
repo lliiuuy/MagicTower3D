@@ -22,7 +22,7 @@ protected:
 	virtual bool loadTexture() = 0; // 将bitmap转成纹理
 
 public:
-	virtual void draw2D() = 0; // 2D绘制用函数
+	virtual void draw2D(int width, int height) = 0; // 2D绘制用函数
 	virtual void draw3D() = 0; // 3D绘制用函数
 	virtual void collide() = 0; // 物体接触函数
 	virtual bool init(); // 初始化函数

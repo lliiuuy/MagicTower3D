@@ -298,9 +298,9 @@ void UIManager::draw()
 			glEnable(GL_TEXTURE_2D); // 开启2D纹理
 			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
 			glBegin(GL_QUADS);
-			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
 			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index%6) * (double)234/6) / 1600, height * (409 + (index/6) * (double)185/4) / 1200);
 			glEnd();
 		}
@@ -316,9 +316,9 @@ void UIManager::draw()
 			glEnable(GL_TEXTURE_2D); // 开启2D纹理
 			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
 			glBegin(GL_QUADS);
-			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
 			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
 			glEnd();
 		}
@@ -333,9 +333,9 @@ void UIManager::draw()
 			glEnable(GL_TEXTURE_2D); // 开启2D纹理
 			glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
 			glBegin(GL_QUADS);
-			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((index / 6) + 1) * (double)185 / 4) / 1200);
-			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
+			glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (1327 + (index % 6) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + ((double)(index / 6) + 1) * (double)185 / 4) / 1200);
+			glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (1327 + ((double)(index % 6) + 1) * (double)234 / 6) / 1600, height * (409 + (index / 6) * (double)185 / 4) / 1200);
 			glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1327 + (index%6) * (double)234/6) / 1600, height * (409 + (index/6) * (double)185/4) / 1200);
 			glEnd();
 		}
@@ -382,7 +382,7 @@ void UIManager::draw()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width * 1.8f / height, 0.1f, 1000.0f); //	设置回透视投影
+	gluPerspective(60.0f, width * 1.2f / height, 0.1f, 1000.0f); //	设置回透视投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵

@@ -4,12 +4,12 @@
 
 bool fullScreen = false; // 是否全屏
 
-unsigned short adjust = 5;
-unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
-
 MapCreator* mapCreator; // 测试用
 UIManager* uiManager; // 测试用
 Player* player; // 测试用
+
+unsigned short adjust = 5;
+unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
 struct			 											// 计时器的结构体
 {
@@ -82,7 +82,7 @@ bool initObjects()
 	return status;
 }
 
-void drawScene()
+void drawScene(int width, int height)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -92,6 +92,7 @@ void drawScene()
 	glTranslatef(-player->getPositon()->x, -player->getPositon()->y, -player->getPositon()->z);
 
 	mapCreator->createMap3D();
+	mapCreator->createMap2D(width, height);
 
 	 uiManager->draw();
 }
@@ -145,14 +146,17 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 		height = 1; // 保护
 	if (width == 0)
 		width = 1;
+	int widthOrigin = width;
+	if (width != height * 4 / 3)
+		width = height * 4 / 3;
 	uiManager->setWindow(width, height);
 
-	glViewport(0, 0, width, height);
+	glViewport((widthOrigin - width)/2, 0, width, height);
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width * 1.8f / height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(60.0f, width / height, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -180,7 +184,7 @@ int main()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width * 1.8f / height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(60.0f, width * 1.3f / height, 0.1f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -195,7 +199,7 @@ int main()
 	{
 		float start = timerGetTime();
 		while (timerGetTime() < start + float(steps[adjust] * 2.0f)) {} // 控制帧数
-		drawScene();
+		drawScene(width, height);
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

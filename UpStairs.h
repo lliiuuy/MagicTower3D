@@ -3,9 +3,13 @@
 class UpStairs :
 	public Obstacle
 {
+private:
+	float spinY = 0;
+	bool loadTexture();
 public:
 	UpStairs(Vector2* positionInMap);
-	void collide();
 	void draw3D();
+	void lookAt(Vector3* position);
+	void collide();
 };
 

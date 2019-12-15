@@ -2,7 +2,7 @@
 
 OldMan::OldMan(Vector2* positionInMap): NPC(positionInMap)
 {
-	this->name = "OldMan";
+	this->name = "Old Man";
 }
 
 void OldMan::talk()

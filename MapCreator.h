@@ -2,6 +2,7 @@
 #include "Vector2.h"
 #include "Object.h"
 #include "Objects.h"
+#include "Config.h"
 #include <string.h>
 
 #include "json/reader.h"
@@ -34,7 +35,7 @@ private:
 
 public:
 	bool loadMap(); // 从文件中读取json
-	bool createMap2D(); // 创建2D地图
+	bool createMap2D(int width, int height); // 创建2D地图
 	bool createMap3D(); // 创建3D地图
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼

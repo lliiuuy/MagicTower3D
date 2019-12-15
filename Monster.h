@@ -5,6 +5,7 @@ class Monster :
 {
 protected: 
 	float spinY = 0;
+	unsigned short index; // texture的编号
 
 	void lookAt(Vector3* position); // 朝着人物所在方向旋转
 
@@ -13,7 +14,7 @@ protected:
 public:
 	Monster(Vector2* positionInMap);
 	void collide();
-	void draw2D();
+	void draw2D(int width, int height);
 	void draw3D();
 
 	GLuint getTexture() { return texture[0]; }

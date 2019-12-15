@@ -7,6 +7,8 @@ enum class Tag : unsigned short
 	door,
 	ironDoor,
 	prison,
+	downStairs,
+	upStairs,
 	consumbleItem,
 	sword,
 	shield,

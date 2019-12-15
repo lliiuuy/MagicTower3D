@@ -8,140 +8,140 @@
     "floorImage": "floor",
     "mapData": [
         {
-            "element": "yellow_key"
+            "element": "Yellow Key"
         },
         {
-            "element": "blue_jewel_1"
+            "element": "Blue Jewel"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "yellow_key"
+            "element": "Yellow Key"
         },
         {
-            "element": "blue_hp_1"
+            "element": "Blue Medicine"
         },
         {
-            "element": "yellow_key"
+            "element": "Yellow Key"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "red_hp_1"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "red_hp_1"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "blue_hp_1"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "blue_hp_1"
-        },
-        {
-            "element": "wall"
+            "element": "Red Medicine"
         },
         {
             "element": ""
         },
         {
-            "element": "yellow_door"
+            "element": "Red Medicine"
         },
         {
-            "element": "small_bat"
+            "element": "Wall"
         },
         {
-            "element": ""
+            "element": "Blue Medicine"
         },
         {
-            "element": "junior_wizard"
+            "element": "Yellow Key"
         },
         {
-            "element": ""
+            "element": "Blue Medicine"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "blue_key"
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Yellow Door"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "yellow_door"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
+            "element": "Bat"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
+            "element": "Priest"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Blue Key"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "blue_old",
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Yellow Door"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Old Man",
             "dialog":[
                  {
                      "dialogues":[
-                         {"speaker":"blue_old","sentence":"我可以给你怪物手册，它可以预测出当前楼层各类怪物对你的伤害"}
+                         {"speaker":"Old Man","sentence":"我可以给你怪物手册，它可以预测出当前楼层各类怪物对你的伤害"}
                      ],
                      "action":"main.help=true;currentMap.mapData[43].element=null;currentMap.mapData[43].dialog=null",
                      "message":"获得怪物图鉴"
@@ -155,7 +155,7 @@
             "element": ""
         },
         {
-            "element": "small_bat"
+            "element": "Bat"
         },
         {
             "element": ""
@@ -167,7 +167,7 @@
             "element": ""
         },
         {
-            "element": "green_slime"
+            "element": "Green Slime"
         },
         {
             "element": ""
@@ -182,79 +182,13 @@
             "element": ""
         },
         {
-            "element": "yellow_door"
+            "element": "Yellow Door"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "skeleton"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "red_hp_1"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "yellow_key"
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
@@ -266,28 +200,94 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "yellow_door"
+            "element": "Wall"
         },
         {
-            "element": "junior_wizard"
+            "element": "Wall"
         },
         {
-            "element": "yellow_key"
+            "element": "Wall"
         },
         {
-            "element": "red_hp_1"
+            "element": "SkeletonC"
         },
         {
-            "element": "red_jewel_1"
+            "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Red Medicine"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Yellow Door"
+        },
+        {
+            "element": "Priest"
+        },
+        {
+            "element": "Yellow Key"
+        },
+        {
+            "element": "Red Medicine"
+        },
+        {
+            "element": "Red Jewel"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
@@ -300,61 +300,55 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
+            "element": "Wall"
         },
         {
-            "element": "wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "wall"
-        },
-        {
-            "element": "red_slime"
-        },
-        {
-            "element": "wall"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": ""
+            "element": "Wall"
         },
         {
-            "element": "stair_down"
+            "element": "Wall"
+        },
+        {
+            "element": "Red Slime"
+        },
+        {
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
             "element": ""
+        },
+        {
+            "element": "DownStairs"
         },
         {
             "element": ""
@@ -366,19 +360,25 @@
             "element": ""
         },
         {
-            "element": "wall"
+            "element": ""
         },
         {
             "element": ""
         },
         {
-            "element": "yellow_door"
+            "element": "Wall"
         },
         {
             "element": ""
         },
         {
-            "element": "stair_up"
+            "element": "Yellow Door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "UpStairs"
         }
     ],
     "mapFloor": 3,

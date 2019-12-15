@@ -255,6 +255,9 @@
     <ClCompile Include="IronShield.cpp">
       <Filter>源文件\Objects\Items\ConsumbleItems\Shield</Filter>
     </ClCompile>
+    <ClCompile Include="DownStairs.cpp">
+      <Filter>源文件\Objects\Obstacles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -406,6 +409,9 @@
     </ClInclude>
     <ClInclude Include="IronSword.h">
       <Filter>头文件\Objects\Items\ConsumbleItems\Sword</Filter>
+    </ClInclude>
+    <ClInclude Include="DownStairs.h">
+      <Filter>头文件\Objects\Obstacles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

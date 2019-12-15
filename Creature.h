@@ -9,12 +9,7 @@ protected:
 	unsigned int defence = 0; // 防御力
 	unsigned int money = 0; // 拥有的钱
 
-	virtual bool loadTexture() = 0; // 读取纹理
-
 public:
-	virtual void collide() = 0;
-	virtual void draw2D() = 0;
-	virtual void draw3D() = 0;
 
 	unsigned int getHealth() { return health; }
 	unsigned int getAttack() { return attack; }

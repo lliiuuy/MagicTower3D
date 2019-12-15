@@ -10,7 +10,7 @@ protected:
 	bool enable;
 public:
 	virtual void useItem() = 0;
-	void draw2D();
+	void draw2D(int width, int height);
 	void draw3D();
 	void collide();
 	bool init();

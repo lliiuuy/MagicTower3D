@@ -24,7 +24,7 @@ public:
 	unsigned short getRedKeyNumber() { return redKeyNumber; }
 	unsigned short getBlueKeyNumber() { return blueKeyNumber; }
 	unsigned short getYellowKeyNumber() { return yellowKeyNumber; }
-	void draw2D();
+	void draw2D(int width, int height);
 	void draw3D();
 	void collide();
 

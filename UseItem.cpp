@@ -5,7 +5,7 @@ bool UseItem::loadTexture()
 	return false;
 }
 
-void UseItem::draw2D()
+void UseItem::draw2D(int width, int height)
 {
 }
 

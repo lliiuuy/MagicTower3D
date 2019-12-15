@@ -47,7 +47,7 @@ public:
 	void display();
 
 	void draw3D() { ; } // 不在3D中绘制
-	void draw2D();
+	void draw2D(int width, int height);
 	void collide() { ; } // 不会碰撞
 	void lookAt(Vector3* position) { ; }
 
