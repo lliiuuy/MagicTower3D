@@ -29,6 +29,8 @@ private:
 	bool loadTexture(); // 将bitmap转成纹理
 	Monster* monster; // 用于显示怪物
 
+	char* setence = "";
+
 public:
 
 	void draw(Player* player); // 绘画UI
@@ -36,5 +38,7 @@ public:
 	bool init();
 	UIManager(int width, int height);
 	void setWindow(int width, int height);
+	void dialog(char* message, bool isAction);
+	void message(char* message);
 };
 

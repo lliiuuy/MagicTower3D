@@ -392,3 +392,13 @@ void UIManager::setWindow(int width, int height)
 	this->width = width;
 	this->height = height;
 }
+
+void UIManager::dialog(char* setence, bool isAction)
+{
+	this->setence = setence;
+}
+
+void UIManager::message(char* message)
+{
+
+}

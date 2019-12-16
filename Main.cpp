@@ -129,6 +129,19 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 	glLoadIdentity();									// 重新载入模型矩阵
 }
 
+void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+{
+	double posX, posY;
+	glfwGetCursorPos(window ,&posX, &posY);
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+		printf("%f, %f\n", posX, posY);
+}
+
+void cursorPosCallback(GLFWwindow* window, double x, double y)
+{
+
+}
+
 int main()
 {
 	if (!glfwInit())
@@ -163,6 +176,8 @@ int main()
 
 	glfwSetKeyCallback(window, keyCallback);
 	glfwSetWindowSizeCallback(window, resizeCallback);
+	glfwSetMouseButtonCallback(window, mouseButtonCallback);
+	glfwSetCursorPosCallback(window, cursorPosCallback);
 
 	while (!glfwWindowShouldClose(window))
 	{

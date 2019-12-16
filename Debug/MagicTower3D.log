@@ -1,2 +1,6 @@
-﻿  Player.cpp
+﻿  GameManager.cpp
+  Main.cpp
+  Player.cpp
+  UIManager.cpp
+  正在生成代码...
   MagicTower3D.vcxproj -> C:\Users\lliiuuy\Desktop\repository\MagicTower3D\Debug\MagicTower3D.exe

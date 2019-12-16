@@ -316,7 +316,7 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	spinSpeed = 5.0f;
 	useItems = new std::vector<UseItem*>();
 	direction = new Vector2(1, 0);
-	floor = 1;
+	floor = 3;
 
 	monster = NULL;
 }
