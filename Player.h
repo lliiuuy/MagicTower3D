@@ -12,8 +12,11 @@ private:
 	unsigned short blueKeyNumber; // 蓝钥匙的数量
 	unsigned short redKeyNumber; // 红钥匙的数量
 
-	Sword* sword; // 玩家所持有的剑
-	Shield* shield; // 玩家持有的盾
+	GLuint swordTexture;
+	char* swordName;
+
+	GLuint shieldTexture;
+	char* shieldName;
 
 	int index = 0; // 人物移动的index
 
@@ -60,16 +63,20 @@ public:
 
 	float getSpinY() { return spinY; }
 
-	PlayerStatus getStatus() { return status; }
+	GLuint getSwordTexture() { return swordTexture; }
+	char* getSwordName() { return swordName; }
+	GLuint getShieldTexture() { return shieldTexture; }
+	char* getShieldName() { return shieldName; }
 
-	Sword* getSword() { return sword; }
-	Shield* getShield() { return shield; }
+	PlayerStatus getStatus() { return status; }
 
 	void reciveItems(ConsumbleItem* consumbleItem); // 获取消耗物品
 	void reciveUseItems(UseItem* useItem); // 获取使用型物体
 
 	Vector2* getDirection() { return direction; }
 	void SetDirection(Vector2* direction);
+
+	void openDoor(int tag);
 
 	Player(Vector2* positionInMap);
 

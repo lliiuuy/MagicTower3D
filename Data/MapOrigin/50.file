@@ -1,0 +1,409 @@
+{
+    "bgMusic": "music/sound_5.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 6
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "thief",
+            "actionAfter":"currentMap.mapData[49].actionAfter=null;",
+            "dialogAfter":{
+                "dialogues":[
+                     {"speaker":"empty_stair_unknown_floor","sentence":"您消灭了魔王，恭喜通关！\n从此魔塔只是个传说........."}
+                 ],
+                 "action":"currentMap.mapData[49].dialog=null;main.isFinish=true"
+            }
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"hero","sentence":"你怎么会在这里！你到底是谁？"},
+                         {"speaker":"thief","sentence":"我在这里只有一个理由，那就是..."},
+                         {"speaker":"parser","sentence":"currentMap.mapData[49].element=\"red_devil_king_50\""},
+                         {"speaker":"hero","sentence":"啊！你就是魔王！你怎么还活着？"},
+                         {"speaker":"red_devil_king_50","sentence":"我是不会死的。以前我只是对你的能力做测试而已。"},
+                         {"speaker":"hero","sentence":"什么？你这是什么意思？你为什么要做这样的事情？"},
+                         {"speaker":"red_devil_king_50","sentence":"神圣剑就是你装备的武器，智慧权杖是我所装备的武器。先知说过无论谁使用它们都必须要有足够的智慧，且剑只能被真正的战士使用。"},
+                         {"speaker":"hero","sentence":"如你所说我就是那个战士"},
+                         {"speaker":"red_devil_king_50","sentence":"是的，你是最合适的人选。但你刚到魔塔时，你的能力还不足以支配神圣剑。因此我在塔内安排了各类机关，让你通过战斗直到可以控制神圣剑。"},
+                         {"speaker":"hero","sentence":"很好，那么外面传说有一个公主被困在魔塔，就是为了把我骗到这里。是这样的吗？"},
+                         {"speaker":"red_devil_king_50","sentence":"是的。现在如果我们能够合作那么这场闹剧就结束了。现在让我们一起用权杖破坏神圣剑，这样伟大的时代就要降临了。"},
+                         {"speaker":"hero","sentence":"我不会让你毁了神圣剑，让黑暗降临。"}
+                     ],
+                     "action":"currentMap.mapData[60].dialog=null"
+                 }
+             ]
+
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        },
+        {
+            "element": "star"
+        }
+    ],
+    "mapFloor": 50,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 6
+    }
+}

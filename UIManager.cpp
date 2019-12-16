@@ -249,12 +249,12 @@ void UIManager::draw(Player* player)
 
 	}
 	// 画剑和盾
-	if (player->getSword() != NULL)
+	if (player->getSwordTexture() != 0)
 	{
-		sprintf_s(string, "%s", player->getSword()->getUIName());
+		sprintf_s(string, "%s", player->getSwordName());
 		glPrint(width * 1328 / 1600, height * 192 / 1200, string, width * 2.5f / 1600);
 
-		texture = player->getSword()->getTexture();
+		texture = player->getSwordTexture();
 		glEnable(GL_TEXTURE_2D); // 开启2D纹理
 		glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
 		glBegin(GL_QUADS);
@@ -264,12 +264,12 @@ void UIManager::draw(Player* player)
 		glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (1526 - 36) / 1600, height * 151 / 1200);
 		glEnd();
 	}
-	if (player->getShield() != NULL)
+	if (player->getShieldTexture() != 0)
 	{
-		sprintf_s(string, "%s", player->getShield()->getUIName());
+		sprintf_s(string, "%s", player->getShieldName());
 		glPrint(width * 1328 / 1600, height * 332 / 1200, string, width * 2.5f / 1600);
 
-		texture = player->getShield()->getTexture();
+		texture = player->getShieldTexture();
 		glEnable(GL_TEXTURE_2D); // 开启2D纹理
 		glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
 		glBegin(GL_QUADS);

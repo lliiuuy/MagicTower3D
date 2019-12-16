@@ -14,8 +14,9 @@ private:
 	UIManager* uiManager;
 	Player* player;
 
-	int width, height;
+	int width, height; // ÆÁÄ»³¤¿í
 
+	void detectCollision();
 public:
 	GameManager(int width, int height);
 	void init();

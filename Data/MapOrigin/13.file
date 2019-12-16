@@ -1,0 +1,462 @@
+{
+    "bgMusic": "music/sound_2.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 9,
+        "y": 10
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[0].element=\"\",currentMap.mapData[0].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[1].element=\"\",currentMap.mapData[1].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[2].element=\"\",currentMap.mapData[2].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[3].element=\"\",currentMap.mapData[3].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[4].element=\"\",currentMap.mapData[4].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[5].element=\"\",currentMap.mapData[5].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[6].element=\"\",currentMap.mapData[6].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[7].element=\"\",currentMap.mapData[7].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[8].element=\"\",currentMap.mapData[8].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[9].element=\"\",currentMap.mapData[9].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[10].element=\"\",currentMap.mapData[10].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[11].element=\"\",currentMap.mapData[11].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[12].element=\"\",currentMap.mapData[12].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[13].element=\"\",currentMap.mapData[13].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[14].element=\"\",currentMap.mapData[14].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[15].element=\"\",currentMap.mapData[15].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[16].element=\"\",currentMap.mapData[16].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[17].element=\"\",currentMap.mapData[17].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[18].element=\"\",currentMap.mapData[18].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[19].element=\"\",currentMap.mapData[19].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[20].element=\"\",currentMap.mapData[20].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[21].element=\"\",currentMap.mapData[21].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[22].element=\"\",currentMap.mapData[22].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[23].element=\"\",currentMap.mapData[23].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[24].element=\"\",currentMap.mapData[24].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[25].element=\"\",currentMap.mapData[25].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[29].element=\"\",currentMap.mapData[29].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[30].element=\"\",currentMap.mapData[30].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[31].element=\"\",currentMap.mapData[31].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[32].element=\"\",currentMap.mapData[32].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[33].element=\"\",currentMap.mapData[33].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[34].element=\"\",currentMap.mapData[34].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[35].element=\"\",currentMap.mapData[35].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[41].element=\"\",currentMap.mapData[41].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[42].element=\"\",currentMap.mapData[42].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[43].element=\"\",currentMap.mapData[43].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[44].element=\"\",currentMap.mapData[44].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[45].element=\"\",currentMap.mapData[45].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[46].element=\"\",currentMap.mapData[46].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "sword_5"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[52].element=\"\",currentMap.mapData[52].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[53].element=\"\",currentMap.mapData[53].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[54].element=\"\",currentMap.mapData[54].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[55].element=\"\",currentMap.mapData[55].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[56].element=\"\",currentMap.mapData[56].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[57].element=\"\",currentMap.mapData[57].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[60].element=\"\",currentMap.mapData[60].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[63].element=\"\",currentMap.mapData[63].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[64].element=\"\",currentMap.mapData[64].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[65].element=\"\",currentMap.mapData[65].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[66].element=\"\",currentMap.mapData[66].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[67].element=\"\",currentMap.mapData[67].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[68].element=\"\",currentMap.mapData[68].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[69].element=\"\",currentMap.mapData[69].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[71].element=\"\",currentMap.mapData[71].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[73].element=\"\",currentMap.mapData[73].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[74].element=\"\",currentMap.mapData[74].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[75].element=\"\",currentMap.mapData[75].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[76].element=\"\",currentMap.mapData[76].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[77].element=\"\",currentMap.mapData[77].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[78].element=\"\",currentMap.mapData[78].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[79].element=\"\",currentMap.mapData[79].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[80].element=\"\",currentMap.mapData[80].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[81].element=\"\",currentMap.mapData[81].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[82].element=\"\",currentMap.mapData[82].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[83].element=\"\",currentMap.mapData[83].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[84].element=\"\",currentMap.mapData[84].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[85].element=\"\",currentMap.mapData[85].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[86].element=\"\",currentMap.mapData[86].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[87].element=\"\",currentMap.mapData[87].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[88].element=\"\",currentMap.mapData[88].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[89].element=\"\",currentMap.mapData[89].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[90].element=\"\",currentMap.mapData[90].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[91].element=\"\",currentMap.mapData[91].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[92].element=\"\",currentMap.mapData[92].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[93].element=\"\",currentMap.mapData[93].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[94].element=\"\",currentMap.mapData[94].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[95].element=\"\",currentMap.mapData[95].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[96].element=\"\",currentMap.mapData[96].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[97].element=\"\",currentMap.mapData[97].action=null:null"
+        },
+        {
+            "element": "lava",
+            "action": "main.tools[snow]!=null?currentMap.mapData[98].element=\"\",currentMap.mapData[98].action=null:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        }
+    ],
+    "mapFloor": 13,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 1,
+        "y": 10
+    }
+}

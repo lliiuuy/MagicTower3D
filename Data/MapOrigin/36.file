@@ -1,0 +1,412 @@
+{
+    "bgMusic": "music/sound_4.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 9
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "blue_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"blue_old","sentence":"如果你能用好4条密道，你不用与强敌作战就能上楼。"}
+                     ],
+                     "action":"currentMap.mapData[0].element=\"\";currentMap.mapData[0].dialog=null",
+                     "toNote":"true",
+                     "end":true
+                 }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "dark_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "double_sword_man"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "gold_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "double_sword_man"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+"element": "brown_fake_wall",
+"action":true
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_hp_4"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "orc_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "double_sword_man"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        }
+    ],
+    "mapFloor": 36,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 1
+    }
+}

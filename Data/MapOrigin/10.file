@@ -1,0 +1,403 @@
+{
+    "bgMusic": "music/sound_1.mp3",
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "dialogAfter": {
+                "dialogues":[
+                    {"speaker":"skeleton_captain","sentence":"不，这是不可能的，你怎会打败我！你别太得意，后面还有许多强大的对手和机关存在，你稍有疏忽就必死无疑。"}
+                ],
+                "action":"currentMap.mapData[5].dialogAfter=null;currentMap.mapData[115].element=\"stair_up\";\
+                        currentMap.mapData[36].element=\"\";currentMap.mapData[40].element=\"\";currentMap.mapData[71].element=\"\";\
+                        currentMap.mapData[22].element=\"red_jewel_1\";currentMap.mapData[23].element=\"red_jewel_1\";currentMap.mapData[24].element=\"red_jewel_1\";\
+                        currentMap.mapData[30].element=\"blue_jewel_1\";currentMap.mapData[31].element=\"blue_jewel_1\";currentMap.mapData[32].element=\"blue_jewel_1\";\
+                        currentMap.mapData[33].element=\"blue_hp_1\";currentMap.mapData[34].element=\"blue_hp_1\";currentMap.mapData[35].element=\"blue_hp_1\";\
+                        currentMap.mapData[41].element=\"yellow_key\";currentMap.mapData[42].element=\"yellow_key\";currentMap.mapData[43].element=\"yellow_key\";"
+            }
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "dialog": [
+                {
+                    "dialogues":[
+                        {"speaker":"skeleton_captain","sentence":"你怎能杀出重围？我是绝不会让你通过的，来吧，我要与你决斗！"}
+                    ],
+                    "action":"currentMap.mapData[16].dialog[0]=null",
+                    "end":true
+                }
+            ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton_captain"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "scenario":"mt50_10"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "blue_jewel_1"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "brown_fake_wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "brown_fake_wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": "red_jewel_1"
+        },
+        {
+            "element": "skeleton"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "skeleton_soldier"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "junior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "junior_wizard"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_hp_1"
+        }
+    ],
+    "mapFloor": 10,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "downPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 9
+    },
+    "upPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 9
+    }
+}

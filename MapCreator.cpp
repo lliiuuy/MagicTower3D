@@ -1,8 +1,7 @@
 #include "MapCreator.h"
 
-bool MapCreator::loadMap(int floor)
+void MapCreator::loadMap(int floor)
 {
-	bool status = false;
 	Json::Reader reader;
 	Json::Value mapValue;
 
@@ -10,6 +9,17 @@ bool MapCreator::loadMap(int floor)
 	sprintf_s(fileName, "Data/Map/%d.file", floor);
 
 	std::ifstream is(fileName, std::ios::binary);
+
+	for (unsigned short i = 0; i < 13; i++)
+	{
+		for (unsigned short j = 0; j < 13; j++)
+		{
+			floors[i][j] = new Floor(new Vector2((float)i - 1, (float)j - 1), true);
+			floors[i][j]->init();
+			cells[i][j] = new Floor(new Vector2((float)i - 1, (float)j - 1), false);
+			cells[i][j]->init();
+		}
+	}
 
 	if (reader.parse(is, mapValue))
 	{
@@ -102,12 +112,42 @@ bool MapCreator::loadMap(int floor)
 		upPosition->x = (float)mapValue["upPosition"]["x"].asInt();
 		upPosition->y = (float)mapValue["upPosition"]["y"].asInt();
 	}
-	return status;
+}
+
+void MapCreator::saveMap(int floor)
+{
+	Json::Value mapValue;
+	mapValue["downPosition"]["direction"] = downDirection;
+	mapValue["downPosition"]["x"] = downPosition->x;
+	mapValue["downPosition"]["y"] = downPosition->y;
+	for (int i = 0; i < mapHeight; i++)
+	{
+		for (int j = 0; j < mapWidth; j++)
+		{
+			if (i > 0 && i < 12 && j > 0 && j < 12)
+			{
+				if (objects[i][j] == NULL)
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "";
+				else
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = objects[i][j]->getName();
+			}
+		}
+	}
+	mapValue["upPosition"]["direction"] = upDirection;
+	mapValue["upPosition"]["x"] = upPosition->x;
+	mapValue["upPosition"]["y"] = upPosition->y;
+
+	Json::StyledWriter writer;
+
+	std::ofstream os;
+	char fileName[20];
+	sprintf_s(fileName, "Data/Map/%d_1.file", floor);
+	os.open(fileName);
+	os << writer.write(mapValue);
 }
 
 void MapCreator::createMap2D(int width, int height)
 {
-
 	// 先画地板
 	for (unsigned short i = 0; i < mapWidth; i++)
 	{
@@ -246,7 +286,7 @@ void MapCreator::display(Vector3* position)
 					|| objects[i][j]->getTag() == Tag::ironDoor
 					|| objects[i][j]->getTag() == Tag::prison)
 				{
-					if (i > 1 && j > 1)
+					if (i > 0)
 					{
 						if (objects[i - 1][j] != NULL)
 						{
@@ -267,12 +307,29 @@ void MapCreator::display(Vector3* position)
 
 Vector2* MapCreator::getUpDirection()
 {
-	return nullptr;
+	// (左(0, 1), 右(0, -1), 前(1, 0), 后(-1, 0))
+	if (strcmp(upDirection, "up") == 0)
+		return new Vector2(1, 0);
+	else if (strcmp(upDirection, "down") == 0)
+		return new Vector2(-1, 0);
+	else if (strcmp(upDirection, "left") == 0)
+		return new Vector2(0, 1);
+	else if (strcmp(upDirection, "right") == 0)
+		return new Vector2(0, -1);
+	return NULL;
 }
 
 Vector2* MapCreator::getDownDirection()
 {
-	return nullptr;
+	if (strcmp(downDirection, "up") == 0)
+		return new Vector2(1, 0);
+	else if (strcmp(downDirection, "down") == 0)
+		return new Vector2(-1, 0);
+	else if (strcmp(downDirection, "left") == 0)
+		return new Vector2(0, 1);
+	else if (strcmp(downDirection, "right") == 0)
+		return new Vector2(0, -1);
+	return NULL;
 }
 
 MapCreator::MapCreator()
@@ -283,9 +340,9 @@ MapCreator::MapCreator()
 	{
 		for (unsigned short j = 0; j < 13; j++)
 		{
-			floors[i][j] = new Floor(new Vector2((float)i-1, (float)j-1), true);
+			floors[i][j] = new Floor(new Vector2((float)i - 1, (float)j - 1), true);
 			floors[i][j]->init();
-			cells[i][j] = new Floor(new Vector2((float)i-1, (float)j-1), false);
+			cells[i][j] = new Floor(new Vector2((float)i - 1, (float)j - 1), false);
 			cells[i][j]->init();
 		}
 	}

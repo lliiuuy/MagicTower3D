@@ -162,7 +162,9 @@ void Player::upStairs(Vector2* position, Vector2* direction)
 		spinY = 180; // 后
 	else if (direction->y == -1)
 		spinY = 270; // 右
-	this->positionInMap = position;
+	this->positionInMap->x = position->x;
+	this->positionInMap->y = position->y;
+	this->position = new Vector3(positionInMap->y * lx, ly / 2, positionInMap->x * lz); // 在3D世界中的位置可以按照2DMap中的位置计算
 }
 
 void Player::downStairs(Vector2* position, Vector2* direction)
@@ -177,15 +179,23 @@ void Player::downStairs(Vector2* position, Vector2* direction)
 		spinY = 180; // 后
 	else if (direction->y == -1)
 		spinY = 270; // 右
-	this->positionInMap = position;
+	this->positionInMap->x = position->x;
+	this->positionInMap->y = position->y;
+	this->position = new Vector3(positionInMap->y * lx, ly / 2, positionInMap->x * lz); // 在3D世界中的位置可以按照2DMap中的位置计算
 }
 
 void Player::reciveItems(ConsumbleItem* consumbleItem)
 {
 	if (consumbleItem->getTag() == Tag::sword)
-		this->sword = (Sword*)consumbleItem;
+	{
+		swordTexture = ((Sword*)consumbleItem)->getTexture();
+		swordName = ((Sword*)consumbleItem)->getUIName();
+	}
 	else if (consumbleItem->getTag() == Tag::shield)
-		this->shield = (Shield*)consumbleItem;
+	{
+		shieldTexture = ((Shield*)consumbleItem)->getTexture();
+		shieldName = ((Shield*)consumbleItem)->getUIName();
+	}
 	// 将消耗物品的属性加到人物身上
 	this->health += consumbleItem->getHealth();
 	this->attack += consumbleItem->getAttack();
@@ -197,28 +207,48 @@ void Player::reciveItems(ConsumbleItem* consumbleItem)
 
 void Player::reciveUseItems(UseItem* useItem)
 {
-	useItems->push_back(useItem);
 }
 
 void Player::SetDirection(Vector2* direction)
 {
+	this->direction = direction;
+	if (direction->x == 1)
+		spinY = 0; // 前
+	else if (direction->y == 1)
+		spinY = 90;
+	else if (direction->x == -1)
+		spinY = 180; // 后
+	else if (direction->y == -1)
+		spinY = 270; // 右
+}
+
+void Player::openDoor(int tag)
+{
+	if (tag == 0)
+		yellowKeyNumber--;
+	else if (tag == 1)
+		blueKeyNumber--;
+	else if (tag == 2)
+		redKeyNumber--;
 }
 
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	yellowKeyNumber = 0;
-	blueKeyNumber = 0;
-	redKeyNumber = 0;
+	yellowKeyNumber = 5;
+	blueKeyNumber = 5;
+	redKeyNumber = 5;
 	
 	moveSpeed = 0.1f;
 	positionMoveTo = positionInMap;
 
-	shield = NULL;
-	sword = NULL;
-	
+	swordTexture = 0;
+	swordName = "";
+	shieldTexture = 0;
+	shieldName = "";
+
 	spinY = 0;
 	spinSpeed = 5.0f;
 	useItems = new std::vector<UseItem*>();
 	direction = new Vector2(1, 0);
-	floor = 5;
+	floor = 1;
 }
