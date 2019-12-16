@@ -21,6 +21,8 @@ public:
 
 	void draw2D(int width, int height);
 	void draw3D();
+	void save();
+	void load();
 	void collide();
 	void display(Vector3* position) {}
 

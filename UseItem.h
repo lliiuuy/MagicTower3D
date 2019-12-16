@@ -5,9 +5,10 @@ class UseItem :
 {
 protected:
 	bool loadTexture();
-	unsigned short index;
+	unsigned short index = 0;
 	
-	bool enable;
+	bool enable = false;
+
 public:
 	virtual void useItem() = 0;
 	void draw2D(int width, int height);

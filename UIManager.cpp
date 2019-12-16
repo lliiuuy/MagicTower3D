@@ -242,12 +242,12 @@ void UIManager::draw(Player* player)
 
 	GLuint texture;
 	// 画主动道具
-	for (unsigned short i = 0; i < player->getUseItem()->size(); i++)
-	{
-		int index = (*(player->getUseItem()))[i]->getIndex();
-		texture = (*(player->getUseItem()))[i]->getTexture();
+	//for (unsigned short i = 0; i < player->getUseItem()->size(); i++)
+	//{
+	//	int index = (*(player->getUseItem()))[i]->getIndex();
+	//	texture = (*(player->getUseItem()))[i]->getTexture();
 
-	}
+	//}
 	// 画剑和盾
 	if (player->getSwordTexture() != 0)
 	{

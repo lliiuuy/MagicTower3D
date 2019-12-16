@@ -8,3 +8,11 @@ OldMan::OldMan(Vector2* positionInMap): NPC(positionInMap)
 void OldMan::talk()
 {
 }
+
+void OldMan::save()
+{
+}
+
+void OldMan::load()
+{
+}

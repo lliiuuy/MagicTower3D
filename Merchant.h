@@ -6,5 +6,7 @@ class Merchant :
 public:
 	Merchant(Vector2* positionInMap);
 	void talk() {}
+	void save();
+	void load();
 };
 

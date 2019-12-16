@@ -21,6 +21,9 @@ public:
 	void draw2D(int width, int height);
 	void display(Vector3* position); // NPC³¯×ÅÍæ¼ÒÐý×ª
 
+	virtual void save() = 0;
+	virtual void load() = 0;
+
 	NPC(Vector2* positionInMap);
 };
 

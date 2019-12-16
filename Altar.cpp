@@ -106,6 +106,14 @@ void Altar::draw3D()
 	glDisable(GL_BLEND);
 }
 
+void Altar::save()
+{
+}
+
+void Altar::load()
+{
+}
+
 void Altar::collide()
 {
 }

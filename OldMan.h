@@ -6,5 +6,6 @@ class OldMan :
 public:
 	OldMan(Vector2* positionInMap);
 	void talk();
+	void save();
+	void load();
 };
-

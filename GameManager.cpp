@@ -13,7 +13,7 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	player->load();
+	// player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
 	uiManager->init();
@@ -21,12 +21,12 @@ void GameManager::init()
 
 void GameManager::load()
 {
-	player->load();
+	// player->load();
 }
 
 void GameManager::save()
 {
-	player->save();
+	// player->save();
 }
 
 void GameManager::drawScene()
@@ -117,7 +117,7 @@ void GameManager::movePlayer(bool isUp)
 		bool canOpen = false;
 		if (strcmp(object->getName(), "Yellow Door") == 0)
 		{
-			if (player->getYellowKeyNumber() > 0)
+			if (player->getYellowKeyNumber() > 0 && !((Door*)object)->isOpen())
 			{
 				player->openDoor(0);
 				canOpen = true;

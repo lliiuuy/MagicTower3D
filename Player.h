@@ -42,7 +42,7 @@ private:
 
 	bool loadTexture(); // 读取人物的纹理
 
-	std::vector<UseItem*> *useItems; // 玩家的使用型物品列表
+	UseItem* useItems[12]; // 玩家的使用型物品列表
 
 	GLuint left[4] = { 0 }; // 人物朝左移动的纹理
 	GLuint right[4] = { 0 }; // 人物朝右移动的纹理
@@ -98,7 +98,5 @@ public:
 
 	void load();
 	void save();
-
-	std::vector<UseItem*>* getUseItem() { return useItems; }
 };
 

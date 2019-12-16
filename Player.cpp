@@ -314,9 +314,8 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 
 	spinY = 0;
 	spinSpeed = 5.0f;
-	useItems = new std::vector<UseItem*>();
 	direction = new Vector2(1, 0);
-	floor = 3;
+	floor = 1;
 
 	monster = NULL;
 }
@@ -367,9 +366,11 @@ void Player::save()
 	playerValue["PositionInMap"]["x"] = this->positionInMap->x;
 	playerValue["PositionInMap"]["y"] = this->positionInMap->y;
 	playerValue["Sword"]["Texture"] = this->swordTexture;
-	playerValue["Sword"]["Name"] = this->swordName;
+	if(strcmp(this->swordName, "") != 0)
+		playerValue["Sword"]["Name"] = this->swordName;
 	playerValue["Shield"]["Texture"] = this->shieldTexture;
-	playerValue["Shield"]["Name"] = this->shieldName;
+	if(strcmp(this->swordName, "") != 0)
+		playerValue["Shield"]["Name"] = this->shieldName;
 	playerValue["spinY"] = this->spinY;
 	playerValue["floor"] = this->floor;
 	playerValue["direction"]["x"] = this->direction->x;

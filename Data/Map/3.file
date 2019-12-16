@@ -143,7 +143,7 @@
                      "dialogues":[
                          {"speaker":"Old Man","sentence":"我可以给你怪物手册，它可以预测出当前楼层各类怪物对你的伤害"}
                      ],
-                     "action":"main.help=true;currentMap.mapData[43].element=null;currentMap.mapData[43].dialog=null",
+                     "action":"false",
                      "message":"获得怪物图鉴"
                  }
              ]
