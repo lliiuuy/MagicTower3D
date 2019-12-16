@@ -6,13 +6,14 @@ GameManager::GameManager(int width, int height)
 	mapCreator = new MapCreator();
 	uiManager = new UIManager(width, height);
 	battleController = new BattleController();
-	player = new Player(new Vector2(0, 5));
+	player = new Player(new Vector2(10, 5));
 	this->width = width;
 	this->height = height;
 }
 
 void GameManager::init()
 {
+	player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
 	uiManager->init();
@@ -20,10 +21,12 @@ void GameManager::init()
 
 void GameManager::load()
 {
+	player->load();
 }
 
 void GameManager::save()
 {
+	player->save();
 }
 
 void GameManager::drawScene()
@@ -32,7 +35,14 @@ void GameManager::drawScene()
 
 	glLoadIdentity();
 
+	PlayerStatus playerStatus = player->getStatus();
 	player->display();
+	PlayerStatus playerStatusNow = player->getStatus();
+	if (playerStatus == PlayerStatus::battling && playerStatusNow == PlayerStatus::idle)
+	{
+		uiManager->loadMonster(NULL);
+		audioManager->stop();
+	}
 
 	mapCreator->display(player->getPositon());
 	detectCollision();
@@ -78,12 +88,14 @@ void GameManager::setWindow(int width, int height)
 
 void GameManager::upStairs()
 {
+	mapCreator->saveMap(player->getFloor());
 	player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
 	mapCreator->loadMap(player->getFloor());
 }
 
 void GameManager::downStairs()
 {
+	mapCreator->saveMap(player->getFloor());
 	player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
 	mapCreator->loadMap(player->getFloor());
 }
@@ -92,9 +104,9 @@ void GameManager::movePlayer(bool isUp)
 {
 	Object* object;
 	if (isUp)
-		object = mapCreator->getObject((int)floor(player->getPostionInMap()->x - player->getDirection()->x + 0.5f) + 1, (int)floor(player->getPostionInMap()->y - player->getDirection()->y + 0.5f) + 1);
+		object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - player->getDirection()->x + 0.5f) + 1, (int)floor(player->getPositionInMap()->y - player->getDirection()->y + 0.5f) + 1);
 	else
-		object = mapCreator->getObject((int)floor(player->getPostionInMap()->x + player->getDirection()->x + 0.5f) + 1, (int)floor(player->getPostionInMap()->y + player->getDirection()->y + 0.5f) + 1);
+		object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + player->getDirection()->x + 0.5f) + 1, (int)floor(player->getPositionInMap()->y + player->getDirection()->y + 0.5f) + 1);
 	if (object == NULL)
 	{
 		if (player->getStatus() == PlayerStatus::idle)
@@ -161,7 +173,7 @@ void GameManager::detectCollision()
 {
 	if (player->getStatus() == PlayerStatus::idle)
 	{
-		Object* object = mapCreator->getObject((int)floor(player->getPostionInMap()->x + 0.5f) + 1, (int)floor(player->getPostionInMap()->y + 0.5f) + 1);
+		Object* object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + 0.5f) + 1, (int)floor(player->getPositionInMap()->y + 0.5f) + 1);
 		if (object == NULL)
 			return;
 		if (object->getTag() == Tag::consumbleItem || object->getTag() == Tag::shield || object->getTag() == Tag::sword)
@@ -169,6 +181,12 @@ void GameManager::detectCollision()
 			audioManager->playSound("Data/Audio/get.wav");
 			player->reciveItems((ConsumbleItem*)object);
 			object->destroyThis();
+		}
+		else if (object->getTag() == Tag::monster)
+		{
+			player->battle((Monster*)object);
+			audioManager->playSoundLoop("Data/Audio/battle.wav");
+			uiManager->loadMonster((Monster*)object);
 		}
 	}
 }

@@ -92,3 +92,11 @@ void Monster::draw3D()
 	glPopMatrix();
 	glDisable(GL_BLEND);
 }
+
+void Monster::receiveDamage(unsigned int damage)
+{
+	if (health >= damage)
+		this->health -= damage;
+	else
+		health = 0;
+}

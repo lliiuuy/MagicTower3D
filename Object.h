@@ -33,7 +33,7 @@ public:
 	virtual void display(Vector3* position) = 0; // 看向玩家的函数(通用包括根据自身位置而改变的物体)
 	
 	Tag getTag(); // 获取物体种类
-	Vector2* getPostionInMap(); // 获取物体在小地图中的位置
+	Vector2* getPositionInMap(); // 获取物体在小地图中的位置
 	Vector3* getPositon(); // 获取物体在3D世界中的位置
 
 	void destroyThis() { destroy = true; }

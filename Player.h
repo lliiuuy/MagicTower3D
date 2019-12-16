@@ -3,6 +3,15 @@
 #include "Sword.h"
 #include "Shield.h"
 #include "UseItem.h"
+#include "Monster.h"
+
+#include "json/reader.h"
+#include "json/writer.h"
+#include "json/json.h"
+#include <fstream>
+#include <iostream>
+
+#pragma comment(lib, "json_vc71_libmtd.lib")
 
 class Player :
 	public Creature
@@ -11,6 +20,8 @@ private:
 	unsigned short yellowKeyNumber; // 黄钥匙的数量
 	unsigned short blueKeyNumber; // 蓝钥匙的数量
 	unsigned short redKeyNumber; // 红钥匙的数量
+
+	Monster* monster;
 
 	GLuint swordTexture;
 	char* swordName;
@@ -38,9 +49,13 @@ private:
 	GLuint up[4] = { 0 }; // 人物朝前移动的纹理
 	GLuint down[4] = { 0 }; // 人物朝后移动的纹理
 
+	GLuint battleTexture[1] = { 0 };
+
 	PlayerStatus status;
 
 	unsigned short floor = 1; // 人物所在层数
+
+	void finishBattle() { status = PlayerStatus::idle; }
 public:
 	void move(bool isUp);
 	void spin(bool isLeft);
@@ -77,8 +92,12 @@ public:
 	void SetDirection(Vector2* direction);
 
 	void openDoor(int tag);
+	void battle(Monster* monster);
 
 	Player(Vector2* positionInMap);
+
+	void load();
+	void save();
 
 	std::vector<UseItem*>* getUseItem() { return useItems; }
 };

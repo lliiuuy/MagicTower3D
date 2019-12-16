@@ -1,414 +1,377 @@
 {
-    "bgMusic": "music/sound_1.mp3",
-    "downPosition": {
-        "direction": "right",
-        "x": 0,
-        "y": 1
-    },
-    "floorImage": "floor",
-    "mapData": [
-        {
-            "element": "DownStairs"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Blue Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Gate-Keeper B",
-            "actionAfter":"currentMap.mapData[18].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Gate-Keeper B",
-            "actionAfter":"currentMap.mapData[16].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Old Man",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Old Man","sentence":"谢谢你救了我，为感谢你的帮助，请收下这些礼物(1000金币)"}
-                     ],
-                     "action":"main.money+=1000;currentMap.mapData[43].element=null",
-                     "message":"获得1000金币",
-                     "end":true
-                 }
-             ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Thief"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Merchant",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Merchant","sentence":"谢谢你救了我，我可以用祝福魔法提升你3%的攻击力和防御力，现在就提升吗？"}
-                     ],
-                     "actionAsk":"main.damage*=1.03;main.defense*=1.03;currentMap.mapData[76].element=null;currentMap.mapData[76].dialog=null;",
-                     "end":false
-                 }
-             ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "UpStairs"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "action": "false"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "",
-            "dialog":[
-                {
-                    "condition":"false"
-                }
-            ]
-        }
-    ],
-    "mapFloor": 2,
-    "mapHeight": 11,
-    "mapWidth": 11,
-    "upPosition": {
-        "direction": "right",
-        "x": 10,
-        "y": 1
-    }
+   "downPosition" : {
+      "direction" : "right",
+      "x" : 0.0,
+      "y" : 1.0
+   },
+   "mapData" : [
+      {
+         "element" : "DownStairs"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Blue Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Gate-Keeper B"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Gate-Keeper B"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Old Man"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Thief"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Merchant"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "UpStairs"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      }
+   ],
+   "upPosition" : {
+      "direction" : "right",
+      "x" : 10.0,
+      "y" : 1.0
+   }
 }

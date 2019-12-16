@@ -28,7 +28,7 @@ Tag Object::getTag()
 	return tag;
 }
 
-Vector2* Object::getPostionInMap()
+Vector2* Object::getPositionInMap()
 {
 	return positionInMap;
 }

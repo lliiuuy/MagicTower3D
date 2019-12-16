@@ -349,7 +349,10 @@ void UIManager::draw(Player* player)
 		glEnd();
 
 		sprintf_s(string, "%s", monster->getName());
-		glPrint((int)((float)1328 / 1600 * width), (int)((float)774 / 1200 * height), string, (width * ((float)240 / (strlen(string)* 11.2f))) / 1600);
+		if(strlen(string) > 10)
+			glPrint((int)((float)1328 / 1600 * width), (int)((float)774 / 1200 * height), string, (width * ((float)240 / (strlen(string)* 11.2f))) / 1600);
+		else
+			glPrint((int)((float)1328 / 1600 * width), (int)((float)774 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "%d", monster->getHealth());
 		glPrint((int)((float)1400 / 1600 * width), (int)((float)832 / 1200 * height), string, (2.2f / 1600) * width);
 		sprintf_s(string, "%d", monster->getAttack());

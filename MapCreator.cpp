@@ -5,7 +5,7 @@ void MapCreator::loadMap(int floor)
 	Json::Reader reader;
 	Json::Value mapValue;
 
-	char fileName[20];
+	char fileName[100];
 	sprintf_s(fileName, "Data/Map/%d.file", floor);
 
 	std::ifstream is(fileName, std::ios::binary);
@@ -141,7 +141,7 @@ void MapCreator::saveMap(int floor)
 
 	std::ofstream os;
 	char fileName[20];
-	sprintf_s(fileName, "Data/Map/%d_1.file", floor);
+	sprintf_s(fileName, "Data/Map/%d.file", floor);
 	os.open(fileName);
 	os << writer.write(mapValue);
 }
@@ -295,7 +295,7 @@ void MapCreator::display(Vector3* position)
 						}
 					}
 				}
-				if (objects[i][j]->isDestroy() == true)
+				if (objects[i][j]->isDestroy())
 				{
 					delete objects[i][j];
 					objects[i][j] = NULL;

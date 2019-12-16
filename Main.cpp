@@ -172,4 +172,7 @@ int main()
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
+	gameManager->save();
+
+	return 0;
 }
