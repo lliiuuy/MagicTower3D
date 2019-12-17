@@ -16,6 +16,11 @@ private:
 
 	int width, height; // ÆÁÄ»³¤¿í
 
+	bool usingStairs = false;
+	bool finishUsingStairs = false;
+
+	bool isUpStairs = false;
+
 	void detectCollision();
 public:
 	GameManager(int width, int height);

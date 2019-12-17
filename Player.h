@@ -76,6 +76,7 @@ public:
 
 	void upStairs(Vector2* position, Vector2* direction);
 	void downStairs(Vector2* position, Vector2* direction);
+	void finishUsingStairs() { this->status = PlayerStatus::idle; }
 
 	float getSpinY() { return spinY; }
 
@@ -103,5 +104,8 @@ public:
 
 	void load();
 	void save();
+
+	void setTalking() { this->status = PlayerStatus::talking; }
+	void finishTalking() { this->status = PlayerStatus::idle; }
 };
 

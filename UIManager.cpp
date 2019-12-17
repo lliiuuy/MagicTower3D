@@ -184,6 +184,48 @@ bool UIManager::loadTexture()
 		}
 	}
 
+	sprintf_s(fileName, "Data/UI/UsingStairs.bmp");
+
+	if (textureImage[0] = loadBMP(fileName))
+	{
+		status = true;
+		glGenTextures(1, &usingStairs);
+		glBindTexture(GL_TEXTURE_2D, usingStairs); // 使用纹理中坐标最接近的若干个颜色，通过加权平均算法得到需要绘制的像素颜色
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+	}
+
+	if (textureImage[0])
+	{
+		if (textureImage[0]->data)
+		{
+			free(textureImage[0]->data);
+		}
+		free(textureImage[0]);
+	}
+
+	sprintf_s(fileName, "Data/UI/Dialog.bmp");
+
+	if (textureImage[0] = loadBMP(fileName))
+	{
+		status = true;
+		glGenTextures(1, &dialogTexture);
+		glBindTexture(GL_TEXTURE_2D, dialogTexture); // 使用纹理中坐标最接近的若干个颜色，通过加权平均算法得到需要绘制的像素颜色
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+	}
+
+	if (textureImage[0])
+	{
+		if (textureImage[0]->data)
+		{
+			free(textureImage[0]->data);
+		}
+		free(textureImage[0]);
+	}
+
 	return status;
 }
 
@@ -387,8 +429,115 @@ void UIManager::draw(Player* player)
 		sprintf_s(string, "Defense");
 		glPrint((int)((float)1400 / 1600 * width), (int)((float)948 / 1200 * height), string, (2.2f / 1600) * width);
 	}
-
 	glDisable(GL_BLEND);
+
+	// 楼层移动动画
+	if (isUsingStairs)
+	{
+		if (map[3][3])
+		{
+			direction = new Vector2(1, 0);
+			position = new Vector2(0, 0);
+			isUsingStairs = !isUsingStairs;
+		}
+		else
+		{
+			map[(int)floor(position->x + 0.5f)][(int)floor(position->y + 0.5f)] = true;
+			position->x += direction->x;
+			position->y += direction->y;
+			if ((int)floor(position->x + 0.5f + direction->x) > 12 || (int)floor(position->x + 0.5f + direction->x) < 0 || (int)floor(position->y + direction->y + 0.5f) > 12 || map[(int)floor(position->x + direction->x + 0.5f)][(int)floor(position->y + direction->y + 0.5f)])
+			{
+				if (direction->x == 0 && direction->y == 1)
+					direction = new Vector2(-1, 0);
+				else if (direction->x == 1 && direction->y == 0)
+					direction = new Vector2(0, 1);
+				else if (direction->x == 0 && direction->y == -1)
+					direction = new Vector2(1, 0);
+				else if (direction->x == -1 && direction->y == 0)
+					direction = new Vector2(0, -1);
+			}
+		}
+	}
+	if (isFinishUsingStairs)
+	{
+		if (!map[3][3])
+		{
+			direction = new Vector2(1, 0);
+			position = new Vector2(0, 0);
+			isFinishUsingStairs = !isFinishUsingStairs;
+		}
+		else
+		{
+			map[(int)floor(position->x + 0.5f)][(int)floor(position->y + 0.5f)] = false;
+			position->x += direction->x;
+			position->y += direction->y;
+			if ((int)floor(position->x + direction->x + 0.5f) > 6 || (int)floor(position->x + direction->x + 0.5f) < 0 || (int)floor(position->y + direction->y + 0.5f) > 6 || !map[(int)floor(position->x + direction->x + 0.5f)][(int)floor(position->y + direction->y + 0.5f)])
+			{
+				if (direction->x == 0 && direction->y == 1)
+					direction = new Vector2(-1, 0);
+				else if (direction->x == 1 && direction->y == 0)
+					direction = new Vector2(0, 1);
+				else if (direction->x == 0 && direction->y == -1)
+					direction = new Vector2(1, 0);
+				else if (direction->x == -1 && direction->y == 0)
+					direction = new Vector2(0, -1);
+			}
+		}
+	}
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < 7; j++)
+		{
+			if (map[i][j])
+			{
+				glEnable(GL_TEXTURE_2D); // 开启2D纹理
+				glBindTexture(GL_TEXTURE_2D, usingStairs);		// 选择纹理
+				glBegin(GL_QUADS);
+				glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (300 + i * (1020 / 7)) / 1600, height * ((j + 1) * (1144 / 7)) / 1200);
+				glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (300 + (i + 1) * (1020 / 7)) / 1600, height * ((j + 1) * (1144 / 7)) / 1200);
+				glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (300 + (i + 1) * (1020 / 7)) / 1600, height * (j * (1144 / 7)) / 1200);
+				glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (300 + i * (1020 / 7)) / 1600, height * (j * (1144 / 7)) / 1200);
+				glEnd();
+			}
+		}
+	}
+
+	// 对话框绘制
+	if (dialogDrawing)
+	{
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, dialogTexture);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width* 320 / 1600, height* 690 / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width* 1280 / 1600, height* 690 / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width* 1280 / 1600, height* 50 / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width* 320 / 1600, height* 50 / 1200);
+		glEnd();
+		glEnable(GL_BLEND);
+		char* word = NULL;
+		char* nextWord = NULL;
+		char words[1000];
+		sprintf_s(words, setence);
+		word = strtok_s(words, "#", &nextWord);
+
+		int i = 0;
+		while (word != NULL)
+		{
+			if (word != NULL)
+			{
+				glPrint(width * 320 / 1600, height* (60 + 32 * i)/ 1200, word, width * (float)2 / 1600);
+				word = strtok_s(NULL, "#", &nextWord);
+				i++;
+			}
+		}
+
+		if (isChoose)
+		{
+			glPrint(width * 1170 / 1600, height* 600 / 1200, "Yes", width * (float)2 / 1600);
+			glPrint(width * 1184 / 1600, height* 640 / 1200, "No", width * (float)2 / 1600);
+		}
+		glDisable(GL_BLEND);
+	}
 }
 
 void UIManager::loadMonster(Monster* monster)
@@ -401,6 +550,15 @@ UIManager::UIManager(int width, int height)
 	this->width = width;
 	this->height = height;
 	this->monster = NULL;
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < 7; j++)
+		{
+			map[i][j] = false;
+		}
+	}
+	this->position = new Vector2(0, 0);
+	this->direction = new Vector2(1, 0);
 }
 
 void UIManager::setWindow(int width, int height)
@@ -413,7 +571,7 @@ void UIManager::dialogDraw(char* setence, bool isChoose)
 {
 	this->dialogDrawing = true;
 	sprintf_s(this->setence, setence);
-	this->isChoose = true;
+	this->isChoose = isChoose;
 }
 
 void UIManager::messageDraw(char* message)

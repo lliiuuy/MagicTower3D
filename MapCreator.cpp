@@ -340,6 +340,23 @@ Vector2* MapCreator::getDownDirection()
 	return NULL;
 }
 
+Object* MapCreator::getObject(int x, int y)
+{
+	Object* object = NULL;
+	for (int i = 0; i < mapHeight; i++)
+	{
+		for (int j = 0; j < mapWidth; j++)
+		{
+			if (objects[i][j] != NULL)
+			{
+				if ((int)floor(objects[i][j]->getPositionInMap()->x + 0.5f) == x && (int)floor(objects[i][j]->getPositionInMap()->y + 0.5f) == y)
+					object = objects[i][j];
+			}
+		}
+	}
+	return object;
+}
+
 MapCreator::MapCreator()
 {
 	downPosition = new Vector2(0, 0);

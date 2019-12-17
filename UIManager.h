@@ -3,9 +3,6 @@
 #include "Monster.h"
 #include "Player.h"
 
-// 测试
-#include "GreenSlime.h"
-
 class UIManager
 {
 private:
@@ -16,6 +13,9 @@ private:
 	GLuint font[1] = { 0 }; // 字符串UI
 
 	GLuint key[3] = { 0 }; // 钥匙UI
+
+	GLuint usingStairs = 0; // 上下楼过场所用图片
+	GLuint dialogTexture = 0; // 对话框图片
 
 	int	base = 0; // 用于print文字的渲染列表序号
 	int width, height; // 窗口的大小
@@ -30,12 +30,18 @@ private:
 	Monster* monster; // 用于显示怪物
 
 	bool dialogDrawing = false;
-	char setence[100] = "";
+	char setence[1000] = "";
 	bool isChoose = false;
 	
 	bool messaging = false;
 	char message[100] = "";
 
+	bool map[7][7];
+	Vector2* position;
+	Vector2* direction;
+
+	bool isUsingStairs = false;
+	bool isFinishUsingStairs = false;
 public:
 
 	void draw(Player* player); // 绘画UI
@@ -52,5 +58,11 @@ public:
 	void deleteMessage() { this->messaging = false; }
 
 	bool isDrawingDialog() { return this->dialogDrawing; }
+
+	void useStairs() { isUsingStairs = true; }
+	void finishUsingStaris() { isFinishUsingStairs = true; }
+
+	bool getIsUsingStairs() { return isUsingStairs; }
+	bool getIsFinishUsingStairs() { return isFinishUsingStairs; }
 };
 

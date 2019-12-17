@@ -138,15 +138,17 @@
         },
         {
             "element": "Old Man",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Old Man","sentence":"我可以给你怪物手册，它可以预测出当前楼层各类怪物对你的伤害"}
-                     ],
-                     "action":"false",
-                     "message":"获得怪物图鉴"
-                 }
-             ]
+            "index": "0"
+            "number": "1"
+            "messages":[
+            {
+            	"setence": "I will grant you the orb of the hero. You will now be able to forecast the results of fighting monsters on the current floor. Use it often."
+            	"choose": "false"
+            	"message": "You've found the orb of the hero."
+             	"toNote": "true"
+            }
+            ]
+            "indexOfUseItem": "0"
         },
         {
             "element": ""

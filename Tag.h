@@ -21,7 +21,9 @@ enum class Tag : unsigned short
 enum class PlayerStatus : unsigned short
 {
 	moving,
+	usingStairs,
 	spining,
 	battling,
+	talking,
 	idle,
 };

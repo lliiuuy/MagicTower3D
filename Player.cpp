@@ -261,6 +261,7 @@ void Player::reciveItems(ConsumbleItem* consumbleItem)
 
 void Player::reciveUseItems(UseItem* useItem)
 {
+	this->useItems[useItem->getIndex()]->enableItem();
 }
 
 void Player::SetDirection(Vector2* direction)

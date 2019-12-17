@@ -43,7 +43,7 @@ public:
 	Vector2* getUpDirection();
 	Vector2* getDownDirection();
 
-	Object* getObject(int x, int y) { return objects[x][y]; }
+	Object* getObject(int x, int y);
 
 	MapCreator();
 };
