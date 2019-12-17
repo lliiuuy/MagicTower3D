@@ -9,12 +9,22 @@ protected:
 	
 	bool enable = false;
 
+	float spinY = 0; // Ğı×ª
+
 public:
 	virtual void useItem() = 0;
 	void draw2D(int width, int height);
 	void draw3D();
 	void collide();
-	bool init();
+	void display(Vector3 *position);
+	
+	virtual void save() = 0;
+	virtual void load() = 0;
+
+	bool isEnable() { return enable; }
+
+	void enableItem() { this->enable = true; }
+	void disableItem() { this->enable = false; }
 
 	GLuint getTexture() { return texture[0]; }
 

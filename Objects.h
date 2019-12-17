@@ -37,4 +37,8 @@
 #include "IronSword.h"
 #include "IronShield.h"
 
+#include "TheOrbOfTheHero.h"
+#include "TheOrbOfWisdom.h"
+#include "TheOrbOfFlying.h"
+
 #include "Player.h"

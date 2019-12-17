@@ -170,7 +170,9 @@
     <ClCompile Include="SkeletonB.cpp" />
     <ClCompile Include="SkeletonC.cpp" />
     <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="TheOrbOfFlying.cpp" />
     <ClCompile Include="TheOrbOfTheHero.cpp" />
+    <ClCompile Include="TheOrbOfWisdom.cpp" />
     <ClCompile Include="Thief.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UpStairs.cpp" />
@@ -224,7 +226,9 @@
     <ClInclude Include="SkeletonC.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tag.h" />
+    <ClInclude Include="TheOrbOfFlying.h" />
     <ClInclude Include="TheOrbOfTheHero.h" />
+    <ClInclude Include="TheOrbOfWisdom.h" />
     <ClInclude Include="Thief.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UpStairs.h" />

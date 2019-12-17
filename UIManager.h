@@ -29,7 +29,12 @@ private:
 	bool loadTexture(); // 将bitmap转成纹理
 	Monster* monster; // 用于显示怪物
 
+	bool dialogDrawing = false;
 	char* setence = "";
+	bool isChoose = false;
+	
+	bool messaging = false;
+	char* message = "";
 
 public:
 
@@ -38,7 +43,10 @@ public:
 	bool init();
 	UIManager(int width, int height);
 	void setWindow(int width, int height);
-	void dialog(char* message, bool isAction);
-	void message(char* message);
+	void dialogDraw(char* message, bool isChoose);
+	void messageDraw(char* message);
+
+	void closeDialog() { this->dialogDrawing = false; }
+	void deleteMessage() { this->messaging = false; }
 };
 

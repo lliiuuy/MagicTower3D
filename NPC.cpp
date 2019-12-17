@@ -90,6 +90,8 @@ void NPC::display(Vector3* position)
 NPC::NPC(Vector2* positionInMap): Object(positionInMap)
 {
 	this->tag = Tag::NPC;
-	this->indexOfMessage = 0;
+	this->indexOfMessages = 0;
+	this->numberofMessages = 0;
 	this->index = 0;
+	this->messages = new std::vector<Message*>();
 }

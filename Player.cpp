@@ -318,6 +318,27 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	floor = 1;
 
 	monster = NULL;
+
+	for (int i = 0; i < 15; i++)
+	{
+		switch (i)
+		{
+		case 0:
+			useItems[i] = new TheOrbOfTheHero(new Vector2(-1, -1));
+			useItems[i]->init();
+			break;
+		case 1:
+			useItems[i] = new TheOrbOfWisdom(new Vector2(-1, -1));
+			useItems[i]->init();
+			break;
+		case 2:
+			useItems[i] = new TheOrbOfFlying(new Vector2(-1, -1));
+			useItems[i]->init();
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void Player::load()

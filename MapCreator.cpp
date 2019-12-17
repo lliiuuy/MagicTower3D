@@ -103,6 +103,12 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = new Thief(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Altar") == 0)
 						objects[i][j] = new Altar(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "The orb of the hero") == 0)
+						objects[i][j] = new TheOrbOfTheHero(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "The orb of flying") == 0)
+						objects[i][j] = new TheOrbOfFlying(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "The orb of wisdom") == 0)
+						objects[i][j] = new TheOrbOfWisdom(new Vector2((float)i - 1, (float)j - 1));
 				}
 				if (objects[i][j] != NULL)
 					objects[i][j]->init();
@@ -258,8 +264,9 @@ void MapCreator::createMap3D()
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::monster 
-					|| objects[i][j]->getTag() == Tag::consumbleItem 
+				if (objects[i][j]->getTag() == Tag::monster
+					|| objects[i][j]->getTag() == Tag::consumbleItem
+					|| objects[i][j]->getTag() == Tag::useItem
 					|| objects[i][j]->getTag() == Tag::sword 
 					|| objects[i][j]->getTag() == Tag::shield)
 					objects[i][j]->draw3D();
@@ -276,7 +283,8 @@ void MapCreator::display(Vector3* position)
 		{
 			if (objects[i][j] != NULL)
 			{
-				if (objects[i][j]->getTag() == Tag::consumbleItem 
+				if (objects[i][j]->getTag() == Tag::consumbleItem
+					|| objects[i][j]->getTag() == Tag::useItem
 					|| objects[i][j]->getTag() == Tag::monster 
 					|| objects[i][j]->getTag() == Tag::NPC
 					|| objects[i][j]->getTag() == Tag::sword

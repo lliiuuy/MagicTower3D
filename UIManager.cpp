@@ -197,6 +197,7 @@ bool UIManager::init()
 
 void UIManager::draw(Player* player)
 {
+	// 画左边的UI
 	glEnable(GL_TEXTURE_2D); // 开启2D纹理
 	glBindTexture(GL_TEXTURE_2D, left[0]);		// 选择纹理
 	glBegin(GL_QUADS);
@@ -205,7 +206,7 @@ void UIManager::draw(Player* player)
 	glTexCoord2f(1.0f, 1.0f); glVertex2d(width * 3 / 16, 0);
 	glTexCoord2f(0.0f, 1.0f); glVertex2d(0, 0);
 	glEnd();
-
+	// 画右边的UI框
 	glEnable(GL_TEXTURE_2D); // 开启2D纹理
 	glBindTexture(GL_TEXTURE_2D, right[0]);		// 选择纹理
 	glBegin(GL_QUADS);
@@ -214,7 +215,7 @@ void UIManager::draw(Player* player)
 	glTexCoord2f(1.0f, 1.0f); glVertex2d(width, 0);
 	glTexCoord2f(0.0f, 1.0f); glVertex2d(width * 13 / 16, 0);
 	glEnd();
-
+	// 画底下的信息框
 	glEnable(GL_TEXTURE_2D); // 开启2D纹理
 	glBindTexture(GL_TEXTURE_2D, bottom[0]);		// 选择纹理
 	glBegin(GL_QUADS);
@@ -225,6 +226,9 @@ void UIManager::draw(Player* player)
 	glEnd();
 
 	glEnable(GL_BLEND);
+	// 显示message
+	if (messaging)
+		glPrint(width * 5 / 1600, height * ((1200 * 20 / 21) + 5) / 1200, this->message, (float)3 / 1600 * width);
 
 	char string[100];
 	// 显示层数
@@ -242,12 +246,24 @@ void UIManager::draw(Player* player)
 
 	GLuint texture;
 	// 画主动道具
-	//for (unsigned short i = 0; i < player->getUseItem()->size(); i++)
-	//{
-	//	int index = (*(player->getUseItem()))[i]->getIndex();
-	//	texture = (*(player->getUseItem()))[i]->getTexture();
-
-	//}
+	for (unsigned short i = 0; i < 15; i++)
+	{
+		if (player->getUseItems()[i] != NULL)
+		{
+			if ((player->getUseItems()[i])->isEnable())
+			{
+				texture = (player->getUseItems()[i])->getTexture();
+				glEnable(GL_TEXTURE_2D); // 开启2D纹理
+				glBindTexture(GL_TEXTURE_2D, texture);		// 选择纹理
+				glBegin(GL_QUADS);
+				glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (76 + 75 * (i % 3) - 36) / 1600, height * (596 + 88 * (i / 3) + 36) / 1200);
+				glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (76 + 75 * (i % 3) + 36) / 1600, height * (596 + 88 * (i / 3) + 36) / 1200);
+				glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (76 + 75 * (i % 3) + 36) / 1600, height * (596 + 88 * (i / 3) - 36) / 1200);
+				glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (76 + 75 * (i % 3) - 36) / 1600, height * (596 + 88 * (i / 3) - 36) / 1200);
+				glEnd();
+			}
+		}
+	}
 	// 画剑和盾
 	if (player->getSwordTexture() != 0)
 	{
@@ -385,6 +401,8 @@ UIManager::UIManager(int width, int height)
 	this->width = width;
 	this->height = height;
 	this->monster = NULL;
+	this->message = "12345678521356134718931289741263164671";
+	this->messaging = true;
 }
 
 void UIManager::setWindow(int width, int height)
@@ -393,12 +411,15 @@ void UIManager::setWindow(int width, int height)
 	this->height = height;
 }
 
-void UIManager::dialog(char* setence, bool isAction)
+void UIManager::dialogDraw(char* setence, bool isChoose)
 {
+	this->dialogDrawing = true;
 	this->setence = setence;
+	this->isChoose = true;
 }
 
-void UIManager::message(char* message)
+void UIManager::messageDraw(char* message)
 {
-
+	this->messaging = true;
+	this->message = message;
 }

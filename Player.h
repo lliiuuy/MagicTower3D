@@ -4,6 +4,7 @@
 #include "Shield.h"
 #include "UseItem.h"
 #include "Monster.h"
+#include "Objects.h"
 
 #include "json/reader.h"
 #include "json/writer.h"
@@ -42,7 +43,7 @@ private:
 
 	bool loadTexture(); // 读取人物的纹理
 
-	UseItem* useItems[12]; // 玩家的使用型物品列表
+	UseItem* useItems[15]; // 玩家的使用型物品列表
 
 	GLuint left[4] = { 0 }; // 人物朝左移动的纹理
 	GLuint right[4] = { 0 }; // 人物朝右移动的纹理
@@ -91,10 +92,14 @@ public:
 	Vector2* getDirection() { return direction; }
 	void SetDirection(Vector2* direction);
 
+	void purchase(int money) { this->money -= money; }
+
 	void openDoor(int tag);
 	void battle(Monster* monster);
 
 	Player(Vector2* positionInMap);
+
+	UseItem** getUseItems() { return useItems; }
 
 	void load();
 	void save();

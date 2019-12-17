@@ -1,7 +1,8 @@
 #include "Message.h"
 
-Message::Message(char* message, bool action)
+Message::Message(char* message, bool choose, bool toNote)
 {
 	this->message = message;
-	this->action = action;
+	this->choose = choose;
+	this->toNote = toNote;
 }

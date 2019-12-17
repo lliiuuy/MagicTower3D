@@ -1,12 +1,15 @@
 #pragma once
 #include "Object.h"
+#include "Message.h"
+
 class NPC :
 	public Object
 {
 protected:
-	std::vector<char*> messages; // 与人物的对话
+	std::vector<Message*> *messages; // 与人物的对话
 
-	unsigned short indexOfMessage = 0; // 记录对话进行到第几句
+	unsigned short numberofMessages = 0; // 记录一共有几条对话
+	unsigned short indexOfMessages = 0; // 记录对话进行到第几句
 	unsigned short index = 0; // 记录加载第几张texture
 
 	float spinY = 0; // NPC旋转的角度
@@ -14,6 +17,8 @@ protected:
 	virtual void talk() = 0; // 与人物对话
 
 	bool loadTexture();
+
+	bool choosing = false;
 
 public:
 	void collide();

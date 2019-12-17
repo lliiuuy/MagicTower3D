@@ -6,6 +6,8 @@ class TheOrbOfTheHero :
 {
 public:
 	void useItem();
+	void save();
+	void load();
 	TheOrbOfTheHero(Vector2* positionInMap);
 };
 

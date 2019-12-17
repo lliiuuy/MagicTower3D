@@ -261,6 +261,12 @@
     <ClCompile Include="Thief.cpp">
       <Filter>源文件\Objects\NPCs</Filter>
     </ClCompile>
+    <ClCompile Include="TheOrbOfWisdom.cpp">
+      <Filter>源文件\Objects\Items\UseItem</Filter>
+    </ClCompile>
+    <ClCompile Include="TheOrbOfFlying.cpp">
+      <Filter>源文件\Objects\Items\UseItem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -418,6 +424,12 @@
     </ClInclude>
     <ClInclude Include="Thief.h">
       <Filter>头文件\Objects\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="TheOrbOfWisdom.h">
+      <Filter>头文件\Objects\Items\UseItems</Filter>
+    </ClInclude>
+    <ClInclude Include="TheOrbOfFlying.h">
+      <Filter>头文件\Objects\Items\UseItems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

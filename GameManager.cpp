@@ -102,7 +102,9 @@ void GameManager::downStairs()
 
 void GameManager::movePlayer(bool isUp)
 {
-	Object* object;
+	if (player->getStatus() == PlayerStatus::idle)
+		player->move(isUp);
+	/*Object* object;
 	if (isUp)
 		object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - player->getDirection()->x + 0.5f) + 1, (int)floor(player->getPositionInMap()->y - player->getDirection()->y + 0.5f) + 1);
 	else
@@ -160,7 +162,7 @@ void GameManager::movePlayer(bool isUp)
 	{
 		if (player->getStatus() == PlayerStatus::idle)
 			player->move(isUp);
-	}
+	}*/
 }
 
 void GameManager::spinPlayer(bool isLeft)
