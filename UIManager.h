@@ -30,11 +30,11 @@ private:
 	Monster* monster; // 用于显示怪物
 
 	bool dialogDrawing = false;
-	char* setence = "";
+	char setence[100] = "";
 	bool isChoose = false;
 	
 	bool messaging = false;
-	char* message = "";
+	char message[100] = "";
 
 public:
 
@@ -46,7 +46,11 @@ public:
 	void dialogDraw(char* message, bool isChoose);
 	void messageDraw(char* message);
 
+	Monster* getMonster() { return monster; }
+
 	void closeDialog() { this->dialogDrawing = false; }
 	void deleteMessage() { this->messaging = false; }
+
+	bool isDrawingDialog() { return this->dialogDrawing; }
 };
 

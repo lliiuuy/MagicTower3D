@@ -38,10 +38,16 @@ void GameManager::drawScene()
 	PlayerStatus playerStatus = player->getStatus();
 	player->display();
 	PlayerStatus playerStatusNow = player->getStatus();
-	if (playerStatus == PlayerStatus::battling && playerStatusNow == PlayerStatus::idle)
+	if (uiManager->getMonster() != NULL)
 	{
-		uiManager->loadMonster(NULL);
-		audioManager->stop();
+		if (uiManager->getMonster()->isDestroy())
+		{
+			char message[100];
+			sprintf_s(message, "You've beat %s. Receive %d Gold", uiManager->getMonster()->getName(), uiManager->getMonster()->getMoney());
+			uiManager->messageDraw(message);
+			uiManager->loadMonster(NULL);
+			audioManager->stop();
+		}
 	}
 
 	mapCreator->display(player->getPositon());
@@ -180,8 +186,11 @@ void GameManager::detectCollision()
 			return;
 		if (object->getTag() == Tag::consumbleItem || object->getTag() == Tag::shield || object->getTag() == Tag::sword)
 		{
+			char message[100];
+			sprintf_s(message, "You,ve found a %s", object->getName());
 			audioManager->playSound("Data/Audio/get.wav");
 			player->reciveItems((ConsumbleItem*)object);
+			uiManager->messageDraw(message);
 			object->destroyThis();
 		}
 		else if (object->getTag() == Tag::monster)

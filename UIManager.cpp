@@ -401,8 +401,6 @@ UIManager::UIManager(int width, int height)
 	this->width = width;
 	this->height = height;
 	this->monster = NULL;
-	this->message = "12345678521356134718931289741263164671";
-	this->messaging = true;
 }
 
 void UIManager::setWindow(int width, int height)
@@ -414,12 +412,12 @@ void UIManager::setWindow(int width, int height)
 void UIManager::dialogDraw(char* setence, bool isChoose)
 {
 	this->dialogDrawing = true;
-	this->setence = setence;
+	sprintf_s(this->setence, setence);
 	this->isChoose = true;
 }
 
 void UIManager::messageDraw(char* message)
 {
 	this->messaging = true;
-	this->message = message;
+	sprintf_s(this->message, message);
 }
