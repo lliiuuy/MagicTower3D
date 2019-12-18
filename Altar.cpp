@@ -67,7 +67,7 @@ void Altar::draw2D(int width, int height)
 void Altar::draw3D()
 {
 	counter++;
-	if (counter >= 5)
+	if (counter >= 10)
 	{
 		index = index == 1 ? 0 : 1;
 		counter = 0;
@@ -106,11 +106,13 @@ void Altar::draw3D()
 	glDisable(GL_BLEND);
 }
 
-void Altar::save()
+std::string Altar::save()
 {
+	std::string jsonString;
+	return jsonString;
 }
 
-void Altar::load()
+void Altar::load(std::string jsonString)
 {
 }
 

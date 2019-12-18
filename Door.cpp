@@ -37,6 +37,7 @@ bool Door::loadTexture()
 
 void Door::openDoor()
 {
+	AudioManager::playSound("Data/Audio/open.wav");
 	this->open = true;
 }
 
@@ -51,7 +52,7 @@ void Door::draw3D()
 	{
 		glEnable(GL_BLEND);
 		counter++;
-		if (counter == 5)
+		if (counter == 10)
 		{
 			counter = 0;
 			index++;

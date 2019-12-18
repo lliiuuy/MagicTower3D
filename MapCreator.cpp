@@ -43,6 +43,11 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = NULL;
 					else if (strcmp(element, "Wall") == 0)
 						objects[i][j] = new Wall(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Broken Wall") == 0)
+					{
+						objects[i][j] = new Wall(new Vector2((float)i - 1, (float)j - 1));
+						((Wall*)objects[i][j])->setBrokenWall();
+					}
 					else if (strcmp(element, "Yellow Door") == 0)
 						objects[i][j] = new YellowDoor(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Door") == 0)
@@ -50,9 +55,17 @@ void MapCreator::loadMap(int floor)
 					else if (strcmp(element, "Red Door") == 0)
 						objects[i][j] = new RedDoor(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Iron Door") == 0)
+					{
 						objects[i][j] = new IronDoor(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((IronDoor*)objects[i][j])->load(jsonString);
+					}
 					else if (strcmp(element, "Prison") == 0)
+					{
 						objects[i][j] = new Prison(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((Prison*)objects[i][j])->load(jsonString);
+					}
 					else if (strcmp(element, "UpStairs") == 0)
 					{
 						cells[i][j] = NULL;
@@ -63,6 +76,7 @@ void MapCreator::loadMap(int floor)
 						floors[i][j] = NULL;
 						objects[i][j] = new DownStairs(new Vector2((float)i - 1, (float)j - 1));
 					}
+					// 怪物
 					else if (strcmp(element, "Green Slime") == 0)
 						objects[i][j] = new GreenSlime(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Red Slime") == 0)
@@ -75,8 +89,13 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = new SkeletonC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "SkeletonB") == 0)
 						objects[i][j] = new SkeletonB(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "SkeletonA") == 0)
+						objects[i][j] = new SkeletonA(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "Gate-Keeper C") == 0)
+						objects[i][j] = new GateKeeperC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Gate-Keeper B") == 0)
 						objects[i][j] = new GateKeeperB(new Vector2((float)i - 1, (float)j - 1));
+					// 道具
 					else if (strcmp(element, "Yellow Key") == 0)
 						objects[i][j] = new YellowKey(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Blue Key") == 0)
@@ -95,14 +114,24 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = new IronSword(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Iron Shield") == 0)
 						objects[i][j] = new IronShield(new Vector2((float)i - 1, (float)j - 1));
+					// NPC
 					else if (strcmp(element, "Old Man") == 0)
+					{
 						objects[i][j] = new OldMan(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((OldMan*)objects[i][j])->load(jsonString);
+					}
 					else if (strcmp(element, "Merchant") == 0)
+					{
 						objects[i][j] = new Merchant(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((Merchant*)objects[i][j])->load(jsonString);
+					}
 					else if (strcmp(element, "Thief") == 0)
 						objects[i][j] = new Thief(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Altar") == 0)
 						objects[i][j] = new Altar(new Vector2((float)i - 1, (float)j - 1));
+					// 主动道具
 					else if (strcmp(element, "The orb of the hero") == 0)
 						objects[i][j] = new TheOrbOfTheHero(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "The orb of flying") == 0)
@@ -288,7 +317,8 @@ void MapCreator::display(Vector3* position)
 					|| objects[i][j]->getTag() == Tag::monster 
 					|| objects[i][j]->getTag() == Tag::NPC
 					|| objects[i][j]->getTag() == Tag::sword
-					|| objects[i][j]->getTag() == Tag::shield)
+					|| objects[i][j]->getTag() == Tag::shield
+					|| objects[i][j]->getTag() == Tag::wall)
 					objects[i][j]->display(position);
 				else if (objects[i][j]->getTag() == Tag::door
 					|| objects[i][j]->getTag() == Tag::ironDoor
@@ -300,6 +330,20 @@ void MapCreator::display(Vector3* position)
 						{
 							if (objects[i - 1][j]->getTag() == Tag::wall)
 								objects[i][j]->display(position);
+						}
+						if (objects[i][j]->getTag() == Tag::ironDoor && !((Door*)objects[i][j])->isOpen())
+						{
+							Vector2* guardPosition = ((IronDoor*)objects[i][j])->getGuardPosition();
+							Vector2* otherGuardPosition = ((IronDoor*)objects[i][j])->getOtherGuardPosition();
+							if (objects[(int)guardPosition->x + 1][(int)guardPosition->y + 1] == NULL && objects[(int)otherGuardPosition->x + 1][(int)otherGuardPosition->y + 1] == NULL)
+								((Door*)objects[i][j])->collide();
+						}
+						else if(objects[i][j]->getTag() == Tag::prison && !((Door*)objects[i][j])->isOpen())
+						{
+							Vector2* guardPosition = ((Prison*)objects[i][j])->getGuardPosition();
+							Vector2* otherGuardPosition = ((Prison*)objects[i][j])->getOtherGuardPosition();
+							if (objects[(int)guardPosition->x + 1][(int)guardPosition->y + 1] == NULL && objects[(int)otherGuardPosition->x + 1][(int)otherGuardPosition->y + 1] == NULL)
+								((Door*)objects[i][j])->collide();
 						}
 					}
 				}

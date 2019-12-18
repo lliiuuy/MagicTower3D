@@ -145,6 +145,7 @@
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GateKeeperB.cpp" />
+    <ClCompile Include="GateKeeperC.cpp" />
     <ClCompile Include="GreenSlime.cpp" />
     <ClCompile Include="IronDoor.cpp" />
     <ClCompile Include="IronShield.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="RedMedicine.cpp" />
     <ClCompile Include="RedSlime.cpp" />
     <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="SkeletonA.cpp" />
     <ClCompile Include="SkeletonB.cpp" />
     <ClCompile Include="SkeletonC.cpp" />
     <ClCompile Include="Sword.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="Floor.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GateKeeperB.h" />
+    <ClInclude Include="GateKeeperC.h" />
     <ClInclude Include="GreenSlime.h" />
     <ClInclude Include="IronDoor.h" />
     <ClInclude Include="IronShield.h" />
@@ -222,6 +225,7 @@
     <ClInclude Include="RedMedicine.h" />
     <ClInclude Include="RedSlime.h" />
     <ClInclude Include="Shield.h" />
+    <ClInclude Include="SkeletonA.h" />
     <ClInclude Include="SkeletonB.h" />
     <ClInclude Include="SkeletonC.h" />
     <ClInclude Include="Sword.h" />

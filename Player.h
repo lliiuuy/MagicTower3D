@@ -6,14 +6,6 @@
 #include "Monster.h"
 #include "Objects.h"
 
-#include "json/reader.h"
-#include "json/writer.h"
-#include "json/json.h"
-#include <fstream>
-#include <iostream>
-
-#pragma comment(lib, "json_vc71_libmtd.lib")
-
 class Player :
 	public Creature
 {
@@ -23,6 +15,7 @@ private:
 	unsigned short redKeyNumber; // 红钥匙的数量
 
 	Monster* monster;
+	NPC* npc;
 
 	GLuint swordTexture;
 	char* swordName;
@@ -97,6 +90,11 @@ public:
 
 	void openDoor(int tag);
 	void battle(Monster* monster);
+	void talk(NPC* npc);
+	void action(); // 和NPC互动获得道具
+
+	NPC* getNPC() { return this->npc; }
+	void endTalk() { this->npc = NULL; this->status = PlayerStatus::idle; }
 
 	Player(Vector2* positionInMap);
 
@@ -104,8 +102,5 @@ public:
 
 	void load();
 	void save();
-
-	void setTalking() { this->status = PlayerStatus::talking; }
-	void finishTalking() { this->status = PlayerStatus::idle; }
 };
 

@@ -38,12 +38,13 @@ bool NPC::loadTexture()
 
 void NPC::collide()
 {
+	talk();
 }
 
 void NPC::draw3D()
 {
 	counter++;
-	if (counter >= 5)
+	if (counter >= 10)
 	{
 		index = index == 1 ? 0 : 1;
 		counter = 0;

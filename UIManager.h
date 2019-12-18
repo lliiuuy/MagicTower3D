@@ -2,6 +2,7 @@
 #include "Config.h"
 #include "Monster.h"
 #include "Player.h"
+#include "AudioManager.h"
 
 class UIManager
 {
@@ -30,7 +31,7 @@ private:
 	Monster* monster; // 用于显示怪物
 
 	bool dialogDrawing = false;
-	char setence[1000] = "";
+	char sentence[1000] = "";
 	bool isChoose = false;
 	
 	bool messaging = false;
@@ -59,8 +60,16 @@ public:
 
 	bool isDrawingDialog() { return this->dialogDrawing; }
 
-	void useStairs() { isUsingStairs = true; }
-	void finishUsingStaris() { isFinishUsingStairs = true; }
+	void useStairs() 
+	{ 
+		isUsingStairs = true; 
+		AudioManager::playSound("Data/Audio/usingStairs.wav");
+	}
+	void finishUsingStaris() 
+	{ 
+		isFinishUsingStairs = true; 
+		AudioManager::playSound("Data/Audio/usingStairs.wav");
+	}
 
 	bool getIsUsingStairs() { return isUsingStairs; }
 	bool getIsFinishUsingStairs() { return isFinishUsingStairs; }

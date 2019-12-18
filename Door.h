@@ -1,5 +1,7 @@
 #pragma once
 #include "Obstacle.h"
+#include "AudioManager.h"
+
 class Door :
 	public Obstacle
 {

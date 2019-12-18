@@ -2,11 +2,10 @@
 
 GameManager::GameManager(int width, int height)
 {
-	audioManager = new AudioManager();
 	mapCreator = new MapCreator();
 	uiManager = new UIManager(width, height);
 	battleController = new BattleController();
-	player = new Player(new Vector2(0, 1));
+	player = new Player(new Vector2(10, 5));
 	this->width = width;
 	this->height = height;
 }
@@ -56,7 +55,6 @@ void GameManager::drawScene()
 	{
 		this->finishUsingStairs = false;
 		player->finishUsingStairs();
-		audioManager->stop();
 	}
 
 	player->display();
@@ -68,7 +66,6 @@ void GameManager::drawScene()
 			sprintf_s(message, "You've beat %s. Receive %d Gold", uiManager->getMonster()->getName(), uiManager->getMonster()->getMoney());
 			uiManager->messageDraw(message);
 			uiManager->loadMonster(NULL);
-			audioManager->stop();
 		}
 	}
 
@@ -97,6 +94,17 @@ void GameManager::drawScene()
 
 	uiManager->draw(player);
 
+	if (player->getStatus() == PlayerStatus::talking)
+	{
+		if(player->getNPC()->isEndTalking())
+			uiManager->dialogDraw(player->getNPC()->getEndSentence(), false);
+		else
+		{
+			uiManager->dialogDraw(player->getNPC()->getSentence(), player->getNPC()->isChoose());
+			uiManager->messageDraw(player->getNPC()->getMessage());
+		}
+	}
+
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
@@ -117,7 +125,6 @@ void GameManager::setWindow(int width, int height)
 void GameManager::upStairs()
 {
 	// mapCreator->saveMap(player->getFloor());
-	audioManager->playSoundLoop("Data/Audio/usingStairs.wav");
 	this->usingStairs = true;
 	this->isUpStairs = true;
 	uiManager->useStairs();
@@ -125,7 +132,6 @@ void GameManager::upStairs()
 
 void GameManager::downStairs()
 {
-	audioManager->playSoundLoop("Data/Audio/usingStairs.wav");
 	this->usingStairs = true;
 	this->isUpStairs = false;
 	uiManager->useStairs();
@@ -134,7 +140,8 @@ void GameManager::downStairs()
 void GameManager::movePlayer(bool isUp)
 {
 	// 移动player的时候，关闭底部message显示
-	uiManager->deleteMessage();
+	if(player->getStatus() == PlayerStatus::idle)
+		uiManager->deleteMessage();
 
 	Object* object;
 	if (isUp)
@@ -179,13 +186,18 @@ void GameManager::movePlayer(bool isUp)
 			char message[100];
 			sprintf_s(message, "The door has opened");
 			uiManager->messageDraw(message);
-			audioManager->playSound("Data/Audio/open.wav");
 			object->collide();
 		}
 	}
 	else if (object->getTag() == Tag::NPC && player->getStatus() == PlayerStatus::idle)
 	{
-
+		object->collide();
+		player->talk((NPC*)object);
+		if (player->getNPC()->isAction() && !player->getNPC()->isChoose())
+		{
+			AudioManager::playSound("Data/Audio/get.wav");
+			player->action();
+		}
 	}
 	else if (object->getTag() == Tag::upStairs && player->getStatus() == PlayerStatus::idle)
 	{
@@ -201,8 +213,11 @@ void GameManager::movePlayer(bool isUp)
 		uiManager->messageDraw(message);
 		downStairs();
 	}
-	else if (object->getTag() != Tag::wall
-		&& object->getTag() != Tag::prison
+	else if (object->getTag() == Tag::wall && player->getStatus() == PlayerStatus::idle)
+	{
+		object->collide();
+	}
+	else if (object->getTag() != Tag::prison
 		&& object->getTag() != Tag::ironDoor)
 	{
 		if (player->getStatus() == PlayerStatus::idle)
@@ -216,6 +231,60 @@ void GameManager::spinPlayer(bool isLeft)
 		player->spin(isLeft);
 }
 
+void GameManager::mouseButtonClick(int x, int y)
+{
+	if (player->getStatus() == PlayerStatus::talking)
+	{
+		if (player->getNPC()->isChoose())
+		{
+			// 选中Yes
+			if (x > width * 1150 / 1600 && x < width * 1250 / 1600 && y > height * 590 / 1200 && y < height * 630 / 1200)
+			{
+				if (strcmp(player->getNPC()->getName(), "Merchant") == 0)
+				{
+					if ((int)player->getMoney() > ((Merchant*)player->getNPC())->getCost())
+					{
+						((Merchant*)player->getNPC())->setCanBuy(true);
+						AudioManager::playSound("Data/Audio/get.wav");
+						player->action();
+					}
+					player->getNPC()->nextSentence();
+					if (!player->getNPC()->isTalking())
+					{
+						player->endTalk();
+						uiManager->closeDialog();
+					}
+				}
+				else if (strcmp(player->getNPC()->getName(), "Altar") == 0)
+				{
+					if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
+						player->getNPC()->nextSentence();
+					if (!player->getNPC()->isTalking())
+					{
+						player->endTalk();
+						uiManager->closeDialog();
+					}
+				}
+			}
+			// 选中No
+			else if (x > width * 1174 / 1600 && x < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
+			{
+				player->endTalk();
+				uiManager->closeDialog();
+			}
+		}
+		else
+		{
+			player->getNPC()->nextSentence();
+			if (!player->getNPC()->isTalking())
+			{
+				player->endTalk();
+				uiManager->closeDialog();
+			}
+		}
+	}
+}
+
 void GameManager::detectCollision()
 {
 	if (player->getStatus() == PlayerStatus::idle)
@@ -227,7 +296,7 @@ void GameManager::detectCollision()
 			{
 				char message[100];
 				sprintf_s(message, "You've found a %s", object->getName());
-				audioManager->playSound("Data/Audio/get.wav");
+				AudioManager::playSound("Data/Audio/get.wav");
 				player->reciveItems((ConsumbleItem*)object);
 				uiManager->messageDraw(message);
 				object->destroyThis();
@@ -235,7 +304,6 @@ void GameManager::detectCollision()
 			else if (object->getTag() == Tag::monster)
 			{
 				player->battle((Monster*)object);
-				audioManager->playSoundLoop("Data/Audio/battle.wav");
 				uiManager->loadMonster((Monster*)object);
 			}
 			else if (object->getTag() == Tag::useItem)
@@ -243,7 +311,7 @@ void GameManager::detectCollision()
 				char message[100];
 				sprintf_s(message, "You've found a %s", object->getName());
 				uiManager->messageDraw(message);
-				audioManager->playSound("Data/Audio/get.wav");
+				AudioManager::playSound("Data/Audio/get.wav");
 				player->reciveUseItems((UseItem*)object);
 			}
 		}

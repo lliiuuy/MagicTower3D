@@ -1,8 +1,10 @@
 #include "Message.h"
 
-Message::Message(char* message, bool choose, bool toNote)
+Message::Message(const char* sentence, const char* message, bool choose, bool toNote, bool action)
 {
-	this->message = message;
+	sprintf_s(this->sentence, sentence);
+	sprintf_s(this->message, message);
 	this->choose = choose;
 	this->toNote = toNote;
+	this->action = action;
 }

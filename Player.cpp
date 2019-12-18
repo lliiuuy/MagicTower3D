@@ -137,18 +137,10 @@ void Player::display()
 	else if (status == PlayerStatus::battling)
 	{
 		counter++;
-		if (counter == 5)
+		if (counter == 15)
 		{
+			AudioManager::playSound("Data/Audio/battle.wav");
 			if (index == 0)
-			{
-				int damage = monster->getAttack() - defence;
-				if (damage < 0)
-					damage = 0;
-				health -= damage;
-				if (health < 0)
-					health = 0;
-			}
-			else
 			{
 				int damage = attack - monster->getDefence();
 				if (damage < 0)
@@ -160,6 +152,15 @@ void Player::display()
 					finishBattle();
 					monster->destroyThis();
 				}
+			}
+			else
+			{
+				int damage = monster->getAttack() - defence;
+				if (damage < 0)
+					damage = 0;
+				health -= damage;
+				if (health < 0)
+					health = 0;
 			}
 			index++;
 			counter = 0;
@@ -174,7 +175,7 @@ void Player::draw2D(int width, int height)
 	if (status == PlayerStatus::moving)
 	{
 		counter++;
-		if (counter == 2)
+		if (counter == 4)
 		{
 			index++;
 			counter = 0;
@@ -294,18 +295,48 @@ void Player::battle(Monster* monster)
 	this->index = 0;
 }
 
+void Player::talk(NPC* npc)
+{
+	this->status = PlayerStatus::talking;
+	this->npc = npc;
+}
+
+void Player::action()
+{
+	if (strcmp(npc->getName(), "Old Man") == 0)
+	{
+		if(((OldMan*)npc)->getIndexOfUseItems() > -1)
+		this->useItems[((OldMan*)npc)->getIndexOfUseItems()]->enableItem();
+	}
+	else if (strcmp(npc->getName(), "Merchant") == 0)
+	{
+		this->money -= ((Merchant*)npc)->getCost();
+		this->yellowKeyNumber += ((Merchant*)npc)->getYellowKeyNumber();
+		this->blueKeyNumber += ((Merchant*)npc)->getBlueKeyNumber();
+		this->redKeyNumber += ((Merchant*)npc)->getRedKeyNumber();
+	}
+	else if (strcmp(npc->getName(), "Altar") == 0)
+	{
+
+	}
+	else if (strcmp(npc->getName(), "Thief") == 0)
+	{
+
+	}
+}
+
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	yellowKeyNumber = 5;
-	blueKeyNumber = 5;
-	redKeyNumber = 5;
+	yellowKeyNumber = 100;
+	blueKeyNumber = 8;
+	redKeyNumber = 8;
 
 	health = 1000;
-	attack = 10;
+	attack = 1000;
 	defence = 10;
 	money = 0;
 	
-	moveSpeed = 0.1f;
+	moveSpeed = 0.05f;
 	positionMoveTo = positionInMap;
 
 	swordTexture = 0;
@@ -314,7 +345,7 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	shieldName = "";
 
 	spinY = 0;
-	spinSpeed = 5.0f;
+	spinSpeed = 2.5f;
 	direction = new Vector2(1, 0);
 	floor = 1;
 

@@ -5,7 +5,7 @@ bool fullScreen = false; // 是否全屏
 
 GameManager* gameManager;
 
-unsigned short adjust = 5;
+unsigned short adjust = 4;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
 struct			 											// 计时器的结构体
@@ -134,7 +134,7 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 	double posX, posY;
 	glfwGetCursorPos(window ,&posX, &posY);
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
-		printf("%f, %f\n", posX, posY);
+		gameManager->mouseButtonClick((int)posX, (int)posY);
 }
 
 void cursorPosCallback(GLFWwindow* window, double x, double y)

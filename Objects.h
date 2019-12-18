@@ -27,6 +27,8 @@
 #include "Priest.h"
 #include "SkeletonC.h"
 #include "SkeletonB.h"
+#include "SkeletonA.h"
+#include "GateKeeperC.h"
 #include "GateKeeperB.h"
 
 #include "OldMan.h"

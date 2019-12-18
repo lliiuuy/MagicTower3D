@@ -45,16 +45,19 @@
         },
         {
             "element": "Old Man",
-             "dialog":[
-                  {
-                      "dialogues":[
-                          {"speaker":"Old Man","sentence":"有些门不能用钥匙打开，只有当你打败它的守卫后才会自动打开"}
-                      ],
-                      "action":"currentMap.mapData[9].element=null",
-                      "toNote":"true",
-                      "end":true
-                  }
-              ]
+            "messages":[
+                 {
+                    "sentence": "There are doors which cannot be opened with#a key; these doors can only open by beating#the monsters which guard them.",
+                    "message":"",
+                    "choose": false,
+                    "toNote": true,
+                    "action": false
+                 }
+             ],
+            "index": 0,
+            "number": 1,
+            "indexOfUseItem": -1,
+            "endTalking": false
         },
         {
             "element": ""

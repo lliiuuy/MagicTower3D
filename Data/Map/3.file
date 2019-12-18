@@ -138,17 +138,19 @@
         },
         {
             "element": "Old Man",
-            "index": "0"
-            "number": "1"
-            "messages":[
-            {
-            	"setence": "I will grant you the orb of the hero. You will now be able to forecast the results of fighting monsters on the current floor. Use it often."
-            	"choose": "false"
-            	"message": "You've found the orb of the hero."
-             	"toNote": "true"
-            }
-            ]
-            "indexOfUseItem": "0"
+      		"messages":[
+                 {
+                 	"sentence": "I will grant you the orb of the hero. You will#now be able to forecast the results of fighting#monsters on the current floor. Use it often.",
+                    "message":"You've found the orb of the hero.",
+                    "choose": false,
+                    "toNote": false,
+                    "action": true
+                 }
+             ],
+            "index": 0,
+            "number": 1,
+            "indexOfUseItem": 0,
+            "endTalking": false
         },
         {
             "element": ""

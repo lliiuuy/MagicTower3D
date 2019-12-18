@@ -8,7 +8,6 @@
 class GameManager
 {
 private:
-	AudioManager* audioManager;
 	MapCreator* mapCreator;
 	BattleController* battleController;
 	UIManager* uiManager;
@@ -20,6 +19,8 @@ private:
 	bool finishUsingStairs = false;
 
 	bool isUpStairs = false;
+
+	bool talking = false;
 
 	void detectCollision();
 public:
@@ -33,5 +34,6 @@ public:
 	void downStairs(); // ÏÂÂ¥
 	void movePlayer(bool isUp); // ÒÆ¶¯Íæ¼Ò
 	void spinPlayer(bool isLeft);
+	void mouseButtonClick(int x, int y);
 };
 

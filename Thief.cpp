@@ -5,10 +5,12 @@ Thief::Thief(Vector2* positionInMap): NPC(positionInMap)
 	this->name = "Thief";
 }
 
-void Thief::save()
+std::string Thief::save()
 {
+	std::string jsonString;
+	return jsonString;
 }
 
-void Thief::load()
+void Thief::load(std::string jsonString)
 {
 }

@@ -267,6 +267,12 @@
     <ClCompile Include="TheOrbOfFlying.cpp">
       <Filter>源文件\Objects\Items\UseItem</Filter>
     </ClCompile>
+    <ClCompile Include="GateKeeperC.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonA.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -430,6 +436,12 @@
     </ClInclude>
     <ClInclude Include="TheOrbOfFlying.h">
       <Filter>头文件\Objects\Items\UseItems</Filter>
+    </ClInclude>
+    <ClInclude Include="GateKeeperC.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonA.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

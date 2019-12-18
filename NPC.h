@@ -18,7 +18,10 @@ protected:
 
 	bool loadTexture();
 
-	bool choosing = false;
+	bool talking = false;
+	bool endTalking = false;
+
+	char endSentence[100] = "";
 
 public:
 	void collide();
@@ -26,8 +29,28 @@ public:
 	void draw2D(int width, int height);
 	void display(Vector3* position); // NPC³¯×ÅÍæ¼ÒÐý×ª
 
-	virtual void save() = 0;
-	virtual void load() = 0;
+	virtual std::string save() = 0;
+	virtual void load(std::string jsonString) = 0;
+
+	virtual void nextSentence() 
+	{
+		if (indexOfMessages + 1 >= numberofMessages)
+		{
+			talking = false;
+			endTalking = true;
+		}
+		else
+			indexOfMessages++;
+	}
+
+	char* getEndSentence() { return endSentence; }
+
+	char* getSentence() { return messages->at(indexOfMessages)->getSentence(); }
+	char* getMessage() { return messages->at(indexOfMessages)->getMessage(); }
+	bool isChoose() { return messages->at(indexOfMessages)->isChoose(); }
+	bool isAction() { return messages->at(indexOfMessages)->isAction(); }
+	bool isEndTalking() { return endTalking; }
+	bool isTalking() { return talking; }
 
 	NPC(Vector2* positionInMap);
 };

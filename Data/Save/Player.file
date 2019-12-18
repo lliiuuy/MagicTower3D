@@ -1,0 +1,25 @@
+{
+   "PositionInMap" : {
+      "x" : 7.999996185302734,
+      "y" : 0.0
+   },
+   "Shield" : {
+      "Texture" : 0
+   },
+   "Sword" : {
+      "Texture" : 0
+   },
+   "attack" : 10,
+   "blueKeyNumber" : 5,
+   "defence" : 10,
+   "direction" : {
+      "x" : 1.0,
+      "y" : 0.0
+   },
+   "floor" : 2,
+   "health" : 1000,
+   "money" : 0,
+   "redKeyNumber" : 5,
+   "spinY" : 0.0,
+   "yellowKeyNumber" : 5
+}

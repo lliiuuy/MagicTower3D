@@ -517,7 +517,7 @@ void UIManager::draw(Player* player)
 		char* word = NULL;
 		char* nextWord = NULL;
 		char words[1000];
-		sprintf_s(words, setence);
+		sprintf_s(words, sentence);
 		word = strtok_s(words, "#", &nextWord);
 
 		int i = 0;
@@ -525,7 +525,7 @@ void UIManager::draw(Player* player)
 		{
 			if (word != NULL)
 			{
-				glPrint(width * 320 / 1600, height* (60 + 32 * i)/ 1200, word, width * (float)2 / 1600);
+				glPrint(width * 320 / 1600, height* (60 +40 * i)/ 1200, word, width * (float)2 / 1600);
 				word = strtok_s(NULL, "#", &nextWord);
 				i++;
 			}
@@ -567,10 +567,10 @@ void UIManager::setWindow(int width, int height)
 	this->height = height;
 }
 
-void UIManager::dialogDraw(char* setence, bool isChoose)
+void UIManager::dialogDraw(char* sentence, bool isChoose)
 {
 	this->dialogDrawing = true;
-	sprintf_s(this->setence, setence);
+	sprintf_s(this->sentence, sentence);
 	this->isChoose = isChoose;
 }
 

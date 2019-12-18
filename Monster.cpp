@@ -71,7 +71,7 @@ void Monster::draw2D(int width, int height)
 void Monster::draw3D()
 {
 	counter++;
-	if (counter >= 5)
+	if (counter >= 10)
 	{
 		index = index == 1 ? 0 : 1;
 		counter = 0;

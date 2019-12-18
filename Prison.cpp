@@ -1,9 +1,11 @@
 #include "Prison.h"
 
-Prison::Prison(Vector2* positionInMap): Door(positionInMap)
+Prison::Prison(Vector2* positionInMap) : Door(positionInMap)
 {
 	this->tag = Tag::prison;
 	this->name = "Prison";
+	this->guardPosition = new Vector2(0, 0);
+	this->otherGuardPosition = new Vector2(0, 0);
 }
 
 void Prison::draw2D(int width, int height)
@@ -26,12 +28,12 @@ void Prison::draw3D()
 	{
 		glEnable(GL_BLEND);
 		counter++;
-		if (counter == 5)
+		if (counter == 10)
 		{
 			counter = 0;
 			index++;
 			if (index == 3)
-				index = 0;
+				destroy = true;
 		}
 	}
 	glEnable(GL_BLEND);
@@ -56,4 +58,17 @@ void Prison::draw3D()
 	glPopMatrix();
 
 	glDisable(GL_BLEND);
+}
+
+void Prison::load(std::string jsonString)
+{
+	Json::Value data;
+	Json::Reader reader;
+	if (reader.parse(jsonString, data))
+	{
+		guardPosition->x = (float)data["position"][(Json::UInt)0]["x"].asDouble();
+		guardPosition->y = (float)data["position"][(Json::UInt)0]["y"].asDouble();
+		otherGuardPosition->x = (float)data["position"][(Json::UInt)1]["x"].asDouble();
+		otherGuardPosition->y = (float)data["position"][(Json::UInt)1]["y"].asDouble();
+	}
 }

@@ -18,3 +18,11 @@
 #include<GL\GLAUX.H>
 #include<GL\GLU.h>
 #include<GLFW\glfw3.h>
+
+#include "json/reader.h"
+#include "json/writer.h"
+#include "json/json.h"
+#include <fstream>
+#include <iostream>
+
+#pragma comment(lib, "json_vc71_libmtd.lib")
