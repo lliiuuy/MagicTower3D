@@ -138,6 +138,7 @@
     <ClCompile Include="BlueJewel.cpp" />
     <ClCompile Include="BlueKey.cpp" />
     <ClCompile Include="BlueMedicine.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="ConsumbleItem.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Door.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="BlueJewel.h" />
     <ClInclude Include="BlueKey.h" />
     <ClInclude Include="BlueMedicine.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="ConsumbleItem.h" />
     <ClInclude Include="Creature.h" />

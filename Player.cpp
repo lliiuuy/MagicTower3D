@@ -243,12 +243,12 @@ void Player::reciveItems(ConsumbleItem* consumbleItem)
 	if (consumbleItem->getTag() == Tag::sword)
 	{
 		swordTexture = ((Sword*)consumbleItem)->getTexture();
-		swordName = ((Sword*)consumbleItem)->getUIName();
+		sprintf_s(swordName, ((Sword*)consumbleItem)->getUIName());
 	}
 	else if (consumbleItem->getTag() == Tag::shield)
 	{
 		shieldTexture = ((Shield*)consumbleItem)->getTexture();
-		shieldName = ((Shield*)consumbleItem)->getUIName();
+		sprintf_s(shieldName, ((Shield*)consumbleItem)->getUIName());
 	}
 
 	// 将消耗物品的属性加到人物身上
@@ -317,7 +317,20 @@ void Player::action()
 	}
 	else if (strcmp(npc->getName(), "Altar") == 0)
 	{
-
+		this->money -= ((Altar*)npc)->getCost();
+		unsigned short i = ((Altar*)npc)->getIndexOfChoose();
+		switch (i)
+		{
+		case 0:
+			this->health += ((Altar*)npc)->getHealth();
+			break;
+		case 1:
+			this->attack += ((Altar*)npc)->getAttack();
+			break;
+		case 2:
+			this->defence += ((Altar*)npc)->getDefence();
+			break;
+		}
 	}
 	else if (strcmp(npc->getName(), "Thief") == 0)
 	{
@@ -327,12 +340,12 @@ void Player::action()
 
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	yellowKeyNumber = 100;
-	blueKeyNumber = 8;
-	redKeyNumber = 8;
+	yellowKeyNumber = 0;
+	blueKeyNumber = 0;
+	redKeyNumber = 0;
 
 	health = 1000;
-	attack = 1000;
+	attack = 10;
 	defence = 10;
 	money = 0;
 	
@@ -340,9 +353,7 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	positionMoveTo = positionInMap;
 
 	swordTexture = 0;
-	swordName = "";
 	shieldTexture = 0;
-	shieldName = "";
 
 	spinY = 0;
 	spinSpeed = 2.5f;
@@ -392,13 +403,12 @@ void Player::load()
 		this->redKeyNumber = playerValue["redKeyNumber"].asUInt();
 		this->positionInMap->x = (float)playerValue["PositionInMap"]["x"].asDouble();
 		this->positionInMap->y = (float)playerValue["PositionInMap"]["y"].asDouble();
+		this->position->x = positionInMap->y * lx;
+		this->position->z = positionInMap->x * lz;
 		this->swordTexture = playerValue["Sword"]["Texture"].asInt();
-		char temp[20];
-		sprintf_s(temp, playerValue["Sword"]["Name"].asCString());
-		this->swordName = temp;
+		sprintf_s(swordName, playerValue["Sword"]["Name"].asCString());
 		this->shieldTexture = playerValue["Shield"]["Texture"].asInt();
-		sprintf_s(temp, playerValue["Shield"]["Name"].asCString());
-		this->shieldName = temp;
+		sprintf_s(shieldName, playerValue["Shield"]["Name"].asCString());
 		this->spinY = (float)playerValue["spinY"].asDouble();
 		this->floor = playerValue["floor"].asUInt();
 		this->direction->x = (float)playerValue["direction"]["x"].asDouble();
@@ -419,11 +429,9 @@ void Player::save()
 	playerValue["PositionInMap"]["x"] = this->positionInMap->x;
 	playerValue["PositionInMap"]["y"] = this->positionInMap->y;
 	playerValue["Sword"]["Texture"] = this->swordTexture;
-	if(strcmp(this->swordName, "") != 0)
-		playerValue["Sword"]["Name"] = this->swordName;
+	playerValue["Sword"]["Name"] = swordName;
 	playerValue["Shield"]["Texture"] = this->shieldTexture;
-	if(strcmp(this->swordName, "") != 0)
-		playerValue["Shield"]["Name"] = this->shieldName;
+	playerValue["Shield"]["Name"] = shieldName;
 	playerValue["spinY"] = this->spinY;
 	playerValue["floor"] = this->floor;
 	playerValue["direction"]["x"] = this->direction->x;

@@ -1,0 +1,435 @@
+{
+    "bgMusic": "music/sound_3.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 1
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[2].element=\"brown_fake_wall\";currentMap.mapData[2].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[3].element=\"brown_fake_wall\";currentMap.mapData[3].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[4].element=\"brown_fake_wall\";currentMap.mapData[4].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[12].element=\"brown_fake_wall\";currentMap.mapData[12].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[23].element=\"brown_fake_wall\";currentMap.mapData[23].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[25].element=\"brown_fake_wall\";currentMap.mapData[25].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[26].element=\"brown_fake_wall\";currentMap.mapData[26].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[29].element=\"brown_fake_wall\";currentMap.mapData[29].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[30].element=\"brown_fake_wall\";currentMap.mapData[30].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[31].element=\"brown_fake_wall\";currentMap.mapData[31].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[34].element=\"brown_fake_wall\";currentMap.mapData[34].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[37].element=\"brown_fake_wall\";currentMap.mapData[37].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[40].element=\"brown_fake_wall\";currentMap.mapData[40].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[42].element=\"brown_fake_wall\";currentMap.mapData[42].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[45].element=\"brown_fake_wall\";currentMap.mapData[45].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[46].element=\"brown_fake_wall\";currentMap.mapData[46].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[47].element=\"brown_fake_wall\";currentMap.mapData[47].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[48].element=\"brown_fake_wall\";currentMap.mapData[48].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[51].element=\"brown_fake_wall\";currentMap.mapData[51].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[52].element=\"brown_fake_wall\";currentMap.mapData[52].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[53].element=\"brown_fake_wall\";currentMap.mapData[53].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[67].element=\"brown_fake_wall\";currentMap.mapData[67].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[68].element=\"brown_fake_wall\";currentMap.mapData[68].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[69].element=\"brown_fake_wall\";currentMap.mapData[69].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[70].element=\"brown_fake_wall\";currentMap.mapData[70].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[72].element=\"brown_fake_wall\";currentMap.mapData[72].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[73].element=\"brown_fake_wall\";currentMap.mapData[73].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[74].element=\"brown_fake_wall\";currentMap.mapData[74].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[75].element=\"brown_fake_wall\";currentMap.mapData[75].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[78].element=\"brown_fake_wall\";currentMap.mapData[78].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[81].element=\"brown_fake_wall\";currentMap.mapData[81].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[83].element=\"brown_fake_wall\";currentMap.mapData[83].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[89].element=\"brown_fake_wall\";currentMap.mapData[89].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[92].element=\"brown_fake_wall\";currentMap.mapData[92].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[94].element=\"brown_fake_wall\";currentMap.mapData[94].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[95].element=\"brown_fake_wall\";currentMap.mapData[95].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[96].element=\"brown_fake_wall\";currentMap.mapData[96].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[100].element=\"brown_fake_wall\";currentMap.mapData[100].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[101].element=\"brown_fake_wall\";currentMap.mapData[101].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[102].element=\"brown_fake_wall\";currentMap.mapData[102].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[103].element=\"brown_fake_wall\";currentMap.mapData[103].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[105].element=\"brown_fake_wall\";currentMap.mapData[105].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"currentMap.mapData[116].element=\"brown_fake_wall\";currentMap.mapData[116].action=\"\";main.gameArgs[floor_23_wall]+=1"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"blue_old","sentence":"我没有什么可说的，但有一个确切的消息藏在这个楼层里。"}
+                     ],
+                     "action":"currentMap.mapData[120].element=\"\";currentMap.mapData[120].dialog[0]=null",
+                     "toNote":"true",
+                     "end":true
+                 }
+             ]
+        }
+    ],
+    "mapFloor": 23,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 1
+    }
+}

@@ -1,0 +1,400 @@
+{
+    "bgMusic": "music/sound_3.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 1
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "cyan_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[46].actionAfter=null"
+        },
+        {
+            "element": "red_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[47].actionAfter=null"
+        },
+        {
+            "element": "green_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[48].actionAfter=null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "green_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[50].actionAfter=null"
+        },
+        {
+            "element": "red_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[51].actionAfter=null"
+        },
+        {
+            "element": "cyan_slime",
+            "actionAfter":"currentMap.mapData[46].element!=\"cyan_slime\"&&currentMap.mapData[47].element!=\"red_slime\"&&currentMap.mapData[48].element!=\"green_slime\"&&\
+                           currentMap.mapData[50].element!=\"green_slime\"&&currentMap.mapData[51].element!=\"red_slime\"&&currentMap.mapData[52].element!=\"cyan_slime\"\
+                           ?currentMap.mapData[38].element=\"\":null;currentMap.mapData[52].actionAfter=null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        }
+    ],
+    "mapFloor": 30,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 5,
+        "y": 9
+    }
+}

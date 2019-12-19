@@ -130,7 +130,11 @@ void MapCreator::loadMap(int floor)
 					else if (strcmp(element, "Thief") == 0)
 						objects[i][j] = new Thief(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Altar") == 0)
+					{
 						objects[i][j] = new Altar(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((Altar*)objects[i][j])->load(jsonString);
+					}
 					// 主动道具
 					else if (strcmp(element, "The orb of the hero") == 0)
 						objects[i][j] = new TheOrbOfTheHero(new Vector2((float)i - 1, (float)j - 1));
@@ -151,6 +155,7 @@ void MapCreator::loadMap(int floor)
 
 void MapCreator::saveMap(int floor)
 {
+	Json::Reader reader;
 	Json::Value mapValue;
 	mapValue["downPosition"]["direction"] = downDirection;
 	mapValue["downPosition"]["x"] = downPosition->x;
@@ -163,6 +168,24 @@ void MapCreator::saveMap(int floor)
 			{
 				if (objects[i][j] == NULL)
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "";
+				else if (strcmp(objects[i][j]->getName(), "Merchant") == 0)
+				{
+					std::string jsonString = ((Merchant*)objects[i][j])->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Merchant";
+				}
+				else if (strcmp(objects[i][j]->getName(), "Old Man") == 0)
+				{
+					std::string jsonString = ((OldMan*)objects[i][j])->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Old Man";
+				}
+				else if (strcmp(objects[i][j]->getName(), "Altar") == 0)
+				{
+					std::string jsonString = ((Merchant*)objects[i][j])->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Altar";
+				}
 				else
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = objects[i][j]->getName();
 			}

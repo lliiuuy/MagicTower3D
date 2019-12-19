@@ -25,5 +25,6 @@ enum class PlayerStatus : unsigned short
 	spining,
 	battling,
 	talking,
+	shoping,
 	idle,
 };

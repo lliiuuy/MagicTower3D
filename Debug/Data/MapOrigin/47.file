@@ -1,0 +1,448 @@
+{
+    "bgMusic": "music/sound_5.mp3",
+    "downPosition": {
+        "direction": "down",
+        "x": 0,
+        "y": 1
+    },
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "stair_up"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[18].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_old",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_old","sentence":"你给我4000个金币，我就给你地震卷轴，它可以摧毁一层楼的所有墙。"}
+                     ],
+                     "actionAsk":"main.money>=4000?main.money-=4000,currentMap.mapData[15].dialog[0]=null,main.tools[kraft]=information.tools[kraft]:null"
+                 },
+                 {
+                      "dialogues":[
+                          {"speaker":"red_old","sentence":"如果要打败魔龙你需要圣剑、圣盾、屠龙匕或更高等级的装备。"}
+                      ],
+                      "action":"currentMap.mapData[15].element=\"\";currentMap.mapData[15].dialog=null",
+                      "toNote":"true"
+                  }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[18].element==\"scarlet_wizard\"&&currentMap.mapData[17].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "scarlet_wizard",
+            "actionAfter":"currentMap.mapData[7].action=null;currentMap.mapData[17].action=null;currentMap.mapData[19].action=null;currentMap.mapData[29].action=null;"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[18].element==\"scarlet_wizard\"&&currentMap.mapData[19].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_jewel_5"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[37].element==\"scarlet_wizard\"&&currentMap.mapData[26].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[18].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "slime_king"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[37].element==\"scarlet_wizard\"&&currentMap.mapData[36].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "scarlet_wizard",
+            "actionAfter":"currentMap.mapData[36].action=null;currentMap.mapData[26].action=null;\
+                           currentMap.mapData[49].element==\"\"?currentMap.mapData[38].action=null,currentMap.mapData[48].action=null:null"
+
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[37].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.gameArgs[st_shield_state]==0&&currentMap.mapData[49].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[52].element==\"sackcloth_wizard\"&&currentMap.mapData[41].element==\"\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_bat"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[37].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.gameArgs[st_shield_state]==0&&currentMap.mapData[49].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "sackcloth_wizard",
+            "actionAfter":"currentMap.mapData[50].action=null;currentMap.mapData[60].action=null;\
+                           currentMap.mapData[37].element==\"\"?currentMap.mapData[38].action=null,currentMap.mapData[48].action=null:null"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[49].element==\"sackcloth_wizard\"&&currentMap.mapData[50].element==\"\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[52].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "sackcloth_wizard",
+            "actionAfter":"currentMap.mapData[41].action=null;currentMap.mapData[51].action=null;currentMap.mapData[53].action=null;currentMap.mapData[63].action=null;"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[52].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[49].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[52].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_bat"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "blue_key"
+        },
+        {
+            "element": "yellow_key"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[88].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "blue_door"
+        },
+        {
+            "element": "red_jewel_5"
+        },
+        {
+            "element": "blue_jewel_5"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "scarlet_wizard",
+            "actionAfter":"currentMap.mapData[77].action=null;currentMap.mapData[89].action=null;currentMap.mapData[99].action=null;"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[88].element==\"scarlet_wizard\"&&currentMap.mapData[89].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "slime_king"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[88].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "red_hp_5"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[114].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "red_jewel_5"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[114].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "sackcloth_wizard",
+            "actionAfter":"currentMap.mapData[103].action=null;currentMap.mapData[113].action=null;currentMap.mapData[115].action=null;"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[114].element==\"sackcloth_wizard\"?main.hp-=100:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "yellow_door"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "stair_down"
+        }
+    ],
+    "mapFloor": 47,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "upPosition": {
+        "direction": "down",
+        "x": 10,
+        "y": 9
+    }
+}

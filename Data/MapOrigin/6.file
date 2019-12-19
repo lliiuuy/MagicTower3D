@@ -1,409 +1,427 @@
 {
-    "bgMusic": "music/sound_1.mp3",
-    "downPosition": {
-        "direction": "down",
-        "x": 10,
-        "y": 9
-    },
-    "floorImage": "floor",
-    "mapData": [
-        {
-            "element": "DownStairs"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Priest"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Green Slime"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Slime"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Merchant",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Merchant","sentence":"我有一把蓝钥匙，你出50个金币就卖给你。"}
-                     ],
-                     "actionAsk":"main.money>=50?main.money-=50,main.keys[blueKey]+=1,currentMap.mapData[40].dialog[0]=null:null",
-                     "end":false
-                 },
-                 {
-                      "dialogues":[
-                          {"speaker":"Merchant","sentence":"魔塔一共50层，每10层为一个区域。如果不打败此区域的头目就不能到更高的地方。"}
-                      ],
-                      "action":"currentMap.mapData[40].element=\"\";currentMap.mapData[40].dialog=null",
-                      "toNote":"true",
-                      "end":true
-                  }
-
-             ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Bat"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Red Slime"
-        },
-        {
-            "element": "Priest"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "SkeletonB"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Priest"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Old Man",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Old Man","sentence":"你购买了礼物后再与商人对话，他会告诉你一些重要的消息。"}
-                     ],
-                     "action":"currentMap.mapData[80].element=\"\";currentMap.mapData[80].dialog=null",
-                     "toNote":"true"
-                 }
-             ]
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Bat"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Blue Jewel"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Slime"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Slime"
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Green Slime"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "UpStairs"
-        }
-    ],
-    "mapFloor": 6,
-    "mapHeight": 11,
-    "mapWidth": 11,
-    "upPosition": {
-        "direction": "down",
-        "x": 0,
-        "y": 1
-    }
+   "downPosition" : {
+      "direction" : "down",
+      "x" : 1.0,
+      "y" : 0.0
+   },
+   "mapData" : [
+      {
+         "element" : "DownStairs"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Priest"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Green Slime"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "SkeletonC"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "blueKeyNumber" : 1,
+         "cost" : 50,
+         "element" : "Merchant",
+         "endTalking" : false,
+         "index" : 0,
+         "messages" : [
+            {
+               "action" : true,
+               "choose" : true,
+               "messsage" : "",
+               "sentence" : "I will sell a blue key at very special#price(50 gold)! Will you buy it?",
+               "toNote" : false
+            },
+            {
+               "action" : false,
+               "choose" : false,
+               "messsage" : "",
+               "sentence" : "You don't have enough money.",
+               "toNote" : false
+            },
+            {
+               "action" : false,
+               "choose" : false,
+               "messsage" : "",
+               "sentence" : "Thank you very much.",
+               "toNote" : false
+            },
+            {
+               "action" : false,
+               "choose" : false,
+               "messsage" : "",
+               "sentence" : "Here is a magic tower of 50 stories. Every#ten stories form one area. The boss whom#controls each area, are posted in this tower. And#if you don't beat them, you cannot ascend from# there",
+               "toNote" : true
+            }
+         ],
+         "number" : 4,
+         "redKeyNumber" : 0,
+         "yellowKeyNumber" : 0
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Bat"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
+         "element" : "Priest"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "SkeletonC"
+      },
+      {
+         "element" : "SkeletonB"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Priest"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Old Man",
+         "endTalking" : false,
+         "index" : 0,
+         "indexOfUseItem" : 65535,
+         "messages" : [
+            {
+               "action" : false,
+               "choose" : false,
+               "messsage" : "",
+               "sentence" : "If you buy goods from merchants, you#will be able to hear important information later.",
+               "toNote" : true
+            }
+         ],
+         "number" : 1
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Bat"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Blue Jewel"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Green Slime"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "SkeletonC"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "UpStairs"
+      }
+   ],
+   "upPosition" : {
+      "direction" : "up",
+      "x" : 9.0,
+      "y" : 10.0
+   }
 }

@@ -11,9 +11,10 @@ private:
 
 	bool canBuy = false;
 
+	void talk() { this->talking = true; }
+
 public:
 	Merchant(Vector2* positionInMap);
-	void talk() { this->talking = true; }
 	std::string save();
 	void load(std::string jsonString);
 

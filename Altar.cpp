@@ -109,20 +109,53 @@ void Altar::draw3D()
 std::string Altar::save()
 {
 	std::string jsonString;
+	Json::Value value;
+	value["index"] = this->indexOfMessages;
+	value["number"] = this->numberofMessages;
+	value["health"] = this->health;
+	value["attack"] = this->attack;
+	value["defence"] = this->defence;
+	value["cost"] = this->cost;
+	for (int i = 0; i < numberofMessages; i++)
+	{
+		value["messages"][i]["sentence"] = messages->at(i)->getSentence();
+		value["messages"][i]["messsage"] = messages->at(i)->getMessage();
+		value["messages"][i]["toNote"] = messages->at(i)->isToNote();
+		value["messages"][i]["choose"] = messages->at(i)->isChoose();
+		value["messages"][i]["action"] = messages->at(i)->isAction();
+	}
+	jsonString = value.toStyledString();
 	return jsonString;
 }
 
 void Altar::load(std::string jsonString)
 {
+	Json::Value data;
+	Json::Reader reader;
+	if (reader.parse(jsonString, data))
+	{
+		this->indexOfMessages = data["index"].asInt();
+		this->numberofMessages = data["number"].asInt();
+		this->health = data["health"].asInt();
+		this->attack = data["attack"].asInt();
+		this->defence = data["defence"].asInt();
+		this->cost = data["cost"].asInt();
+
+		Message* message;
+		for (int i = 0; i < numberofMessages; i++)
+		{
+			if (data["messages"][i]["message"].isNull())
+				message = new Message(data["messages"][i]["sentence"].asCString(), "", data["messages"][i]["choose"].asBool(), data["messages"][i]["toNote"].asBool(), data["messages"][i]["action"].asBool());
+			else
+				message = new Message(data["messages"][i]["sentence"].asCString(), data["messages"][i]["message"].asCString(), data["messages"][i]["choose"].asBool(), data["messages"][i]["toNote"].asBool(), data["messages"][i]["action"].asBool());
+			messages->push_back(message);
+		}
+	}
 }
 
-void Altar::collide()
-{
-}
-
-Altar::Altar(Vector2* positionInMap): Object(positionInMap)
+Altar::Altar(Vector2* positionInMap): NPC(positionInMap)
 {
 	this->name = "Altar";
-	this->tag = Tag::NPC;
 	this->index = 0;
+	this->messages = new std::vector<Message*>();
 }

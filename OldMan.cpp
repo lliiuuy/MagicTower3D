@@ -14,6 +14,20 @@ void OldMan::talk()
 std::string OldMan::save()
 {
 	std::string jsonString;
+	Json::Value value;
+	value["index"] = this->indexOfMessages;
+	value["number"] = this->numberofMessages;
+	value["indexOfUseItem"] = this->indexOfUseItems;
+	value["endTalking"] = this->endTalking;
+	for (int i = 0; i < numberofMessages; i++)
+	{
+		value["messages"][i]["sentence"] = messages->at(i)->getSentence();
+		value["messages"][i]["messsage"] = messages->at(i)->getMessage();
+		value["messages"][i]["toNote"] = messages->at(i)->isToNote();
+		value["messages"][i]["choose"] = messages->at(i)->isChoose();
+		value["messages"][i]["action"] = messages->at(i)->isAction();
+	}
+	jsonString = value.toStyledString();
 	return jsonString;
 }
 

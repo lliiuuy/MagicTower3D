@@ -56,15 +56,13 @@
             "element": ""
         },
         {
-            "element": "Gate-Keeper B",
-            "actionAfter":"currentMap.mapData[18].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
+            "element": "Gate-Keeper B"
         },
         {
             "element": ""
         },
         {
-            "element": "Gate-Keeper B",
-            "actionAfter":"currentMap.mapData[16].element!=\"Gate-Keeper B\"?currentMap.mapData[48].element=\"\",currentMap.mapData[52].element=\"\",currentMap.mapData[81].element=\"\",currentMap.mapData[85].element=\"\",currentMap.mapData[114].element=\"\",currentMap.mapData[118].element=\"\":null"
+            "element": "Gate-Keeper B"
         },
         {
             "element": ""
@@ -165,7 +163,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5 
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""
@@ -178,7 +185,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5 
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""
@@ -275,7 +291,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5 
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""
@@ -288,7 +313,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5 
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""
@@ -376,7 +410,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""
@@ -389,7 +432,16 @@
         },
         {
             "element": "Prison",
-            "action": "false"
+            "position":[
+                {
+                    "x": 1,
+                    "y": 5 
+                },
+                {
+                    "x": 1,
+                    "y": 7
+                }
+            ]
         },
         {
             "element": ""

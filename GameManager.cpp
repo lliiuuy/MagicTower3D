@@ -12,7 +12,7 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	// player->load();
+	player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
 	uiManager->init();
@@ -20,12 +20,13 @@ void GameManager::init()
 
 void GameManager::load()
 {
-	// player->load();
+	player->load();
 }
 
 void GameManager::save()
 {
-	// player->save();
+	player->save();
+	mapCreator->saveMap(player->getFloor());
 }
 
 void GameManager::drawScene()
@@ -124,7 +125,7 @@ void GameManager::setWindow(int width, int height)
 
 void GameManager::upStairs()
 {
-	// mapCreator->saveMap(player->getFloor());
+	mapCreator->saveMap(player->getFloor());
 	this->usingStairs = true;
 	this->isUpStairs = true;
 	uiManager->useStairs();
@@ -255,22 +256,56 @@ void GameManager::mouseButtonClick(int x, int y)
 						uiManager->closeDialog();
 					}
 				}
-				else if (strcmp(player->getNPC()->getName(), "Altar") == 0)
-				{
-					if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
-						player->getNPC()->nextSentence();
-					if (!player->getNPC()->isTalking())
-					{
-						player->endTalk();
-						uiManager->closeDialog();
-					}
-				}
 			}
 			// Ñ¡ÖÐNo
 			else if (x > width * 1174 / 1600 && x < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
 			{
 				player->endTalk();
 				uiManager->closeDialog();
+			}
+		}
+		else if (strcmp(player->getNPC()->getName(), "Altar") == 0)
+		{
+			if (player->getNPC()->isAction())
+			{
+				if (x > width * 320 / 1600 && x < 1280 * width / 1600)
+				{
+					if (y > height * 220 / 1200 && y < height * 260 / 1200)
+					{
+						player->endTalk();
+						uiManager->closeDialog();
+					}
+					else if(y > height * 100 / 1200 && y < height * 220 / 1200)
+					{
+						if (y > height * 100 / 1200 && y < height * 140 / 1200)
+							((Altar*)player->getNPC())->setIndexOfChoose(0);
+						else if (y > height * 140 / 1200 && y < height * 180 / 1200)
+							((Altar*)player->getNPC())->setIndexOfChoose(1);
+						else if (y > height * 180 / 1200 && y < height * 220 / 1200)
+							((Altar*)player->getNPC())->setIndexOfChoose(2);
+						if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
+						{
+							((Altar*)player->getNPC())->setCanBuy(true);
+							AudioManager::playSound("Data/Audio/get.wav");
+							player->action();
+						}
+						player->getNPC()->nextSentence();
+						if (!player->getNPC()->isTalking())
+						{
+							player->endTalk();
+							uiManager->closeDialog();
+						}
+					}
+				}
+			}
+			else
+			{
+				player->getNPC()->nextSentence();
+				if (!player->getNPC()->isTalking())
+				{
+					player->endTalk();
+					uiManager->closeDialog();
+				}
 			}
 		}
 		else

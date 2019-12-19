@@ -18,10 +18,10 @@ private:
 	NPC* npc;
 
 	GLuint swordTexture;
-	char* swordName;
+	char swordName[100] = "";
 
 	GLuint shieldTexture;
-	char* shieldName;
+	char shieldName[100] = "";
 
 	int index = 0; // 人物移动的index
 

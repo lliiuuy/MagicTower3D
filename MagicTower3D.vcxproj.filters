@@ -109,6 +109,12 @@
     <Filter Include="源文件\Objects\Items\UseItem">
       <UniqueIdentifier>{8c72343e-afb1-4499-8af1-c4806f3e3822}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Objects\Creatures\Monsters\Boss">
+      <UniqueIdentifier>{2316d291-2e1f-4cc4-93da-b584cb15273b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Objects\Creatures\Monster\Boss">
+      <UniqueIdentifier>{0bc4886b-ffee-4b8e-8c4b-14c25d858566}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -272,6 +278,9 @@
     </ClCompile>
     <ClCompile Include="SkeletonA.cpp">
       <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -442,6 +451,9 @@
     </ClInclude>
     <ClInclude Include="SkeletonA.h">
       <Filter>头文件\Objects\Creatures\Monsters</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>头文件\Objects\Creatures\Monsters\Boss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

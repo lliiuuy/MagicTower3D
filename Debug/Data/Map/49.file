@@ -1,0 +1,507 @@
+{
+    "bgMusic": "music/sound_5.mp3",
+    "floorImage": "floor",
+    "mapData": [
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "white_warrior",
+            "actionAfter":"currentMap.mapData[16].action=null;currentMap.mapData[26].action=null;\
+                           currentMap.mapData[16].actionAfter=null;currentMap.mapData[16].dialogAfter=null;\
+                           currentMap.mapData[26].actionAfter=null;currentMap.mapData[26].dialogAfter=null;\
+                           currentMap.mapData[28].actionAfter=null;currentMap.mapData[28].dialogAfter=null;\
+                           currentMap.mapData[38].actionAfter=null;currentMap.mapData[38].dialogAfter=null;\
+                           currentMap.mapData[15].actionAfter=null;currentMap.mapData[17].dialogAfter=null;\
+                           currentMap.mapData[37].actionAfter=null;currentMap.mapData[39].dialogAfter=null;"
+        },
+        {
+            "element": "white_warrior",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[16].element==\"\"&&\
+                      currentMap.mapData[15].element!=\"\"&&currentMap.mapData[17].element!=\"\"?\
+                      main.hp/=2:null;main.hp<=0?main.hp=1:null",
+            "actionAfter":"currentMap.mapData[26].element==\"\"&&currentMap.mapData[28].element==\"\"&&currentMap.mapData[38].element==\"\"?\
+                           null:currentMap.mapData[16].dialogAfter=null;currentMap.mapData[16].actionAfter=null",
+            "dialogAfter":{
+                 "dialogues":[
+                     {"speaker":"red_devil_king_seal","sentence":"啊！我怎么被封印了，我只剩下一成的功力了！！！"}
+                 ],
+                 "action":"currentMap.mapData[27].element=\"red_devil_king_seal\";currentMap.mapData[16].dialogAfter=null"
+            }
+        },
+        {
+            "element": "white_warrior",
+            "actionAfter":"currentMap.mapData[16].action=null;currentMap.mapData[38].action=null;\
+                           currentMap.mapData[16].actionAfter=null;currentMap.mapData[16].dialogAfter=null;\
+                           currentMap.mapData[26].actionAfter=null;currentMap.mapData[26].dialogAfter=null;\
+                           currentMap.mapData[28].actionAfter=null;currentMap.mapData[28].dialogAfter=null;\
+                           currentMap.mapData[38].actionAfter=null;currentMap.mapData[38].dialogAfter=null;\
+                           currentMap.mapData[15].actionAfter=null;currentMap.mapData[17].dialogAfter=null;\
+                           currentMap.mapData[37].actionAfter=null;currentMap.mapData[39].dialogAfter=null;"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "white_warrior",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[26].element==\"\"&&\
+                      currentMap.mapData[15].element!=\"\"&&currentMap.mapData[37].element!=\"\"?\
+                      main.hp/=2:null;main.hp<=0?main.hp=1:null",
+            "actionAfter":"currentMap.mapData[16].element==\"\"&&currentMap.mapData[28].element==\"\"&&currentMap.mapData[38].element==\"\"\
+                           ?null:currentMap.mapData[26].dialogAfter=null;currentMap.mapData[26].actionAfter=null",
+            "dialogAfter":{
+                 "dialogues":[
+                     {"speaker":"red_devil_king_seal","sentence":"啊！我怎么被封印了，我只剩下一成的功力了！！！"}
+                 ],
+                 "action":"currentMap.mapData[27].element=\"red_devil_king_seal\";currentMap.mapData[26].dialogAfter=null"
+            }
+        },
+        {
+            "element": "red_devil_king",
+            "dialogAfter":{
+                 "dialogues":[
+                     {"speaker":"red_devil_king_seal","sentence":"哈哈哈，很好，你是个合格的战士。"}
+                 ],
+                 "action":"currentMap.mapData[15].element=\"\";currentMap.mapData[16].element=\"\";\
+                           currentMap.mapData[17].element=\"\";currentMap.mapData[26].element=\"\";\
+                           currentMap.mapData[28].element=\"\";currentMap.mapData[37].element=\"\";\
+                           currentMap.mapData[38].element=\"\";currentMap.mapData[39].element=\"\";\
+                           currentMap.mapData[16].action=null;currentMap.mapData[26].action=null;\
+                           currentMap.mapData[28].action=null;currentMap.mapData[38].action=null;\
+                           currentMap.mapData[16].actionAfter=null;currentMap.mapData[16].dialogAfter=null;\
+                           currentMap.mapData[26].actionAfter=null;currentMap.mapData[26].dialogAfter=null;\
+                           currentMap.mapData[28].actionAfter=null;currentMap.mapData[28].dialogAfter=null;\
+                           currentMap.mapData[38].actionAfter=null;currentMap.mapData[38].dialogAfter=null;\
+                           currentMap.mapData[15].actionAfter=null;currentMap.mapData[17].dialogAfter=null;\
+                           currentMap.mapData[37].actionAfter=null;currentMap.mapData[39].dialogAfter=null;\
+                           currentMap.mapData[15].element=\"red_key\";currentMap.mapData[17].element=\"knife\";\
+                           currentMap.mapData[34].element=\"red_jewel_5\";currentMap.mapData[35].element=\"red_jewel_5\";\
+                           currentMap.mapData[36].element=\"red_jewel_5\";currentMap.mapData[40].element=\"blue_jewel_5\";\
+                           currentMap.mapData[41].element=\"blue_jewel_5\";currentMap.mapData[42].element=\"blue_jewel_5\";\
+                           currentMap.mapData[48].element=\"blue_hp_5\";currentMap.mapData[49].element=\"blue_hp_5\";\
+                           currentMap.mapData[50].element=\"blue_hp_5\";"
+            }
+
+        },
+        {
+            "element": "white_warrior",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[28].element==\"\"&&\
+                      currentMap.mapData[17].element!=\"\"&&currentMap.mapData[39].element!=\"\"?\
+                      main.hp/=2:null;main.hp<=0?main.hp=1:null",
+            "actionAfter":"currentMap.mapData[16].element==\"\"&&currentMap.mapData[26].element==\"\"&&currentMap.mapData[38].element==\"\"\
+                           ?null:currentMap.mapData[28].dialogAfter=null;currentMap.mapData[28].actionAfter=null",
+            "dialogAfter":{
+                 "dialogues":[
+                     {"speaker":"red_devil_king_seal","sentence":"啊！我怎么被封印了，我只剩下一成的功力了！！！"}
+                 ],
+                 "action":"currentMap.mapData[27].element=\"red_devil_king_seal\";currentMap.mapData[28].dialogAfter=null"
+            }
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "white_warrior",
+            "actionAfter":"currentMap.mapData[16].action=null;currentMap.mapData[28].action=null;\
+                           currentMap.mapData[16].actionAfter=null;currentMap.mapData[16].dialogAfter=null;\
+                           currentMap.mapData[26].actionAfter=null;currentMap.mapData[26].dialogAfter=null;\
+                           currentMap.mapData[28].actionAfter=null;currentMap.mapData[28].dialogAfter=null;\
+                           currentMap.mapData[38].actionAfter=null;currentMap.mapData[38].dialogAfter=null;\
+                           currentMap.mapData[15].actionAfter=null;currentMap.mapData[17].dialogAfter=null;\
+                           currentMap.mapData[37].actionAfter=null;currentMap.mapData[39].dialogAfter=null;"
+        },
+        {
+            "element": "white_warrior",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[38].element==\"\"&&\
+                      currentMap.mapData[37].element!=\"\"&&currentMap.mapData[39].element!=\"\"?\
+                      main.hp/=2:null;main.hp<=0?main.hp=1:null",
+            "actionAfter":"currentMap.mapData[16].element==\"\"&&currentMap.mapData[26].element==\"\"&&currentMap.mapData[28].element==\"\"\
+                           ?null:currentMap.mapData[38].dialogAfter=null;currentMap.mapData[38].actionAfter=null",
+            "dialogAfter":{
+                 "dialogues":[
+                     {"speaker":"red_devil_king_seal","sentence":"啊！我怎么被封印了，我只剩下一成的功力了！！！"}
+                 ],
+                 "action":"currentMap.mapData[27].element=\"red_devil_king_seal\";currentMap.mapData[38].dialogAfter=null"
+            }
+        },
+        {
+            "element": "white_warrior",
+            "actionAfter":"currentMap.mapData[28].action=null;currentMap.mapData[38].action=null;\
+                           currentMap.mapData[16].actionAfter=null;currentMap.mapData[16].dialogAfter=null;\
+                           currentMap.mapData[26].actionAfter=null;currentMap.mapData[26].dialogAfter=null;\
+                           currentMap.mapData[28].actionAfter=null;currentMap.mapData[28].dialogAfter=null;\
+                           currentMap.mapData[38].actionAfter=null;currentMap.mapData[38].dialogAfter=null;\
+                           currentMap.mapData[15].actionAfter=null;currentMap.mapData[17].dialogAfter=null;\
+                           currentMap.mapData[37].actionAfter=null;currentMap.mapData[39].dialogAfter=null;"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "ghost_warrior",
+            "actionAfter":"currentMap.mapData[83].element==\"\"?currentMap.mapData[71].element=\"\":null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "ghost_warrior",
+            "actionAfter":"currentMap.mapData[81].element==\"\"?currentMap.mapData[71].element=\"\":null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[103].element==\"scarlet_wizard\"&&currentMap.mapData[92].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "iron_door"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[105].element==\"scarlet_wizard\"&&currentMap.mapData[94].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[103].element==\"scarlet_wizard\"&&currentMap.mapData[102].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "scarlet_wizard",
+            "actionAfter":"currentMap.mapData[92].action=null;currentMap.mapData[102].action=null;currentMap.mapData[114].action=null;\
+                           currentMap.mapData[105].element==\"\"?currentMap.mapData[104].action=null,currentMap.mapData[93].element=\"\":null"
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[103].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.gameArgs[st_shield_state]==0&&currentMap.mapData[105].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "scarlet_wizard",
+            "actionAfter":"currentMap.mapData[94].action=null;currentMap.mapData[106].action=null;currentMap.mapData[116].action=null;\
+                           currentMap.mapData[103].element==\"\"?currentMap.mapData[104].action=null,currentMap.mapData[93].element=\"\":null"
+        },
+        {
+            "element": "wall",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[105].element==\"scarlet_wizard\"&&currentMap.mapData[106].element==\"\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "wall"
+        },
+        {
+            "element": "stair_down"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "red_door",
+            "dialog":[
+                 {
+                     "dialogues":[
+                         {"speaker":"red_devil_king","sentence":"你终于来了，我很想与你立刻决斗，但我的部下不同意。"}
+                     ],
+                     "action":"currentMap.mapData[112].dialog=null"
+                 }
+             ]
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[103].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "",
+            "action":"main.gameArgs[st_shield_state]==0&&currentMap.mapData[105].element==\"scarlet_wizard\"?main.hp-=200:null;\
+                      main.hp<=0?main.hp=1:null"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": ""
+        }
+    ],
+    "mapFloor": 49,
+    "mapHeight": 11,
+    "mapWidth": 11,
+    "downPosition": {
+        "direction": "down",
+        "x": 1,
+        "y": 10
+    },
+    "upPosition": {
+        "direction": "down",
+        "x": 1,
+        "y": 10
+    }
+}
