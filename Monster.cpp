@@ -2,6 +2,36 @@
 
 void Monster::display(Vector3* position)
 {
+	if (this->moving)
+	{
+		if (fabs(positionInMap->x - node[indexOfMove]->x) < moveSpeed / 2 && fabs(positionInMap->y - node[indexOfMove]->y) < moveSpeed / 2)
+		{
+			this->indexOfMove++;
+			if (this->indexOfMove == this->numberOfNode)
+			{
+				// 测试用代码
+				this->indexOfMove = 0;
+			}
+		}
+		else
+		{
+			this->dir->x = 0;
+			this->dir->y = 0;
+			if (positionInMap->x  < node[indexOfMove]->x)
+				this->dir->x = 1;
+			else if (positionInMap->x > node[indexOfMove]->x)
+				this->dir->x = -1;
+			if (positionInMap->y < node[indexOfMove]->y)
+				this->dir->y = 1;
+			else if (positionInMap->y > node[indexOfMove]->y)
+				this->dir->y = -1;
+		}
+		this->positionInMap->x += moveSpeed * dir->x;
+		this->positionInMap->y += moveSpeed * dir->y;
+		this->position->x = this->positionInMap->y * lx;
+		this->position->z = this->positionInMap->x * lz;
+	}
+
 	// 经过测试没问题
 	Vector3* direction = new Vector3(position->x - this->position->x, position->y - this->position->y, position->z - this->position->z);
 	if (direction->x < 0)

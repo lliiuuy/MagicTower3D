@@ -12,7 +12,10 @@ protected:
 
 	bool moving = false;
 	Vector2** node = NULL;
-	int numberOfNode = 0;
+	unsigned short numberOfNode = 0;
+	unsigned short indexOfMove = 0;
+
+	float moveSpeed = 0.05f;
 
 	Vector2* dir = new Vector2(0, 0);
 
@@ -23,7 +26,20 @@ public:
 	void draw3D();
 	void receiveDamage(unsigned int damage);
 
-	void move(Vector2** node, unsigned short numberOfNode) { moving = true, this->node = node, this->numberOfNode = numberOfNode; };
+	void move(Vector2** node, unsigned short numberOfNode) 
+	{
+		moving = true, this->node = node, this->numberOfNode = numberOfNode;
+		this->dir->x = 0;
+		this->dir->y = 0;
+		if ((int)floor(positionInMap->x + 0.5f) < (int)floor(node[indexOfMove]->x + 0.5f))
+			this->dir->x = 1;
+		else if ((int)floor(positionInMap->x + 0.5f) > (int)floor(node[indexOfMove]->x + 0.5f))
+			this->dir->x = -1;
+		if ((int)floor(positionInMap->y + 0.5f) < (int)floor(node[indexOfMove]->y + 0.5f))
+			this->dir->y = 1;
+		else if ((int)floor(positionInMap->y + 0.5f) > (int)floor(node[indexOfMove]->y + 0.5f))
+			this->dir->y = -1;
+	};
 
 	GLuint getTexture() { return texture[0]; }
 };

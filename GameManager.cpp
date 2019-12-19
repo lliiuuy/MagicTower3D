@@ -15,18 +15,23 @@ void GameManager::init()
 	player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
+	Vector2** nodes = new Vector2*[3]();
+	nodes[0] = new Vector2(0, 0);
+	nodes[1] = new Vector2(0, 9);
+	nodes[2] = new Vector2(0, 5);
+	((Monster*)mapCreator->getObject(0, 2))->move(nodes, 3);
 	uiManager->init();
 }
 
 void GameManager::load()
 {
-	player->load();
+	// player->load();
 }
 
 void GameManager::save()
 {
-	player->save();
-	mapCreator->saveMap(player->getFloor());
+	// player->save();
+	// mapCreator->saveMap(player->getFloor());
 }
 
 void GameManager::drawScene()
