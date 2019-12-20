@@ -385,9 +385,9 @@ void Player::action()
 
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	yellowKeyNumber = 0;
+	yellowKeyNumber = 10;
 	blueKeyNumber = 0;
-	redKeyNumber = 0;
+	redKeyNumber = 10;
 
 	health = 1000;
 	attack = 100;

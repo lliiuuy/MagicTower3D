@@ -22,7 +22,7 @@ private:
 
 	bool talking = false;
 
-	bool is3FAnimated = false;
+	bool isAnimated = false;
 
 	unsigned short counter = 0;
 

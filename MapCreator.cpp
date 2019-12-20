@@ -59,6 +59,13 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = new IronDoor(new Vector2((float)i - 1, (float)j - 1));
 						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
 						((IronDoor*)objects[i][j])->load(jsonString);
+						if (floor == 10)
+						{
+							if (i == 7 && j == 6)
+								((IronDoor*)objects[i][j])->setClose(true);
+							else if(i == 3 && j == 6)
+								((IronDoor*)objects[i][j])->setClose(true);
+						}
 					}
 					else if (strcmp(element, "Prison") == 0)
 					{
@@ -103,6 +110,8 @@ void MapCreator::loadMap(int floor)
 					else if (strcmp(element, "SkeletonA") == 0)
 					{
 						objects[i][j] = new SkeletonA(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((SkeletonA*)objects[i][j])->load(jsonString);
 					}
 					else if (strcmp(element, "The Magic Sergeant") == 0)
 					{
@@ -402,7 +411,7 @@ void MapCreator::display(Vector3* position)
 							Vector2* guardPosition = ((IronDoor*)objects[i][j])->getGuardPosition();
 							Vector2* otherGuardPosition = ((IronDoor*)objects[i][j])->getOtherGuardPosition();
 							if (objects[(int)guardPosition->x + 1][(int)guardPosition->y + 1] == NULL && objects[(int)otherGuardPosition->x + 1][(int)otherGuardPosition->y + 1] == NULL)
-								((Door*)objects[i][j])->collide();
+								((IronDoor*)objects[i][j])->openDoor(true);
 						}
 						else if(objects[i][j]->getTag() == Tag::prison && !((Door*)objects[i][j])->isOpen())
 						{
@@ -415,8 +424,19 @@ void MapCreator::display(Vector3* position)
 				}
 				if (objects[i][j]->isDestroy())
 				{
-					delete objects[i][j];
-					objects[i][j] = NULL;
+					if (strcmp(objects[i][j]->getName(), "SkeletonA") == 0)
+					{
+						if (((Boss*)objects[i][j])->getIndexOfMessage() == 3)
+						{
+							delete objects[i][j];
+							objects[i][j] = NULL;
+						}
+					}
+					else
+					{
+						delete objects[i][j];
+						objects[i][j] = NULL;
+					}
 				}
 			}
 		}

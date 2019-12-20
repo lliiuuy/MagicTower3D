@@ -12,7 +12,7 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	player->load();
+	// player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
 	uiManager->init();
@@ -20,13 +20,13 @@ void GameManager::init()
 
 void GameManager::load()
 {
-	player->load();
+	// player->load();
 }
 
 void GameManager::save()
 {
-	player->save();
-	mapCreator->saveMap(player->getFloor());
+	// player->save();
+	// mapCreator->saveMap(player->getFloor());
 }
 
 void GameManager::drawScene()
@@ -42,12 +42,72 @@ void GameManager::drawScene()
 			downStairs();
 	}
 
+	if (player->getFloor() == 10)
+	{
+		Object* boss = mapCreator->getObject(1, 5);
+		if (boss != NULL)
+		{
+			if (((Boss*)boss)->getIndexOfMessage() == 1)
+			{
+				if (isAnimated)
+				{
+					if (mapCreator->getObject(3, 5) != NULL
+						&& mapCreator->getObject(5, 5) != NULL
+						&& mapCreator->getObject(5, 6) != NULL
+						&& mapCreator->getObject(5, 4) != NULL
+						&& mapCreator->getObject(3, 4) != NULL
+						&& mapCreator->getObject(3, 6) != NULL
+						&& mapCreator->getObject(4, 4) != NULL
+						&& mapCreator->getObject(4, 6) != NULL
+						&& mapCreator->getObject(1, 5) != NULL) // 如果都移动到位
+					{
+						((IronDoor*)mapCreator->getObject(3, 3))->openDoor(false);
+						((IronDoor*)mapCreator->getObject(3, 7))->openDoor(false);
+						isAnimated = false;
+					}
+
+				}
+				else
+				{
+					if (mapCreator->getObject(3, 5) == NULL
+						&& mapCreator->getObject(5, 5) == NULL
+						&& mapCreator->getObject(5, 6) == NULL
+						&& mapCreator->getObject(5, 4) == NULL
+						&& mapCreator->getObject(3, 4) == NULL
+						&& mapCreator->getObject(3, 6) == NULL
+						&& mapCreator->getObject(4, 4) == NULL
+						&& mapCreator->getObject(4, 6) == NULL
+						&& mapCreator->getObject(2, 5) != NULL)
+					{
+						((IronDoor*)mapCreator->getObject(2, 5))->openDoor(true);
+						if (player->getStatus() == PlayerStatus::idle)
+						{
+							player->talk((Boss*)boss);
+							((Boss*)boss)->talk();
+						}
+					}
+				}
+			}
+			else if (((Boss*)boss)->getIndexOfMessage() == 2)
+			{
+				if (((Boss*)boss)->getHealth() == 0)
+				{
+					if (player->getStatus() == PlayerStatus::idle)
+					{
+						player->talk((Boss*)boss);
+						((Boss*)boss)->talk();
+					}
+				}
+			}
+		}
+	}
+
 	if (this->usingStairs != uiManager->getIsUsingStairs())
 	{
 		this->usingStairs = false;
 		if (isUpStairs)
 		{
-			mapCreator->saveMap(player->getFloor());
+			// mapCreator->saveMap(player->getFloor());
 			player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
 			mapCreator->loadMap(player->getFloor());
 		}
@@ -66,7 +126,7 @@ void GameManager::drawScene()
 			}
 			else
 			{
-				mapCreator->saveMap(player->getFloor());
+				// mapCreator->saveMap(player->getFloor());
 				player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
 			}
 			mapCreator->loadMap(player->getFloor());
@@ -79,9 +139,9 @@ void GameManager::drawScene()
 	{
 		this->finishUsingStairs = false;
 		player->finishUsingStairs();
-		if (is3FAnimated)
+		if (isAnimated)
 		{
-			is3FAnimated = false;
+			isAnimated = false;
 			Object* object = mapCreator->getObject(6, 2);
 			object->collide();
 			player->talk((NPC*)object);
@@ -178,6 +238,9 @@ void GameManager::downStairs()
 
 void GameManager::movePlayer(bool isUp)
 {
+	if (isAnimated)
+		return;
+
 	// 移动player的时候，关闭底部message显示
 	if(player->getStatus() == PlayerStatus::idle)
 		uiManager->deleteMessage();
@@ -256,8 +319,12 @@ void GameManager::movePlayer(bool isUp)
 	{
 		object->collide();
 	}
-	else if (object->getTag() != Tag::prison
-		&& object->getTag() != Tag::ironDoor)
+	else if (object->getTag() == Tag::ironDoor && ((IronDoor*)object)->isClose())
+	{
+		if (player->getStatus() == PlayerStatus::idle)
+			player->move(isUp);
+	}
+	else if (object->getTag() != Tag::prison)
 	{
 		if (player->getStatus() == PlayerStatus::idle)
 			player->move(isUp);
@@ -394,6 +461,66 @@ void GameManager::mouseButtonClick(int x, int y)
 					player->action3F();
 				}
 			}
+			else if (strcmp(object->getName(), "SkeletonA") == 0)
+			{
+				if (((Boss*)object)->getIndexOfMessage() == 0)
+				{
+					this->isAnimated = true;
+					Vector2** nodes;
+					nodes = new Vector2 * [1]();
+					nodes[0] = new Vector2(1, 5);
+					((Monster*)object)->move(nodes, 1);
+					((IronDoor*)mapCreator->getObject(2, 5))->openDoor(false);
+					((IronDoor*)mapCreator->getObject(6, 5))->openDoor(false);
+					((IronDoor*)mapCreator->getObject(3, 3))->openDoor(false);
+					((IronDoor*)mapCreator->getObject(3, 7))->openDoor(false);
+					((Wall*)mapCreator->getObject(5, 4))->collide();
+					((Wall*)mapCreator->getObject(5, 6))->collide();
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(4, 3);
+					nodes[1] = new Vector2(5, 4);
+					nodes[2] = new Vector2(5, 5);
+					((Monster*)mapCreator->getObject(3, 1))->move(nodes, 3); // 第一个骷髅兵
+					nodes = new Vector2 * [1]();
+					nodes[0] = new Vector2(3, 5);
+					((Monster*)mapCreator->getObject(3, 9))->move(nodes, 1); // 第二个骷髅兵
+					nodes = new Vector2*[3]();
+					nodes[0] = new Vector2(3, 2);
+					nodes[1] = new Vector2(3, 4);
+					nodes[2] = new Vector2(5, 4);
+					((Monster*)mapCreator->getObject(2, 2))->move(nodes, 3);
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(3, 1);
+					nodes[1] = new Vector2(3, 4);
+					nodes[2] = new Vector2(4, 4);
+					((Monster*)mapCreator->getObject(2, 1))->move(nodes, 3);
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(3, 0);
+					nodes[1] = new Vector2(3, 4);
+					((Monster*)mapCreator->getObject(2, 0))->move(nodes, 2); // 左边三个骷髅
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(3, 8);
+					nodes[1] = new Vector2(3, 6);
+					nodes[2] = new Vector2(5, 6);
+					((Monster*)mapCreator->getObject(2, 8))->move(nodes, 3);
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(3, 9);
+					nodes[1] = new Vector2(3, 6);
+					nodes[2] = new Vector2(4, 6);
+					((Monster*)mapCreator->getObject(2, 9))->move(nodes, 3);
+					nodes = new Vector2 * [3]();
+					nodes[0] = new Vector2(3, 10);
+					nodes[1] = new Vector2(3, 6);
+					((Monster*)mapCreator->getObject(2, 10))->move(nodes, 2); // 右边三个骷髅
+				}
+				else if (((Boss*)object)->getIndexOfMessage() == 2)
+				{
+					((IronDoor*)mapCreator->getObject(6, 5))->openDoor(true);
+					((IronDoor*)mapCreator->getObject(3, 3))->openDoor(true);
+					((IronDoor*)mapCreator->getObject(3, 7))->openDoor(true);
+					object->destroyThis();
+				}
+			}
 			((Boss*)object)->nextSentence();
 			if (!((Boss*)object)->isTalking())
 			{
@@ -414,13 +541,29 @@ void GameManager::detectCollision()
 			if ((int)floor(player->getPositionInMap()->x + 0.5) == 8 && (int)floor(player->getPositionInMap()->y + 0.5) == 4)
 			{
 				Object* object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - 2 + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
-				if (object != NULL && !this->is3FAnimated)
+				if (object != NULL && !this->isAnimated)
 				{
-					this->is3FAnimated = true;
+					this->isAnimated = true;
 					AudioManager::playSound("Data/Audio/3f.wav");
 					((Boss*)object)->toAppear();
 					((Boss*)object)->talk();
 					player->talk((Boss*)object);
+				}
+			}
+		}
+		else if (player->getFloor() == 10 && player->getStatus() == PlayerStatus::idle && !isAnimated)
+		{
+			if ((int)floor(player->getPositionInMap()->x + 0.5) == 4 && (int)floor(player->getPositionInMap()->y + 0.5) == 5)
+			{
+				Object *object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - 1 + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
+				if (object != NULL)
+				{
+					if (strcmp(object->getName(), "SkeletonA") == 0)
+					{
+						this->isAnimated = true;
+						((Boss*)object)->talk();
+						player->talk((Boss*)object);
+					}
 				}
 			}
 		}
@@ -436,9 +579,9 @@ void GameManager::detectCollision()
 				uiManager->messageDraw(message);
 				object->destroyThis();
 			}
-			else if (object->getTag() == Tag::monster)
+			else if (object->getTag() == Tag::monster || object->getTag() == Tag::boss)
 			{
-				if (!((Monster*)object)->isAppearMonster())
+				if (!((Monster*)object)->isAppearMonster() && ((Monster*)object)->getHealth() != 0)
 				{
 					player->battle((Monster*)object);
 					uiManager->loadMonster((Monster*)object);

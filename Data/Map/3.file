@@ -1,413 +1,390 @@
 {
-    "bgMusic": "music/sound_1.mp3",
-    "downPosition": {
-        "direction": "up",
-        "x": 9,
-        "y": 0
-    },
-    "floorImage": "floor",
-    "mapData": [
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Blue Jewel"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Bat"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Priest"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Blue Key"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Old Man",
-      		"messages":[
-                 {
-                 	"sentence": "I will grant you the orb of the hero. You will#now be able to forecast the results of fighting#monsters on the current floor. Use it often.",
-                    "message":"You've found the orb of the hero.",
-                    "choose": false,
-                    "toNote": false,
-                    "action": true
-                 }
-             ],
-            "index": 0,
-            "number": 1,
-            "indexOfUseItem": 0,
-            "endTalking": false
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Bat"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Green Slime"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "The Magic Sergeant",
-            "messages":[
-                 {
-                    "sentence": "The Magic Sergeant, Zeno, says#'Welcome to  'The Magic Tower'. You are the#hundredthman who dared to enter my tower.#You willnow face my guards. Should you happen#to survive,I will fight with youin person#specially. Youshould accept your fate.'",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "What? Oh!",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 }
-             ],
-            "index": 0,
-            "number": 2
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "The Magician Sergeant"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": "Priest"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Red Medicine"
-        },
-        {
-            "element": "Red Jewel"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "The Magician Sergeant"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "The Magician Sergeant"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "The Magician Sergeant"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Red Slime"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "DownStairs"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Yellow Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "UpStairs"
-        }
-    ],
-    "mapFloor": 3,
-    "mapHeight": 11,
-    "mapWidth": 11,
-    "upPosition": {
-        "direction": "up",
-        "x": 9,
-        "y": 10
-    }
+   "downPosition" : {
+      "direction" : "up",
+      "x" : 9.0,
+      "y" : 0.0
+   },
+   "mapData" : [
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Blue Jewel"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Bat"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Priest"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Blue Key"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Old Man",
+         "endTalking" : false,
+         "index" : 0,
+         "indexOfUseItem" : 0,
+         "messages" : [
+            {
+               "action" : true,
+               "choose" : false,
+               "messsage" : "You've found the orb of the hero.",
+               "sentence" : "I will grant you the orb of the hero. You will#now be able to forecast the results of fighting#monsters on the current floor. Use it often.",
+               "toNote" : false
+            }
+         ],
+         "number" : 1
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Bat"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Green Slime"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "SkeletonC"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Priest"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Red Medicine"
+      },
+      {
+         "element" : "Red Jewel"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "DownStairs"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "UpStairs"
+      }
+   ],
+   "upPosition" : {
+      "direction" : "up",
+      "x" : 9.0,
+      "y" : 10.0
+   }
 }
