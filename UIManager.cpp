@@ -445,7 +445,7 @@ void UIManager::draw(Player* player)
 			map[(int)floor(position->x + 0.5f)][(int)floor(position->y + 0.5f)] = true;
 			position->x += direction->x;
 			position->y += direction->y;
-			if ((int)floor(position->x + 0.5f + direction->x) > 12 || (int)floor(position->x + 0.5f + direction->x) < 0 || (int)floor(position->y + direction->y + 0.5f) > 12 || map[(int)floor(position->x + direction->x + 0.5f)][(int)floor(position->y + direction->y + 0.5f)])
+			if ((int)floor(position->x + 0.5f + direction->x) > 6 || (int)floor(position->x + 0.5f + direction->x) < 0 || (int)floor(position->y + direction->y + 0.5f) > 6 || map[(int)floor(position->x + direction->x + 0.5f)][(int)floor(position->y + direction->y + 0.5f)])
 			{
 				if (direction->x == 0 && direction->y == 1)
 					direction = new Vector2(-1, 0);

@@ -61,7 +61,7 @@ public:
 			{
 				talking = false;
 				Vector2** nodes = new Vector2 * [1]();
-				nodes[0] = new Vector2(10, 0);
+				nodes[0] = new Vector2(9, 0);
 				move(nodes, 1);
 			}
 			else

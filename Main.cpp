@@ -137,11 +137,6 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 		gameManager->mouseButtonClick((int)posX, (int)posY);
 }
 
-void cursorPosCallback(GLFWwindow* window, double x, double y)
-{
-
-}
-
 int main()
 {
 	if (!glfwInit())
@@ -177,7 +172,6 @@ int main()
 	glfwSetKeyCallback(window, keyCallback);
 	glfwSetWindowSizeCallback(window, resizeCallback);
 	glfwSetMouseButtonCallback(window, mouseButtonCallback);
-	glfwSetCursorPosCallback(window, cursorPosCallback);
 
 	while (!glfwWindowShouldClose(window))
 	{

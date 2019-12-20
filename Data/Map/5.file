@@ -2,8 +2,8 @@
     "bgMusic": "music/sound_1.mp3",
     "downPosition": {
         "direction": "up",
-        "x": 0,
-        "y": 9
+        "x": 9,
+        "y": 0
     },
     "floorImage": "floor",
     "mapData": [

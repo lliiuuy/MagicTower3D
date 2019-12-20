@@ -44,7 +44,7 @@ void Thief::load(std::string jsonString)
 			messages->push_back(message);
 		}
 		this->floorNumber = data["floor"].asInt();
-		this->brokenWallPosition = new Vector2((float)data["brokenWall"][(Json::UInt)0]["x"].asDouble(), (float)data["brokenWall"][(Json::UInt)0]["y"].asDouble());
+		this->brokenWallPosition = new Vector2((float)data["brokenWall"]["x"].asDouble(), (float)data["brokenWall"]["y"].asDouble());
 	}
 }
 

@@ -208,6 +208,12 @@ void MapCreator::saveMap(int floor)
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Altar";
 				}
+				else if (strcmp(object->getName(), "Thief") == 0)
+				{
+					std::string jsonString = ((Thief*)object)->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Thief";
+				}
 				// Boss
 				else if (strcmp(object->getName(), "The Magic Sergeant") == 0)
 				{

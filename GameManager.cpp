@@ -12,7 +12,7 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	// player->load();
+	player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
 	uiManager->init();
@@ -20,13 +20,13 @@ void GameManager::init()
 
 void GameManager::load()
 {
-	// player->load();
+	player->load();
 }
 
 void GameManager::save()
 {
-	// player->save();
-	// mapCreator->saveMap(player->getFloor());
+	player->save();
+	mapCreator->saveMap(player->getFloor());
 }
 
 void GameManager::drawScene()
@@ -47,7 +47,7 @@ void GameManager::drawScene()
 		this->usingStairs = false;
 		if (isUpStairs)
 		{
-			// mapCreator->saveMap(player->getFloor());
+			mapCreator->saveMap(player->getFloor());
 			player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
 			mapCreator->loadMap(player->getFloor());
 		}
@@ -61,12 +61,12 @@ void GameManager::drawScene()
 				mapCreator->getObject(7, 4)->destroyThis();
 				mapCreator->getObject(9, 4)->destroyThis();
 				mapCreator->display(player->getPositon());
-				// mapCreator->saveMap(player->getFloor());
+				mapCreator->saveMap(player->getFloor());
 				player->downStairs(new Vector2(7, 2), new Vector2(1, 0));
 			}
 			else
 			{
-				// mapCreator->saveMap(player->getFloor());
+				mapCreator->saveMap(player->getFloor());
 				player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
 			}
 			mapCreator->loadMap(player->getFloor());

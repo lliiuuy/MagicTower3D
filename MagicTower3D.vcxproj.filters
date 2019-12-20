@@ -276,9 +276,6 @@
     <ClCompile Include="GateKeeperC.cpp">
       <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
-    <ClCompile Include="SkeletonA.cpp">
-      <Filter>源文件\Objects\Creatures\Monster</Filter>
-    </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
     </ClCompile>
@@ -286,6 +283,9 @@
       <Filter>源文件\Objects\Creatures\Monster</Filter>
     </ClCompile>
     <ClCompile Include="TheMagicSergeant.cpp">
+      <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonA.cpp">
       <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
     </ClCompile>
   </ItemGroup>
