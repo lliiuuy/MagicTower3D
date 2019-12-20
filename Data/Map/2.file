@@ -242,7 +242,60 @@
             "element": "Wall"
         },
         {
-            "element": "Thief"
+            "element": "Thief",
+            "messages":[
+                 {
+                    "sentence": "------",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "------",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "------ Hey!",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "------ Hey! Wake up!",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "What a relief you're okay! You were caught#and thrown in this prison by the#Magic Sergeant. You were unconcious when#you got here. Nevertheless, you are so lucky#that youjust woke up. I've finished the escape#tunnel. Let's break out.",
+                    "message":"The wall collapsed!",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "O.K. Well, excuse my going first. Your#sword and shield were stolen by the guards.#It's not wise to wander about without them.#I believe#there is a sword on the 5th floor and#a shield on the 9th, you had better get them#first of all. See you later!",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 }
+             ],
+            "index": 0,
+            "number": 6,
+            "floor": 2,
+            "brokenWall":[
+                {
+                    "x": 6,
+                    "y": 1 
+                }
+            ]
         },
         {
             "element": ""

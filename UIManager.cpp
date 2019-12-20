@@ -310,7 +310,7 @@ void UIManager::draw(Player* player)
 	if (player->getSwordTexture() != 0)
 	{
 		sprintf_s(string, "%s", player->getSwordName());
-		glPrint(width * 1328 / 1600, height * 192 / 1200, string, width * 2.5f / 1600);
+		glPrint(width * 1328 / 1600, height * 192 / 1200, string, width * 2.4f / 1600);
 
 		texture = player->getSwordTexture();
 		glEnable(GL_TEXTURE_2D); // 开启2D纹理
@@ -325,7 +325,7 @@ void UIManager::draw(Player* player)
 	if (player->getShieldTexture() != 0)
 	{
 		sprintf_s(string, "%s", player->getShieldName());
-		glPrint(width * 1328 / 1600, height * 332 / 1200, string, width * 2.5f / 1600);
+		glPrint(width * 1328 / 1600, height * 332 / 1200, string, width * 2.4f / 1600);
 
 		texture = player->getShieldTexture();
 		glEnable(GL_TEXTURE_2D); // 开启2D纹理

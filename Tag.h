@@ -15,6 +15,7 @@ enum class Tag : unsigned short
 	useItem,
 	monster,
 	magician,
+	boss,
 	NPC,
 };
 
@@ -25,6 +26,6 @@ enum class PlayerStatus : unsigned short
 	spining,
 	battling,
 	talking,
-	shoping,
+	animating,
 	idle,
 };

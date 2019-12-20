@@ -4,13 +4,16 @@ void Monster::display(Vector3* position)
 {
 	if (this->moving)
 	{
-		if (fabs(positionInMap->x - node[indexOfMove]->x) < moveSpeed / 2 && fabs(positionInMap->y - node[indexOfMove]->y) < moveSpeed / 2)
+		if (fabs(positionInMap->x - node[indexOfMove]->x) < moveSpeed && fabs(positionInMap->y - node[indexOfMove]->y) < moveSpeed)
 		{
 			this->indexOfMove++;
 			if (this->indexOfMove == this->numberOfNode)
 			{
-				// 测试用代码
-				this->indexOfMove = 0;
+				this->dir->x = 0;
+				this->dir->y = 0;
+				this->positionInMap->x = node[indexOfMove - 1]->x;
+				this->positionInMap->y = node[indexOfMove - 1]->y;
+				this->moving = false;
 			}
 		}
 		else
@@ -30,6 +33,20 @@ void Monster::display(Vector3* position)
 		this->positionInMap->y += moveSpeed * dir->y;
 		this->position->x = this->positionInMap->y * lx;
 		this->position->z = this->positionInMap->x * lz;
+	}
+
+	if (this->appearMonster)
+	{
+		if (appear)
+		{
+			counterOfAppear++;
+			if (counterOfAppear == 40)
+			{
+				appear = false;
+				appearMonster = false;
+			}
+			this->position->y += ly / 40;
+		}
 	}
 
 	// 经过测试没问题
@@ -88,14 +105,17 @@ void Monster::collide()
 
 void Monster::draw2D(int width, int height)
 {
-	glEnable(GL_TEXTURE_2D); // 开启2D纹理
-	glBindTexture(GL_TEXTURE_2D, texture[index]);		// 选择纹理
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 +16) / 1200);
-	glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 +16) / 1200);
-	glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 -16) / 1200);
-	glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 -16) / 1200);
-	glEnd();
+	if (!appearMonster)
+	{
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, texture[index]);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 - 16) / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 - 16) / 1200);
+		glEnd();
+	}
 }
 
 void Monster::draw3D()

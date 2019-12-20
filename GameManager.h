@@ -22,6 +22,10 @@ private:
 
 	bool talking = false;
 
+	bool is3FAnimated = false;
+
+	unsigned short counter = 0;
+
 	void detectCollision();
 public:
 	GameManager(int width, int height);

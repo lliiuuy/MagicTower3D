@@ -89,12 +89,29 @@ void MapCreator::loadMap(int floor)
 						objects[i][j] = new SkeletonC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "SkeletonB") == 0)
 						objects[i][j] = new SkeletonB(new Vector2((float)i - 1, (float)j - 1));
-					else if (strcmp(element, "SkeletonA") == 0)
-						objects[i][j] = new SkeletonA(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Gate-Keeper C") == 0)
 						objects[i][j] = new GateKeeperC(new Vector2((float)i - 1, (float)j - 1));
 					else if (strcmp(element, "Gate-Keeper B") == 0)
 						objects[i][j] = new GateKeeperB(new Vector2((float)i - 1, (float)j - 1));
+					else if (strcmp(element, "The Magician Sergeant") == 0)
+					{
+						objects[i][j] = new TheMagicianSergeant(new Vector2((float)i - 1, (float)j - 1));
+						if (floor == 3)
+							((TheMagicianSergeant*)objects[i][j])->setAppear();
+					}
+					// boss
+					else if (strcmp(element, "SkeletonA") == 0)
+					{
+						objects[i][j] = new SkeletonA(new Vector2((float)i - 1, (float)j - 1));
+					}
+					else if (strcmp(element, "The Magic Sergeant") == 0)
+					{
+						objects[i][j] = new TheMagicSergeant(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((TheMagicSergeant*)objects[i][j])->load(jsonString);
+						if (floor == 3)
+							((TheMagicSergeant*)objects[i][j])->setAppear();
+					}
 					// µÀ¾ß
 					else if (strcmp(element, "Yellow Key") == 0)
 						objects[i][j] = new YellowKey(new Vector2((float)i - 1, (float)j - 1));
@@ -128,7 +145,11 @@ void MapCreator::loadMap(int floor)
 						((Merchant*)objects[i][j])->load(jsonString);
 					}
 					else if (strcmp(element, "Thief") == 0)
+					{
 						objects[i][j] = new Thief(new Vector2((float)i - 1, (float)j - 1));
+						std::string jsonString = mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1].toStyledString();
+						((Thief*)objects[i][j])->load(jsonString);
+					}
 					else if (strcmp(element, "Altar") == 0)
 					{
 						objects[i][j] = new Altar(new Vector2((float)i - 1, (float)j - 1));
@@ -166,28 +187,42 @@ void MapCreator::saveMap(int floor)
 		{
 			if (i > 0 && i < 12 && j > 0 && j < 12)
 			{
-				if (objects[i][j] == NULL)
+				Object* object = getObject(i - 1, j - 1);
+				if (object == NULL)
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "";
-				else if (strcmp(objects[i][j]->getName(), "Merchant") == 0)
+				else if (strcmp(object->getName(), "Merchant") == 0)
 				{
-					std::string jsonString = ((Merchant*)objects[i][j])->save();
+					std::string jsonString = ((Merchant*)object)->save();
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Merchant";
 				}
-				else if (strcmp(objects[i][j]->getName(), "Old Man") == 0)
+				else if (strcmp(object->getName(), "Old Man") == 0)
 				{
-					std::string jsonString = ((OldMan*)objects[i][j])->save();
+					std::string jsonString = ((OldMan*)object)->save();
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Old Man";
 				}
-				else if (strcmp(objects[i][j]->getName(), "Altar") == 0)
+				else if (strcmp(object->getName(), "Altar") == 0)
 				{
-					std::string jsonString = ((Merchant*)objects[i][j])->save();
+					std::string jsonString = ((Merchant*)object)->save();
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Altar";
 				}
+				// Boss
+				else if (strcmp(object->getName(), "The Magic Sergeant") == 0)
+				{
+					std::string jsonString = ((TheMagicSergeant*)object)->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "The Magic Sergeant";
+				}
+				else if (strcmp(object->getName(), "SkeletonA") == 0)
+				{
+					std::string jsonString = ((SkeletonA*)object)->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "SkeletonA";
+				}
 				else
-					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = objects[i][j]->getName();
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = object->getName();
 			}
 		}
 	}
@@ -317,6 +352,7 @@ void MapCreator::createMap3D()
 			if (objects[i][j] != NULL)
 			{
 				if (objects[i][j]->getTag() == Tag::monster
+					|| objects[i][j]->getTag() == Tag::boss
 					|| objects[i][j]->getTag() == Tag::consumbleItem
 					|| objects[i][j]->getTag() == Tag::useItem
 					|| objects[i][j]->getTag() == Tag::sword 
@@ -337,7 +373,8 @@ void MapCreator::display(Vector3* position)
 			{
 				if (objects[i][j]->getTag() == Tag::consumbleItem
 					|| objects[i][j]->getTag() == Tag::useItem
-					|| objects[i][j]->getTag() == Tag::monster 
+					|| objects[i][j]->getTag() == Tag::monster
+					|| objects[i][j]->getTag() == Tag::boss
 					|| objects[i][j]->getTag() == Tag::NPC
 					|| objects[i][j]->getTag() == Tag::sword
 					|| objects[i][j]->getTag() == Tag::shield

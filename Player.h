@@ -15,7 +15,8 @@ private:
 	unsigned short redKeyNumber; // 红钥匙的数量
 
 	Monster* monster;
-	NPC* npc;
+
+	Object* npc;
 
 	GLuint swordTexture;
 	char swordName[100] = "";
@@ -48,6 +49,7 @@ private:
 	PlayerStatus status;
 
 	unsigned short floor = 1; // 人物所在层数
+	unsigned short maxFloor = 1; // 人物去过最高的层数
 
 	void finishBattle() { status = PlayerStatus::idle; }
 public:
@@ -66,6 +68,7 @@ public:
 	unsigned short getRedKeyNumber() { return redKeyNumber; }
 
 	unsigned short getFloor() { return floor; }
+	unsigned short getMaxFloor() { return maxFloor; }
 
 	void upStairs(Vector2* position, Vector2* direction);
 	void downStairs(Vector2* position, Vector2* direction);
@@ -91,14 +94,31 @@ public:
 	void openDoor(int tag);
 	void battle(Monster* monster);
 	void talk(NPC* npc);
+	void talk(Boss* boss);
+
 	void action(); // 和NPC互动获得道具
 
-	NPC* getNPC() { return this->npc; }
+	Object* getNPC() { return npc; }
+
 	void endTalk() { this->npc = NULL; this->status = PlayerStatus::idle; }
 
 	Player(Vector2* positionInMap);
 
 	UseItem** getUseItems() { return useItems; }
+
+	void action3F() 
+	{
+		// 没收道具
+		sprintf_s(this->swordName, "");
+		this->swordTexture = 0;
+		sprintf_s(this->shieldName, "");
+		this->shieldTexture = 0;
+		this->health = 400;
+		this->attack = 10;
+		this->defence = 10;
+		AudioManager::playSound("Data/Audio/battle.wav");
+		this->status = PlayerStatus::animating;
+	}
 
 	void load();
 	void save();

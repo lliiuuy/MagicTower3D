@@ -43,6 +43,8 @@ private:
 
 	bool isUsingStairs = false;
 	bool isFinishUsingStairs = false;
+
+	bool isAnimation = false;
 public:
 
 	void draw(Player* player); // »æ»­UI
@@ -65,6 +67,7 @@ public:
 		isUsingStairs = true; 
 		AudioManager::playSound("Data/Audio/usingStairs.wav");
 	}
+
 	void finishUsingStaris() 
 	{ 
 		isFinishUsingStairs = true; 

@@ -30,6 +30,8 @@
 #include "SkeletonA.h"
 #include "GateKeeperC.h"
 #include "GateKeeperB.h"
+#include "TheMagicSergeant.h"
+#include "TheMagicianSergeant.h"
 
 #include "OldMan.h"
 #include "Merchant.h"

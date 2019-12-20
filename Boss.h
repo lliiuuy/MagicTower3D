@@ -5,7 +5,7 @@
 class Boss :
 	public Monster
 {
-private:
+protected:
 	std::vector<Message*>* messages;
 
 	unsigned short numberofMessages = 0; // 记录一共有几条对话
@@ -14,16 +14,19 @@ private:
 	bool talking = false;
 
 public:
-	virtual void nextSentence();
+	virtual void nextSentence() = 0;
 	char* getSentence() { return messages->at(indexOfMessages)->getSentence(); }
 	char* getMessage() { return messages->at(indexOfMessages)->getMessage(); }
 	bool isChoose() { return messages->at(indexOfMessages)->isChoose(); }
 	bool isAction() { return messages->at(indexOfMessages)->isAction(); }
 	bool isTalking() { return talking; }
 
+	unsigned short getIndexOfMessage() { return this->indexOfMessages; }
+
 	void talk() { this->talking = true; }
 
 	Boss(Vector2* positionInMap);
-	void load(std::string jsonString);
+	virtual void load(std::string jsonString) = 0;
+	virtual std::string save() = 0;
 };
 

@@ -173,6 +173,8 @@
     <ClCompile Include="SkeletonB.cpp" />
     <ClCompile Include="SkeletonC.cpp" />
     <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="TheMagicianSergeant.cpp" />
+    <ClCompile Include="TheMagicSergeant.cpp" />
     <ClCompile Include="TheOrbOfFlying.cpp" />
     <ClCompile Include="TheOrbOfTheHero.cpp" />
     <ClCompile Include="TheOrbOfWisdom.cpp" />
@@ -232,6 +234,8 @@
     <ClInclude Include="SkeletonC.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tag.h" />
+    <ClInclude Include="TheMagicianSergeant.h" />
+    <ClInclude Include="TheMagicSergeant.h" />
     <ClInclude Include="TheOrbOfFlying.h" />
     <ClInclude Include="TheOrbOfTheHero.h" />
     <ClInclude Include="TheOrbOfWisdom.h" />

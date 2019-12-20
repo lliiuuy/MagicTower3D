@@ -12,14 +12,9 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	player->load();
+	// player->load();
 	player->init();
 	mapCreator->loadMap(player->getFloor());
-	Vector2** nodes = new Vector2*[3]();
-	nodes[0] = new Vector2(0, 0);
-	nodes[1] = new Vector2(0, 9);
-	nodes[2] = new Vector2(0, 5);
-	((Monster*)mapCreator->getObject(0, 2))->move(nodes, 3);
 	uiManager->init();
 }
 
@@ -40,17 +35,40 @@ void GameManager::drawScene()
 
 	glLoadIdentity();
 
+	if (player->getFloor() == 3 && player->getStatus() == PlayerStatus::animating)
+	{
+		counter++;
+		if (counter == 30)
+			downStairs();
+	}
+
 	if (this->usingStairs != uiManager->getIsUsingStairs())
 	{
 		this->usingStairs = false;
 		if (isUpStairs)
 		{
+			// mapCreator->saveMap(player->getFloor());
 			player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
 			mapCreator->loadMap(player->getFloor());
 		}
 		else
 		{
-			player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
+			if (player->getFloor() == 3 && player->getStatus() == PlayerStatus::animating)
+			{
+				mapCreator->getObject(6, 4)->destroyThis();
+				mapCreator->getObject(8, 3)->destroyThis();
+				mapCreator->getObject(8, 5)->destroyThis();
+				mapCreator->getObject(7, 4)->destroyThis();
+				mapCreator->getObject(9, 4)->destroyThis();
+				mapCreator->display(player->getPositon());
+				// mapCreator->saveMap(player->getFloor());
+				player->downStairs(new Vector2(7, 2), new Vector2(1, 0));
+			}
+			else
+			{
+				// mapCreator->saveMap(player->getFloor());
+				player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
+			}
 			mapCreator->loadMap(player->getFloor());
 		}
 		uiManager->finishUsingStaris();
@@ -61,6 +79,13 @@ void GameManager::drawScene()
 	{
 		this->finishUsingStairs = false;
 		player->finishUsingStairs();
+		if (is3FAnimated)
+		{
+			is3FAnimated = false;
+			Object* object = mapCreator->getObject(6, 2);
+			object->collide();
+			player->talk((NPC*)object);
+		}
 	}
 
 	player->display();
@@ -102,12 +127,21 @@ void GameManager::drawScene()
 
 	if (player->getStatus() == PlayerStatus::talking)
 	{
-		if(player->getNPC()->isEndTalking())
-			uiManager->dialogDraw(player->getNPC()->getEndSentence(), false);
-		else
+		Object* object = player->getNPC();
+		if (object->getTag() == Tag::NPC)
 		{
-			uiManager->dialogDraw(player->getNPC()->getSentence(), player->getNPC()->isChoose());
-			uiManager->messageDraw(player->getNPC()->getMessage());
+			if (((NPC*)object)->isEndTalking())
+				uiManager->dialogDraw(((NPC*)object)->getEndSentence(), false);
+			else
+			{
+				uiManager->dialogDraw(((NPC*)object)->getSentence(), ((NPC*)object)->isChoose());
+				uiManager->messageDraw(((NPC*)object)->getMessage());
+			}
+		}
+		else if (object->getTag() == Tag::boss)
+		{
+				uiManager->dialogDraw(((Boss*)object)->getSentence(), ((Boss*)object)->isChoose());
+				uiManager->messageDraw(((Boss*)object)->getMessage());
 		}
 	}
 
@@ -130,7 +164,6 @@ void GameManager::setWindow(int width, int height)
 
 void GameManager::upStairs()
 {
-	mapCreator->saveMap(player->getFloor());
 	this->usingStairs = true;
 	this->isUpStairs = true;
 	uiManager->useStairs();
@@ -199,7 +232,7 @@ void GameManager::movePlayer(bool isUp)
 	{
 		object->collide();
 		player->talk((NPC*)object);
-		if (player->getNPC()->isAction() && !player->getNPC()->isChoose())
+		if (((NPC*)player->getNPC())->isAction() && !((NPC*)player->getNPC())->isChoose())
 		{
 			AudioManager::playSound("Data/Audio/get.wav");
 			player->action();
@@ -241,84 +274,131 @@ void GameManager::mouseButtonClick(int x, int y)
 {
 	if (player->getStatus() == PlayerStatus::talking)
 	{
-		if (player->getNPC()->isChoose())
+		Object* object = player->getNPC();
+		if (object->getTag() == Tag::NPC)
 		{
-			// 选中Yes
-			if (x > width * 1150 / 1600 && x < width * 1250 / 1600 && y > height * 590 / 1200 && y < height * 630 / 1200)
+			if (((NPC*)object)->isChoose())
 			{
-				if (strcmp(player->getNPC()->getName(), "Merchant") == 0)
+				// 选中Yes
+				if (x > width * 1150 / 1600 && x < width * 1250 / 1600 && y > height * 590 / 1200 && y < height * 630 / 1200)
 				{
-					if ((int)player->getMoney() > ((Merchant*)player->getNPC())->getCost())
+					if (strcmp(((NPC*)object)->getName(), "Merchant") == 0)
 					{
-						((Merchant*)player->getNPC())->setCanBuy(true);
-						AudioManager::playSound("Data/Audio/get.wav");
-						player->action();
-					}
-					player->getNPC()->nextSentence();
-					if (!player->getNPC()->isTalking())
-					{
-						player->endTalk();
-						uiManager->closeDialog();
-					}
-				}
-			}
-			// 选中No
-			else if (x > width * 1174 / 1600 && x < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
-			{
-				player->endTalk();
-				uiManager->closeDialog();
-			}
-		}
-		else if (strcmp(player->getNPC()->getName(), "Altar") == 0)
-		{
-			if (player->getNPC()->isAction())
-			{
-				if (x > width * 320 / 1600 && x < 1280 * width / 1600)
-				{
-					if (y > height * 220 / 1200 && y < height * 260 / 1200)
-					{
-						player->endTalk();
-						uiManager->closeDialog();
-					}
-					else if(y > height * 100 / 1200 && y < height * 220 / 1200)
-					{
-						if (y > height * 100 / 1200 && y < height * 140 / 1200)
-							((Altar*)player->getNPC())->setIndexOfChoose(0);
-						else if (y > height * 140 / 1200 && y < height * 180 / 1200)
-							((Altar*)player->getNPC())->setIndexOfChoose(1);
-						else if (y > height * 180 / 1200 && y < height * 220 / 1200)
-							((Altar*)player->getNPC())->setIndexOfChoose(2);
-						if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
+						if ((int)player->getMoney() > ((Merchant*)player->getNPC())->getCost())
 						{
-							((Altar*)player->getNPC())->setCanBuy(true);
+							((Merchant*)player->getNPC())->setCanBuy(true);
 							AudioManager::playSound("Data/Audio/get.wav");
 							player->action();
 						}
-						player->getNPC()->nextSentence();
-						if (!player->getNPC()->isTalking())
+						((NPC*)object)->nextSentence();
+						if (!((NPC*)object)->isTalking())
 						{
 							player->endTalk();
 							uiManager->closeDialog();
 						}
 					}
 				}
+				// 选中No
+				else if (x > width * 1174 / 1600 && x < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
+				{
+					player->endTalk();
+					uiManager->closeDialog();
+				}
+			}
+			else if (strcmp(player->getNPC()->getName(), "Altar") == 0)
+			{
+				if (((NPC*)object)->isAction())
+				{
+					if (x > width * 320 / 1600 && x < 1280 * width / 1600)
+					{
+						if (y > height * 220 / 1200 && y < height * 260 / 1200)
+						{
+							player->endTalk();
+							uiManager->closeDialog();
+						}
+						else if (y > height * 100 / 1200 && y < height * 220 / 1200)
+						{
+							if (y > height * 100 / 1200 && y < height * 140 / 1200)
+								((Altar*)player->getNPC())->setIndexOfChoose(0);
+							else if (y > height * 140 / 1200 && y < height * 180 / 1200)
+								((Altar*)player->getNPC())->setIndexOfChoose(1);
+							else if (y > height * 180 / 1200 && y < height * 220 / 1200)
+								((Altar*)player->getNPC())->setIndexOfChoose(2);
+							if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
+							{
+								((Altar*)player->getNPC())->setCanBuy(true);
+								AudioManager::playSound("Data/Audio/get.wav");
+								player->action();
+							}
+							((NPC*)object)->nextSentence();
+							if (!((NPC*)object)->isTalking())
+							{
+								player->endTalk();
+								uiManager->closeDialog();
+							}
+						}
+					}
+				}
+				else
+				{
+					((NPC*)object)->nextSentence();
+					if (!((NPC*)object)->isTalking())
+					{
+						player->endTalk();
+						uiManager->closeDialog();
+					}
+				}
+			}
+			else if (strcmp(((NPC*)object)->getName(), "Thief") == 0)
+			{
+				if (((Thief*)player->getNPC())->getFloor() == 2)
+				{
+					if (((Thief*)player->getNPC())->getIndexOfMessage() == 3)
+					{
+						Vector2* brokenWallPosition = ((Thief*)player->getNPC())->getBrokenWallPosition();
+						((Wall*)mapCreator->getObject((int)floor(brokenWallPosition->x + 0.5f), (int)floor(brokenWallPosition->y + 0.5f)))->setBrokenWall();
+						((Wall*)mapCreator->getObject((int)floor(brokenWallPosition->x + 0.5f), (int)floor(brokenWallPosition->y + 0.5f)))->collide();
+					}
+				}
+				((NPC*)object)->nextSentence();
+				if (!((NPC*)object)->isTalking())
+				{
+					player->endTalk();
+					uiManager->closeDialog();
+				}
 			}
 			else
 			{
-				player->getNPC()->nextSentence();
-				if (!player->getNPC()->isTalking())
+				((NPC*)object)->nextSentence();
+				if (!((NPC*)object)->isTalking())
 				{
 					player->endTalk();
 					uiManager->closeDialog();
 				}
 			}
 		}
-		else
+		else if (object->getTag() == Tag::boss)
 		{
-			player->getNPC()->nextSentence();
-			if (!player->getNPC()->isTalking())
+			if (strcmp(object->getName(), "The Magic Sergeant") == 0 && player->getFloor() == 3)
 			{
-				player->endTalk();
+				if (((Boss*)object)->getIndexOfMessage() == 0)
+				{
+					AudioManager::playSound("Data/Audio/3f.wav");
+					((Monster*)mapCreator->getObject(8, 3))->toAppear();
+					((Monster*)mapCreator->getObject(8, 5))->toAppear();
+					((Monster*)mapCreator->getObject(7, 4))->toAppear();
+					((Monster*)mapCreator->getObject(9, 4))->toAppear();
+				}
+				else if (((Boss*)object)->getIndexOfMessage() == 1)
+				{
+					player->action3F();
+				}
+			}
+			((Boss*)object)->nextSentence();
+			if (!((Boss*)object)->isTalking())
+			{
+				if(player->getStatus() == PlayerStatus::talking)
+					player->endTalk();
 				uiManager->closeDialog();
 			}
 		}
@@ -329,6 +409,21 @@ void GameManager::detectCollision()
 {
 	if (player->getStatus() == PlayerStatus::idle)
 	{
+		if (player->getFloor() == 3 && player->getStatus() == PlayerStatus::idle)
+		{
+			if ((int)floor(player->getPositionInMap()->x + 0.5) == 8 && (int)floor(player->getPositionInMap()->y + 0.5) == 4)
+			{
+				Object* object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - 2 + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
+				if (object != NULL && !this->is3FAnimated)
+				{
+					this->is3FAnimated = true;
+					AudioManager::playSound("Data/Audio/3f.wav");
+					((Boss*)object)->toAppear();
+					((Boss*)object)->talk();
+					player->talk((Boss*)object);
+				}
+			}
+		}
 		Object* object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
 		if (object != NULL)
 		{
@@ -343,8 +438,11 @@ void GameManager::detectCollision()
 			}
 			else if (object->getTag() == Tag::monster)
 			{
-				player->battle((Monster*)object);
-				uiManager->loadMonster((Monster*)object);
+				if (!((Monster*)object)->isAppearMonster())
+				{
+					player->battle((Monster*)object);
+					uiManager->loadMonster((Monster*)object);
+				}
 			}
 			else if (object->getTag() == Tag::useItem)
 			{

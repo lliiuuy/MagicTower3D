@@ -78,6 +78,41 @@ bool Player::loadTexture()
 		}
 	}
 
+	sprintf_s(fileName, "Data/ConsumbleItem/Sword/Sacred Sword.bmp");
+	if (textureImage[0] = loadBMP(fileName))
+	{
+		glGenTextures(1, &swordTexture);
+		glBindTexture(GL_TEXTURE_2D, swordTexture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+		if (textureImage[0])
+		{
+			if (textureImage[0]->data)
+			{
+				free(textureImage[0]->data);
+			}
+			free(textureImage[0]);
+		}
+	}
+	sprintf_s(fileName, "Data/ConsumbleItem/Shield/Sacred Shield.bmp");
+	if (textureImage[0] = loadBMP(fileName))
+	{
+		glGenTextures(1, &shieldTexture);
+		glBindTexture(GL_TEXTURE_2D, shieldTexture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+		if (textureImage[0])
+		{
+			if (textureImage[0]->data)
+			{
+				free(textureImage[0]->data);
+			}
+			free(textureImage[0]);
+		}
+	}
+
 	return status;
 }
 
@@ -196,6 +231,8 @@ void Player::draw2D(int width, int height)
 		glBindTexture(GL_TEXTURE_2D, right[index]);		// Ñ¡ÔñÎÆÀí
 	if (status == PlayerStatus::battling && index == 0)
 		glBindTexture(GL_TEXTURE_2D, battleTexture[0]);
+	if(status == PlayerStatus::animating && this->floor == 3)
+		glBindTexture(GL_TEXTURE_2D, battleTexture[0]);
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 - 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
 	glTexCoord2f(1.0f, 0.0f); glVertex2d(width * (930 + positionInMap->y * 32 + 16) / 1600, height * (784 + positionInMap->x * 32 + 16) / 1200);
@@ -207,6 +244,8 @@ void Player::draw2D(int width, int height)
 void Player::upStairs(Vector2* position, Vector2* direction)
 {
 	floor++;
+	if (floor > maxFloor)
+		maxFloor = floor;
 	this->direction = direction;
 	if (direction->x == 1)
 		spinY = 0; // Ç°
@@ -301,6 +340,12 @@ void Player::talk(NPC* npc)
 	this->npc = npc;
 }
 
+void Player::talk(Boss* boss)
+{
+	this->status = PlayerStatus::talking;
+	this->npc = boss;
+}
+
 void Player::action()
 {
 	if (strcmp(npc->getName(), "Old Man") == 0)
@@ -345,14 +390,16 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	redKeyNumber = 0;
 
 	health = 1000;
-	attack = 10;
-	defence = 10;
+	attack = 100;
+	defence = 100;
 	money = 0;
 	
 	moveSpeed = 0.05f;
 	positionMoveTo = positionInMap;
 
+	sprintf_s(this->swordName, "Sacred");
 	swordTexture = 0;
+	sprintf_s(this->shieldName, "Sacred");
 	shieldTexture = 0;
 
 	spinY = 0;

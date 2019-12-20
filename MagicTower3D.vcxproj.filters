@@ -282,6 +282,12 @@
     <ClCompile Include="Boss.cpp">
       <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
     </ClCompile>
+    <ClCompile Include="TheMagicianSergeant.cpp">
+      <Filter>源文件\Objects\Creatures\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="TheMagicSergeant.cpp">
+      <Filter>源文件\Objects\Creatures\Monster\Boss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -449,11 +455,17 @@
     <ClInclude Include="GateKeeperC.h">
       <Filter>头文件\Objects\Creatures\Monsters</Filter>
     </ClInclude>
-    <ClInclude Include="SkeletonA.h">
-      <Filter>头文件\Objects\Creatures\Monsters</Filter>
-    </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>头文件\Objects\Creatures\Monsters\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="TheMagicSergeant.h">
+      <Filter>头文件\Objects\Creatures\Monsters\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonA.h">
+      <Filter>头文件\Objects\Creatures\Monsters\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="TheMagicianSergeant.h">
+      <Filter>头文件\Objects\Creatures\Monsters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

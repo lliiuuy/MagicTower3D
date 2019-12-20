@@ -17,6 +17,11 @@ protected:
 
 	float moveSpeed = 0.05f;
 
+	int counterOfAppear = 0;
+
+	bool appearMonster = false;
+	bool appear = false;
+
 	Vector2* dir = new Vector2(0, 0);
 
 public:
@@ -25,6 +30,20 @@ public:
 	void draw2D(int width, int height);
 	void draw3D();
 	void receiveDamage(unsigned int damage);
+
+	void setAppear() 
+	{
+		this->appearMonster = true; 
+		this->position->y -= ly;
+	}
+
+	void toAppear()
+	{
+		appear = true;
+		counterOfAppear = 0;
+	}
+
+	bool isAppearMonster() { return this->appearMonster; }
 
 	void move(Vector2** node, unsigned short numberOfNode) 
 	{
