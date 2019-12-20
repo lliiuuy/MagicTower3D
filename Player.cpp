@@ -136,6 +136,8 @@ void Player::spin(bool isLeft)
 
 void Player::display()
 {
+	if (floor > maxFloor)
+		maxFloor = floor;
 	if (status == PlayerStatus::moving)
 	{
 		if (fabsf(positionInMap->x - positionMoveTo->x) < moveSpeed/2 && fabsf(positionInMap->y - positionMoveTo->y) < moveSpeed/2)
@@ -169,7 +171,7 @@ void Player::display()
 		else
 			spinY += (spinY - spinYTo) < 0 ? spinSpeed : -spinSpeed;
 	}
-	else if (status == PlayerStatus::battling)
+	else if (status == PlayerStatus::battling && this->health > 0)
 	{
 		counter++;
 		if (counter == 15)
@@ -193,9 +195,10 @@ void Player::display()
 				int damage = monster->getAttack() - defence;
 				if (damage < 0)
 					damage = 0;
-				health -= damage;
-				if (health < 0)
+				if (health < (unsigned int)damage)
 					health = 0;
+				else
+					health -= damage;
 			}
 			index++;
 			counter = 0;
@@ -244,8 +247,6 @@ void Player::draw2D(int width, int height)
 void Player::upStairs(Vector2* position, Vector2* direction)
 {
 	floor++;
-	if (floor > maxFloor)
-		maxFloor = floor;
 	this->direction = direction;
 	if (direction->x == 1)
 		spinY = 0; // ǰ
@@ -377,17 +378,13 @@ void Player::action()
 			break;
 		}
 	}
-	else if (strcmp(npc->getName(), "Thief") == 0)
-	{
-
-	}
 }
 
 Player::Player(Vector2* positionInMap): Creature(positionInMap)
 {
-	yellowKeyNumber = 10;
+	yellowKeyNumber = 0;
 	blueKeyNumber = 0;
-	redKeyNumber = 10;
+	redKeyNumber = 0;
 
 	health = 1000;
 	attack = 100;
@@ -406,6 +403,7 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	spinSpeed = 2.5f;
 	direction = new Vector2(1, 0);
 	floor = 1;
+	maxFloor = 0;
 
 	monster = NULL;
 
@@ -441,6 +439,7 @@ void Player::load()
 	std::ifstream is(fileName, std::ios::binary);
 	if (reader.parse(is, playerValue))
 	{
+		this->maxFloor = playerValue["maxFloor"].asUInt();
 		this->health = playerValue["health"].asUInt();
 		this->attack = playerValue["attack"].asUInt();
 		this->defence = playerValue["defence"].asUInt();
@@ -460,12 +459,14 @@ void Player::load()
 		this->floor = playerValue["floor"].asUInt();
 		this->direction->x = (float)playerValue["direction"]["x"].asDouble();
 		this->direction->y = (float)playerValue["direction"]["y"].asDouble();
+
 	}
 }
 
 void Player::save()
 {
 	Json::Value playerValue;
+	playerValue["maxFloor"] = this->maxFloor;
 	playerValue["health"] = this->health;
 	playerValue["attack"] = this->attack;
 	playerValue["defence"] = this->defence;

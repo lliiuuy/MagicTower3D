@@ -51,14 +51,85 @@
             "element": ""
         },
         {
-            "element": "",
-            "dialog": [
+            "element": ""
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Iron Door",
+            "position":[
                 {
-                    "dialogues":[
-                        {"speaker":"SkeletonA","sentence":"你怎能杀出重围？我是绝不会让你通过的，来吧，我要与你决斗！"}
-                    ],
-                    "action":"currentMap.mapData[16].dialog[0]=null",
-                    "end":true
+                    "x": 1,
+                    "y": 0 
+                },
+                {
+                    "x": 1,
+                    "y": 0
+                }
+            ]
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "Wall"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": "SkeletonC"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "SkeletonB"
+        },
+        {
+            "element": ""
+        },
+        {
+            "element": "Iron Door",
+            "position":[
+                {
+                    "x": 1,
+                    "y": 0 
+                },
+                {
+                    "x": 1,
+                    "y": 0
                 }
             ]
         },
@@ -66,73 +137,48 @@
             "element": ""
         },
         {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "SkeletonC"
-        },
-        {
-            "element": "SkeletonC"
+            "element": "SkeletonA",
+            "messages":[
+                 {
+                    "sentence": "Ha ha ha. You are lucky to have gotten#so far. Since it has come to this, I shall#fight with you personally, but#first I must test your strength.#Go and fight! Skeleton Soldiers.",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "How considerably you do. But I will never#let you pass. Here, you will die.#Fight me!",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 },
+                 {
+                    "sentence": "No, It's not possible! You may have#defeated me, but beyond this point you must#meet some enemies and snares that#powerful beyond anything you've seen.#If careless, you will die.",
+                    "message":"",
+                    "choose": false,
+                    "toNote": false,
+                    "action": false
+                 }
+             ],
+            "index": 0,
+            "number": 3
         },
         {
             "element": ""
         },
         {
-            "element": "SkeletonB"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "iron_door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "SkeletonA"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "iron_door"
+            "element": "Iron Door",
+            "position":[
+                {
+                    "x": 1,
+                    "y": 0 
+                },
+                {
+                    "x": 1,
+                    "y": 0
+                }
+            ]
         },
         {
             "element": ""
@@ -159,8 +205,7 @@
             "element": ""
         },
         {
-            "element": "",
-            "scenario":"mt50_10"
+            "element": ""
         },
         {
             "element": ""
@@ -226,7 +271,17 @@
             "element": "Wall"
         },
         {
-            "element": ""
+            "element": "Iron Door",
+            "position":[
+                {
+                    "x": 1,
+                    "y": 0 
+                },
+                {
+                    "x": 1,
+                    "y": 0
+                }
+            ]
         },
         {
             "element": "Wall"

@@ -1,12 +1,15 @@
 #include "MapCreator.h"
 
-void MapCreator::loadMap(int floor)
+void MapCreator::loadMap(int floor, int maxFloor)
 {
 	Json::Reader reader;
 	Json::Value mapValue;
 
 	char fileName[100];
-	sprintf_s(fileName, "Data/Map/%d.file", floor);
+	if (floor <= maxFloor)
+		sprintf_s(fileName, "Data/Map/%d.file", floor);
+	else
+		sprintf_s(fileName, "Data/MapOrigin/%d.file", floor);
 
 	std::ifstream is(fileName, std::ios::binary);
 
@@ -235,6 +238,15 @@ void MapCreator::saveMap(int floor)
 					std::string jsonString = ((SkeletonA*)object)->save();
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "SkeletonA";
+				}
+				else if (object->getTag() == Tag::wall)
+				{
+					if (((Wall*)object)->isBrokenWall())
+						mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Broken Wall";
+					else if(((Wall*)object)->isAppearWall())
+						mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Appear Wall";
+					else
+						mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = object->getName();
 				}
 				else
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = object->getName();

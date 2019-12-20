@@ -1,518 +1,388 @@
 {
-    "bgMusic": "music/sound_1.mp3",
-    "downPosition": {
-        "direction": "right",
-        "x": 0,
-        "y": 1
-    },
-    "floorImage": "floor",
-    "mapData": [
-        {
-            "element": "DownStairs"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Blue Door"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Gate-Keeper B"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Gate-Keeper B"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Old Man",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Old Man","sentence":"谢谢你救了我，为感谢你的帮助，请收下这些礼物(1000金币)"}
-                     ],
-                     "action":"main.money+=1000;currentMap.mapData[43].element=null",
-                     "message":"获得1000金币",
-                     "end":true
-                 }
-             ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Yellow Key"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5 
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5 
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Thief",
-            "messages":[
-                 {
-                    "sentence": "------",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "------",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "------ Hey!",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "------ Hey! Wake up!",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "What a relief you're okay! You were caught#and thrown in this prison by the#Magic Sergeant. You were unconcious when#you got here. Nevertheless, you are so lucky#that youjust woke up. I've finished the escape#tunnel. Let's break out.",
-                    "message":"The wall collapsed!",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 },
-                 {
-                    "sentence": "O.K. Well, excuse my going first. Your#sword and shield were stolen by the guards.#It's not wise to wander about without them.#I believe#there is a sword on the 5th floor and#a shield on the 9th, you had better get them#first of all. See you later!",
-                    "message":"",
-                    "choose": false,
-                    "toNote": false,
-                    "action": false
-                 }
-             ],
-            "index": 0,
-            "number": 6,
-            "floor": 2,
-            "brokenWall":
-                {
-                    "x": 6,
-                    "y": 1 
-                }
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Merchant",
-            "dialog":[
-                 {
-                     "dialogues":[
-                         {"speaker":"Merchant","sentence":"谢谢你救了我，我可以用祝福魔法提升你3%的攻击力和防御力，现在就提升吗？"}
-                     ],
-                     "actionAsk":"main.damage*=1.03;main.defense*=1.03;currentMap.mapData[76].element=null;currentMap.mapData[76].dialog=null;",
-                     "end":false
-                 }
-             ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5 
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5 
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "UpStairs"
-        },
-        {
-            "element": "Wall"
-        },
-        {
-            "element": "Blue Medicine"
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "Prison",
-            "position":[
-                {
-                    "x": 1,
-                    "y": 5 
-                },
-                {
-                    "x": 1,
-                    "y": 7
-                }
-            ]
-        },
-        {
-            "element": ""
-        },
-        {
-            "element": "",
-            "dialog":[
-                {
-                    "condition":"false"
-                }
-            ]
-        }
-    ],
-    "mapFloor": 2,
-    "mapHeight": 11,
-    "mapWidth": 11,
-    "upPosition": {
-        "direction": "right",
-        "x": 10,
-        "y": 1
-    }
+   "downPosition" : {
+      "direction" : "right",
+      "x" : 0.0,
+      "y" : 1.0
+   },
+   "mapData" : [
+      {
+         "element" : "DownStairs"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Blue Door"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Gate-Keeper B"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Gate-Keeper B"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Old Man",
+         "endTalking" : false,
+         "index" : 0,
+         "indexOfUseItem" : 0,
+         "number" : 0
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Key"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "blueKeyNumber" : 0,
+         "cost" : 0,
+         "element" : "Merchant",
+         "endTalking" : false,
+         "index" : 0,
+         "number" : 0,
+         "redKeyNumber" : 0,
+         "yellowKeyNumber" : 0
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "UpStairs"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Blue Medicine"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Prison"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      }
+   ],
+   "upPosition" : {
+      "direction" : "right",
+      "x" : 10.0,
+      "y" : 1.0
+   }
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include "AudioManager.h"
 #include "MapCreator.h"
-#include "BattleController.h"
 #include "UIManager.h"
 #include "Player.h"
 
@@ -9,7 +8,6 @@ class GameManager
 {
 private:
 	MapCreator* mapCreator;
-	BattleController* battleController;
 	UIManager* uiManager;
 	Player* player;
 
@@ -23,6 +21,9 @@ private:
 	bool talking = false;
 
 	bool isAnimated = false;
+
+	bool gameOver = false;
+	bool restart = false;
 
 	unsigned short counter = 0;
 
@@ -39,5 +40,8 @@ public:
 	void movePlayer(bool isUp); // ÒÆ¶¯Íæ¼Ò
 	void spinPlayer(bool isLeft);
 	void mouseButtonClick(int x, int y);
+	void newGame();
+
+	bool isGameOver() { return this->gameOver; }
 };
 

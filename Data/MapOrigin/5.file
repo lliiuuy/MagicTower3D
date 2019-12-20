@@ -2,8 +2,8 @@
     "bgMusic": "music/sound_1.mp3",
     "downPosition": {
         "direction": "up",
-        "x": 0,
-        "y": 9
+        "x": 9,
+        "y": 0
     },
     "floorImage": "floor",
     "mapData": [
@@ -362,8 +362,7 @@
             "element": ""
         },
         {
-            "element": "brown_fake_Wall",
-            "action":"true"
+            "element": "Broken Wall"
         },
         {
             "element": ""
@@ -378,6 +377,6 @@
     "upPosition": {
         "direction": "down",
         "x": 1,
-        "y": 10
+        "y": 0
     }
 }

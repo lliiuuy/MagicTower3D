@@ -4,7 +4,6 @@ GameManager::GameManager(int width, int height)
 {
 	mapCreator = new MapCreator();
 	uiManager = new UIManager(width, height);
-	battleController = new BattleController();
 	player = new Player(new Vector2(10, 5));
 	this->width = width;
 	this->height = height;
@@ -12,21 +11,21 @@ GameManager::GameManager(int width, int height)
 
 void GameManager::init()
 {
-	// player->load();
+	player->load();
 	player->init();
-	mapCreator->loadMap(player->getFloor());
+	mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
 	uiManager->init();
 }
 
 void GameManager::load()
 {
-	// player->load();
+	player->load();
 }
 
 void GameManager::save()
 {
-	// player->save();
-	// mapCreator->saveMap(player->getFloor());
+	player->save();
+	mapCreator->saveMap(player->getFloor());
 }
 
 void GameManager::drawScene()
@@ -102,49 +101,71 @@ void GameManager::drawScene()
 		}
 	}
 
-	if (this->usingStairs != uiManager->getIsUsingStairs())
+	if (!restart)
 	{
-		this->usingStairs = false;
-		if (isUpStairs)
+		if (this->usingStairs != uiManager->getIsUsingStairs())
 		{
-			// mapCreator->saveMap(player->getFloor());
-			player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
-			mapCreator->loadMap(player->getFloor());
-		}
-		else
-		{
-			if (player->getFloor() == 3 && player->getStatus() == PlayerStatus::animating)
+			this->usingStairs = false;
+			if (isUpStairs)
 			{
-				mapCreator->getObject(6, 4)->destroyThis();
-				mapCreator->getObject(8, 3)->destroyThis();
-				mapCreator->getObject(8, 5)->destroyThis();
-				mapCreator->getObject(7, 4)->destroyThis();
-				mapCreator->getObject(9, 4)->destroyThis();
-				mapCreator->display(player->getPositon());
 				mapCreator->saveMap(player->getFloor());
-				player->downStairs(new Vector2(7, 2), new Vector2(1, 0));
+				player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
+				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
 			}
 			else
 			{
-				// mapCreator->saveMap(player->getFloor());
-				player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
+				if (player->getFloor() == 3 && player->getStatus() == PlayerStatus::animating)
+				{
+					mapCreator->getObject(6, 4)->destroyThis();
+					mapCreator->getObject(8, 3)->destroyThis();
+					mapCreator->getObject(8, 5)->destroyThis();
+					mapCreator->getObject(7, 4)->destroyThis();
+					mapCreator->getObject(9, 4)->destroyThis();
+					mapCreator->display(player->getPositon());
+					mapCreator->saveMap(player->getFloor());
+					player->downStairs(new Vector2(7, 2), new Vector2(1, 0));
+				}
+				else
+				{
+					mapCreator->saveMap(player->getFloor());
+					player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
+				}
+				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
 			}
-			mapCreator->loadMap(player->getFloor());
+			uiManager->finishUsingStaris();
+			this->finishUsingStairs = true;
 		}
-		uiManager->finishUsingStaris();
-		this->finishUsingStairs = true;
-	}
 
-	if (this->finishUsingStairs != uiManager->getIsFinishUsingStairs())
-	{
-		this->finishUsingStairs = false;
-		player->finishUsingStairs();
-		if (isAnimated)
+		if (this->finishUsingStairs != uiManager->getIsFinishUsingStairs())
 		{
-			isAnimated = false;
-			Object* object = mapCreator->getObject(6, 2);
-			object->collide();
-			player->talk((NPC*)object);
+			this->finishUsingStairs = false;
+			player->finishUsingStairs();
+			if (isAnimated)
+			{
+				isAnimated = false;
+				Object* object = mapCreator->getObject(6, 2);
+				object->collide();
+				player->talk((NPC*)object);
+			}
+		}
+	}
+	else
+	{
+		if (this->usingStairs != uiManager->getIsUsingStairs())
+		{
+			this->usingStairs = false;
+			mapCreator = new MapCreator();
+			player = new Player(new Vector2(10, 5));
+			player->init();
+			mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
+			uiManager->messageDraw("Restart the game.");
+			uiManager->finishUsingStaris();
+			this->finishUsingStairs = true;
+		}
+		if (this->finishUsingStairs != uiManager->getIsFinishUsingStairs())
+		{
+			this->finishUsingStairs = false;
+			this->restart = false;
 		}
 	}
 
@@ -203,6 +224,12 @@ void GameManager::drawScene()
 				uiManager->dialogDraw(((Boss*)object)->getSentence(), ((Boss*)object)->isChoose());
 				uiManager->messageDraw(((Boss*)object)->getMessage());
 		}
+	}
+
+	if (player->getHealth() <= 0 && !restart)
+	{
+		gameOver = true;
+		uiManager->dialogDraw("Game Over!#Press R to restart", false);
 	}
 
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
@@ -290,12 +317,14 @@ void GameManager::movePlayer(bool isUp)
 			uiManager->messageDraw(message);
 			object->collide();
 		}
+		else
+			uiManager->messageDraw("You don't have the key");
 	}
 	else if (object->getTag() == Tag::NPC && player->getStatus() == PlayerStatus::idle)
 	{
 		object->collide();
 		player->talk((NPC*)object);
-		if (((NPC*)player->getNPC())->isAction() && !((NPC*)player->getNPC())->isChoose())
+		if (((NPC*)player->getNPC())->isAction() && !((NPC*)player->getNPC())->isChoose() && strcmp(player->getNPC()->getName(), "Old Man") == 0)
 		{
 			AudioManager::playSound("Data/Audio/get.wav");
 			player->action();
@@ -391,7 +420,7 @@ void GameManager::mouseButtonClick(int x, int y)
 								((Altar*)player->getNPC())->setIndexOfChoose(1);
 							else if (y > height * 180 / 1200 && y < height * 220 / 1200)
 								((Altar*)player->getNPC())->setIndexOfChoose(2);
-							if ((int)player->getMoney() > ((Altar*)player->getNPC())->getCost())
+							if ((int)player->getMoney() >= ((Altar*)player->getNPC())->getCost())
 							{
 								((Altar*)player->getNPC())->setCanBuy(true);
 								AudioManager::playSound("Data/Audio/get.wav");
@@ -477,7 +506,7 @@ void GameManager::mouseButtonClick(int x, int y)
 					((Wall*)mapCreator->getObject(5, 4))->collide();
 					((Wall*)mapCreator->getObject(5, 6))->collide();
 					nodes = new Vector2 * [3]();
-					nodes[0] = new Vector2(4, 3);
+					nodes[0] = new Vector2(3, 4);
 					nodes[1] = new Vector2(5, 4);
 					nodes[2] = new Vector2(5, 5);
 					((Monster*)mapCreator->getObject(3, 1))->move(nodes, 3); // 第一个骷髅兵
@@ -530,6 +559,22 @@ void GameManager::mouseButtonClick(int x, int y)
 			}
 		}
 	}
+}
+
+void GameManager::newGame()
+{
+	uiManager->closeDialog();
+	usingStairs = true;
+	finishUsingStairs = false;
+	isUpStairs = false;
+	talking = false;
+	isAnimated = false;
+	gameOver = false;
+	restart = true;
+	counter = 0;
+	uiManager = new UIManager(width, height);
+	uiManager->init();
+	uiManager->useStairs();
 }
 
 void GameManager::detectCollision()

@@ -49,7 +49,7 @@ private:
 	PlayerStatus status;
 
 	unsigned short floor = 1; // 人物所在层数
-	unsigned short maxFloor = 1; // 人物去过最高的层数
+	unsigned short maxFloor = 0; // 人物去过最高的层数
 
 	void finishBattle() { status = PlayerStatus::idle; }
 public:

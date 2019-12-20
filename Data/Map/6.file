@@ -12,10 +12,10 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -45,10 +45,10 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -81,7 +81,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Red Slime"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -108,16 +108,16 @@
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
-      },
-      {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
+      },
+      {
+         "element" : ""
       },
       {
          "element" : ""
@@ -223,7 +223,7 @@
          "element" : ""
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
          "element" : ""
@@ -305,16 +305,16 @@
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
-      },
-      {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
+      },
+      {
+         "element" : ""
       },
       {
          "element" : ""
@@ -344,13 +344,13 @@
          "element" : "Wall"
       },
       {
-         "element" : "Red Slime"
+         "element" : ""
       },
       {
          "element" : "Wall"
       },
       {
-         "element" : "Red Slime"
+         "element" : ""
       },
       {
          "element" : "Yellow Door"
@@ -407,10 +407,10 @@
          "element" : "Wall"
       },
       {
-         "element" : "Red Medicine"
+         "element" : ""
       },
       {
-         "element" : "Red Medicine"
+         "element" : ""
       },
       {
          "element" : "Wall"

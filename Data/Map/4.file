@@ -246,13 +246,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Red Slime"
-      },
-      {
          "element" : ""
-      },
-      {
-         "element" : "Green Slime"
       },
       {
          "element" : ""
@@ -279,7 +273,13 @@
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -309,7 +309,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : ""

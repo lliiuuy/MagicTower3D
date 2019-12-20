@@ -5,6 +5,8 @@ bool fullScreen = false; // 是否全屏
 
 GameManager* gameManager;
 
+int counter = 0;
+
 unsigned short adjust = 4;
 unsigned short steps[6] = { 1, 2, 4, 5, 10, 20 }; // 帧数调整的步进值
 
@@ -87,6 +89,22 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 			fullScreen = !fullScreen;
 		}
 	}
+	if (key == GLFW_KEY_R && action == GLFW_PRESS)
+	{
+		if (gameManager->isGameOver())
+			gameManager->newGame();
+	}
+	else if (key == GLFW_KEY_R && action == GLFW_REPEAT)
+	{
+		counter++;
+		if (counter >= 100)
+		{
+			gameManager->newGame();
+			counter = 0;
+		}
+	}
+	else if (key == GLFW_KEY_R && action == GLFW_RELEASE)
+		counter = 0;
 	if (action == GLFW_REPEAT || action == GLFW_PRESS)
 	{
 		switch (key)

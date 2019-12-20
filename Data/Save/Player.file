@@ -4,22 +4,23 @@
       "y" : 5.0
    },
    "Shield" : {
-      "Name" : "",
-      "Texture" : 0
+      "Name" : "Sacred",
+      "Texture" : 359
    },
    "Sword" : {
-      "Name" : "",
-      "Texture" : 0
+      "Name" : "Sacred",
+      "Texture" : 358
    },
-   "attack" : 10,
+   "attack" : 100,
    "blueKeyNumber" : 0,
-   "defence" : 10,
+   "defence" : 100,
    "direction" : {
       "x" : 1.0,
       "y" : 0.0
    },
    "floor" : 1,
    "health" : 1000,
+   "maxFloor" : 1,
    "money" : 0,
    "redKeyNumber" : 0,
    "spinY" : 0.0,

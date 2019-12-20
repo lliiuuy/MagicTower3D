@@ -6,6 +6,8 @@ void Monster::display(Vector3* position)
 	{
 		if (fabs(positionInMap->x - node[indexOfMove]->x) < moveSpeed && fabs(positionInMap->y - node[indexOfMove]->y) < moveSpeed)
 		{
+			this->positionInMap->x = node[indexOfMove]->x;
+			this->positionInMap->y = node[indexOfMove]->y;
 			this->indexOfMove++;
 			if (this->indexOfMove == this->numberOfNode)
 			{

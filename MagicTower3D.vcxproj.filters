@@ -132,9 +132,6 @@
     <ClCompile Include="Object.cpp">
       <Filter>源文件\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="BattleController.cpp">
-      <Filter>源文件\Managers</Filter>
-    </ClCompile>
     <ClCompile Include="Creature.cpp">
       <Filter>源文件\Objects\Creatures</Filter>
     </ClCompile>
@@ -304,9 +301,6 @@
     </ClInclude>
     <ClInclude Include="Tag.h">
       <Filter>头文件\Config</Filter>
-    </ClInclude>
-    <ClInclude Include="BattleController.h">
-      <Filter>头文件\Managers</Filter>
     </ClInclude>
     <ClInclude Include="Creature.h">
       <Filter>头文件\Objects\Creatures</Filter>

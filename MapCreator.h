@@ -31,7 +31,7 @@ private:
 	char downDirection[10]; // 从该层下楼后人物的朝向
 
 public:
-	void loadMap(int floor); // 从文件中读取json
+	void loadMap(int floor, int maxFloor); // 从文件中读取json
 	void saveMap(int floor); // 将当前层的json存入文件中
 	void createMap2D(int width, int height); // 创建2D地图
 	void createMap3D(); // 创建3D地图
