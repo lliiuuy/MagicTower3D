@@ -49,6 +49,7 @@ public:
 	char* getMessage() { return messages->at(indexOfMessages)->getMessage(); }
 	bool isChoose() { return messages->at(indexOfMessages)->isChoose(); }
 	bool isAction() { return messages->at(indexOfMessages)->isAction(); }
+	bool isToNote() { return messages->at(indexOfMessages)->isToNote(); }
 	bool isEndTalking() { return endTalking; }
 	bool isTalking() { return talking; }
 

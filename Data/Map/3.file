@@ -136,7 +136,7 @@
       },
       {
          "element" : "Old Man",
-         "endTalking" : false,
+         "endTalking" : true,
          "index" : 0,
          "indexOfUseItem" : 0,
          "messages" : [

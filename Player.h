@@ -70,9 +70,11 @@ public:
 	unsigned short getFloor() { return floor; }
 	unsigned short getMaxFloor() { return maxFloor; }
 
-	void upStairs(Vector2* position, Vector2* direction);
-	void downStairs(Vector2* position, Vector2* direction);
+	void upStairs(Vector2* position, Vector2* direction, unsigned short floor);
+	void downStairs(Vector2* position, Vector2* direction, unsigned short floor);
 	void finishUsingStairs() { this->status = PlayerStatus::idle; }
+
+	void moveFloor(unsigned short floor) { this->floor = floor; }
 
 	float getSpinY() { return spinY; }
 

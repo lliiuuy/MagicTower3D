@@ -1,28 +1,16 @@
 #include "TheOrbOfTheHero.h"
 
-std::string TheOrbOfTheHero::save()
-{
-	std::string jsonString;
-	Json::Value value;
-	value["enable"] = this->enable;
-	value["canUse"] = this->canUse;
-	jsonString = value.toStyledString();
-	return jsonString;
-}
-
-void TheOrbOfTheHero::load(std::string jsonString)
-{
-	Json::Value data;
-	Json::Reader reader;
-	if (reader.parse(jsonString, data))
-	{
-		this->canUse = data["canUse"].asBool();
-		this->enable = data["enable"].asBool();
-	}
-}
-
 TheOrbOfTheHero::TheOrbOfTheHero(Vector2* positionInMap): UseItem(positionInMap)
 {
 	this->name = "The orb of the hero";
 	this->index = 0;
+	this->names = new std::vector<char*>();
+	this->health = new std::vector<unsigned int>();
+	this->attack = new std::vector<unsigned int>();
+	this->defence = new std::vector<unsigned int>();
+	this->money = new std::vector<unsigned int>();
+	this->damages = new std::vector<int>();
+	this->textures = new std::vector<GLuint>();
+	this->playerAttack = 0;
+	this->playerDefence = 0;
 }

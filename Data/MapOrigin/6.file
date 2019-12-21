@@ -157,7 +157,7 @@
                "action" : false,
                "choose" : false,
                "messsage" : "",
-               "sentence" : "Here is a magic tower of 50 stories. Every#ten stories form one area. The boss whom#controls each area, are posted in this tower. And#if you don't beat them, you cannot ascend from# there",
+               "sentence" : "Here is a magic tower of 50 stories. Every#ten stories form one area. The boss whom#controls each area, are posted in this tower. And#if you don't beat them, you cannot ascend from#there",
                "toNote" : true
             }
          ],
@@ -292,7 +292,7 @@
                "action" : false,
                "choose" : false,
                "messsage" : "",
-               "sentence" : "If you buy goods from merchants, you#will be able to hear important information later.",
+               "sentence" : "If you buy goods from merchants, you#will be able to hear important information#later.",
                "toNote" : true
             }
          ],

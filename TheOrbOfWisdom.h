@@ -1,10 +1,12 @@
 #pragma once
+#include "Message.h"
 #include "UseItem.h"
+
 class TheOrbOfWisdom :
 	public UseItem
 {
 private:
-	std::vector<char*>* messages;
+	std::vector<Message*>* messages;
 	int indexOfMessages = 0; // 当前查看对话的index
 public:
 
@@ -12,11 +14,11 @@ public:
 	void load(std::string jsonString);
 
 	void useItem() { this->isUsing = true;}
-	void closeItem() { this->isUsing = true; }
+	void closeItem() { this->isUsing = false; }
 
 	void nextMessage() 
 	{ 
-		if(indexOfMessages < messages->size() - 1)
+		if(indexOfMessages < (int)messages->size() - 1)
 			indexOfMessages++; 
 	}
 	void previousMessage() 
@@ -25,7 +27,14 @@ public:
 			indexOfMessages--; 
 	}
 
-	char* getMessage() { return this->messages->at(this->indexOfMessages); }
+	char* getMessage() 
+	{ 
+		if (messages->size() > 0)
+			return this->messages->at(this->indexOfMessages)->getSentence();
+		else
+			return NULL;
+	}
+	void addMessage(char* message);
 
 	TheOrbOfWisdom(Vector2* positionInMap);
 };

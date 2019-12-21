@@ -284,7 +284,7 @@
       },
       {
          "element" : "Old Man",
-         "endTalking" : false,
+         "endTalking" : true,
          "index" : 0,
          "indexOfUseItem" : 65535,
          "messages" : [
@@ -292,7 +292,7 @@
                "action" : false,
                "choose" : false,
                "messsage" : "",
-               "sentence" : "If you buy goods from merchants, you#will be able to hear important information later.",
+               "sentence" : "If you buy goods from merchants, you#will be able to hear important information#later.",
                "toNote" : true
             }
          ],
@@ -323,25 +323,10 @@
          "element" : ""
       },
       {
-         "element" : "Bat"
-      },
-      {
          "element" : ""
       },
       {
-         "element" : "Blue Jewel"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
          "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
       },
       {
          "element" : ""
@@ -351,15 +336,6 @@
       },
       {
          "element" : ""
-      },
-      {
-         "element" : "Yellow Door"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
       },
       {
          "element" : "Wall"
@@ -383,13 +359,28 @@
          "element" : "Wall"
       },
       {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
          "element" : ""
       },
       {
          "element" : ""
       },
       {
-         "element" : "Green Slime"
+         "element" : "Wall"
       },
       {
          "element" : ""
@@ -398,7 +389,16 @@
          "element" : ""
       },
       {
-         "element" : "SkeletonC"
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
       },
       {
          "element" : ""

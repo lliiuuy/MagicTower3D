@@ -97,7 +97,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	else if (key == GLFW_KEY_R && action == GLFW_REPEAT)
 	{
 		counter++;
-		if (counter >= 100)
+		if (counter >= 50)
 		{
 			gameManager->newGame();
 			counter = 0;
@@ -141,7 +141,7 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width  / height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(60.0f, width * 1.3f  / height, 0.025f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -177,7 +177,7 @@ int main()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width * 1.3f / height, 0.1f, 1000.0f); // 设置投影
+	gluPerspective(60.0f, width * 1.3f / height, 0.025f, 1000.0f); // 设置投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵

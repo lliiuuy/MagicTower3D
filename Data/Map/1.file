@@ -12,13 +12,13 @@
          "element" : ""
       },
       {
-         "element" : "Green Slime"
+         "element" : ""
       },
       {
-         "element" : "Red Slime"
+         "element" : ""
       },
       {
-         "element" : "Green Slime"
+         "element" : ""
       },
       {
          "element" : ""
@@ -285,7 +285,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -315,7 +315,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
          "element" : ""
@@ -339,7 +339,7 @@
          "element" : "Red Medicine"
       },
       {
-         "element" : "The orb of the hero"
+         "element" : "The orb of flying"
       },
       {
          "element" : "Yellow Key"

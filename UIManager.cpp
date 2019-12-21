@@ -270,7 +270,14 @@ void UIManager::draw(Player* player)
 	glEnable(GL_BLEND);
 	// 显示message
 	if (messaging)
-		glPrint(width * 5 / 1600, height * ((1200 * 20 / 21) + 5) / 1200, this->message, (float)3 / 1600 * width);
+	{
+		float scale;
+		if (strlen(message) * 18.0f > 1600)
+			scale = 1600 / strlen(message) * 18.0f;
+		else
+			scale = 3;
+		glPrint(width * 5 / 1600, height * ((1200 * 20 / 21) + 5) / 1200, this->message, scale / 1600 * width);
+	}
 
 	char string[100];
 	// 显示层数
@@ -431,7 +438,125 @@ void UIManager::draw(Player* player)
 	}
 	glDisable(GL_BLEND);
 
-	// 楼层移动动画
+	// 对话框绘制
+	if (dialogDrawing)
+	{
+		glEnable(GL_TEXTURE_2D); // 开启2D纹理
+		glBindTexture(GL_TEXTURE_2D, dialogTexture);		// 选择纹理
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f); glVertex2d(width* 320 / 1600, height* 690 / 1200);
+		glTexCoord2f(1.0f, 0.0f); glVertex2d(width* 1280 / 1600, height* 690 / 1200);
+		glTexCoord2f(1.0f, 1.0f); glVertex2d(width* 1280 / 1600, height* 50 / 1200);
+		glTexCoord2f(0.0f, 1.0f); glVertex2d(width* 320 / 1600, height* 50 / 1200);
+		glEnd();
+		glEnable(GL_BLEND);
+		char* word = NULL;
+		char* nextWord = NULL;
+		char words[1000];
+		sprintf_s(words, sentence);
+		word = strtok_s(words, "#", &nextWord);
+
+		int i = 0;
+		while (word != NULL)
+		{
+			if (word != NULL)
+			{
+				glPrint(width * 320 / 1600, height* (60 +40 * i)/ 1200, word, width * (float)2 / 1600);
+				word = strtok_s(NULL, "#", &nextWord);
+				i++;
+			}
+		}
+
+		if (isChoose)
+		{
+			glPrint(width * 1170 / 1600, height* 600 / 1200, "Yes", width * (float)2 / 1600);
+			glPrint(width * 1184 / 1600, height* 640 / 1200, "No", width * (float)2 / 1600);
+		}
+		glDisable(GL_BLEND);
+	}
+
+	// 对主动道具进行操作
+	for (int i = 0; i < 15; i++)
+	{
+		if (player->getUseItems()[i] != NULL)
+		{
+			if (player->getUseItems()[i]->ifIsUsing())
+			{
+				switch (i)
+				{
+				case 0: // The orb of the hero
+				{
+					glBindTexture(GL_TEXTURE_2D, dialogTexture); // 选择纹理
+					glBegin(GL_QUADS);
+					glTexCoord2f(0.0f, 0.0f); glVertex2d(width * 3 / 16, height * 20 / 21);
+					glTexCoord2f(1.0f, 0.0f); glVertex2d(width * 13 / 16, height * 20 / 21);
+					glTexCoord2f(1.0f, 1.0f); glVertex2d(width * 13 / 16, 0);
+					glTexCoord2f(0.0f, 1.0f); glVertex2d(width * 3 / 16, 0);
+					glEnd();
+					glEnable(GL_BLEND);
+					for (int j = 0; j < (int)((TheOrbOfTheHero*)player->getUseItems()[i])->getSize(); j++)
+					{
+						glBindTexture(GL_TEXTURE_2D, ((TheOrbOfTheHero*)player->getUseItems()[i])->getTextureOfMonster(j)); // 先画纹理
+						glBegin(GL_QUADS);
+						glTexCoord2f(0.0f, 0.0f); glVertex2d(width * 320 / 1600, height * (130 + j * 100) / 1200);
+						glTexCoord2f(1.0f, 0.0f); glVertex2d(width * 400 / 1600, height * (130 + j * 100) / 1200);
+						glTexCoord2f(1.0f, 1.0f); glVertex2d(width * 400 / 1600, height * (50 + j * 100) / 1200);
+						glTexCoord2f(0.0f, 1.0f); glVertex2d(width * 320 / 1600, height * (50 + j * 100) / 1200);
+						glEnd();
+						char status[100];
+						if (((TheOrbOfTheHero*)player->getUseItems()[i])->getDamageOfMonster(j) < 0)
+							sprintf_s(status, "%s: Cannot be hit by you", ((TheOrbOfTheHero*)player->getUseItems()[i])->getNameOfMonster(j));
+						else
+							sprintf_s(status, "%s: Expected damage %d", ((TheOrbOfTheHero*)player->getUseItems()[i])->getNameOfMonster(j), ((TheOrbOfTheHero*)player->getUseItems()[i])->getDamageOfMonster(j));
+						glPrint(width * 420 / 1600, height * (50 + j * 100) / 1200, status, (float)2 / 1600 * width);
+						sprintf_s(status, "Life %d Offence %d Defense %d Money %d", ((TheOrbOfTheHero*)player->getUseItems()[i])->getHealthOfMonster(j), ((TheOrbOfTheHero*)player->getUseItems()[i])->getAttackOfMonster(j), ((TheOrbOfTheHero*)player->getUseItems()[i])->getDefenceOfMonster(j), ((TheOrbOfTheHero*)player->getUseItems()[i])->getMoneyOfMonster(j));
+						glPrint(width * 420 / 1600, height * (90 + j * 100) / 1200, status, (float)2 / 1600 * width);
+					}
+					glDisable(GL_BLEND);
+					break;
+				}
+				case 1: // The orb of wisdom
+				{
+					char* message = ((TheOrbOfWisdom*)player->getUseItems()[i])->getMessage();
+					if (message != NULL)
+					{
+						dialogDraw(message, false);
+						messageDraw("Press A to previous, Press D to next sentence");
+					}
+					else
+					{
+						dialogDraw("There is no setence.", false);
+						messageDraw("There is no setence.");
+					}
+					break;
+				}
+				case 2: // The orb of flying
+				{
+					glBindTexture(GL_TEXTURE_2D, dialogTexture); // 选择纹理
+					glBegin(GL_QUADS);
+					glTexCoord2f(0.0f, 0.0f); glVertex2d(width * 270 / 1600, height * 760 / 1200);
+					glTexCoord2f(1.0f, 0.0f); glVertex2d(width * 680 / 1600, height * 760 / 1200);
+					glTexCoord2f(1.0f, 1.0f); glVertex2d(width * 680 / 1600, height * 560 / 1200);
+					glTexCoord2f(0.0f, 1.0f); glVertex2d(width * 270 / 1600, height * 560 / 1200);
+					glEnd();
+					glEnable(GL_BLEND);
+					char floor[10];
+					for (int j = 0; j < player->getMaxFloor(); j++)
+					{
+						sprintf_s(floor, "%d", j + 1);
+						glPrint(width* (270 + (j % 10) * 40) / 1600, height* (560 + (j / 10) * 40) / 1200, floor, (float)1.7 / 1600 * width);
+					}
+					glDisable(GL_BLEND);
+					break;
+				}
+				default:
+					break;
+				}
+			}
+		}
+	}
+
+	// 楼层移动动画(必须置于最顶层)
 	if (isUsingStairs)
 	{
 		if (map[3][3])
@@ -500,43 +625,6 @@ void UIManager::draw(Player* player)
 				glEnd();
 			}
 		}
-	}
-
-	// 对话框绘制
-	if (dialogDrawing)
-	{
-		glEnable(GL_TEXTURE_2D); // 开启2D纹理
-		glBindTexture(GL_TEXTURE_2D, dialogTexture);		// 选择纹理
-		glBegin(GL_QUADS);
-		glTexCoord2f(0.0f, 0.0f); glVertex2d(width* 320 / 1600, height* 690 / 1200);
-		glTexCoord2f(1.0f, 0.0f); glVertex2d(width* 1280 / 1600, height* 690 / 1200);
-		glTexCoord2f(1.0f, 1.0f); glVertex2d(width* 1280 / 1600, height* 50 / 1200);
-		glTexCoord2f(0.0f, 1.0f); glVertex2d(width* 320 / 1600, height* 50 / 1200);
-		glEnd();
-		glEnable(GL_BLEND);
-		char* word = NULL;
-		char* nextWord = NULL;
-		char words[1000];
-		sprintf_s(words, sentence);
-		word = strtok_s(words, "#", &nextWord);
-
-		int i = 0;
-		while (word != NULL)
-		{
-			if (word != NULL)
-			{
-				glPrint(width * 320 / 1600, height* (60 +40 * i)/ 1200, word, width * (float)2 / 1600);
-				word = strtok_s(NULL, "#", &nextWord);
-				i++;
-			}
-		}
-
-		if (isChoose)
-		{
-			glPrint(width * 1170 / 1600, height* 600 / 1200, "Yes", width * (float)2 / 1600);
-			glPrint(width * 1184 / 1600, height* 640 / 1200, "No", width * (float)2 / 1600);
-		}
-		glDisable(GL_BLEND);
 	}
 }
 

@@ -1,6 +1,6 @@
 {
    "downPosition" : {
-      "direction" : "down",
+      "direction" : "up",
       "x" : 9.0,
       "y" : 10.0
    },
@@ -175,7 +175,7 @@
          "element" : ""
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -205,7 +205,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Door"
+         "element" : ""
       },
       {
          "element" : ""
@@ -253,19 +253,19 @@
          "element" : "Wall"
       },
       {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
          "element" : "Yellow Door"
       },
       {
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Door"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "SkeletonB"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -319,7 +319,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Bat"
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -331,15 +331,6 @@
          "element" : "Wall"
       },
       {
-         "element" : "Blue Medicine"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
          "element" : ""
       },
       {
@@ -349,10 +340,19 @@
          "element" : ""
       },
       {
+         "element" : ""
+      },
+      {
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -364,28 +364,28 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
          "element" : ""
       },
       {
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
       },
       {
          "element" : "Wall"
@@ -397,7 +397,7 @@
          "element" : "Wall"
       },
       {
-         "element" : "Yellow Key"
+         "element" : ""
       },
       {
          "element" : "Wall"

@@ -78,40 +78,50 @@ bool Player::loadTexture()
 		}
 	}
 
-	sprintf_s(fileName, "Data/ConsumbleItem/Sword/Sacred Sword.bmp");
-	if (textureImage[0] = loadBMP(fileName))
+	if (strcmp("", this->swordName) != 0)
 	{
-		glGenTextures(1, &swordTexture);
-		glBindTexture(GL_TEXTURE_2D, swordTexture);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
-		if (textureImage[0])
+		sprintf_s(fileName, "Data/ConsumbleItem/Sword/%s Sword.bmp", this->swordName);
+		if (textureImage[0] = loadBMP(fileName))
 		{
-			if (textureImage[0]->data)
+			glGenTextures(1, &swordTexture);
+			glBindTexture(GL_TEXTURE_2D, swordTexture);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+			if (textureImage[0])
 			{
-				free(textureImage[0]->data);
+				if (textureImage[0]->data)
+				{
+					free(textureImage[0]->data);
+				}
+				free(textureImage[0]);
 			}
-			free(textureImage[0]);
 		}
 	}
-	sprintf_s(fileName, "Data/ConsumbleItem/Shield/Sacred Shield.bmp");
-	if (textureImage[0] = loadBMP(fileName))
+	else
+		this->swordTexture = 0;
+	if (strcmp("", this->shieldName) != 0)
 	{
-		glGenTextures(1, &shieldTexture);
-		glBindTexture(GL_TEXTURE_2D, shieldTexture);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
-		if (textureImage[0])
+		sprintf_s(fileName, "Data/ConsumbleItem/Shield/%s Shield.bmp", this->shieldName);
+		if (textureImage[0] = loadBMP(fileName))
 		{
-			if (textureImage[0]->data)
+			glGenTextures(1, &shieldTexture);
+			glBindTexture(GL_TEXTURE_2D, shieldTexture);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage[0]->sizeX, textureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, textureImage[0]->data);
+			if (textureImage[0])
 			{
-				free(textureImage[0]->data);
+				if (textureImage[0]->data)
+				{
+					free(textureImage[0]->data);
+				}
+				free(textureImage[0]);
 			}
-			free(textureImage[0]);
 		}
 	}
+	else
+		this->shieldTexture = 0;
 
 	return status;
 }
@@ -136,6 +146,7 @@ void Player::spin(bool isLeft)
 
 void Player::display()
 {
+	((TheOrbOfTheHero*)useItems[0])->setPlayer(this->attack, this->defence);
 	if (floor > maxFloor)
 		maxFloor = floor;
 	if (status == PlayerStatus::moving)
@@ -244,9 +255,9 @@ void Player::draw2D(int width, int height)
 	glEnd();
 }
 
-void Player::upStairs(Vector2* position, Vector2* direction)
+void Player::upStairs(Vector2* position, Vector2* direction, unsigned short floor)
 {
-	floor++;
+	this->floor = floor;
 	this->direction = direction;
 	if (direction->x == 1)
 		spinY = 0; // 前
@@ -261,9 +272,9 @@ void Player::upStairs(Vector2* position, Vector2* direction)
 	this->position = new Vector3(positionInMap->y * lx, ly / 2, positionInMap->x * lz); // 在3D世界中的位置可以按照2DMap中的位置计算
 }
 
-void Player::downStairs(Vector2* position, Vector2* direction)
+void Player::downStairs(Vector2* position, Vector2* direction, unsigned short floor)
 {
-	floor--;
+	this->floor = floor;
 	this->direction = direction;
 	if (direction->x == 1)
 		spinY = 0; // 前
@@ -351,8 +362,11 @@ void Player::action()
 {
 	if (strcmp(npc->getName(), "Old Man") == 0)
 	{
-		if(((OldMan*)npc)->getIndexOfUseItems() > -1)
-		this->useItems[((OldMan*)npc)->getIndexOfUseItems()]->enableItem();
+		if (((OldMan*)npc)->getIndexOfUseItems() >= 0 && ((OldMan*)npc)->getIndexOfUseItems() < 15 && !((OldMan*)npc)->isEndTalking())
+		{
+			AudioManager::playSound("Data/Audio/get.wav");
+			this->useItems[((OldMan*)npc)->getIndexOfUseItems()]->enableItem();
+		}
 	}
 	else if (strcmp(npc->getName(), "Merchant") == 0)
 	{
@@ -424,6 +438,7 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 			useItems[i]->init();
 			break;
 		default:
+			useItems[i] = NULL;
 			break;
 		}
 	}
@@ -448,15 +463,35 @@ void Player::useItem(int index)
 			}
 		}
 		break;
-	case 1: // The orb of flying
+	case 1: // The orb of wisdom
 		if (useItems[index]->isEnable())
 		{
-
+			if (!useItems[index]->ifIsUsing())
+			{
+				useItems[index]->useItem();
+				this->status = PlayerStatus::usingItem;
+			}
+			else
+			{
+				useItems[index]->closeItem();
+				this->status = PlayerStatus::idle;
+			}
 		}
 		break;
-	case 2: // The orb of wisdom
-		break;
-	case 3:
+	case 2: // The orb of flying
+		if (useItems[index]->isEnable())
+		{
+			if (!useItems[index]->ifIsUsing())
+			{
+				useItems[index]->useItem();
+				this->status = PlayerStatus::usingItem;
+			}
+			else
+			{
+				useItems[index]->closeItem();
+				this->status = PlayerStatus::idle;
+			}
+		}
 		break;
 	}
 }
@@ -491,7 +526,20 @@ void Player::load()
 		this->floor = playerValue["floor"].asUInt();
 		this->direction->x = (float)playerValue["direction"]["x"].asDouble();
 		this->direction->y = (float)playerValue["direction"]["y"].asDouble();
-
+		for (int i = 0; i < 3; i++)
+		{
+			if (i == 1)
+			{
+				std::string jsonString = playerValue["useItems"][i].toStyledString();
+				((TheOrbOfWisdom*)this->useItems[i])->load(jsonString);
+			}
+			else
+			{
+				bool enable = playerValue["useItems"][i]["enable"].asBool();
+				if (enable)
+					this->useItems[i]->enableItem();
+			}
+		}
 	}
 }
 
@@ -516,6 +564,20 @@ void Player::save()
 	playerValue["floor"] = this->floor;
 	playerValue["direction"]["x"] = this->direction->x;
 	playerValue["direction"]["y"] = this->direction->y;
+
+	for (int i = 0; i < 3; i++)
+	{
+		if (i == 1) // the orb of wisdom 存储方法特殊
+		{
+			std::string jsonString;
+			jsonString = ((TheOrbOfWisdom*)this->useItems[i])->save();
+			Json::Reader reader;
+			reader.parse(jsonString, playerValue["useItems"][i]);
+			playerValue["useItems"][i]["enable"] = this->useItems[i]->isEnable();
+		}
+		else
+			playerValue["useItems"][i]["enable"] = this->useItems[i]->isEnable();
+	}
 
 	Json::StyledWriter writer;
 

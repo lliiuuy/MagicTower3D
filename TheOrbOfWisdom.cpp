@@ -7,11 +7,10 @@ std::string TheOrbOfWisdom::save()
 	value["index"] = this->indexOfMessages;
 	value["number"] = this->messages->size();
 	value["enable"] = this->enable;
-	value["canUse"] = this->canUse;
-	for (int i = 0; i < messages->size(); i++)
+	for (int i = 0; i < (int)messages->size(); i++)
 	{
 		char message[1000];
-		sprintf_s(message, messages->at(i));
+		sprintf_s(message, messages->at(i)->getSentence());
 		value["messages"][i] = message;
 	}
 	jsonString = value.toStyledString();
@@ -26,20 +25,35 @@ void TheOrbOfWisdom::load(std::string jsonString)
 	{
 		this->indexOfMessages = data["index"].asInt();
 		int numberOfMessages = data["number"].asInt();
-		this->canUse = data["canUse"].asBool();
 		this->enable = data["enable"].asBool();
 		for (int i = 0; i < numberOfMessages; i++)
 		{
-			char message[1000];
-			sprintf_s(message, data["messages"][i].asCString());
+			char sentence[1000] = "";
+			sprintf_s(sentence, data["messages"][i].asCString());
+			Message* message = new Message(sentence, "", false, false, false);
 			this->messages->push_back(message);
 		}
+	}
+}
+
+void TheOrbOfWisdom::addMessage(char* message)
+{
+	bool add = true;
+	for (unsigned int i = 0; i < this->messages->size(); i++)
+	{
+		if (strcmp(message, this->messages->at(i)->getSentence()) == 0)
+			add = false;
+	}
+	if (add)
+	{
+		Message* messageClass = new Message(message, "", false, false, false);
+		messages->push_back(messageClass);
 	}
 }
 
 TheOrbOfWisdom::TheOrbOfWisdom(Vector2* positionInMap): UseItem(positionInMap)
 {
 	this->name = "The orb of wisdom";
-	this->messages = new std::vector<char*>();
-	this->index = 2;
+	this->messages = new std::vector<Message*>();
+	this->index = 1;
 }

@@ -101,7 +101,7 @@ void GameManager::drawScene()
 		}
 	}
 
-	if (!restart)
+	if (!restart && player->getStatus() != PlayerStatus::usingItem)
 	{
 		if (this->usingStairs != uiManager->getIsUsingStairs())
 		{
@@ -109,7 +109,7 @@ void GameManager::drawScene()
 			if (isUpStairs)
 			{
 				mapCreator->saveMap(player->getFloor());
-				player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection());
+				player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection(), player->getFloor() + 1);
 				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
 			}
 			else
@@ -123,12 +123,12 @@ void GameManager::drawScene()
 					mapCreator->getObject(9, 4)->destroyThis();
 					mapCreator->display(player->getPositon());
 					mapCreator->saveMap(player->getFloor());
-					player->downStairs(new Vector2(7, 2), new Vector2(1, 0));
+					player->downStairs(new Vector2(7, 2), new Vector2(1, 0), 2);
 				}
 				else
 				{
 					mapCreator->saveMap(player->getFloor());
-					player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection());
+					player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection(), player->getFloor() - 1);
 				}
 				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
 			}
@@ -146,10 +146,12 @@ void GameManager::drawScene()
 				Object* object = mapCreator->getObject(6, 2);
 				object->collide();
 				player->talk((NPC*)object);
+				if (((NPC*)player->getNPC())->isToNote())
+					((TheOrbOfWisdom*)player->getUseItems()[1])->addMessage(((NPC*)player->getNPC())->getSentence());
 			}
 		}
 	}
-	else
+	else if(restart && player->getStatus() != PlayerStatus::usingItem)
 	{
 		if (this->usingStairs != uiManager->getIsUsingStairs())
 		{
@@ -168,8 +170,35 @@ void GameManager::drawScene()
 			this->restart = false;
 		}
 	}
+	else if (player->getStatus() == PlayerStatus::usingItem)
+	{
+		if (this->usingStairs != uiManager->getIsUsingStairs())
+		{
+			this->usingStairs = false;
+			if (isUpStairs)
+			{
+				mapCreator->loadMap(player->getFloor() - 1, player->getMaxFloor());
+				player->upStairs(mapCreator->getUpPosition(), mapCreator->getUpDirection(), player->getFloor());
+				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
+			}
+			else
+			{
+				mapCreator->loadMap(player->getFloor() + 1, player->getMaxFloor());
+				player->downStairs(mapCreator->getDownPosition(), mapCreator->getDownDirection(), player->getFloor());
+				mapCreator->loadMap(player->getFloor(), player->getMaxFloor());
+			}
+			uiManager->finishUsingStaris();
+			this->finishUsingStairs = true;
+		}
+		if (this->finishUsingStairs != uiManager->getIsFinishUsingStairs())
+		{
+			this->finishUsingStairs = false;
+			this->restart = false;
+		}
+	}
 
 	player->display();
+	
 	if (uiManager->getMonster() != NULL)
 	{
 		if (uiManager->getMonster()->isDestroy())
@@ -182,6 +211,24 @@ void GameManager::drawScene()
 	}
 
 	mapCreator->display(player->getPositon());
+	((TheOrbOfTheHero*)(player->getUseItems()[0]))->setPlayer(player->getAttack(), player->getDefence());
+	((TheOrbOfTheHero*)(player->getUseItems()[0]))->clearMonster();
+	for (int i = 0; i < 11; i++)
+	{
+		for (int j = 0; j < 11; j++)
+		{
+			Object* object = mapCreator->getObject(i, j);
+			if (object != NULL)
+			{
+				if (object->getTag() == Tag::monster || object->getTag() == Tag::boss)
+				{
+					if(!((Monster*)object)->isAppearMonster())
+						((TheOrbOfTheHero*)(player->getUseItems()[0]))->addMonster((Monster*)object);
+				}
+			}
+		}
+	}
+
 	detectCollision();
 
 	glRotatef(360.0f - player->getSpinY(), 0, 1, 0);
@@ -235,7 +282,7 @@ void GameManager::drawScene()
 	glMatrixMode(GL_PROJECTION);						// 选择透视矩阵
 	glLoadIdentity();									// 重设透视矩阵
 
-	gluPerspective(60.0f, width * 1.3f / height, 0.1f, 1000.0f); //	设置回透视投影
+	gluPerspective(60.0f, width * 1.3f / height, 0.025f, 1000.0f); //	设置回透视投影
 
 	glMatrixMode(GL_MODELVIEW);							// 选择模型矩阵
 	glLoadIdentity();									// 重新载入模型矩阵
@@ -280,7 +327,31 @@ void GameManager::movePlayer(bool isUp)
 	if (object == NULL)
 	{
 		if (player->getStatus() == PlayerStatus::idle)
-			player->move(isUp);
+		{
+			bool canMove = true;
+			Object* object1 = mapCreator->getObject((int)floor(player->getPositionInMap()->x - player->getDirection()->x + 0.5f), (int)floor(player->getPositionInMap()->y - player->getDirection()->y + 1 + 0.5f));
+			Object* object2 = mapCreator->getObject((int)floor(player->getPositionInMap()->x - player->getDirection()->x + 0.5f), (int)floor(player->getPositionInMap()->y - player->getDirection()->y - 1 + 0.5f));
+			if (object1 != NULL)
+			{
+				if (strcmp("Altar", object1->getName()) == 0)
+				{
+					canMove = false;
+					object1->collide();
+					player->talk((NPC*)object1);
+				}
+			}
+			else if (object2 != NULL)
+			{
+				if (strcmp("Altar", object2->getName()) == 0)
+				{
+					canMove = false;
+					object1->collide();
+					player->talk((NPC*)object2);
+				}
+			}
+			if(canMove)
+				player->move(isUp);
+		}
 	}
 	else if (object->getTag() == Tag::door && player->getStatus() == PlayerStatus::idle)
 	{
@@ -324,9 +395,10 @@ void GameManager::movePlayer(bool isUp)
 	{
 		object->collide();
 		player->talk((NPC*)object);
+		if(((NPC*)player->getNPC())->isToNote())
+			((TheOrbOfWisdom*)player->getUseItems()[1])->addMessage(((NPC*)player->getNPC())->getSentence());
 		if (((NPC*)player->getNPC())->isAction() && !((NPC*)player->getNPC())->isChoose() && strcmp(player->getNPC()->getName(), "Old Man") == 0)
 		{
-			AudioManager::playSound("Data/Audio/get.wav");
 			player->action();
 		}
 	}
@@ -364,6 +436,16 @@ void GameManager::spinPlayer(bool isLeft)
 {
 	if (player->getStatus() == PlayerStatus::idle)
 		player->spin(isLeft);
+	else if (player->getStatus() == PlayerStatus::usingItem)
+	{
+		if (player->getUseItems()[1]->ifIsUsing())
+		{
+			if (isLeft)
+				((TheOrbOfWisdom*)player->getUseItems()[1])->previousMessage();
+			else
+				((TheOrbOfWisdom*)player->getUseItems()[1])->nextMessage();
+		}
+	}
 }
 
 void GameManager::mouseButtonClick(int x, int y)
@@ -373,6 +455,8 @@ void GameManager::mouseButtonClick(int x, int y)
 		Object* object = player->getNPC();
 		if (object->getTag() == Tag::NPC)
 		{
+			if (((NPC*)player->getNPC())->isToNote())
+				((TheOrbOfWisdom*)player->getUseItems()[1])->addMessage(((NPC*)player->getNPC())->getSentence());
 			if (((NPC*)object)->isChoose())
 			{
 				// 选中Yes
@@ -559,6 +643,59 @@ void GameManager::mouseButtonClick(int x, int y)
 			}
 		}
 	}
+	else if (player->getStatus() == PlayerStatus::idle || player->getStatus() == PlayerStatus::usingItem)
+	{
+		if (player->getUseItems()[2]->ifIsUsing() && !usingStairs && !finishUsingStairs) // 选择楼层
+		{
+			int floor;
+			floor = ((x * 1600 / width) - 270) / 40 + 10 * (((y * 1200 / height) - 560) / 40) + 1;
+			if (floor > 0 && floor <= player->getMaxFloor() && floor != player->getFloor())
+			{
+				if (player->getUseItems()[2]->isCanUse())
+				{
+					if (floor > player->getFloor())
+					{
+						player->moveFloor(floor);
+						usingStairs = true;
+						finishUsingStairs = false;
+						isUpStairs = true;
+						uiManager->useStairs();
+					}
+					else
+					{
+						player->moveFloor(floor);
+						usingStairs = true;
+						finishUsingStairs = false;
+						isUpStairs = false;
+						uiManager->useStairs();
+					}
+				}
+				else
+					this->uiManager->messageDraw("You must near the stairs to fly");
+			}
+		}
+		int index;
+		index = (((x * 1600 / width) - 40) / 75) + 3 * (((y * 1200 / height) - 560) / 88);
+		if (index > -1 && index < 15)
+		{
+			if (player->getUseItems()[index] != NULL)
+			{
+				bool isUsing = false;
+				for (int i = 0; i < 15; i++)
+				{
+					if (i == index)
+						continue;
+					if(player->getUseItems()[i] != NULL && !usingStairs && !finishUsingStairs)
+						isUsing = player->getUseItems()[i]->ifIsUsing();
+				}
+				if (!isUsing)
+				{
+					player->useItem(index);
+					uiManager->closeDialog();
+				}
+			}
+		} //  // 关闭当前打开的道具
+    }
 }
 
 void GameManager::newGame()
@@ -639,6 +776,7 @@ void GameManager::detectCollision()
 				uiManager->messageDraw(message);
 				AudioManager::playSound("Data/Audio/get.wav");
 				player->reciveUseItems((UseItem*)object);
+				object->destroyThis();
 			}
 		}
 		object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - player->getDirection()->x + 0.5f), (int)floor(player->getPositionInMap()->y - player->getDirection()->y + 0.5f));
@@ -660,5 +798,32 @@ void GameManager::detectCollision()
 				}
 			}
 		}
+		bool canUse = false;
+		for (int i = 0; i < 4; i++)
+		{
+			switch (i)
+			{
+			case 0:
+				object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + 1 + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
+				break;
+			case 1:
+				object = mapCreator->getObject((int)floor(player->getPositionInMap()->x - 1 + 0.5f), (int)floor(player->getPositionInMap()->y + 0.5f));
+				break;
+			case 2:
+				object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + 0.5f), (int)floor(player->getPositionInMap()->y + 1 + 0.5f));
+				break;
+			case 3:
+				object = mapCreator->getObject((int)floor(player->getPositionInMap()->x + 0.5f), (int)floor(player->getPositionInMap()->y - 1 + 0.5f));
+				break;
+			default:
+				break;
+			}
+			if (object != NULL)
+			{
+				if (object->getTag() == Tag::upStairs || object->getTag() == Tag::downStairs)
+					canUse = true;
+			}
+		}
+		player->getUseItems()[2]->setCanUse(canUse);
 	}
 }

@@ -14,8 +14,6 @@ protected:
 	float spinY = 0; // Ğı×ª
 
 public:
-	virtual std::string save() = 0;
-	virtual void load(std::string jsonString) = 0;
 
 	virtual void useItem() = 0;
 	virtual void closeItem() = 0;
@@ -28,7 +26,7 @@ public:
 	bool isEnable() { return enable; }
 	bool ifIsUsing() { return isUsing; }
 	bool isCanUse() { return canUse; }
-	bool setCanUse() { return canUse; }
+	void setCanUse(bool canUse) { this->canUse = canUse; }
 
 	void enableItem() { this->enable = true; }
 	void disableItem() { this->enable = false; }
