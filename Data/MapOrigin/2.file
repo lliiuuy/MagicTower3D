@@ -280,7 +280,7 @@
                     "action": false
                  },
                  {
-                    "sentence": "O.K. Well, excuse my going first. Your#sword and shield were stolen by the guards.#It's not wise to wander about without them.#I believe#there is a sword on the 5th floor and#a shield on the 9th, you had better get them#first of all. See you later!",
+                    "sentence": "O.K. Well, excuse my going first. Your#sword and shield were stolen by the guards.#It's not wise to wander about without them.#I believe there is a sword on the 5th floor and#a shield on the 9th, you had better get them#first of all. See you later!",
                     "message":"",
                     "choose": false,
                     "toNote": false,

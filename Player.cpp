@@ -429,6 +429,38 @@ Player::Player(Vector2* positionInMap): Creature(positionInMap)
 	}
 }
 
+void Player::useItem(int index)
+{
+	switch (index)
+	{
+	case 0: // The orb of the hero
+		if (useItems[index]->isEnable())
+		{
+			if (!useItems[index]->ifIsUsing())
+			{
+				useItems[index]->useItem();
+				this->status = PlayerStatus::usingItem;
+			}
+			else
+			{
+				useItems[index]->closeItem();
+				this->status = PlayerStatus::idle;
+			}
+		}
+		break;
+	case 1: // The orb of flying
+		if (useItems[index]->isEnable())
+		{
+
+		}
+		break;
+	case 2: // The orb of wisdom
+		break;
+	case 3:
+		break;
+	}
+}
+
 void Player::load()
 {
 	Json::Reader reader;

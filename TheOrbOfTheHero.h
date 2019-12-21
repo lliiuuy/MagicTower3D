@@ -5,9 +5,10 @@ class TheOrbOfTheHero :
 	public UseItem
 {
 public:
-	void useItem();
-	void save();
-	void load();
+	void useItem() { this->isUsing = true; }
+	void closeItem() { this->isUsing = false; }
+	std::string save();
+	void load(std::string jsonString);
 	TheOrbOfTheHero(Vector2* positionInMap);
 };
 

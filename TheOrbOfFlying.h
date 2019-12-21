@@ -4,13 +4,15 @@ class TheOrbOfFlying :
 	public UseItem
 {
 private:
-	unsigned short maxFloor;
+	unsigned short maxFloor = 0;
 public:
-	void load();
-	void save();
-	void useItem();
+	void useItem() { this->isUsing = true; }
+	void closeItem() { this->isUsing = false; }
 
-	void setMaxFloor(unsigned short floor) { this->maxFloor = floor; }
+	void load(std::string jsonString);
+	std::string save();
+	void setMaxFloor(unsigned short maxFloor) { this->maxFloor = maxFloor; }
+
 	TheOrbOfFlying(Vector2* positionInMap);
 };
 

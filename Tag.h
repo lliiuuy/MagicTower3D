@@ -27,5 +27,6 @@ enum class PlayerStatus : unsigned short
 	battling,
 	talking,
 	animating,
+	usingItem,
 	idle,
 };

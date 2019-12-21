@@ -106,6 +106,8 @@ public:
 
 	UseItem** getUseItems() { return useItems; }
 
+	void useItem(int index);
+
 	void action3F() 
 	{
 		// 没收道具

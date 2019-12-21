@@ -8,20 +8,27 @@ protected:
 	unsigned short index = 0;
 	
 	bool enable = false;
+	bool isUsing = false;
+	bool canUse = false;
 
 	float spinY = 0; // Ğı×ª
 
 public:
+	virtual std::string save() = 0;
+	virtual void load(std::string jsonString) = 0;
+
 	virtual void useItem() = 0;
+	virtual void closeItem() = 0;
+
 	void draw2D(int width, int height);
 	void draw3D();
 	void collide();
 	void display(Vector3 *position);
-	
-	virtual void save() = 0;
-	virtual void load() = 0;
 
 	bool isEnable() { return enable; }
+	bool ifIsUsing() { return isUsing; }
+	bool isCanUse() { return canUse; }
+	bool setCanUse() { return canUse; }
 
 	void enableItem() { this->enable = true; }
 	void disableItem() { this->enable = false; }
