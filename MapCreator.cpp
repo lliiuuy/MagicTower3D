@@ -239,6 +239,7 @@ void MapCreator::saveMap(int floor)
 					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "SkeletonA";
 				}
+				// Obstacle
 				else if (object->getTag() == Tag::wall)
 				{
 					if (((Wall*)object)->isBrokenWall())
@@ -247,6 +248,18 @@ void MapCreator::saveMap(int floor)
 						mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Appear Wall";
 					else
 						mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = object->getName();
+				}
+				else if (object->getTag() == Tag::ironDoor)
+				{
+					std::string jsonString = ((IronDoor*)object)->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Iron Door";
+				}
+				else if (object->getTag() == Tag::prison)
+				{
+					std::string jsonString = ((Prison*)object)->save();
+					reader.parse(jsonString, mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]);
+					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = "Prison";
 				}
 				else
 					mapValue["mapData"][(i - 1) * (mapWidth - 2) + j - 1]["element"] = object->getName();

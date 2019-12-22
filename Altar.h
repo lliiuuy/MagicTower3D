@@ -76,9 +76,5 @@ public:
 		else
 			return messages->at(indexOfMessages)->getSentence();
 	}
-	char* getMessage() { return messages->at(indexOfMessages)->getMessage(); }
-	bool isChoose() { return messages->at(indexOfMessages)->isChoose(); }
-	bool isAction() { return messages->at(indexOfMessages)->isAction(); }
-	bool isTalking() { return talking; }
 };
 

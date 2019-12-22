@@ -5,6 +5,7 @@
 #include "UseItem.h"
 #include "Monster.h"
 #include "Objects.h"
+#include "Math.h"
 
 class Player :
 	public Creature
@@ -23,8 +24,6 @@ private:
 
 	GLuint shieldTexture;
 	char shieldName[100] = "";
-
-	int index = 0; // 人物移动的index
 
 	float spinY; // 玩家的朝向
 	float spinYTo; // 玩家需要转向的位置
@@ -56,12 +55,12 @@ public:
 	void move(bool isUp);
 	void spin(bool isLeft);
 
+	void display(Vector3* position) {}
 	void display();
 
 	void draw3D() { ; } // 不在3D中绘制
 	void draw2D(int width, int height);
 	void collide() { ; } // 不会碰撞
-	void display(Vector3* position) { ; }
 
 	unsigned short getYellowKeyNumber() { return yellowKeyNumber; }
 	unsigned short getBlueKeyNumber() { return blueKeyNumber; }
@@ -73,6 +72,7 @@ public:
 	void upStairs(Vector2* position, Vector2* direction, unsigned short floor);
 	void downStairs(Vector2* position, Vector2* direction, unsigned short floor);
 	void finishUsingStairs() { this->status = PlayerStatus::idle; }
+	void useStairs() { this->status = PlayerStatus::usingStairs; }
 
 	void moveFloor(unsigned short floor) { this->floor = floor; }
 
@@ -89,9 +89,6 @@ public:
 	void reciveUseItems(UseItem* useItem); // 获取使用型物体
 
 	Vector2* getDirection() { return direction; }
-	void SetDirection(Vector2* direction);
-
-	void purchase(int money) { this->money -= money; }
 
 	void openDoor(int tag);
 	void battle(Monster* monster);

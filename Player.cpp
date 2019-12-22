@@ -151,8 +151,14 @@ void Player::display()
 		maxFloor = floor;
 	if (status == PlayerStatus::moving)
 	{
-		if (fabsf(positionInMap->x - positionMoveTo->x) < moveSpeed/2 && fabsf(positionInMap->y - positionMoveTo->y) < moveSpeed/2)
+		if (fabsf(positionInMap->x - positionMoveTo->x) < moveSpeed / 2 && fabsf(positionInMap->y - positionMoveTo->y) < moveSpeed / 2)
+		{
+			positionInMap->x = ceilf(positionMoveTo->x - 0.5f);
+			positionInMap->y = ceilf(positionMoveTo->y - 0.5f);
+			this->position->x = positionInMap->y * lx;
+			this->position->z = positionInMap->x * lz;
 			status = PlayerStatus::idle;
+		}
 		else
 		{
 			if(direction->x == 0)
@@ -314,19 +320,6 @@ void Player::reciveItems(ConsumbleItem* consumbleItem)
 void Player::reciveUseItems(UseItem* useItem)
 {
 	this->useItems[useItem->getIndex()]->enableItem();
-}
-
-void Player::SetDirection(Vector2* direction)
-{
-	this->direction = direction;
-	if (direction->x == 1)
-		spinY = 0; // г╟
-	else if (direction->y == 1)
-		spinY = 90;
-	else if (direction->x == -1)
-		spinY = 180; // ╨С
-	else if (direction->y == -1)
-		spinY = 270; // ср
 }
 
 void Player::openDoor(int tag)

@@ -154,7 +154,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""
@@ -166,7 +176,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""
@@ -260,7 +280,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""
@@ -272,7 +302,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""
@@ -359,7 +399,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""
@@ -371,7 +421,17 @@
          "element" : ""
       },
       {
-         "element" : "Prison"
+         "element" : "Prison",
+         "position" : [
+            {
+               "x" : 1.0,
+               "y" : 5.0
+            },
+            {
+               "x" : 1.0,
+               "y" : 7.0
+            }
+         ]
       },
       {
          "element" : ""

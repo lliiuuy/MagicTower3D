@@ -7,7 +7,7 @@ class TheOrbOfWisdom :
 {
 private:
 	std::vector<Message*>* messages;
-	int indexOfMessages = 0; // 当前查看对话的index
+	unsigned short indexOfMessages = 0; // 当前查看对话的index
 public:
 
 	std::string save();

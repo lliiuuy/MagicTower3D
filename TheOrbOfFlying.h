@@ -3,7 +3,6 @@
 class TheOrbOfFlying :
 	public UseItem
 {
-private:
 public:
 	void useItem() 
 	{ 

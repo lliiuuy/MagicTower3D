@@ -1,43 +1,40 @@
 {
    "PositionInMap" : {
-      "x" : 8.000012397766113,
-      "y" : 2.999998331069946
+      "x" : 6.0,
+      "y" : 2.0
    },
    "Shield" : {
       "Name" : "",
       "Texture" : 0
    },
    "Sword" : {
-      "Name" : "Iron",
-      "Texture" : 359
+      "Name" : "",
+      "Texture" : 0
    },
-   "attack" : 20,
-   "blueKeyNumber" : 0,
-   "defence" : 20,
+   "attack" : 10,
+   "blueKeyNumber" : 1,
+   "defence" : 10,
    "direction" : {
-      "x" : 1.0,
-      "y" : 0.0
+      "x" : 0.0,
+      "y" : 1.0
    },
-   "floor" : 6,
-   "health" : 103,
-   "maxFloor" : 7,
-   "money" : 29,
+   "floor" : 4,
+   "health" : 902,
+   "maxFloor" : 4,
+   "money" : 8,
    "redKeyNumber" : 0,
-   "spinY" : 0.0,
+   "spinY" : 90.0,
    "useItems" : [
       {
          "enable" : true
       },
       {
-         "enable" : true,
+         "enable" : false,
          "index" : 0,
-         "messages" : [
-            "If you buy goods from merchants, you#will be able to hear important information#later."
-         ],
-         "number" : 1
+         "number" : 0
       },
       {
-         "enable" : true
+         "enable" : false
       }
    ],
    "yellowKeyNumber" : 3

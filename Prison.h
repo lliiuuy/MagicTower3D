@@ -12,6 +12,7 @@ public:
 	void draw3D();
 
 	void load(std::string jsonString);
+	std::string save();
 
 	Vector2* getGuardPosition() { return guardPosition; }
 	Vector2* getOtherGuardPosition() { return otherGuardPosition; }

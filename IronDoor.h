@@ -15,6 +15,7 @@ public:
 	void openDoor(bool destroy);
 
 	void load(std::string jsonString);
+	std::string save();
 
 	void setClose(bool close) { this->close = close; this->index = 3; }
 

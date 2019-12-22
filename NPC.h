@@ -10,7 +10,6 @@ protected:
 
 	unsigned short numberofMessages = 0; // 记录一共有几条对话
 	unsigned short indexOfMessages = 0; // 记录对话进行到第几句
-	unsigned short index = 0; // 记录加载第几张texture
 
 	float spinY = 0; // NPC旋转的角度
 

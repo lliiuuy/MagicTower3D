@@ -28,6 +28,18 @@ void IronDoor::load(std::string jsonString)
 	}
 }
 
+std::string IronDoor::save()
+{
+	std::string jsonString;
+	Json::Value value;
+	value["position"][(Json::UInt)0]["x"] = guardPosition->x;
+	value["position"][(Json::UInt)0]["y"] = guardPosition->y;
+	value["position"][(Json::UInt)1]["x"] = otherGuardPosition->x;
+	value["position"][(Json::UInt)1]["y"] = otherGuardPosition->y;
+	jsonString = value.toStyledString();
+	return jsonString;
+}
+
 void IronDoor::draw2D(int width, int height)
 {
 	if (!close || open)

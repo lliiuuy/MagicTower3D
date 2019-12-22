@@ -5,9 +5,9 @@ class OldMan :
 {
 private:
 	unsigned short indexOfUseItems = -1;
+	void talk();
 public:
 	OldMan(Vector2* positionInMap);
-	void talk();
 	std::string save();
 	void load(std::string jsonString);
 	unsigned short getIndexOfUseItems() { return this->indexOfUseItems; }

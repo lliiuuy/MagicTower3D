@@ -9,7 +9,7 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Blue Key"
       },
       {
          "element" : ""
@@ -81,13 +81,13 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Red Medicine"
       },
       {
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
          "element" : "Wall"
@@ -150,7 +150,7 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "Yellow Door"
       },
       {
          "element" : "Wall"
@@ -162,7 +162,7 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "Blue Door"
       },
       {
          "element" : "Wall"
@@ -183,28 +183,19 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Priest"
       },
       {
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Yellow Door"
       },
       {
          "element" : ""
       },
       {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
+         "element" : "Red Slime"
       },
       {
          "element" : ""
@@ -213,58 +204,7 @@
          "element" : ""
       },
       {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
+         "element" : "SkeletonC"
       },
       {
          "element" : ""
@@ -288,7 +228,67 @@
          "element" : "Wall"
       },
       {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Red Slime"
+      },
+      {
          "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Door"
       },
       {
          "element" : "Wall"
@@ -321,7 +321,7 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Bat"
       },
       {
          "element" : ""
@@ -351,13 +351,13 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "Green Slime"
       },
       {
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
          "element" : "Wall"
@@ -384,13 +384,13 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
-         "element" : ""
+         "element" : "Green Slime"
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
          "element" : "Wall"

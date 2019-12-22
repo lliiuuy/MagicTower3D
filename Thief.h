@@ -19,9 +19,10 @@ private:
 
 	unsigned short floorNumber = 2;
 
+	void talk() { this->talking = true; }
+
 public:
 	Thief(Vector2* positionInMap);
-	void talk() { this->talking = true; }
 	std::string save();
 	void load(std::string jsonString);
 

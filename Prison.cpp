@@ -72,3 +72,15 @@ void Prison::load(std::string jsonString)
 		otherGuardPosition->y = (float)data["position"][(Json::UInt)1]["y"].asDouble();
 	}
 }
+
+std::string Prison::save()
+{
+	std::string jsonString;
+	Json::Value value;
+	value["position"][(Json::UInt)0]["x"] = guardPosition->x;
+	value["position"][(Json::UInt)0]["y"] = guardPosition->y;
+	value["position"][(Json::UInt)1]["x"] = otherGuardPosition->x;
+	value["position"][(Json::UInt)1]["y"] = otherGuardPosition->y;
+	jsonString = value.toStyledString();
+	return jsonString;
+}

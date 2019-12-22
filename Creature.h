@@ -15,7 +15,6 @@ public:
 	unsigned int getAttack() { return attack; }
 	unsigned int getDefence() { return defence; }
 	unsigned int getMoney() { return money; }
-	char* getName() { return name; }
 
 	Creature(Vector2* positionInMap);
 };

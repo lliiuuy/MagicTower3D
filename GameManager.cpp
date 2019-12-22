@@ -318,6 +318,8 @@ void GameManager::movePlayer(bool isUp)
 	// 移动player的时候，关闭底部message显示
 	if(player->getStatus() == PlayerStatus::idle)
 		uiManager->deleteMessage();
+	if (gameOver)
+		return;
 
 	Object* object;
 	if (isUp)
@@ -407,6 +409,7 @@ void GameManager::movePlayer(bool isUp)
 		char message[100];
 		sprintf_s(message, "You're using stairs");
 		uiManager->messageDraw(message);
+		player->useStairs();
 		upStairs();
 	}
 	else if (object->getTag() == Tag::downStairs && player->getStatus() == PlayerStatus::idle)
@@ -414,6 +417,7 @@ void GameManager::movePlayer(bool isUp)
 		char message[100];
 		sprintf_s(message, "You're using stairs");
 		uiManager->messageDraw(message);
+		player->useStairs();
 		downStairs();
 	}
 	else if (object->getTag() == Tag::wall && player->getStatus() == PlayerStatus::idle)
@@ -434,6 +438,8 @@ void GameManager::movePlayer(bool isUp)
 
 void GameManager::spinPlayer(bool isLeft)
 {
+	if (gameOver)
+		return;
 	if (player->getStatus() == PlayerStatus::idle)
 		player->spin(isLeft);
 	else if (player->getStatus() == PlayerStatus::usingItem)
@@ -632,6 +638,7 @@ void GameManager::mouseButtonClick(int x, int y)
 					((IronDoor*)mapCreator->getObject(3, 3))->openDoor(true);
 					((IronDoor*)mapCreator->getObject(3, 7))->openDoor(true);
 					object->destroyThis();
+					this->gameOver = true;
 				}
 			}
 			((Boss*)object)->nextSentence();
@@ -640,6 +647,8 @@ void GameManager::mouseButtonClick(int x, int y)
 				if(player->getStatus() == PlayerStatus::talking)
 					player->endTalk();
 				uiManager->closeDialog();
+				if(gameOver)
+					uiManager->dialogDraw("Game Clear!#Thanks for your playing!!!#Please press R to restart or exit the game#The game will be updated someday.", false);
 			}
 		}
 	}
