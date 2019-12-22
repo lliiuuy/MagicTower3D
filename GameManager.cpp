@@ -390,7 +390,7 @@ void GameManager::movePlayer(bool isUp)
 			uiManager->messageDraw(message);
 			object->collide();
 		}
-		else
+		else if(!((Door*)object)->isOpen())
 			uiManager->messageDraw("You don't have the key");
 	}
 	else if (object->getTag() == Tag::NPC && player->getStatus() == PlayerStatus::idle)
