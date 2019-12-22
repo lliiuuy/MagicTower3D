@@ -73,22 +73,6 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
-	if (key == GLFW_KEY_F && action == GLFW_PRESS)
-	{
-		if (fullScreen)
-		{
-			GLFWmonitor* pMonitor = glfwGetPrimaryMonitor();
-			const GLFWvidmode* mode = glfwGetVideoMode(pMonitor);
-			glfwSetWindowPos(window, 0, 0);
-			glfwSetWindowSize(window, mode->width, mode->height);
-			fullScreen = !fullScreen;
-		}
-		else
-		{
-			glfwSetWindowSize(window, 800, 600);
-			fullScreen = !fullScreen;
-		}
-	}
 	if (key == GLFW_KEY_R && action == GLFW_PRESS)
 	{
 		if (gameManager->isGameOver())
