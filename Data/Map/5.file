@@ -15,7 +15,7 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Red Slime"
       },
       {
          "element" : ""
@@ -60,7 +60,7 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "Green Slime"
       },
       {
          "element" : ""
@@ -75,43 +75,10 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Yellow Door"
       },
       {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : ""
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
-      },
-      {
-         "element" : "Wall"
+         "element" : "Bat"
       },
       {
          "element" : ""
@@ -138,7 +105,40 @@
          "element" : ""
       },
       {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : "Yellow Door"
+      },
+      {
+         "element" : "Wall"
+      },
+      {
          "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Wall"
+      },
+      {
+         "element" : ""
+      },
+      {
+         "element" : "Yellow Key"
       },
       {
          "element" : ""
@@ -171,7 +171,7 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
          "element" : ""
@@ -180,7 +180,7 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Bat"
       },
       {
          "element" : "Wall"
@@ -207,7 +207,7 @@
          "element" : "Wall"
       },
       {
-         "element" : ""
+         "element" : "SkeletonB"
       },
       {
          "element" : "Wall"
@@ -270,16 +270,16 @@
          "element" : ""
       },
       {
-         "element" : ""
+         "element" : "Blue Jewel"
       },
       {
-         "element" : ""
+         "element" : "Yellow Key"
       },
       {
-         "element" : ""
+         "element" : "Red Medicine"
       },
       {
-         "element" : ""
+         "element" : "The orb of wisdom"
       },
       {
          "element" : "Wall"
