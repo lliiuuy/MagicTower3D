@@ -118,7 +118,7 @@ void resizeCallback(GLFWwindow* window, int width, int height)
 	int widthOrigin = width;
 	if (width != height * 4 / 3)
 		width = height * 4 / 3;
-	gameManager->setWindow(width, height);
+	gameManager->setWindow(width, height, widthOrigin, height);
 
 	glViewport((widthOrigin - width)/2, 0, width, height);
 
@@ -168,7 +168,7 @@ int main()
 
 	timerInit();
 
-	gameManager = new GameManager(width, height);
+	gameManager = new GameManager(width, height, width, height);
 	gameManager->init();
 
 	glfwSetKeyCallback(window, keyCallback);

@@ -12,6 +12,7 @@ private:
 	Player* player;
 
 	int width, height; // 屏幕长宽
+	int originWidth, originHeight;
 
 	bool usingStairs = false;
 	bool finishUsingStairs = false;
@@ -29,12 +30,12 @@ private:
 
 	void detectCollision();
 public:
-	GameManager(int width, int height);
+	GameManager(int width, int height, int originWidth, int originHeight);
 	void init();
 	void load(); // 存人物Json
 	void save(); // 读取人物Json
 	void drawScene();
-	void setWindow(int width, int height);
+	void setWindow(int width, int height, int originWidth, int originHeight);
 	void upStairs(); // 上楼
 	void downStairs(); // 下楼
 	void movePlayer(bool isUp); // 移动玩家

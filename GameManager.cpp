@@ -1,12 +1,14 @@
 #include "GameManager.h"
 
-GameManager::GameManager(int width, int height)
+GameManager::GameManager(int width, int height, int originWidth, int originHeight)
 {
 	mapCreator = new MapCreator();
 	uiManager = new UIManager(width, height);
 	player = new Player(new Vector2(10, 5));
 	this->width = width;
 	this->height = height;
+	this->originWidth = originWidth;
+	this->originHeight = originHeight;
 }
 
 void GameManager::init()
@@ -289,10 +291,12 @@ void GameManager::drawScene()
 
 }
 
-void GameManager::setWindow(int width, int height)
+void GameManager::setWindow(int width, int height, int originWidth, int originHeight)
 {
 	this->width = width;
 	this->height = height;
+	this->originWidth = originWidth;
+	this->originHeight = originHeight;
 	uiManager->setWindow(width, height);
 }
 
@@ -466,7 +470,7 @@ void GameManager::mouseButtonClick(int x, int y)
 			if (((NPC*)object)->isChoose())
 			{
 				// 选中Yes
-				if (x > width * 1150 / 1600 && x < width * 1250 / 1600 && y > height * 590 / 1200 && y < height * 630 / 1200)
+				if ((x - (originWidth - width) / 2) > width * 1150 / 1600 && (x - (originWidth - width) / 2) < width * 1250 / 1600 && y > height * 590 / 1200 && y < height * 630 / 1200)
 				{
 					if (strcmp(((NPC*)object)->getName(), "Merchant") == 0)
 					{
@@ -485,7 +489,7 @@ void GameManager::mouseButtonClick(int x, int y)
 					}
 				}
 				// 选中No
-				else if (x > width * 1174 / 1600 && x < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
+				else if ((x - (originWidth - width) / 2) > width * 1174 / 1600 && (x - (originWidth - width) / 2) < width * 1250 / 1600 && y > height * 630 / 1200 && y < height * 670 / 1200)
 				{
 					player->endTalk();
 					uiManager->closeDialog();
@@ -495,7 +499,7 @@ void GameManager::mouseButtonClick(int x, int y)
 			{
 				if (((NPC*)object)->isAction())
 				{
-					if (x > width * 320 / 1600 && x < 1280 * width / 1600)
+					if ((x - (originWidth - width) / 2) > width * 320 / 1600 && (x - (originWidth - width) / 2) < 1280 * width / 1600)
 					{
 						if (y > height * 220 / 1200 && y < height * 260 / 1200)
 						{
@@ -657,7 +661,7 @@ void GameManager::mouseButtonClick(int x, int y)
 		if (player->getUseItems()[2]->ifIsUsing() && !usingStairs && !finishUsingStairs) // 选择楼层
 		{
 			int floor;
-			floor = ((x * 1600 / width) - 270) / 40 + 10 * (((y * 1200 / height) - 560) / 40) + 1;
+			floor = (((x - (originWidth - width) / 2) * 1600 / width) - 270) / 40 + 10 * (((y * 1200 / height) - 560) / 40) + 1;
 			if (floor > 0 && floor <= player->getMaxFloor() && floor != player->getFloor())
 			{
 				if (player->getUseItems()[2]->isCanUse())
@@ -684,7 +688,7 @@ void GameManager::mouseButtonClick(int x, int y)
 			}
 		}
 		int index;
-		index = (((x * 1600 / width) - 40) / 75) + 3 * (((y * 1200 / height) - 560) / 88);
+		index = ((((x - (originWidth - width) / 2) * 1600 / width) - 40) / 75) + 3 * (((y * 1200 / height) - 560) / 88);
 		if (index > -1 && index < 15)
 		{
 			if (player->getUseItems()[index] != NULL)

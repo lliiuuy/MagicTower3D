@@ -3,5 +3,5 @@
 TheOrbOfFlying::TheOrbOfFlying(Vector2* positionInMap): UseItem(positionInMap)
 {
 	this->name = "The orb of flying";
-	this->index = 1;
+	this->index = 2;
 }
