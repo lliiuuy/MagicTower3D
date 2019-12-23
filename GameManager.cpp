@@ -470,7 +470,7 @@ void GameManager::mouseButtonClick(int x, int y)
 				{
 					if (strcmp(((NPC*)object)->getName(), "Merchant") == 0)
 					{
-						if ((int)player->getMoney() > ((Merchant*)player->getNPC())->getCost())
+						if ((int)player->getMoney() >= ((Merchant*)player->getNPC())->getCost())
 						{
 							((Merchant*)player->getNPC())->setCanBuy(true);
 							AudioManager::playSound("Data/Audio/get.wav");
